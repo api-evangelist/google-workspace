@@ -1,0 +1,169 @@
+name: Google Workspace
+description: A collection of productivity and collaboration tools from Google including Gmail, Drive, Calendar, Meet, and more
+image: https://workspace.google.com/static/img/logo.svg
+url: https://workspace.google.com
+created: '2024'
+modified: '2024'
+tags:
+- productivity
+- collaboration
+- email
+- storage
+- calendar
+- video conferencing
+apis:
+- name: Gmail API
+  description: Send and read email, manage drafts and labels, and handle mailbox settings
+  image: https://www.gstatic.com/images/branding/product/2x/gmail_2020q4_48dp.png
+  humanUrl: https://developers.google.com/gmail/api
+  baseUrl: https://gmail.googleapis.com
+  tags:
+  - email
+  - messaging
+  properties:
+  - type: Documentation
+    url: https://developers.google.com/gmail/api/guides
+  - type: OpenAPI
+    url: https://gmail.googleapis.com/$discovery/rest?version=v1
+  - type: Authentication
+    url: https://developers.google.com/gmail/api/auth/about-auth
+  - type: Pricing
+    url: https://workspace.google.com/pricing
+- name: Google Drive API
+  description: Store and synchronize files across devices, manage file metadata and permissions
+  image: https://www.gstatic.com/images/branding/product/2x/drive_2020q4_48dp.png
+  humanUrl: https://developers.google.com/drive/api
+  baseUrl: https://www.googleapis.com/drive/v3
+  tags:
+  - storage
+  - files
+  - cloud
+  properties:
+  - type: Documentation
+    url: https://developers.google.com/drive/api/guides/about-sdk
+  - type: OpenAPI
+    url: https://www.googleapis.com/discovery/v1/apis/drive/v3/rest
+  - type: Quick Start
+    url: https://developers.google.com/drive/api/quickstart/python
+  - type: Authentication
+    url: https://developers.google.com/drive/api/guides/about-auth
+- name: Google Calendar API
+  description: Create and manage calendars, events, and attendees
+  image: https://www.gstatic.com/images/branding/product/2x/calendar_2020q4_48dp.png
+  humanUrl: https://developers.google.com/calendar/api
+  baseUrl: https://www.googleapis.com/calendar/v3
+  tags:
+  - calendar
+  - scheduling
+  - events
+  properties:
+  - type: Documentation
+    url: https://developers.google.com/calendar/api/guides/overview
+  - type: OpenAPI
+    url: https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest
+  - type: Quick Start
+    url: https://developers.google.com/calendar/api/quickstart/js
+  - type: Samples
+    url: https://developers.google.com/calendar/api/samples
+- name: Google Meet API
+  description: Create and manage video conferencing meetings
+  image: https://www.gstatic.com/images/branding/product/2x/meet_2020q4_48dp.png
+  humanUrl: https://developers.google.com/meet
+  baseUrl: https://meet.googleapis.com
+  tags:
+  - video
+  - conferencing
+  - meetings
+  properties:
+  - type: Documentation
+    url: https://developers.google.com/meet/api/guides/overview
+  - type: Reference
+    url: https://developers.google.com/meet/api/reference/rest
+- name: Google Docs API
+  description: Create and edit documents programmatically
+  image: https://www.gstatic.com/images/branding/product/2x/docs_2020q4_48dp.png
+  humanUrl: https://developers.google.com/docs/api
+  baseUrl: https://docs.googleapis.com
+  tags:
+  - documents
+  - word processing
+  - collaboration
+  properties:
+  - type: Documentation
+    url: https://developers.google.com/docs/api/how-tos/overview
+  - type: OpenAPI
+    url: https://docs.googleapis.com/$discovery/rest?version=v1
+  - type: Quick Start
+    url: https://developers.google.com/docs/api/quickstart/python
+- name: Google Sheets API
+  description: Read and write data in Google Sheets
+  image: https://www.gstatic.com/images/branding/product/2x/sheets_2020q4_48dp.png
+  humanUrl: https://developers.google.com/sheets/api
+  baseUrl: https://sheets.googleapis.com
+  tags:
+  - spreadsheets
+  - data
+  - analytics
+  properties:
+  - type: Documentation
+    url: https://developers.google.com/sheets/api/guides/concepts
+  - type: OpenAPI
+    url: https://sheets.googleapis.com/$discovery/rest?version=v4
+  - type: Samples
+    url: https://developers.google.com/sheets/api/samples
+- name: Google Slides API
+  description: Create and modify presentations
+  image: https://www.gstatic.com/images/branding/product/2x/slides_2020q4_48dp.png
+  humanUrl: https://developers.google.com/slides/api
+  baseUrl: https://slides.googleapis.com
+  tags:
+  - presentations
+  - slides
+  properties:
+  - type: Documentation
+    url: https://developers.google.com/slides/api/guides/concepts
+  - type: OpenAPI
+    url: https://slides.googleapis.com/$discovery/rest?version=v1
+- name: Admin SDK Directory API
+  description: Manage users, groups, organizational units, and devices in a Google Workspace domain
+  humanUrl: https://developers.google.com/admin-sdk/directory
+  baseUrl: https://admin.googleapis.com
+  tags:
+  - admin
+  - users
+  - groups
+  - management
+  properties:
+  - type: Documentation
+    url: https://developers.google.com/admin-sdk/directory/reference/rest
+  - type: OpenAPI
+    url: https://admin.googleapis.com/$discovery/rest?version=directory_v1
+- name: Google Chat API
+  description: Build bots and integrations for Google Chat
+  image: https://www.gstatic.com/images/branding/product/2x/chat_2020q4_48dp.png
+  humanUrl: https://developers.google.com/chat
+  baseUrl: https://chat.googleapis.com
+  tags:
+  - messaging
+  - chat
+  - collaboration
+  properties:
+  - type: Documentation
+    url: https://developers.google.com/chat/api/guides/overview
+  - type: Reference
+    url: https://developers.google.com/chat/api/reference/rest
+common:
+- type: Developer Console
+  url: https://console.cloud.google.com
+- type: Authentication
+  url: https://developers.google.com/identity/protocols/oauth2
+- type: Terms of Service
+  url: https://workspace.google.com/terms/service-terms/
+- type: Support
+  url: https://support.google.com/workspace
+- type: Status
+  url: https://www.google.com/appsstatus/dashboard/
+maintainers:
+- FN: Google
+  email: workspace-apis@google.com
+  url: https://workspace.google.com
