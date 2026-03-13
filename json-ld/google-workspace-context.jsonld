@@ -1,0 +1,348 @@
+{
+  "@context": {
+    "@version": 1.1,
+
+    "gws": "https://developers.google.com/admin-sdk/directory/reference/rest/v1/",
+    "schema": "https://schema.org/",
+    "vcard": "http://www.w3.org/2006/vcard/ns#",
+    "foaf": "http://xmlns.com/foaf/0.1/",
+    "org": "http://www.w3.org/ns/org#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+
+    "User": {
+      "@id": "gws:users#User",
+      "@context": {
+        "id": {
+          "@id": "dcterms:identifier",
+          "@type": "xsd:string"
+        },
+        "primaryEmail": {
+          "@id": "schema:email",
+          "@type": "xsd:string"
+        },
+        "name": {
+          "@id": "schema:name",
+          "@type": "@id",
+          "@context": {
+            "givenName": {
+              "@id": "schema:givenName",
+              "@type": "xsd:string"
+            },
+            "familyName": {
+              "@id": "schema:familyName",
+              "@type": "xsd:string"
+            },
+            "fullName": {
+              "@id": "foaf:name",
+              "@type": "xsd:string"
+            },
+            "displayName": {
+              "@id": "schema:alternateName",
+              "@type": "xsd:string"
+            }
+          }
+        },
+        "isAdmin": {
+          "@id": "gws:users#isAdmin",
+          "@type": "xsd:boolean"
+        },
+        "isDelegatedAdmin": {
+          "@id": "gws:users#isDelegatedAdmin",
+          "@type": "xsd:boolean"
+        },
+        "lastLoginTime": {
+          "@id": "schema:lastReviewed",
+          "@type": "xsd:dateTime"
+        },
+        "creationTime": {
+          "@id": "dcterms:created",
+          "@type": "xsd:dateTime"
+        },
+        "suspended": {
+          "@id": "gws:users#suspended",
+          "@type": "xsd:boolean"
+        },
+        "archived": {
+          "@id": "gws:users#archived",
+          "@type": "xsd:boolean"
+        },
+        "orgUnitPath": {
+          "@id": "org:unitOf",
+          "@type": "xsd:string"
+        },
+        "customerId": {
+          "@id": "gws:users#customerId",
+          "@type": "xsd:string"
+        },
+        "recoveryEmail": {
+          "@id": "gws:users#recoveryEmail",
+          "@type": "xsd:string"
+        },
+        "recoveryPhone": {
+          "@id": "gws:users#recoveryPhone",
+          "@type": "xsd:string"
+        },
+        "thumbnailPhotoUrl": {
+          "@id": "schema:image",
+          "@type": "@id"
+        },
+        "includeInGlobalAddressList": {
+          "@id": "gws:users#includeInGlobalAddressList",
+          "@type": "xsd:boolean"
+        },
+        "isEnrolledIn2Sv": {
+          "@id": "gws:users#isEnrolledIn2Sv",
+          "@type": "xsd:boolean"
+        },
+        "isEnforcedIn2Sv": {
+          "@id": "gws:users#isEnforcedIn2Sv",
+          "@type": "xsd:boolean"
+        },
+        "emails": {
+          "@id": "schema:contactPoint",
+          "@container": "@set",
+          "@context": {
+            "address": {
+              "@id": "schema:email",
+              "@type": "xsd:string"
+            },
+            "type": {
+              "@id": "schema:contactType",
+              "@type": "xsd:string"
+            },
+            "primary": {
+              "@id": "gws:users#primary",
+              "@type": "xsd:boolean"
+            }
+          }
+        },
+        "phones": {
+          "@id": "schema:telephone",
+          "@container": "@set",
+          "@context": {
+            "value": {
+              "@id": "schema:telephone",
+              "@type": "xsd:string"
+            },
+            "type": {
+              "@id": "schema:contactType",
+              "@type": "xsd:string"
+            },
+            "primary": {
+              "@id": "gws:users#primary",
+              "@type": "xsd:boolean"
+            }
+          }
+        },
+        "addresses": {
+          "@id": "schema:address",
+          "@container": "@set",
+          "@context": {
+            "streetAddress": {
+              "@id": "schema:streetAddress",
+              "@type": "xsd:string"
+            },
+            "locality": {
+              "@id": "schema:addressLocality",
+              "@type": "xsd:string"
+            },
+            "region": {
+              "@id": "schema:addressRegion",
+              "@type": "xsd:string"
+            },
+            "postalCode": {
+              "@id": "schema:postalCode",
+              "@type": "xsd:string"
+            },
+            "country": {
+              "@id": "schema:addressCountry",
+              "@type": "xsd:string"
+            },
+            "countryCode": {
+              "@id": "vcard:country-name",
+              "@type": "xsd:string"
+            },
+            "formatted": {
+              "@id": "vcard:label",
+              "@type": "xsd:string"
+            },
+            "type": {
+              "@id": "schema:contactType",
+              "@type": "xsd:string"
+            },
+            "primary": {
+              "@id": "gws:users#primary",
+              "@type": "xsd:boolean"
+            }
+          }
+        },
+        "organizations": {
+          "@id": "schema:worksFor",
+          "@container": "@set",
+          "@context": {
+            "name": {
+              "@id": "schema:name",
+              "@type": "xsd:string"
+            },
+            "title": {
+              "@id": "schema:jobTitle",
+              "@type": "xsd:string"
+            },
+            "department": {
+              "@id": "schema:department",
+              "@type": "xsd:string"
+            },
+            "description": {
+              "@id": "schema:description",
+              "@type": "xsd:string"
+            },
+            "location": {
+              "@id": "schema:location",
+              "@type": "xsd:string"
+            },
+            "domain": {
+              "@id": "schema:url",
+              "@type": "xsd:string"
+            },
+            "primary": {
+              "@id": "gws:users#primary",
+              "@type": "xsd:boolean"
+            }
+          }
+        },
+        "languages": {
+          "@id": "schema:knowsLanguage",
+          "@container": "@set",
+          "@context": {
+            "languageCode": {
+              "@id": "schema:inLanguage",
+              "@type": "xsd:string"
+            }
+          }
+        },
+        "gender": {
+          "@id": "schema:gender",
+          "@context": {
+            "type": {
+              "@id": "schema:GenderType",
+              "@type": "xsd:string"
+            }
+          }
+        },
+        "websites": {
+          "@id": "schema:url",
+          "@container": "@set",
+          "@context": {
+            "value": {
+              "@id": "schema:url",
+              "@type": "@id"
+            },
+            "type": {
+              "@id": "schema:additionalType",
+              "@type": "xsd:string"
+            },
+            "primary": {
+              "@id": "gws:users#primary",
+              "@type": "xsd:boolean"
+            }
+          }
+        },
+        "locations": {
+          "@id": "schema:workLocation",
+          "@container": "@set",
+          "@context": {
+            "area": {
+              "@id": "schema:description",
+              "@type": "xsd:string"
+            },
+            "buildingId": {
+              "@id": "gws:users#buildingId",
+              "@type": "xsd:string"
+            },
+            "floorName": {
+              "@id": "gws:users#floorName",
+              "@type": "xsd:string"
+            },
+            "floorSection": {
+              "@id": "gws:users#floorSection",
+              "@type": "xsd:string"
+            },
+            "deskCode": {
+              "@id": "gws:users#deskCode",
+              "@type": "xsd:string"
+            }
+          }
+        }
+      }
+    },
+
+    "Group": {
+      "@id": "gws:groups#Group",
+      "@context": {
+        "id": {
+          "@id": "dcterms:identifier",
+          "@type": "xsd:string"
+        },
+        "email": {
+          "@id": "schema:email",
+          "@type": "xsd:string"
+        },
+        "name": {
+          "@id": "schema:name",
+          "@type": "xsd:string"
+        },
+        "description": {
+          "@id": "schema:description",
+          "@type": "xsd:string"
+        },
+        "adminCreated": {
+          "@id": "gws:groups#adminCreated",
+          "@type": "xsd:boolean"
+        },
+        "directMembersCount": {
+          "@id": "schema:memberCount",
+          "@type": "xsd:integer"
+        },
+        "aliases": {
+          "@id": "schema:alternateName",
+          "@container": "@set"
+        },
+        "nonEditableAliases": {
+          "@id": "gws:groups#nonEditableAliases",
+          "@container": "@set"
+        }
+      }
+    },
+
+    "OrgUnit": {
+      "@id": "gws:orgunits#OrgUnit",
+      "@context": {
+        "name": {
+          "@id": "schema:name",
+          "@type": "xsd:string"
+        },
+        "description": {
+          "@id": "schema:description",
+          "@type": "xsd:string"
+        },
+        "orgUnitPath": {
+          "@id": "gws:orgunits#orgUnitPath",
+          "@type": "xsd:string"
+        },
+        "orgUnitId": {
+          "@id": "dcterms:identifier",
+          "@type": "xsd:string"
+        },
+        "parentOrgUnitPath": {
+          "@id": "org:subOrganizationOf",
+          "@type": "xsd:string"
+        },
+        "parentOrgUnitId": {
+          "@id": "gws:orgunits#parentOrgUnitId",
+          "@type": "xsd:string"
+        }
+      }
+    }
+  }
+}
