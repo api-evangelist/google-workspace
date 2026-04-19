@@ -21,25 +21,25 @@ externalDocs:
   url: https://developers.google.com/admin-sdk/directory/reference/rest
 
 servers:
-  - url: https://admin.googleapis.com
-    description: Google Admin SDK production endpoint
+- url: https://admin.googleapis.com
+  description: Google Admin SDK production endpoint
 
 security:
-  - oauth2: []
+- oauth2: []
 
 tags:
-  - name: Users
-    description: Manage user accounts in a Google Workspace domain
-    externalDocs:
-      url: https://developers.google.com/admin-sdk/directory/reference/rest/v1/users
-  - name: Groups
-    description: Manage groups in a Google Workspace domain
-    externalDocs:
-      url: https://developers.google.com/admin-sdk/directory/reference/rest/v1/groups
-  - name: OrgUnits
-    description: Manage organizational units in a Google Workspace domain
-    externalDocs:
-      url: https://developers.google.com/admin-sdk/directory/reference/rest/v1/orgunits
+- name: Users
+  description: Manage user accounts in a Google Workspace domain
+  externalDocs:
+    url: https://developers.google.com/admin-sdk/directory/reference/rest/v1/users
+- name: Groups
+  description: Manage groups in a Google Workspace domain
+  externalDocs:
+    url: https://developers.google.com/admin-sdk/directory/reference/rest/v1/groups
+- name: OrgUnits
+  description: Manage organizational units in a Google Workspace domain
+  externalDocs:
+    url: https://developers.google.com/admin-sdk/directory/reference/rest/v1/orgunits
 
 paths:
 
@@ -50,84 +50,84 @@ paths:
   /admin/directory/v1/users:
     get:
       operationId: listUsers
-      summary: List users
+      summary: List Users
       description: >-
         Retrieves a paginated list of either deleted users or all users in a
         domain. Requires authorization with the
         admin.directory.user.readonly or admin.directory.user scope.
       tags:
-        - Users
+      - Users
       parameters:
-        - $ref: '#/components/parameters/domain'
-        - $ref: '#/components/parameters/customer'
-        - name: maxResults
-          in: query
-          description: Maximum number of results to return (1-500). Default is 100.
-          schema:
-            type: integer
-            minimum: 1
-            maximum: 500
-            default: 100
-        - name: pageToken
-          in: query
-          description: Token to specify the next page in the list.
-          schema:
-            type: string
-        - name: orderBy
-          in: query
-          description: Property to use for sorting results.
-          schema:
-            type: string
-            enum:
-              - email
-              - familyName
-              - givenName
-        - name: sortOrder
-          in: query
-          description: Whether to return results in ascending or descending order.
-          schema:
-            type: string
-            enum:
-              - ASCENDING
-              - DESCENDING
-        - name: query
-          in: query
-          description: >-
-            Query string for searching user fields. For more information on
-            constructing user queries, see the Search for Users documentation.
-          schema:
-            type: string
-        - name: showDeleted
-          in: query
-          description: If set to true, retrieves the list of deleted users.
-          schema:
-            type: string
-        - name: projection
-          in: query
-          description: What subset of fields to fetch for this user.
-          schema:
-            type: string
-            enum:
-              - basic
-              - custom
-              - full
-        - name: viewType
-          in: query
-          description: >-
-            Whether to fetch the administrator-only or domain-wide public view
-            of the user. Default is admin_view.
-          schema:
-            type: string
-            enum:
-              - admin_view
-              - domain_public
-        - name: customFieldMask
-          in: query
-          description: >-
-            A comma-separated list of schema names. All fields from these
-            schemas are fetched. Must be set when projection=custom.
-          schema:
-            type: string
+      - $ref: '#/components/parameters/domain'
+      - $ref: '#/components/parameters/customer'
+      - name: maxResults
+        in: query
+        description: Maximum number of results to return (1-500). Default is 100.
+        schema:
+          type: integer
+          minimum: 1
+          maximum: 500
+          default: 100
+      - name: pageToken
+        in: query
+        description: Token to specify the next page in the list.
+        schema:
+          type: string
+      - name: orderBy
+        in: query
+        description: Property to use for sorting results.
+        schema:
+          type: string
+          enum:
+          - email
+          - familyName
+          - givenName
+      - name: sortOrder
+        in: query
+        description: Whether to return results in ascending or descending order.
+        schema:
+          type: string
+          enum:
+          - ASCENDING
+          - DESCENDING
+      - name: query
+        in: query
+        description: >-
+          Query string for searching user fields. For more information on
+          constructing user queries, see the Search for Users documentation.
+        schema:
+          type: string
+      - name: showDeleted
+        in: query
+        description: If set to true, retrieves the list of deleted users.
+        schema:
+          type: string
+      - name: projection
+        in: query
+        description: What subset of fields to fetch for this user.
+        schema:
+          type: string
+          enum:
+          - basic
+          - custom
+          - full
+      - name: viewType
+        in: query
+        description: >-
+          Whether to fetch the administrator-only or domain-wide public view
+          of the user. Default is admin_view.
+        schema:
+          type: string
+          enum:
+          - admin_view
+          - domain_public
+      - name: customFieldMask
+        in: query
+        description: >-
+          A comma-separated list of schema names. All fields from these
+          schemas are fetched. Must be set when projection=custom.
+        schema:
+          type: string
       responses:
         '200':
           description: Successful response containing a list of users.
@@ -142,14 +142,17 @@ paths:
         '403':
           $ref: '#/components/responses/Forbidden'
 
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
     post:
       operationId: insertUser
-      summary: Create a user
+      summary: Create a User
       description: >-
         Creates a user account. The new user account is created in the
         customer account specified in the request body.
       tags:
-        - Users
+      - Users
       requestBody:
         required: true
         content:
@@ -176,45 +179,48 @@ paths:
               schema:
                 $ref: '#/components/schemas/Error'
 
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
   /admin/directory/v1/users/{userKey}:
     parameters:
-      - $ref: '#/components/parameters/userKey'
+    - $ref: '#/components/parameters/userKey'
 
     get:
       operationId: getUser
-      summary: Get a user
+      summary: Get a User
       description: >-
         Retrieves a user account by user key (primary email address, alias
         email address, or unique user ID).
       tags:
-        - Users
+      - Users
       parameters:
-        - name: projection
-          in: query
-          description: What subset of fields to fetch for this user.
-          schema:
-            type: string
-            enum:
-              - basic
-              - custom
-              - full
-        - name: viewType
-          in: query
-          description: >-
-            Whether to fetch the administrator-only or domain-wide public view
-            of the user.
-          schema:
-            type: string
-            enum:
-              - admin_view
-              - domain_public
-        - name: customFieldMask
-          in: query
-          description: >-
-            A comma-separated list of schema names. All fields from these
-            schemas are fetched. Must be set when projection=custom.
-          schema:
-            type: string
+      - name: projection
+        in: query
+        description: What subset of fields to fetch for this user.
+        schema:
+          type: string
+          enum:
+          - basic
+          - custom
+          - full
+      - name: viewType
+        in: query
+        description: >-
+          Whether to fetch the administrator-only or domain-wide public view
+          of the user.
+        schema:
+          type: string
+          enum:
+          - admin_view
+          - domain_public
+      - name: customFieldMask
+        in: query
+        description: >-
+          A comma-separated list of schema names. All fields from these
+          schemas are fetched. Must be set when projection=custom.
+        schema:
+          type: string
       responses:
         '200':
           description: Successful response containing the user.
@@ -229,14 +235,17 @@ paths:
         '404':
           $ref: '#/components/responses/NotFound'
 
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
     put:
       operationId: updateUser
-      summary: Update a user
+      summary: Update a User
       description: >-
         Updates a user account. This replaces the entire user resource.
         Use patch for partial updates.
       tags:
-        - Users
+      - Users
       requestBody:
         required: true
         content:
@@ -259,14 +268,17 @@ paths:
         '404':
           $ref: '#/components/responses/NotFound'
 
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
     patch:
       operationId: patchUser
-      summary: Patch a user
+      summary: Patch a User
       description: >-
         Updates a user account using patch semantics. Only the fields
         specified in the request body are updated.
       tags:
-        - Users
+      - Users
       requestBody:
         required: true
         content:
@@ -289,14 +301,17 @@ paths:
         '404':
           $ref: '#/components/responses/NotFound'
 
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
     delete:
       operationId: deleteUser
-      summary: Delete a user
+      summary: Delete a User
       description: >-
         Deletes a user account. Deleted users are recoverable for a
         period of 20 days using the undelete method.
       tags:
-        - Users
+      - Users
       responses:
         '204':
           description: Successfully deleted user. No content returned.
@@ -307,17 +322,20 @@ paths:
         '404':
           $ref: '#/components/responses/NotFound'
 
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
   /admin/directory/v1/users/{userKey}/makeAdmin:
     post:
       operationId: makeUserAdmin
-      summary: Make a user a super administrator
+      summary: Make a User a Super Administrator
       description: >-
         Makes a user a super administrator. This can only be done by another
         super administrator.
       tags:
-        - Users
+      - Users
       parameters:
-        - $ref: '#/components/parameters/userKey'
+      - $ref: '#/components/parameters/userKey'
       requestBody:
         required: true
         content:
@@ -340,17 +358,20 @@ paths:
         '404':
           $ref: '#/components/responses/NotFound'
 
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
   /admin/directory/v1/users/{userKey}/undelete:
     post:
       operationId: undeleteUser
-      summary: Undelete a user
+      summary: Undelete a User
       description: >-
         Restores a recently deleted user account. Users are recoverable for
         a period of 20 days after deletion.
       tags:
-        - Users
+      - Users
       parameters:
-        - $ref: '#/components/parameters/userKey'
+      - $ref: '#/components/parameters/userKey'
       requestBody:
         required: true
         content:
@@ -373,17 +394,20 @@ paths:
         '404':
           $ref: '#/components/responses/NotFound'
 
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
   /admin/directory/v1/users/{userKey}/signOut:
     post:
       operationId: signOutUser
-      summary: Sign out a user
+      summary: Sign Out a User
       description: >-
         Signs a user out of all web and device sessions and resets their
         sign-in cookies.
       tags:
-        - Users
+      - Users
       parameters:
-        - $ref: '#/components/parameters/userKey'
+      - $ref: '#/components/parameters/userKey'
       responses:
         '204':
           description: Successfully signed out user.
@@ -398,61 +422,64 @@ paths:
   # Groups
   # ──────────────────────────────────────────────
 
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
   /admin/directory/v1/groups:
     get:
       operationId: listGroups
-      summary: List groups
+      summary: List Groups
       description: >-
         Retrieves all groups of a domain or all groups a user is a member
         of. Requires authorization with the admin.directory.group.readonly
         or admin.directory.group scope.
       tags:
-        - Groups
+      - Groups
       parameters:
-        - $ref: '#/components/parameters/domain'
-        - $ref: '#/components/parameters/customer'
-        - name: maxResults
-          in: query
-          description: Maximum number of results to return (1-200). Default is 200.
-          schema:
-            type: integer
-            minimum: 1
-            maximum: 200
-            default: 200
-        - name: pageToken
-          in: query
-          description: Token to specify the next page in the list.
-          schema:
-            type: string
-        - name: orderBy
-          in: query
-          description: Column to use for sorting results.
-          schema:
-            type: string
-            enum:
-              - email
-        - name: sortOrder
-          in: query
-          description: Whether to return results in ascending or descending order.
-          schema:
-            type: string
-            enum:
-              - ASCENDING
-              - DESCENDING
-        - name: userKey
-          in: query
-          description: >-
-            Email or immutable ID of the user to list groups for. If specified,
-            returns only those groups the user is a member of.
-          schema:
-            type: string
-        - name: query
-          in: query
-          description: >-
-            Query string for searching group fields. See the Searching for
-            Groups documentation for supported fields.
-          schema:
-            type: string
+      - $ref: '#/components/parameters/domain'
+      - $ref: '#/components/parameters/customer'
+      - name: maxResults
+        in: query
+        description: Maximum number of results to return (1-200). Default is 200.
+        schema:
+          type: integer
+          minimum: 1
+          maximum: 200
+          default: 200
+      - name: pageToken
+        in: query
+        description: Token to specify the next page in the list.
+        schema:
+          type: string
+      - name: orderBy
+        in: query
+        description: Column to use for sorting results.
+        schema:
+          type: string
+          enum:
+          - email
+      - name: sortOrder
+        in: query
+        description: Whether to return results in ascending or descending order.
+        schema:
+          type: string
+          enum:
+          - ASCENDING
+          - DESCENDING
+      - name: userKey
+        in: query
+        description: >-
+          Email or immutable ID of the user to list groups for. If specified,
+          returns only those groups the user is a member of.
+        schema:
+          type: string
+      - name: query
+        in: query
+        description: >-
+          Query string for searching group fields. See the Searching for
+          Groups documentation for supported fields.
+        schema:
+          type: string
       responses:
         '200':
           description: Successful response containing a list of groups.
@@ -467,12 +494,15 @@ paths:
         '403':
           $ref: '#/components/responses/Forbidden'
 
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
     post:
       operationId: insertGroup
-      summary: Create a group
+      summary: Create a Group
       description: Creates a group in the specified domain.
       tags:
-        - Groups
+      - Groups
       requestBody:
         required: true
         content:
@@ -499,18 +529,21 @@ paths:
               schema:
                 $ref: '#/components/schemas/Error'
 
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
   /admin/directory/v1/groups/{groupKey}:
     parameters:
-      - $ref: '#/components/parameters/groupKey'
+    - $ref: '#/components/parameters/groupKey'
 
     get:
       operationId: getGroup
-      summary: Get a group
+      summary: Get a Group
       description: >-
         Retrieves a group's properties by group key (group email address,
         group alias, or the unique group ID).
       tags:
-        - Groups
+      - Groups
       responses:
         '200':
           description: Successful response containing the group.
@@ -525,12 +558,15 @@ paths:
         '404':
           $ref: '#/components/responses/NotFound'
 
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
     put:
       operationId: updateGroup
-      summary: Update a group
+      summary: Update a Group
       description: Updates a group's properties. This replaces the entire group resource.
       tags:
-        - Groups
+      - Groups
       requestBody:
         required: true
         content:
@@ -553,14 +589,17 @@ paths:
         '404':
           $ref: '#/components/responses/NotFound'
 
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
     patch:
       operationId: patchGroup
-      summary: Patch a group
+      summary: Patch a Group
       description: >-
         Updates a group's properties using patch semantics. Only the
         specified fields are updated.
       tags:
-        - Groups
+      - Groups
       requestBody:
         required: true
         content:
@@ -583,12 +622,15 @@ paths:
         '404':
           $ref: '#/components/responses/NotFound'
 
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
     delete:
       operationId: deleteGroup
-      summary: Delete a group
+      summary: Delete a Group
       description: Deletes a group.
       tags:
-        - Groups
+      - Groups
       responses:
         '204':
           description: Successfully deleted group. No content returned.
@@ -603,37 +645,40 @@ paths:
   # OrgUnits
   # ──────────────────────────────────────────────
 
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
   /admin/directory/v1/customer/{customerId}/orgunits:
     parameters:
-      - $ref: '#/components/parameters/customerId'
+    - $ref: '#/components/parameters/customerId'
 
     get:
       operationId: listOrgUnits
-      summary: List organizational units
+      summary: List Organizational Units
       description: >-
         Retrieves a list of all organizational units for an account.
         The hierarchy of organizational units is limited to 35 levels of
         depth.
       tags:
-        - OrgUnits
+      - OrgUnits
       parameters:
-        - name: type
-          in: query
-          description: >-
-            Whether to return all sub-organizations or just immediate children.
-          schema:
-            type: string
-            enum:
-              - all
-              - children
-              - allIncludingParent
-        - name: orgUnitPath
-          in: query
-          description: >-
-            The full path to the organizational unit or its unique ID. Returns
-            child organizational units beneath the specified path.
-          schema:
-            type: string
+      - name: type
+        in: query
+        description: >-
+          Whether to return all sub-organizations or just immediate children.
+        schema:
+          type: string
+          enum:
+          - all
+          - children
+          - allIncludingParent
+      - name: orgUnitPath
+        in: query
+        description: >-
+          The full path to the organizational unit or its unique ID. Returns
+          child organizational units beneath the specified path.
+        schema:
+          type: string
       responses:
         '200':
           description: Successful response containing a list of organizational units.
@@ -648,12 +693,15 @@ paths:
         '403':
           $ref: '#/components/responses/Forbidden'
 
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
     post:
       operationId: insertOrgUnit
-      summary: Create an organizational unit
+      summary: Create an Organizational Unit
       description: Adds an organizational unit under the specified customer account.
       tags:
-        - OrgUnits
+      - OrgUnits
       requestBody:
         required: true
         content:
@@ -674,17 +722,20 @@ paths:
         '403':
           $ref: '#/components/responses/Forbidden'
 
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
   /admin/directory/v1/customer/{customerId}/orgunits/{orgUnitPath}:
     parameters:
-      - $ref: '#/components/parameters/customerId'
-      - $ref: '#/components/parameters/orgUnitPath'
+    - $ref: '#/components/parameters/customerId'
+    - $ref: '#/components/parameters/orgUnitPath'
 
     get:
       operationId: getOrgUnit
-      summary: Get an organizational unit
+      summary: Get an Organizational Unit
       description: Retrieves an organizational unit.
       tags:
-        - OrgUnits
+      - OrgUnits
       responses:
         '200':
           description: Successful response containing the organizational unit.
@@ -699,14 +750,17 @@ paths:
         '404':
           $ref: '#/components/responses/NotFound'
 
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
     put:
       operationId: updateOrgUnit
-      summary: Update an organizational unit
+      summary: Update an Organizational Unit
       description: >-
         Updates an organizational unit. This replaces the entire resource.
         Use patch for partial updates.
       tags:
-        - OrgUnits
+      - OrgUnits
       requestBody:
         required: true
         content:
@@ -729,14 +783,17 @@ paths:
         '404':
           $ref: '#/components/responses/NotFound'
 
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
     patch:
       operationId: patchOrgUnit
-      summary: Patch an organizational unit
+      summary: Patch an Organizational Unit
       description: >-
         Updates an organizational unit using patch semantics. Only the
         specified fields are updated.
       tags:
-        - OrgUnits
+      - OrgUnits
       requestBody:
         required: true
         content:
@@ -759,15 +816,18 @@ paths:
         '404':
           $ref: '#/components/responses/NotFound'
 
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
     delete:
       operationId: deleteOrgUnit
-      summary: Delete an organizational unit
+      summary: Delete an Organizational Unit
       description: >-
         Removes an organizational unit. Only empty organizational units
         can be deleted. All users and child organizational units must be
         moved or deleted before the parent can be removed.
       tags:
-        - OrgUnits
+      - OrgUnits
       responses:
         '204':
           description: Successfully deleted organizational unit. No content returned.
@@ -778,6 +838,9 @@ paths:
         '404':
           $ref: '#/components/responses/NotFound'
 
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
 components:
 
   # ──────────────────────────────────────────────
@@ -884,14 +947,17 @@ components:
           description: The type of the API resource.
           default: admin#directory#user
           readOnly: true
+          example: example_value
         id:
           type: string
           description: The unique ID for the user.
           readOnly: true
+          example: abc123
         etag:
           type: string
           description: ETag of the resource.
           readOnly: true
+          example: example_value
         primaryEmail:
           type: string
           format: email
@@ -899,6 +965,7 @@ components:
             The user primary email address. This property is required in a
             request to create a user account. The primaryEmail must be unique
             and cannot be an alias of another user.
+          example: user@example.com
         name:
           $ref: '#/components/schemas/UserName'
         isAdmin:
@@ -908,10 +975,12 @@ components:
             property can only be edited using the makeAdmin method; it is not
             directly editable in the user resource.
           readOnly: true
+          example: true
         isDelegatedAdmin:
           type: boolean
           description: Indicates if the user is a delegated administrator.
           readOnly: true
+          example: true
         lastLoginTime:
           type: string
           format: date-time
@@ -919,6 +988,7 @@ components:
             The last time the user logged into the user account. The value
             is in ISO 8601 date and time format.
           readOnly: true
+          example: '2026-01-15T10:30:00Z'
         creationTime:
           type: string
           format: date-time
@@ -926,17 +996,20 @@ components:
             The time the user account was created. The value is in ISO 8601
             date and time format.
           readOnly: true
+          example: '2026-01-15T10:30:00Z'
         deletionTime:
           type: string
           format: date-time
           description: The time the user account was deleted (for deleted users).
           readOnly: true
+          example: '2026-01-15T10:30:00Z'
         agreedToTerms:
           type: boolean
           description: >-
             Indicates whether the user has completed an initial login and
             accepted the Terms of Service.
           readOnly: true
+          example: true
         password:
           type: string
           description: >-
@@ -944,58 +1017,68 @@ components:
             never returned in the API response body. Required when creating
             a user account. Must be 8-100 ASCII characters.
           writeOnly: true
+          example: example_value
         hashFunction:
           type: string
           description: >-
             Stores the hash format of the password property. Use MD5,
             SHA-1, or crypt for supported hash formats.
           enum:
-            - MD5
-            - SHA-1
-            - crypt
+          - MD5
+          - SHA-1
+          - crypt
+          example: MD5
         suspended:
           type: boolean
           description: >-
             Indicates if the user is suspended. A suspended user cannot
             sign in.
+          example: true
         suspensionReason:
           type: string
           description: >-
             The reason a user account is suspended. Only returned when the
             suspended property is true.
           readOnly: true
+          example: example_value
         changePasswordAtNextLogin:
           type: boolean
           description: >-
             Indicates if the user is forced to change their password at
             next login.
+          example: true
         ipWhitelisted:
           type: boolean
           description: >-
             If true, the user IP address is subject to a deprecated IP
             address allowlist configuration.
+          example: true
         customerId:
           type: string
           description: >-
             The customer ID to retrieve all account users. You can use the
             alias my_customer to represent the account customerId.
           readOnly: true
+          example: '500123'
         orgUnitPath:
           type: string
           description: >-
             The full path of the parent organization associated with the
             user. If the parent organization is the top-level, it is
             represented as a forward slash (/).
+          example: example_value
         isMailboxSetup:
           type: boolean
           description: >-
             Indicates if the user Gmail mailbox has been created.
           readOnly: true
+          example: true
         includeInGlobalAddressList:
           type: boolean
           description: >-
             Indicates if the user profile is visible in the Google
             Workspace global address list.
+          example: true
         thumbnailPhotoUrl:
           type: string
           format: uri
@@ -1003,30 +1086,37 @@ components:
             Photo URL of the user. The URL might be temporary or
             private. Read-only.
           readOnly: true
+          example: https://www.example.com
         thumbnailPhotoEtag:
           type: string
           description: ETag of the user photo.
           readOnly: true
+          example: example_value
         archived:
           type: boolean
           description: Indicates if the user is archived.
+          example: true
         recoveryEmail:
           type: string
           format: email
           description: Recovery email of the user.
+          example: user@example.com
         recoveryPhone:
           type: string
           description: Recovery phone of the user in E.164 format.
+          example: example_value
         isEnrolledIn2Sv:
           type: boolean
           description: >-
             Is enrolled in 2-step verification. Read-only.
           readOnly: true
+          example: true
         isEnforcedIn2Sv:
           type: boolean
           description: >-
             Is 2-step verification enforced. Read-only.
           readOnly: true
+          example: true
         emails:
           type: array
           description: >-
@@ -1044,6 +1134,7 @@ components:
                 type: string
               primary:
                 type: boolean
+          example: user@example.com
         phones:
           type: array
           description: A list of the user phone numbers.
@@ -1058,6 +1149,7 @@ components:
                 type: string
               primary:
                 type: boolean
+          example: []
         addresses:
           type: array
           description: A list of the user addresses.
@@ -1090,6 +1182,7 @@ components:
                 type: boolean
               sourceIsStructured:
                 type: boolean
+          example: []
         organizations:
           type: array
           description: A list of organizations the user belongs to.
@@ -1120,6 +1213,7 @@ components:
                 type: boolean
               fullTimeEquivalent:
                 type: integer
+          example: []
         relations:
           type: array
           description: A list of the user relationships to other users.
@@ -1132,6 +1226,7 @@ components:
                 type: string
               customType:
                 type: string
+          example: []
         externalIds:
           type: array
           description: A list of external IDs for the user.
@@ -1144,6 +1239,7 @@ components:
                 type: string
               customType:
                 type: string
+          example: []
         websites:
           type: array
           description: A list of the user websites.
@@ -1159,6 +1255,7 @@ components:
                 type: string
               primary:
                 type: boolean
+          example: []
         ims:
           type: array
           description: The user Instant Messenger (IM) accounts.
@@ -1177,6 +1274,7 @@ components:
                 type: string
               primary:
                 type: boolean
+          example: []
         languages:
           type: array
           description: The user languages.
@@ -1189,6 +1287,7 @@ components:
                 type: string
               preference:
                 type: string
+          example: []
         gender:
           type: object
           description: The user gender.
@@ -1199,6 +1298,7 @@ components:
               type: string
             addressMeAs:
               type: string
+          example: example_value
         keywords:
           type: array
           description: The user keywords.
@@ -1211,6 +1311,7 @@ components:
                 type: string
               customType:
                 type: string
+          example: []
         locations:
           type: array
           description: The user locations.
@@ -1231,6 +1332,7 @@ components:
                 type: string
               type:
                 type: string
+          example: []
         notes:
           type: object
           description: Notes for the user.
@@ -1240,8 +1342,9 @@ components:
             contentType:
               type: string
               enum:
-                - text_plain
-                - text_html
+              - text_plain
+              - text_html
+          example: example_value
         customSchemas:
           type: object
           description: >-
@@ -1250,9 +1353,10 @@ components:
           additionalProperties:
             type: object
             additionalProperties: true
+          example: example_value
       required:
-        - primaryEmail
-        - name
+      - primaryEmail
+      - name
 
     UserName:
       type: object
@@ -1263,21 +1367,25 @@ components:
           description: >-
             The user first name. Required when creating a user account.
           maxLength: 60
+          example: example_value
         familyName:
           type: string
           description: >-
             The user last name. Required when creating a user account.
           maxLength: 60
+          example: example_value
         fullName:
           type: string
           description: The user full name formed by concatenating first and last name values.
           readOnly: true
+          example: example_value
         displayName:
           type: string
           description: The user display name.
+          example: example_value
       required:
-        - givenName
-        - familyName
+      - givenName
+      - familyName
 
     Users:
       type: object
@@ -1288,23 +1396,28 @@ components:
           description: The type of the API resource.
           default: admin#directory#users
           readOnly: true
+          example: example_value
         etag:
           type: string
           description: ETag of the resource.
           readOnly: true
+          example: example_value
         users:
           type: array
           description: A list of user objects.
           items:
             $ref: '#/components/schemas/User'
+          example: []
         nextPageToken:
           type: string
           description: Token for retrieving the next page of results.
+          example: example_value
         trigger_event:
           type: string
           description: Event that triggered this response (for push notifications).
           readOnly: true
 
+          example: example_value
     Group:
       type: object
       description: >-
@@ -1316,41 +1429,49 @@ components:
           description: The type of the API resource.
           default: admin#directory#group
           readOnly: true
+          example: example_value
         id:
           type: string
           description: The unique ID of a group.
           readOnly: true
+          example: abc123
         etag:
           type: string
           description: ETag of the resource.
           readOnly: true
+          example: example_value
         email:
           type: string
           format: email
           description: >-
             The group email address. This property is required when creating
             a group. Group email addresses must be unique.
+          example: user@example.com
         name:
           type: string
           description: The group display name.
+          example: Example Title
         description:
           type: string
           description: >-
             An extended description to help users determine the purpose of
             a group. Maximum 4,096 characters.
           maxLength: 4096
+          example: A sample description.
         adminCreated:
           type: boolean
           description: >-
             Value is true if this group was created by an administrator
             rather than a user.
           readOnly: true
+          example: true
         directMembersCount:
           type: string
           description: >-
             The number of users that are direct members of the group.
             Members of child groups are not counted.
           readOnly: true
+          example: example_value
         aliases:
           type: array
           description: A list of a group alias email addresses.
@@ -1358,6 +1479,7 @@ components:
           items:
             type: string
             format: email
+          example: []
         nonEditableAliases:
           type: array
           description: >-
@@ -1367,8 +1489,9 @@ components:
           items:
             type: string
             format: email
+          example: []
       required:
-        - email
+      - email
 
     Groups:
       type: object
@@ -1379,19 +1502,23 @@ components:
           description: The type of the API resource.
           default: admin#directory#groups
           readOnly: true
+          example: example_value
         etag:
           type: string
           description: ETag of the resource.
           readOnly: true
+          example: example_value
         groups:
           type: array
           description: A list of group objects.
           items:
             $ref: '#/components/schemas/Group'
+          example: []
         nextPageToken:
           type: string
           description: Token for retrieving the next page of results.
 
+          example: example_value
     OrgUnit:
       type: object
       description: >-
@@ -1404,19 +1531,23 @@ components:
           description: The type of the API resource.
           default: admin#directory#orgUnit
           readOnly: true
+          example: example_value
         etag:
           type: string
           description: ETag of the resource.
           readOnly: true
+          example: example_value
         name:
           type: string
           description: >-
             The organizational unit path name. For example, an
             organizational unit with parent path /corp and name sales is
             derived as /corp/sales.
+          example: Example Title
         description:
           type: string
           description: Description of the organizational unit.
+          example: A sample description.
         orgUnitPath:
           type: string
           description: >-
@@ -1424,27 +1555,32 @@ components:
             derived property. When listed, it is derived from parentOrgUnitPath
             and the organizational unit name.
           readOnly: true
+          example: example_value
         orgUnitId:
           type: string
           description: The unique ID of the organizational unit.
           readOnly: true
+          example: '500123'
         parentOrgUnitPath:
           type: string
           description: >-
             The organizational unit path of the parent organizational unit.
             Required unless parentOrgUnitId is set.
+          example: example_value
         parentOrgUnitId:
           type: string
           description: >-
             The unique ID of the parent organizational unit. Required unless
             parentOrgUnitPath is set.
+          example: '500123'
         blockInheritance:
           type: boolean
           description: >-
             Deprecated. Setting this field has no effect.
           deprecated: true
+          example: true
       required:
-        - name
+      - name
 
     OrgUnits:
       type: object
@@ -1455,16 +1591,19 @@ components:
           description: The type of the API resource.
           default: admin#directory#orgUnits
           readOnly: true
+          example: example_value
         etag:
           type: string
           description: ETag of the resource.
           readOnly: true
+          example: example_value
         organizationUnits:
           type: array
           description: A list of organizational unit objects.
           items:
             $ref: '#/components/schemas/OrgUnit'
 
+          example: []
     Error:
       type: object
       description: An error response from the API.
@@ -1495,6 +1634,7 @@ components:
   # Reusable Responses
   # ──────────────────────────────────────────────
 
+          example: example_value
   responses:
     BadRequest:
       description: The request was malformed or contained invalid parameters.

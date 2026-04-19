@@ -1,0 +1,172 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "User",
+  "type": "object",
+  "description": "A Google Workspace user account. JSON representation of a user resource from the Admin SDK Directory API.",
+  "properties": {
+    "kind": {
+      "type": "string",
+      "description": "The type of the API resource."
+    },
+    "id": {
+      "type": "string",
+      "description": "The unique ID for the user."
+    },
+    "etag": {
+      "type": "string",
+      "description": "ETag of the resource."
+    },
+    "primaryEmail": {
+      "type": "string",
+      "description": "The user primary email address. This property is required in a request to create a user account. The primaryEmail must be unique and cannot be an alias of another user."
+    },
+    "isAdmin": {
+      "type": "boolean",
+      "description": "Indicates a user with super administrator privileges. The isAdmin property can only be edited using the makeAdmin method; it is not directly editable in the user resource."
+    },
+    "isDelegatedAdmin": {
+      "type": "boolean",
+      "description": "Indicates if the user is a delegated administrator."
+    },
+    "lastLoginTime": {
+      "type": "string",
+      "description": "The last time the user logged into the user account. The value is in ISO 8601 date and time format."
+    },
+    "creationTime": {
+      "type": "string",
+      "description": "The time the user account was created. The value is in ISO 8601 date and time format."
+    },
+    "deletionTime": {
+      "type": "string",
+      "description": "The time the user account was deleted (for deleted users)."
+    },
+    "agreedToTerms": {
+      "type": "boolean",
+      "description": "Indicates whether the user has completed an initial login and accepted the Terms of Service."
+    },
+    "password": {
+      "type": "string",
+      "description": "Stores the password for the user account. The password value is never returned in the API response body. Required when creating a user account. Must be 8-100 ASCII characters."
+    },
+    "hashFunction": {
+      "type": "string",
+      "description": "Stores the hash format of the password property. Use MD5, SHA-1, or crypt for supported hash formats."
+    },
+    "suspended": {
+      "type": "boolean",
+      "description": "Indicates if the user is suspended. A suspended user cannot sign in."
+    },
+    "suspensionReason": {
+      "type": "string",
+      "description": "The reason a user account is suspended. Only returned when the suspended property is true."
+    },
+    "changePasswordAtNextLogin": {
+      "type": "boolean",
+      "description": "Indicates if the user is forced to change their password at next login."
+    },
+    "ipWhitelisted": {
+      "type": "boolean",
+      "description": "If true, the user IP address is subject to a deprecated IP address allowlist configuration."
+    },
+    "customerId": {
+      "type": "string",
+      "description": "The customer ID to retrieve all account users. You can use the alias my_customer to represent the account customerId."
+    },
+    "orgUnitPath": {
+      "type": "string",
+      "description": "The full path of the parent organization associated with the user. If the parent organization is the top-level, it is represented as a forward slash (/)."
+    },
+    "isMailboxSetup": {
+      "type": "boolean",
+      "description": "Indicates if the user Gmail mailbox has been created."
+    },
+    "includeInGlobalAddressList": {
+      "type": "boolean",
+      "description": "Indicates if the user profile is visible in the Google Workspace global address list."
+    },
+    "thumbnailPhotoUrl": {
+      "type": "string",
+      "description": "Photo URL of the user. The URL might be temporary or private. Read-only."
+    },
+    "thumbnailPhotoEtag": {
+      "type": "string",
+      "description": "ETag of the user photo."
+    },
+    "archived": {
+      "type": "boolean",
+      "description": "Indicates if the user is archived."
+    },
+    "recoveryEmail": {
+      "type": "string",
+      "description": "Recovery email of the user."
+    },
+    "recoveryPhone": {
+      "type": "string",
+      "description": "Recovery phone of the user in E.164 format."
+    },
+    "isEnrolledIn2Sv": {
+      "type": "boolean",
+      "description": "Is enrolled in 2-step verification. Read-only."
+    },
+    "isEnforcedIn2Sv": {
+      "type": "boolean",
+      "description": "Is 2-step verification enforced. Read-only."
+    },
+    "emails": {
+      "type": "array",
+      "description": "A list of the user email addresses. The maximum allowed data size is 10KB."
+    },
+    "phones": {
+      "type": "array",
+      "description": "A list of the user phone numbers."
+    },
+    "addresses": {
+      "type": "array",
+      "description": "A list of the user addresses."
+    },
+    "organizations": {
+      "type": "array",
+      "description": "A list of organizations the user belongs to."
+    },
+    "relations": {
+      "type": "array",
+      "description": "A list of the user relationships to other users."
+    },
+    "externalIds": {
+      "type": "array",
+      "description": "A list of external IDs for the user."
+    },
+    "websites": {
+      "type": "array",
+      "description": "A list of the user websites."
+    },
+    "ims": {
+      "type": "array",
+      "description": "The user Instant Messenger (IM) accounts."
+    },
+    "languages": {
+      "type": "array",
+      "description": "The user languages."
+    },
+    "gender": {
+      "type": "object",
+      "description": "The user gender."
+    },
+    "keywords": {
+      "type": "array",
+      "description": "The user keywords."
+    },
+    "locations": {
+      "type": "array",
+      "description": "The user locations."
+    },
+    "notes": {
+      "type": "object",
+      "description": "Notes for the user."
+    },
+    "customSchemas": {
+      "type": "object",
+      "description": "Custom fields of the user. Keys are schema names and values are objects with field name/value pairs."
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-structure.org/draft/2020-12/schema",
+  "name": "Users",
+  "type": "object",
+  "properties": {
+    "kind": {
+      "type": "string"
+    },
+    "etag": {
+      "type": "string"
+    },
+    "users": {
+      "type": "array"
+    },
+    "nextPageToken": {
+      "type": "string"
+    },
+    "trigger_event": {
+      "type": "string"
+    }
+  }
+}

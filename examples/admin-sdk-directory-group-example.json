@@ -1,0 +1,12 @@
+{
+  "kind": "example_value",
+  "id": "abc123",
+  "etag": "example_value",
+  "email": "user@example.com",
+  "name": "Example Title",
+  "description": "A sample description.",
+  "adminCreated": true,
+  "directMembersCount": "example_value",
+  "aliases": [],
+  "nonEditableAliases": []
+}

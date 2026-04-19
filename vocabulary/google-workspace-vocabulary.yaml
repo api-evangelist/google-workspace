@@ -1,0 +1,10 @@
+name: google-workspace API Vocabulary
+provider: google-workspace
+created: '2026-04-18'
+modified: '2026-04-18'
+operations: 21
+schemas: 8
+tags:
+- Groups
+- OrgUnits
+- Users

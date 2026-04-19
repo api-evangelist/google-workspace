@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-structure.org/draft/2020-12/schema",
+  "name": "Group",
+  "type": "object",
+  "properties": {
+    "kind": {
+      "type": "string"
+    },
+    "id": {
+      "type": "string"
+    },
+    "etag": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "adminCreated": {
+      "type": "boolean"
+    },
+    "directMembersCount": {
+      "type": "string"
+    },
+    "aliases": {
+      "type": "array"
+    },
+    "nonEditableAliases": {
+      "type": "array"
+    }
+  }
+}

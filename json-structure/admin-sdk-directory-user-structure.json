@@ -1,0 +1,130 @@
+{
+  "$schema": "https://json-structure.org/draft/2020-12/schema",
+  "name": "User",
+  "type": "object",
+  "properties": {
+    "kind": {
+      "type": "string"
+    },
+    "id": {
+      "type": "string"
+    },
+    "etag": {
+      "type": "string"
+    },
+    "primaryEmail": {
+      "type": "string"
+    },
+    "isAdmin": {
+      "type": "boolean"
+    },
+    "isDelegatedAdmin": {
+      "type": "boolean"
+    },
+    "lastLoginTime": {
+      "type": "string"
+    },
+    "creationTime": {
+      "type": "string"
+    },
+    "deletionTime": {
+      "type": "string"
+    },
+    "agreedToTerms": {
+      "type": "boolean"
+    },
+    "password": {
+      "type": "string"
+    },
+    "hashFunction": {
+      "type": "string"
+    },
+    "suspended": {
+      "type": "boolean"
+    },
+    "suspensionReason": {
+      "type": "string"
+    },
+    "changePasswordAtNextLogin": {
+      "type": "boolean"
+    },
+    "ipWhitelisted": {
+      "type": "boolean"
+    },
+    "customerId": {
+      "type": "string"
+    },
+    "orgUnitPath": {
+      "type": "string"
+    },
+    "isMailboxSetup": {
+      "type": "boolean"
+    },
+    "includeInGlobalAddressList": {
+      "type": "boolean"
+    },
+    "thumbnailPhotoUrl": {
+      "type": "string"
+    },
+    "thumbnailPhotoEtag": {
+      "type": "string"
+    },
+    "archived": {
+      "type": "boolean"
+    },
+    "recoveryEmail": {
+      "type": "string"
+    },
+    "recoveryPhone": {
+      "type": "string"
+    },
+    "isEnrolledIn2Sv": {
+      "type": "boolean"
+    },
+    "isEnforcedIn2Sv": {
+      "type": "boolean"
+    },
+    "emails": {
+      "type": "array"
+    },
+    "phones": {
+      "type": "array"
+    },
+    "addresses": {
+      "type": "array"
+    },
+    "organizations": {
+      "type": "array"
+    },
+    "relations": {
+      "type": "array"
+    },
+    "externalIds": {
+      "type": "array"
+    },
+    "websites": {
+      "type": "array"
+    },
+    "ims": {
+      "type": "array"
+    },
+    "languages": {
+      "type": "array"
+    },
+    "gender": {
+      "type": "object"
+    },
+    "keywords": {
+      "type": "array"
+    },
+    "locations": {
+      "type": "array"
+    },
+    "notes": {
+      "type": "object"
+    },
+    "customSchemas": {
+      "type": "object"
+    }
+  }
+}

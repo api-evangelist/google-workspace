@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "UserName",
+  "type": "object",
+  "description": "A user name object containing given, family, and full name.",
+  "properties": {
+    "givenName": {
+      "type": "string",
+      "description": "The user first name. Required when creating a user account."
+    },
+    "familyName": {
+      "type": "string",
+      "description": "The user last name. Required when creating a user account."
+    },
+    "fullName": {
+      "type": "string",
+      "description": "The user full name formed by concatenating first and last name values."
+    },
+    "displayName": {
+      "type": "string",
+      "description": "The user display name."
+    }
+  }
+}

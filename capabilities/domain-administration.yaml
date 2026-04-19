@@ -1,0 +1,307 @@
+naftiko: "1.0.0-alpha1"
+
+info:
+  label: "Google Workspace Domain Administration"
+  description: "Unified workflow for managing Google Workspace domain resources including users, groups, and organizational units. Used by IT administrators and workspace domain managers."
+  tags:
+    - Google Workspace
+    - Domain Administration
+    - User Management
+    - Group Management
+  created: "2026-04-18"
+  modified: "2026-04-18"
+
+binds:
+  - namespace: env
+    keys:
+      GOOGLE_WORKSPACE_ACCESS_TOKEN: GOOGLE_WORKSPACE_ACCESS_TOKEN
+
+capability:
+  consumes:
+    - import: gws-admin
+      location: ./shared/admin-directory.yaml
+
+  exposes:
+    - type: rest
+      port: 8080
+      namespace: gws-domain-admin-api
+      description: "Unified REST API for Google Workspace domain administration."
+      resources:
+        - path: /v1/users
+          name: users
+          description: "User account management."
+          operations:
+            - method: GET
+              name: list-users
+              description: "List users in the domain."
+              call: "gws-admin.list-users"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+            - method: POST
+              name: create-user
+              description: "Create a new user."
+              call: "gws-admin.create-user"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+        - path: /v1/users/{id}
+          name: user-details
+          description: "Individual user management."
+          operations:
+            - method: GET
+              name: get-user
+              description: "Get user details."
+              call: "gws-admin.get-user"
+              with:
+                userKey: "rest.id"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+            - method: PUT
+              name: update-user
+              description: "Update a user."
+              call: "gws-admin.update-user"
+              with:
+                userKey: "rest.id"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+            - method: DELETE
+              name: delete-user
+              description: "Delete a user."
+              call: "gws-admin.delete-user"
+              with:
+                userKey: "rest.id"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+        - path: /v1/groups
+          name: groups
+          description: "Group management."
+          operations:
+            - method: GET
+              name: list-groups
+              description: "List groups."
+              call: "gws-admin.list-groups"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+            - method: POST
+              name: create-group
+              description: "Create a group."
+              call: "gws-admin.create-group"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+        - path: /v1/groups/{id}
+          name: group-details
+          description: "Individual group management."
+          operations:
+            - method: GET
+              name: get-group
+              description: "Get group details."
+              call: "gws-admin.get-group"
+              with:
+                groupKey: "rest.id"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+            - method: PUT
+              name: update-group
+              description: "Update a group."
+              call: "gws-admin.update-group"
+              with:
+                groupKey: "rest.id"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+            - method: DELETE
+              name: delete-group
+              description: "Delete a group."
+              call: "gws-admin.delete-group"
+              with:
+                groupKey: "rest.id"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+        - path: /v1/org-units
+          name: org-units
+          description: "Organizational unit management."
+          operations:
+            - method: GET
+              name: list-org-units
+              description: "List organizational units."
+              call: "gws-admin.list-org-units"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+            - method: POST
+              name: create-org-unit
+              description: "Create an organizational unit."
+              call: "gws-admin.create-org-unit"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+
+    - type: mcp
+      port: 9080
+      namespace: gws-domain-admin-mcp
+      transport: http
+      description: "MCP server for AI-assisted Google Workspace domain administration."
+      tools:
+        - name: list-users
+          description: "List users in the Google Workspace domain."
+          hints:
+            readOnly: true
+            openWorld: true
+          call: "gws-admin.list-users"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: create-user
+          description: "Create a new user in the domain."
+          hints:
+            readOnly: false
+          call: "gws-admin.create-user"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: get-user
+          description: "Get user details."
+          hints:
+            readOnly: true
+          call: "gws-admin.get-user"
+          with:
+            userKey: "tools.userKey"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: update-user
+          description: "Update a user."
+          hints:
+            readOnly: false
+            idempotent: true
+          call: "gws-admin.update-user"
+          with:
+            userKey: "tools.userKey"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: patch-user
+          description: "Patch user properties."
+          hints:
+            readOnly: false
+            idempotent: true
+          call: "gws-admin.patch-user"
+          with:
+            userKey: "tools.userKey"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: delete-user
+          description: "Delete a user."
+          hints:
+            destructive: true
+            idempotent: true
+          call: "gws-admin.delete-user"
+          with:
+            userKey: "tools.userKey"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: make-user-admin
+          description: "Make a user an admin."
+          hints:
+            readOnly: false
+          call: "gws-admin.make-user-admin"
+          with:
+            userKey: "tools.userKey"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: undelete-user
+          description: "Undelete a deleted user."
+          hints:
+            readOnly: false
+          call: "gws-admin.undelete-user"
+          with:
+            userKey: "tools.userKey"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: sign-out-user
+          description: "Sign out a user from all sessions."
+          hints:
+            readOnly: false
+          call: "gws-admin.sign-out-user"
+          with:
+            userKey: "tools.userKey"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: list-groups
+          description: "List groups in the domain."
+          hints:
+            readOnly: true
+            openWorld: true
+          call: "gws-admin.list-groups"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: create-group
+          description: "Create a new group."
+          hints:
+            readOnly: false
+          call: "gws-admin.create-group"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: get-group
+          description: "Get group details."
+          hints:
+            readOnly: true
+          call: "gws-admin.get-group"
+          with:
+            groupKey: "tools.groupKey"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: update-group
+          description: "Update a group."
+          hints:
+            readOnly: false
+            idempotent: true
+          call: "gws-admin.update-group"
+          with:
+            groupKey: "tools.groupKey"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: delete-group
+          description: "Delete a group."
+          hints:
+            destructive: true
+            idempotent: true
+          call: "gws-admin.delete-group"
+          with:
+            groupKey: "tools.groupKey"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: list-org-units
+          description: "List organizational units."
+          hints:
+            readOnly: true
+          call: "gws-admin.list-org-units"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: create-org-unit
+          description: "Create an organizational unit."
+          hints:
+            readOnly: false
+          call: "gws-admin.create-org-unit"
+          outputParameters:
+            - type: object
+              mapping: "$."

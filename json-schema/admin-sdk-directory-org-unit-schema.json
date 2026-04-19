@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "OrgUnit",
+  "type": "object",
+  "description": "A Google Workspace organizational unit. JSON representation of an org unit resource from the Admin SDK Directory API. The hierarchy is limited to 35 levels of depth.",
+  "properties": {
+    "kind": {
+      "type": "string",
+      "description": "The type of the API resource."
+    },
+    "etag": {
+      "type": "string",
+      "description": "ETag of the resource."
+    },
+    "name": {
+      "type": "string",
+      "description": "The organizational unit path name. For example, an organizational unit with parent path /corp and name sales is derived as /corp/sales."
+    },
+    "description": {
+      "type": "string",
+      "description": "Description of the organizational unit."
+    },
+    "orgUnitPath": {
+      "type": "string",
+      "description": "The full path to the organizational unit. The orgUnitPath is a derived property. When listed, it is derived from parentOrgUnitPath and the organizational unit name."
+    },
+    "orgUnitId": {
+      "type": "string",
+      "description": "The unique ID of the organizational unit."
+    },
+    "parentOrgUnitPath": {
+      "type": "string",
+      "description": "The organizational unit path of the parent organizational unit. Required unless parentOrgUnitId is set."
+    },
+    "parentOrgUnitId": {
+      "type": "string",
+      "description": "The unique ID of the parent organizational unit. Required unless parentOrgUnitPath is set."
+    },
+    "blockInheritance": {
+      "type": "boolean",
+      "description": "Deprecated. Setting this field has no effect."
+    }
+  }
+}

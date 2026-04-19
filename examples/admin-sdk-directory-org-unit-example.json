@@ -1,0 +1,11 @@
+{
+  "kind": "example_value",
+  "etag": "example_value",
+  "name": "Example Title",
+  "description": "A sample description.",
+  "orgUnitPath": "example_value",
+  "orgUnitId": "500123",
+  "parentOrgUnitPath": "example_value",
+  "parentOrgUnitId": "500123",
+  "blockInheritance": true
+}

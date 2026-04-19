@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "OrgUnits",
+  "type": "object",
+  "description": "A list of organizational unit resources.",
+  "properties": {
+    "kind": {
+      "type": "string",
+      "description": "The type of the API resource."
+    },
+    "etag": {
+      "type": "string",
+      "description": "ETag of the resource."
+    },
+    "organizationUnits": {
+      "type": "array",
+      "description": "A list of organizational unit objects."
+    }
+  }
+}

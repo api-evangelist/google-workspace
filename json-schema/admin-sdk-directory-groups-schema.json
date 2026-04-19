@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Groups",
+  "type": "object",
+  "description": "A paginated list of group resources.",
+  "properties": {
+    "kind": {
+      "type": "string",
+      "description": "The type of the API resource."
+    },
+    "etag": {
+      "type": "string",
+      "description": "ETag of the resource."
+    },
+    "groups": {
+      "type": "array",
+      "description": "A list of group objects."
+    },
+    "nextPageToken": {
+      "type": "string",
+      "description": "Token for retrieving the next page of results."
+    }
+  }
+}

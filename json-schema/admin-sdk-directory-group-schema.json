@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Group",
+  "type": "object",
+  "description": "A Google Workspace group. JSON representation of a group resource from the Admin SDK Directory API.",
+  "properties": {
+    "kind": {
+      "type": "string",
+      "description": "The type of the API resource."
+    },
+    "id": {
+      "type": "string",
+      "description": "The unique ID of a group."
+    },
+    "etag": {
+      "type": "string",
+      "description": "ETag of the resource."
+    },
+    "email": {
+      "type": "string",
+      "description": "The group email address. This property is required when creating a group. Group email addresses must be unique."
+    },
+    "name": {
+      "type": "string",
+      "description": "The group display name."
+    },
+    "description": {
+      "type": "string",
+      "description": "An extended description to help users determine the purpose of a group. Maximum 4,096 characters."
+    },
+    "adminCreated": {
+      "type": "boolean",
+      "description": "Value is true if this group was created by an administrator rather than a user."
+    },
+    "directMembersCount": {
+      "type": "string",
+      "description": "The number of users that are direct members of the group. Members of child groups are not counted."
+    },
+    "aliases": {
+      "type": "array",
+      "description": "A list of a group alias email addresses."
+    },
+    "nonEditableAliases": {
+      "type": "array",
+      "description": "A list of the group non-editable alias email addresses that are outside of the account primary domain or subdomains."
+    }
+  }
+}

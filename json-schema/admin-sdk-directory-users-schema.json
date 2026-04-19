@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Users",
+  "type": "object",
+  "description": "A paginated list of user resources.",
+  "properties": {
+    "kind": {
+      "type": "string",
+      "description": "The type of the API resource."
+    },
+    "etag": {
+      "type": "string",
+      "description": "ETag of the resource."
+    },
+    "users": {
+      "type": "array",
+      "description": "A list of user objects."
+    },
+    "nextPageToken": {
+      "type": "string",
+      "description": "Token for retrieving the next page of results."
+    },
+    "trigger_event": {
+      "type": "string",
+      "description": "Event that triggered this response (for push notifications)."
+    }
+  }
+}
