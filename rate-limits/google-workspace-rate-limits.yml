@@ -4,217 +4,81 @@ schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main
 provider: Google Workspace
 providerId: google-workspace
 created: '2026-05-04'
-modified: '2026-05-04'
+modified: '2026-05-05'
+reconciled: true
 tags:
+  - Rate Limiting
   - Calendar
   - Collaboration
   - Email
   - Productivity
   - Storage
-  - Video Conferencing
-  - Rate Limiting
-  - Quotas
-  - Throttling
-description: Machine-readable rate limit definitions for the Google Workspace API surface. Captures per-tier
-  quotas, burst behavior, response signaling, and recovery semantics. Defaults are scaffold values to
-  be replaced with published provider limits.
-headers:
-  limit: X-RateLimit-Limit
-  remaining: X-RateLimit-Remaining
-  reset: X-RateLimit-Reset
-  retryAfter: Retry-After
-  policy: RateLimit-Policy
+description: Google Workspace REST APIs are governed by Google Cloud per-project quotas. Each Workspace
+  API publishes its own service-specific quotas (visible in the Google Cloud Console > IAM > Quotas
+  page) typically expressed as queries per minute per project, queries per minute per user, and
+  per-user-per-second limits. Examples include Admin SDK Reports at 2,400 QPM per user per project with
+  a separate filter-query limit of 250 per minute / 15,000 per hour. Quotas can be raised via Google
+  Cloud support.
+sources:
+  - https://developers.google.com/workspace/admin/reports/v1/limits
+  - https://developers.google.com/gmail/api/reference/quota
+  - https://developers.google.com/calendar/api/guides/quota
+  - https://developers.google.com/drive/api/guides/limits
 responseCodes:
   throttled: 429
   quotaExceeded: 429
   serviceUnavailable: 503
 limits:
-  - tier: free
-    name: Free Tier Default
-    scope: api-key
+  - name: Admin SDK Reports — activities.list (default)
+    scope: project/user
     metric: requests_per_minute
-    limit: 10
-    burst: 20
+    limit: 2400
     timeFrame: minute
-    applies:
-      - Gmail API
-      - Google Drive API
-      - Google Calendar API
-      - Google Meet REST API
-      - Google Docs API
-      - Google Sheets API
-      - Google Slides API
-      - Admin SDK Directory API
-      - Google Chat API
-      - Admin SDK Reports API
-      - Google Forms API
-      - Google Tasks API
-      - Google Keep API
-      - Google Vault API
-      - Google Classroom API
-      - People API
-      - Google Cloud Search API
-      - Drive Activity API
-      - Drive Labels API
-      - Alert Center API
-      - Groups Settings API
-      - Groups Migration API
-      - Admin SDK Data Transfer API
-      - Enterprise License Manager API
-      - Google Workspace Reseller API
-      - Gmail Postmaster Tools API
-      - Google Workspace Marketplace API
-  - tier: free
-    name: Free Tier Monthly Quota
-    scope: api-key
-    metric: requests_per_month
+    notes: Per-user-per-project default; configurable in Google Cloud Console.
+  - name: Admin SDK Reports — filter queries
+    scope: project/user
+    metric: requests_per_minute
+    limit: 250
+    timeFrame: minute
+    notes: Filter queries also capped at 15,000 per hour. Calls using only startTime/endTime do not count.
+  - name: Gmail API — per-user
+    scope: user
+    metric: varies
+    limit: 'see service-specific quotas page'
+    notes: Gmail uses quota units per request rather than raw QPS; default 250 quota units per user per
+      second with per-method costs documented.
+  - name: Google Drive API — per-user
+    scope: user
+    metric: requests_per_second
+    limit: 'see service-specific quotas page'
+    notes: Default per-user QPS plus per-project QPS; raise via support.
+  - name: Google Calendar API — per-user
+    scope: user
+    metric: requests_per_second
+    limit: 'see service-specific quotas page'
+  - name: Other Workspace APIs (Docs, Sheets, Slides, Chat, Forms, Vault, Classroom, etc.)
+    scope: project/user
+    metric: varies
+    limit: 'see service-specific quotas page'
+    notes: Each API has its own published per-user and per-project limits — see the API Library quota
+      page in Google Cloud Console.
+  - name: maxResults page size
+    scope: request
+    metric: records_per_page
     limit: 1000
-    timeFrame: month
-    applies:
-      - Gmail API
-      - Google Drive API
-      - Google Calendar API
-      - Google Meet REST API
-      - Google Docs API
-      - Google Sheets API
-      - Google Slides API
-      - Admin SDK Directory API
-      - Google Chat API
-      - Admin SDK Reports API
-      - Google Forms API
-      - Google Tasks API
-      - Google Keep API
-      - Google Vault API
-      - Google Classroom API
-      - People API
-      - Google Cloud Search API
-      - Drive Activity API
-      - Drive Labels API
-      - Alert Center API
-      - Groups Settings API
-      - Groups Migration API
-      - Admin SDK Data Transfer API
-      - Enterprise License Manager API
-      - Google Workspace Reseller API
-      - Gmail Postmaster Tools API
-      - Google Workspace Marketplace API
-  - tier: professional
-    name: Professional Tier Default
-    scope: api-key
-    metric: requests_per_minute
-    limit: 100
-    burst: 200
-    timeFrame: minute
-    applies:
-      - Gmail API
-      - Google Drive API
-      - Google Calendar API
-      - Google Meet REST API
-      - Google Docs API
-      - Google Sheets API
-      - Google Slides API
-      - Admin SDK Directory API
-      - Google Chat API
-      - Admin SDK Reports API
-      - Google Forms API
-      - Google Tasks API
-      - Google Keep API
-      - Google Vault API
-      - Google Classroom API
-      - People API
-      - Google Cloud Search API
-      - Drive Activity API
-      - Drive Labels API
-      - Alert Center API
-      - Groups Settings API
-      - Groups Migration API
-      - Admin SDK Data Transfer API
-      - Enterprise License Manager API
-      - Google Workspace Reseller API
-      - Gmail Postmaster Tools API
-      - Google Workspace Marketplace API
-  - tier: professional
-    name: Professional Tier Monthly Quota
-    scope: api-key
-    metric: requests_per_month
-    limit: 100000
-    timeFrame: month
-    applies:
-      - Gmail API
-      - Google Drive API
-      - Google Calendar API
-      - Google Meet REST API
-      - Google Docs API
-      - Google Sheets API
-      - Google Slides API
-      - Admin SDK Directory API
-      - Google Chat API
-      - Admin SDK Reports API
-      - Google Forms API
-      - Google Tasks API
-      - Google Keep API
-      - Google Vault API
-      - Google Classroom API
-      - People API
-      - Google Cloud Search API
-      - Drive Activity API
-      - Drive Labels API
-      - Alert Center API
-      - Groups Settings API
-      - Groups Migration API
-      - Admin SDK Data Transfer API
-      - Enterprise License Manager API
-      - Google Workspace Reseller API
-      - Gmail Postmaster Tools API
-      - Google Workspace Marketplace API
-  - tier: enterprise
-    name: Enterprise Negotiated Limit
-    scope: contract
-    metric: requests_per_minute
-    limit: 1000
-    burst: 5000
-    timeFrame: minute
-    applies:
-      - Gmail API
-      - Google Drive API
-      - Google Calendar API
-      - Google Meet REST API
-      - Google Docs API
-      - Google Sheets API
-      - Google Slides API
-      - Admin SDK Directory API
-      - Google Chat API
-      - Admin SDK Reports API
-      - Google Forms API
-      - Google Tasks API
-      - Google Keep API
-      - Google Vault API
-      - Google Classroom API
-      - People API
-      - Google Cloud Search API
-      - Drive Activity API
-      - Drive Labels API
-      - Alert Center API
-      - Groups Settings API
-      - Groups Migration API
-      - Admin SDK Data Transfer API
-      - Enterprise License Manager API
-      - Google Workspace Reseller API
-      - Gmail Postmaster Tools API
-      - Google Workspace Marketplace API
+    notes: Most list endpoints support a maxResults of 0-1000 with default 1000.
 policies:
   - name: Backoff Strategy
-    description: Clients should implement exponential backoff with jitter, honoring the Retry-After header
-      when present.
-  - name: Burst Handling
-    description: Short bursts above the steady-state limit are tolerated up to the documented burst ceiling
-      before throttling engages.
-  - name: Quota Reset
-    description: Monthly quotas reset at the start of each calendar month in UTC. Per-minute and per-second
-      windows reset on a sliding-window basis.
-  - name: Fair Use
-    description: Even on uncapped enterprise tiers, sustained usage that materially impacts shared infrastructure
-      may be subject to fair-use throttling.
+    description: Use exponential backoff with jitter on 429 / 503; respect Retry-After when present.
+  - name: Quota raise via support
+    description: Default project-level quotas can be increased through the Google Cloud Console quota
+      request flow.
+  - name: Per-user vs per-project scoping
+    description: Most Workspace APIs enforce both per-authenticated-user and per-project quotas; either
+      ceiling can throttle.
+  - name: Use of audit log exports
+    description: For high-volume Reports API consumers, Google recommends BigQuery audit log export
+      instead of polling activities.list.
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com

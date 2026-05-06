@@ -4,7 +4,8 @@ schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main
 provider: Google Workspace
 providerId: google-workspace
 created: '2026-05-04'
-modified: '2026-05-04'
+modified: '2026-05-05'
+reconciled: true
 tags:
   - Calendar
   - Collaboration
@@ -12,365 +13,143 @@ tags:
   - Productivity
   - Storage
   - Video Conferencing
-description: Machine-readable plans and pricing scaffold for this API provider. Conforms to the API Commons
-  Plans schema. Tier limits and prices are scaffold defaults; replace with provider-published values.
+description: Google Workspace is sold as per-user-per-month subscriptions across four editions — Business
+  Starter, Business Standard, Business Plus, and Enterprise. The Workspace REST APIs (Gmail, Drive,
+  Calendar, Meet, Docs, Sheets, Slides, Admin SDK, Chat, etc.) are included with any Workspace subscription
+  at no per-call charge; usage is governed by published Google API quotas. Promotional 50% off for first
+  three months is shown on the public pricing page.
+sources:
+  - https://workspace.google.com/pricing
 plans:
-  - id: google-workspace-free
-    name: Free
-    type: freemium
-    description: Free entry tier for the Google Workspace API surface. Intended for evaluation, prototyping,
-      and low-volume integrations. Real limits and pricing must be reconciled with the provider's published
-      plan documentation.
+  - id: google-workspace-business-starter
+    name: Business Starter
+    type: subscription
+    description: Entry plan with custom business email, 30 GB pooled storage per user, 100-participant
+      video meetings, and Gemini in Gmail.
     entries:
-      - label: API Requests
-        description: Monthly API request quota across all included endpoints
-        name: api_requests
-        type: quota
-        metric: requests
-        limit: 1000
-        timeFrame: month
-        geo: global
-        domains:
-          - https://gmail.googleapis.com
-          - https://www.googleapis.com/drive/v3
-          - https://www.googleapis.com/calendar/v3
-          - https://meet.googleapis.com
-          - https://docs.googleapis.com
-          - https://sheets.googleapis.com
-          - https://slides.googleapis.com
-          - https://admin.googleapis.com
-          - https://chat.googleapis.com
-          - https://forms.googleapis.com
-          - https://tasks.googleapis.com
-          - https://keep.googleapis.com
-          - https://vault.googleapis.com
-          - https://classroom.googleapis.com
-          - https://people.googleapis.com
-          - https://cloudsearch.googleapis.com
-          - https://driveactivity.googleapis.com
-          - https://drivelabels.googleapis.com
-          - https://alertcenter.googleapis.com
-          - https://www.googleapis.com/groups/v1
-          - https://groupsmigration.googleapis.com
-          - https://licensing.googleapis.com
-          - https://reseller.googleapis.com
-          - https://gmailpostmastertools.googleapis.com
-          - https://appsmarket.googleapis.com
-        unit: 1
-        price: '0.00'
-        userMultiplied: false
-      - label: Rate Limit
-        description: Maximum requests per minute on the free tier
-        name: rate_limit
-        type: rate
-        metric: requests_per_minute
-        limit: 10
-        timeFrame: minute
-        geo: global
-        domains:
-          - https://gmail.googleapis.com
-          - https://www.googleapis.com/drive/v3
-          - https://www.googleapis.com/calendar/v3
-          - https://meet.googleapis.com
-          - https://docs.googleapis.com
-          - https://sheets.googleapis.com
-          - https://slides.googleapis.com
-          - https://admin.googleapis.com
-          - https://chat.googleapis.com
-          - https://forms.googleapis.com
-          - https://tasks.googleapis.com
-          - https://keep.googleapis.com
-          - https://vault.googleapis.com
-          - https://classroom.googleapis.com
-          - https://people.googleapis.com
-          - https://cloudsearch.googleapis.com
-          - https://driveactivity.googleapis.com
-          - https://drivelabels.googleapis.com
-          - https://alertcenter.googleapis.com
-          - https://www.googleapis.com/groups/v1
-          - https://groupsmigration.googleapis.com
-          - https://licensing.googleapis.com
-          - https://reseller.googleapis.com
-          - https://gmailpostmastertools.googleapis.com
-          - https://appsmarket.googleapis.com
-        unit: 1
-        price: '0.00'
-        userMultiplied: false
-    elements:
-      - name: Public Documentation
-      - name: Community Support
-      - name: Sandbox Access
-      - name: Gmail API
-      - name: Google Drive API
-      - name: Google Calendar API
-      - name: Google Meet REST API
-      - name: Google Docs API
-      - name: Google Sheets API
-      - name: Google Slides API
-      - name: Admin SDK Directory API
-  - id: google-workspace-pro
-    name: Professional
-    type: paid
-    description: Production tier for Google Workspace. Provides higher quotas, priority support, and access
-      to the broader API portfolio. Pricing placeholder; align with the provider's pricing page.
-    entries:
-      - label: API Requests
-        description: Monthly API request quota
-        name: api_requests
-        type: quota
-        metric: requests
-        limit: 100000
-        timeFrame: month
-        geo: global
-        domains:
-          - https://gmail.googleapis.com
-          - https://www.googleapis.com/drive/v3
-          - https://www.googleapis.com/calendar/v3
-          - https://meet.googleapis.com
-          - https://docs.googleapis.com
-          - https://sheets.googleapis.com
-          - https://slides.googleapis.com
-          - https://admin.googleapis.com
-          - https://chat.googleapis.com
-          - https://forms.googleapis.com
-          - https://tasks.googleapis.com
-          - https://keep.googleapis.com
-          - https://vault.googleapis.com
-          - https://classroom.googleapis.com
-          - https://people.googleapis.com
-          - https://cloudsearch.googleapis.com
-          - https://driveactivity.googleapis.com
-          - https://drivelabels.googleapis.com
-          - https://alertcenter.googleapis.com
-          - https://www.googleapis.com/groups/v1
-          - https://groupsmigration.googleapis.com
-          - https://licensing.googleapis.com
-          - https://reseller.googleapis.com
-          - https://gmailpostmastertools.googleapis.com
-          - https://appsmarket.googleapis.com
-        unit: 1
-        price: TBD
-        userMultiplied: false
-      - label: Rate Limit
-        description: Maximum requests per minute on the professional tier
-        name: rate_limit
-        type: rate
-        metric: requests_per_minute
-        limit: 100
-        timeFrame: minute
-        geo: global
-        domains:
-          - https://gmail.googleapis.com
-          - https://www.googleapis.com/drive/v3
-          - https://www.googleapis.com/calendar/v3
-          - https://meet.googleapis.com
-          - https://docs.googleapis.com
-          - https://sheets.googleapis.com
-          - https://slides.googleapis.com
-          - https://admin.googleapis.com
-          - https://chat.googleapis.com
-          - https://forms.googleapis.com
-          - https://tasks.googleapis.com
-          - https://keep.googleapis.com
-          - https://vault.googleapis.com
-          - https://classroom.googleapis.com
-          - https://people.googleapis.com
-          - https://cloudsearch.googleapis.com
-          - https://driveactivity.googleapis.com
-          - https://drivelabels.googleapis.com
-          - https://alertcenter.googleapis.com
-          - https://www.googleapis.com/groups/v1
-          - https://groupsmigration.googleapis.com
-          - https://licensing.googleapis.com
-          - https://reseller.googleapis.com
-          - https://gmailpostmastertools.googleapis.com
-          - https://appsmarket.googleapis.com
-        unit: 1
-        price: '0.00'
-        userMultiplied: false
-      - label: Overage
-        description: Per-request price after monthly quota is exceeded
-        name: overage
-        type: metered
-        metric: requests
+      - label: Per-user monthly fee
+        name: seat_monthly
+        type: subscription
+        metric: seat
         limit: -1
         timeFrame: month
         geo: global
-        domains:
-          - https://gmail.googleapis.com
-          - https://www.googleapis.com/drive/v3
-          - https://www.googleapis.com/calendar/v3
-          - https://meet.googleapis.com
-          - https://docs.googleapis.com
-          - https://sheets.googleapis.com
-          - https://slides.googleapis.com
-          - https://admin.googleapis.com
-          - https://chat.googleapis.com
-          - https://forms.googleapis.com
-          - https://tasks.googleapis.com
-          - https://keep.googleapis.com
-          - https://vault.googleapis.com
-          - https://classroom.googleapis.com
-          - https://people.googleapis.com
-          - https://cloudsearch.googleapis.com
-          - https://driveactivity.googleapis.com
-          - https://drivelabels.googleapis.com
-          - https://alertcenter.googleapis.com
-          - https://www.googleapis.com/groups/v1
-          - https://groupsmigration.googleapis.com
-          - https://licensing.googleapis.com
-          - https://reseller.googleapis.com
-          - https://gmailpostmastertools.googleapis.com
-          - https://appsmarket.googleapis.com
-        unit: 1000
-        price: TBD
-        userMultiplied: false
+        unit: 1
+        price: '7.00'
+        userMultiplied: true
+      - label: Pooled storage per user
+        name: storage_per_user
+        type: quota
+        metric: gb
+        limit: 30
+        timeFrame: usage
+        geo: global
+        unit: 1
+        price: '0.00'
+        userMultiplied: true
     elements:
-      - name: All Production Endpoints
-      - name: Email Support
-      - name: SLA Targets
-      - name: Webhook Subscriptions
-      - name: Gmail API
-      - name: Google Drive API
-      - name: Google Calendar API
-      - name: Google Meet REST API
-      - name: Google Docs API
-      - name: Google Sheets API
-      - name: Google Slides API
-      - name: Admin SDK Directory API
-      - name: Google Chat API
-      - name: Admin SDK Reports API
-      - name: Google Forms API
-      - name: Google Tasks API
-      - name: Google Keep API
-      - name: Google Vault API
-      - name: Google Classroom API
-      - name: People API
-      - name: Google Cloud Search API
-      - name: Drive Activity API
-      - name: Drive Labels API
-      - name: Alert Center API
-      - name: Groups Settings API
-      - name: Groups Migration API
-      - name: Admin SDK Data Transfer API
-      - name: Enterprise License Manager API
-      - name: Google Workspace Reseller API
-      - name: Gmail Postmaster Tools API
-      - name: Google Workspace Marketplace API
+      - name: Custom business email
+      - name: Gemini in Gmail
+      - name: 100-participant video meetings
+      - name: Standard security and management
+      - name: Workspace REST APIs (Gmail, Drive, Calendar, Meet, Docs, Sheets, Slides)
+  - id: google-workspace-business-standard
+    name: Business Standard
+    type: subscription
+    description: Most popular plan; 2 TB pooled storage per user, 150-participant meetings with recording,
+      eSignature, appointment booking, Gemini across multiple apps.
+    entries:
+      - label: Per-user monthly fee
+        name: seat_monthly
+        type: subscription
+        metric: seat
+        limit: -1
+        timeFrame: month
+        geo: global
+        unit: 1
+        price: '14.00'
+        userMultiplied: true
+      - label: Pooled storage per user
+        name: storage_per_user
+        type: quota
+        metric: gb
+        limit: 2048
+        timeFrame: usage
+        geo: global
+        unit: 1
+        price: '0.00'
+        userMultiplied: true
+    elements:
+      - name: Gemini in Gmail, Docs, Meet
+      - name: Meeting recording (150 participants)
+      - name: eSignature
+      - name: Appointment booking
+      - name: Workspace REST APIs
+  - id: google-workspace-business-plus
+    name: Business Plus
+    type: subscription
+    description: 5 TB pooled storage per user, 500-participant meetings with attendance tracking, Vault
+      eDiscovery, advanced endpoint management.
+    entries:
+      - label: Per-user monthly fee
+        name: seat_monthly
+        type: subscription
+        metric: seat
+        limit: -1
+        timeFrame: month
+        geo: global
+        unit: 1
+        price: '22.00'
+        userMultiplied: true
+      - label: Pooled storage per user
+        name: storage_per_user
+        type: quota
+        metric: gb
+        limit: 5120
+        timeFrame: usage
+        geo: global
+        unit: 1
+        price: '0.00'
+        userMultiplied: true
+    elements:
+      - name: Full Gemini access
+      - name: 500-participant meetings with attendance tracking
+      - name: Vault and eDiscovery
+      - name: Advanced endpoint management
+      - name: Workspace REST APIs (incl. Vault, Alert Center)
   - id: google-workspace-enterprise
     name: Enterprise
     type: enterprise
-    description: Custom-negotiated tier for Google Workspace. Includes dedicated capacity, contractual
-      SLAs, security review, data residency options, and named technical account management.
+    description: Custom-priced plan with in-domain live streaming, 1,000-participant meetings, DLP,
+      enhanced support, and enterprise endpoint management.
     entries:
-      - label: API Requests
-        description: Negotiated request volume; -1 indicates uncapped subject to fair use
-        name: api_requests
-        type: quota
-        metric: requests
+      - label: Per-user monthly fee
+        name: seat_monthly
+        type: subscription
+        metric: seat
         limit: -1
         timeFrame: month
-        geo: configurable
-        domains:
-          - https://gmail.googleapis.com
-          - https://www.googleapis.com/drive/v3
-          - https://www.googleapis.com/calendar/v3
-          - https://meet.googleapis.com
-          - https://docs.googleapis.com
-          - https://sheets.googleapis.com
-          - https://slides.googleapis.com
-          - https://admin.googleapis.com
-          - https://chat.googleapis.com
-          - https://forms.googleapis.com
-          - https://tasks.googleapis.com
-          - https://keep.googleapis.com
-          - https://vault.googleapis.com
-          - https://classroom.googleapis.com
-          - https://people.googleapis.com
-          - https://cloudsearch.googleapis.com
-          - https://driveactivity.googleapis.com
-          - https://drivelabels.googleapis.com
-          - https://alertcenter.googleapis.com
-          - https://www.googleapis.com/groups/v1
-          - https://groupsmigration.googleapis.com
-          - https://licensing.googleapis.com
-          - https://reseller.googleapis.com
-          - https://gmailpostmastertools.googleapis.com
-          - https://appsmarket.googleapis.com
+        geo: global
         unit: 1
-        price: custom
-        userMultiplied: false
-      - label: Rate Limit
-        description: Negotiated burst and steady-state rate
-        name: rate_limit
-        type: rate
-        metric: requests_per_minute
-        limit: 1000
-        timeFrame: minute
-        geo: configurable
-        domains:
-          - https://gmail.googleapis.com
-          - https://www.googleapis.com/drive/v3
-          - https://www.googleapis.com/calendar/v3
-          - https://meet.googleapis.com
-          - https://docs.googleapis.com
-          - https://sheets.googleapis.com
-          - https://slides.googleapis.com
-          - https://admin.googleapis.com
-          - https://chat.googleapis.com
-          - https://forms.googleapis.com
-          - https://tasks.googleapis.com
-          - https://keep.googleapis.com
-          - https://vault.googleapis.com
-          - https://classroom.googleapis.com
-          - https://people.googleapis.com
-          - https://cloudsearch.googleapis.com
-          - https://driveactivity.googleapis.com
-          - https://drivelabels.googleapis.com
-          - https://alertcenter.googleapis.com
-          - https://www.googleapis.com/groups/v1
-          - https://groupsmigration.googleapis.com
-          - https://licensing.googleapis.com
-          - https://reseller.googleapis.com
-          - https://gmailpostmastertools.googleapis.com
-          - https://appsmarket.googleapis.com
+        price: contact sales
+        userMultiplied: true
+      - label: Pooled storage per user
+        name: storage_per_user
+        type: quota
+        metric: gb
+        limit: 5120
+        timeFrame: usage
+        geo: global
         unit: 1
-        price: custom
-        userMultiplied: false
+        price: contact sales
+        userMultiplied: true
     elements:
-      - name: Unlimited / Negotiated Volume
-      - name: 24/7 Dedicated Support
-      - name: Contractual SLA
-      - name: Security & Compliance Review
-      - name: Dedicated Account Manager
-      - name: Custom Data Residency
-      - name: Gmail API
-      - name: Google Drive API
-      - name: Google Calendar API
-      - name: Google Meet REST API
-      - name: Google Docs API
-      - name: Google Sheets API
-      - name: Google Slides API
-      - name: Admin SDK Directory API
-      - name: Google Chat API
-      - name: Admin SDK Reports API
-      - name: Google Forms API
-      - name: Google Tasks API
-      - name: Google Keep API
-      - name: Google Vault API
-      - name: Google Classroom API
-      - name: People API
-      - name: Google Cloud Search API
-      - name: Drive Activity API
-      - name: Drive Labels API
-      - name: Alert Center API
-      - name: Groups Settings API
-      - name: Groups Migration API
-      - name: Admin SDK Data Transfer API
-      - name: Enterprise License Manager API
-      - name: Google Workspace Reseller API
-      - name: Gmail Postmaster Tools API
-      - name: Google Workspace Marketplace API
+      - name: In-domain live streaming
+      - name: 1000-participant meetings
+      - name: Data loss prevention (DLP)
+      - name: Enhanced support
+      - name: Enterprise endpoint management
+      - name: Full Workspace REST API surface (Admin SDK, Reports, Chat, Cloud Search, Vault, Reseller)
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
