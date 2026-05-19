@@ -1,0 +1,429 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Google Workspace Admin SDK Directory API — Users
+  description: 'Google Workspace Admin SDK Directory API — Users. 9 operations. Lead operation: List Users. Self-contained
+    Naftiko capability covering one Google Workspace business surface.'
+  tags:
+  - Google Workspace
+  - Users
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    GOOGLE_WORKSPACE_API_KEY: GOOGLE_WORKSPACE_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: admin-sdk-directory-users
+    baseUri: https://admin.googleapis.com
+    description: Google Workspace Admin SDK Directory API — Users business capability. Self-contained, no shared references.
+    resources:
+    - name: admin-directory-v1-users
+      path: /admin/directory/v1/users
+      operations:
+      - name: listusers
+        method: GET
+        description: List Users
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: maxResults
+          in: query
+          type: integer
+          description: Maximum number of results to return (1-500). Default is 100.
+        - name: pageToken
+          in: query
+          type: string
+          description: Token to specify the next page in the list.
+        - name: orderBy
+          in: query
+          type: string
+          description: Property to use for sorting results.
+        - name: sortOrder
+          in: query
+          type: string
+          description: Whether to return results in ascending or descending order.
+        - name: query
+          in: query
+          type: string
+          description: Query string for searching user fields. For more information on constructing user queries, see the
+            Search for Users documentation.
+        - name: showDeleted
+          in: query
+          type: string
+          description: If set to true, retrieves the list of deleted users.
+        - name: projection
+          in: query
+          type: string
+          description: What subset of fields to fetch for this user.
+        - name: viewType
+          in: query
+          type: string
+          description: Whether to fetch the administrator-only or domain-wide public view of the user. Default is admin_view.
+        - name: customFieldMask
+          in: query
+          type: string
+          description: A comma-separated list of schema names. All fields from these schemas are fetched. Must be set when
+            projection=custom.
+      - name: insertuser
+        method: POST
+        description: Create a User
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: admin-directory-v1-users-userKey
+      path: /admin/directory/v1/users/{userKey}
+      operations:
+      - name: getuser
+        method: GET
+        description: Get a User
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: projection
+          in: query
+          type: string
+          description: What subset of fields to fetch for this user.
+        - name: viewType
+          in: query
+          type: string
+          description: Whether to fetch the administrator-only or domain-wide public view of the user.
+        - name: customFieldMask
+          in: query
+          type: string
+          description: A comma-separated list of schema names. All fields from these schemas are fetched. Must be set when
+            projection=custom.
+      - name: updateuser
+        method: PUT
+        description: Update a User
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: patchuser
+        method: PATCH
+        description: Patch a User
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: deleteuser
+        method: DELETE
+        description: Delete a User
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: admin-directory-v1-users-userKey-makeAdmin
+      path: /admin/directory/v1/users/{userKey}/makeAdmin
+      operations:
+      - name: makeuseradmin
+        method: POST
+        description: Make a User a Super Administrator
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: admin-directory-v1-users-userKey-signOut
+      path: /admin/directory/v1/users/{userKey}/signOut
+      operations:
+      - name: signoutuser
+        method: POST
+        description: Sign Out a User
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: admin-directory-v1-users-userKey-undelete
+      path: /admin/directory/v1/users/{userKey}/undelete
+      operations:
+      - name: undeleteuser
+        method: POST
+        description: Undelete a User
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.GOOGLE_WORKSPACE_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: admin-sdk-directory-users-rest
+    port: 8080
+    description: REST adapter for Google Workspace Admin SDK Directory API — Users. One Spectral-compliant resource per consumed
+      operation, prefixed with /v1.
+    resources:
+    - path: /v1/admin/directory/v1/users
+      name: admin-directory-v1-users
+      description: REST surface for admin-directory-v1-users.
+      operations:
+      - method: GET
+        name: listusers
+        description: List Users
+        call: admin-sdk-directory-users.listusers
+        with:
+          maxResults: rest.maxResults
+          pageToken: rest.pageToken
+          orderBy: rest.orderBy
+          sortOrder: rest.sortOrder
+          query: rest.query
+          showDeleted: rest.showDeleted
+          projection: rest.projection
+          viewType: rest.viewType
+          customFieldMask: rest.customFieldMask
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: insertuser
+        description: Create a User
+        call: admin-sdk-directory-users.insertuser
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/admin/directory/v1/users/{userkey}
+      name: admin-directory-v1-users-userkey
+      description: REST surface for admin-directory-v1-users-userKey.
+      operations:
+      - method: GET
+        name: getuser
+        description: Get a User
+        call: admin-sdk-directory-users.getuser
+        with:
+          projection: rest.projection
+          viewType: rest.viewType
+          customFieldMask: rest.customFieldMask
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PUT
+        name: updateuser
+        description: Update a User
+        call: admin-sdk-directory-users.updateuser
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PATCH
+        name: patchuser
+        description: Patch a User
+        call: admin-sdk-directory-users.patchuser
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: deleteuser
+        description: Delete a User
+        call: admin-sdk-directory-users.deleteuser
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/admin/directory/v1/users/{userkey}/makeadmin
+      name: admin-directory-v1-users-userkey-makeadmin
+      description: REST surface for admin-directory-v1-users-userKey-makeAdmin.
+      operations:
+      - method: POST
+        name: makeuseradmin
+        description: Make a User a Super Administrator
+        call: admin-sdk-directory-users.makeuseradmin
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/admin/directory/v1/users/{userkey}/signout
+      name: admin-directory-v1-users-userkey-signout
+      description: REST surface for admin-directory-v1-users-userKey-signOut.
+      operations:
+      - method: POST
+        name: signoutuser
+        description: Sign Out a User
+        call: admin-sdk-directory-users.signoutuser
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/admin/directory/v1/users/{userkey}/undelete
+      name: admin-directory-v1-users-userkey-undelete
+      description: REST surface for admin-directory-v1-users-userKey-undelete.
+      operations:
+      - method: POST
+        name: undeleteuser
+        description: Undelete a User
+        call: admin-sdk-directory-users.undeleteuser
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: admin-sdk-directory-users-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Google Workspace Admin SDK Directory API — Users. One tool per consumed operation, routed
+      inline through this capability's consumes block.
+    tools:
+    - name: list-users
+      description: List Users
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: admin-sdk-directory-users.listusers
+      with:
+        maxResults: tools.maxResults
+        pageToken: tools.pageToken
+        orderBy: tools.orderBy
+        sortOrder: tools.sortOrder
+        query: tools.query
+        showDeleted: tools.showDeleted
+        projection: tools.projection
+        viewType: tools.viewType
+        customFieldMask: tools.customFieldMask
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: create-user
+      description: Create a User
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: admin-sdk-directory-users.insertuser
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-user
+      description: Get a User
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: admin-sdk-directory-users.getuser
+      with:
+        projection: tools.projection
+        viewType: tools.viewType
+        customFieldMask: tools.customFieldMask
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: update-user
+      description: Update a User
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: admin-sdk-directory-users.updateuser
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: patch-user
+      description: Patch a User
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: admin-sdk-directory-users.patchuser
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: delete-user
+      description: Delete a User
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: admin-sdk-directory-users.deleteuser
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: make-user-super-administrator
+      description: Make a User a Super Administrator
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: admin-sdk-directory-users.makeuseradmin
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: sign-out-user
+      description: Sign Out a User
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: admin-sdk-directory-users.signoutuser
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: undelete-user
+      description: Undelete a User
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: admin-sdk-directory-users.undeleteuser
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

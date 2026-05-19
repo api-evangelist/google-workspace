@@ -1,0 +1,272 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Google Workspace Admin SDK Directory API — Groups
+  description: 'Google Workspace Admin SDK Directory API — Groups. 6 operations. Lead operation: List Groups. Self-contained
+    Naftiko capability covering one Google Workspace business surface.'
+  tags:
+  - Google Workspace
+  - Groups
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    GOOGLE_WORKSPACE_API_KEY: GOOGLE_WORKSPACE_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: admin-sdk-directory-groups
+    baseUri: https://admin.googleapis.com
+    description: Google Workspace Admin SDK Directory API — Groups business capability. Self-contained, no shared references.
+    resources:
+    - name: admin-directory-v1-groups
+      path: /admin/directory/v1/groups
+      operations:
+      - name: listgroups
+        method: GET
+        description: List Groups
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: maxResults
+          in: query
+          type: integer
+          description: Maximum number of results to return (1-200). Default is 200.
+        - name: pageToken
+          in: query
+          type: string
+          description: Token to specify the next page in the list.
+        - name: orderBy
+          in: query
+          type: string
+          description: Column to use for sorting results.
+        - name: sortOrder
+          in: query
+          type: string
+          description: Whether to return results in ascending or descending order.
+        - name: userKey
+          in: query
+          type: string
+          description: Email or immutable ID of the user to list groups for. If specified, returns only those groups the user
+            is a member of.
+        - name: query
+          in: query
+          type: string
+          description: Query string for searching group fields. See the Searching for Groups documentation for supported fields.
+      - name: insertgroup
+        method: POST
+        description: Create a Group
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: admin-directory-v1-groups-groupKey
+      path: /admin/directory/v1/groups/{groupKey}
+      operations:
+      - name: getgroup
+        method: GET
+        description: Get a Group
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: updategroup
+        method: PUT
+        description: Update a Group
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: patchgroup
+        method: PATCH
+        description: Patch a Group
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: deletegroup
+        method: DELETE
+        description: Delete a Group
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: bearer
+      token: '{{env.GOOGLE_WORKSPACE_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: admin-sdk-directory-groups-rest
+    port: 8080
+    description: REST adapter for Google Workspace Admin SDK Directory API — Groups. One Spectral-compliant resource per consumed
+      operation, prefixed with /v1.
+    resources:
+    - path: /v1/admin/directory/v1/groups
+      name: admin-directory-v1-groups
+      description: REST surface for admin-directory-v1-groups.
+      operations:
+      - method: GET
+        name: listgroups
+        description: List Groups
+        call: admin-sdk-directory-groups.listgroups
+        with:
+          maxResults: rest.maxResults
+          pageToken: rest.pageToken
+          orderBy: rest.orderBy
+          sortOrder: rest.sortOrder
+          userKey: rest.userKey
+          query: rest.query
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: insertgroup
+        description: Create a Group
+        call: admin-sdk-directory-groups.insertgroup
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/admin/directory/v1/groups/{groupkey}
+      name: admin-directory-v1-groups-groupkey
+      description: REST surface for admin-directory-v1-groups-groupKey.
+      operations:
+      - method: GET
+        name: getgroup
+        description: Get a Group
+        call: admin-sdk-directory-groups.getgroup
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PUT
+        name: updategroup
+        description: Update a Group
+        call: admin-sdk-directory-groups.updategroup
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PATCH
+        name: patchgroup
+        description: Patch a Group
+        call: admin-sdk-directory-groups.patchgroup
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: deletegroup
+        description: Delete a Group
+        call: admin-sdk-directory-groups.deletegroup
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: admin-sdk-directory-groups-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Google Workspace Admin SDK Directory API — Groups. One tool per consumed operation, routed
+      inline through this capability's consumes block.
+    tools:
+    - name: list-groups
+      description: List Groups
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: admin-sdk-directory-groups.listgroups
+      with:
+        maxResults: tools.maxResults
+        pageToken: tools.pageToken
+        orderBy: tools.orderBy
+        sortOrder: tools.sortOrder
+        userKey: tools.userKey
+        query: tools.query
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: create-group
+      description: Create a Group
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: admin-sdk-directory-groups.insertgroup
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-group
+      description: Get a Group
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: admin-sdk-directory-groups.getgroup
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: update-group
+      description: Update a Group
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: admin-sdk-directory-groups.updategroup
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: patch-group
+      description: Patch a Group
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: admin-sdk-directory-groups.patchgroup
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: delete-group
+      description: Delete a Group
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: admin-sdk-directory-groups.deletegroup
+      outputParameters:
+      - type: object
+        mapping: $.
