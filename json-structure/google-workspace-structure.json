@@ -1,0 +1,259 @@
+{
+  "provider": "Google Workspace",
+  "providerId": "google-workspace",
+  "kind": "json-structure",
+  "description": "Structural overview of the Google Workspace API surface; extracted from openapi/.",
+  "schemaCount": 8,
+  "operationCount": 21,
+  "schemas": [
+    {
+      "name": "User",
+      "type": "object",
+      "propertyCount": 42,
+      "required": [
+        "primaryEmail",
+        "name"
+      ]
+    },
+    {
+      "name": "UserName",
+      "type": "object",
+      "propertyCount": 4,
+      "required": [
+        "givenName",
+        "familyName"
+      ]
+    },
+    {
+      "name": "Users",
+      "type": "object",
+      "propertyCount": 5,
+      "required": []
+    },
+    {
+      "name": "Group",
+      "type": "object",
+      "propertyCount": 10,
+      "required": [
+        "email"
+      ]
+    },
+    {
+      "name": "Groups",
+      "type": "object",
+      "propertyCount": 4,
+      "required": []
+    },
+    {
+      "name": "OrgUnit",
+      "type": "object",
+      "propertyCount": 9,
+      "required": [
+        "name"
+      ]
+    },
+    {
+      "name": "OrgUnits",
+      "type": "object",
+      "propertyCount": 3,
+      "required": []
+    },
+    {
+      "name": "Error",
+      "type": "object",
+      "propertyCount": 1,
+      "required": []
+    }
+  ],
+  "operations": [
+    {
+      "method": "GET",
+      "path": "/admin/directory/v1/users",
+      "operationId": "listUsers",
+      "summary": "List Users",
+      "tags": [
+        "Users"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/admin/directory/v1/users",
+      "operationId": "insertUser",
+      "summary": "Create a User",
+      "tags": [
+        "Users"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/admin/directory/v1/users/{userKey}",
+      "operationId": "getUser",
+      "summary": "Get a User",
+      "tags": [
+        "Users"
+      ]
+    },
+    {
+      "method": "PUT",
+      "path": "/admin/directory/v1/users/{userKey}",
+      "operationId": "updateUser",
+      "summary": "Update a User",
+      "tags": [
+        "Users"
+      ]
+    },
+    {
+      "method": "DELETE",
+      "path": "/admin/directory/v1/users/{userKey}",
+      "operationId": "deleteUser",
+      "summary": "Delete a User",
+      "tags": [
+        "Users"
+      ]
+    },
+    {
+      "method": "PATCH",
+      "path": "/admin/directory/v1/users/{userKey}",
+      "operationId": "patchUser",
+      "summary": "Patch a User",
+      "tags": [
+        "Users"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/admin/directory/v1/users/{userKey}/makeAdmin",
+      "operationId": "makeUserAdmin",
+      "summary": "Make a User a Super Administrator",
+      "tags": [
+        "Users"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/admin/directory/v1/users/{userKey}/undelete",
+      "operationId": "undeleteUser",
+      "summary": "Undelete a User",
+      "tags": [
+        "Users"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/admin/directory/v1/users/{userKey}/signOut",
+      "operationId": "signOutUser",
+      "summary": "Sign Out a User",
+      "tags": [
+        "Users"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/admin/directory/v1/groups",
+      "operationId": "listGroups",
+      "summary": "List Groups",
+      "tags": [
+        "Groups"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/admin/directory/v1/groups",
+      "operationId": "insertGroup",
+      "summary": "Create a Group",
+      "tags": [
+        "Groups"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/admin/directory/v1/groups/{groupKey}",
+      "operationId": "getGroup",
+      "summary": "Get a Group",
+      "tags": [
+        "Groups"
+      ]
+    },
+    {
+      "method": "PUT",
+      "path": "/admin/directory/v1/groups/{groupKey}",
+      "operationId": "updateGroup",
+      "summary": "Update a Group",
+      "tags": [
+        "Groups"
+      ]
+    },
+    {
+      "method": "DELETE",
+      "path": "/admin/directory/v1/groups/{groupKey}",
+      "operationId": "deleteGroup",
+      "summary": "Delete a Group",
+      "tags": [
+        "Groups"
+      ]
+    },
+    {
+      "method": "PATCH",
+      "path": "/admin/directory/v1/groups/{groupKey}",
+      "operationId": "patchGroup",
+      "summary": "Patch a Group",
+      "tags": [
+        "Groups"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/admin/directory/v1/customer/{customerId}/orgunits",
+      "operationId": "listOrgUnits",
+      "summary": "List Organizational Units",
+      "tags": [
+        "OrgUnits"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/admin/directory/v1/customer/{customerId}/orgunits",
+      "operationId": "insertOrgUnit",
+      "summary": "Create an Organizational Unit",
+      "tags": [
+        "OrgUnits"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/admin/directory/v1/customer/{customerId}/orgunits/{orgUnitPath}",
+      "operationId": "getOrgUnit",
+      "summary": "Get an Organizational Unit",
+      "tags": [
+        "OrgUnits"
+      ]
+    },
+    {
+      "method": "PUT",
+      "path": "/admin/directory/v1/customer/{customerId}/orgunits/{orgUnitPath}",
+      "operationId": "updateOrgUnit",
+      "summary": "Update an Organizational Unit",
+      "tags": [
+        "OrgUnits"
+      ]
+    },
+    {
+      "method": "DELETE",
+      "path": "/admin/directory/v1/customer/{customerId}/orgunits/{orgUnitPath}",
+      "operationId": "deleteOrgUnit",
+      "summary": "Delete an Organizational Unit",
+      "tags": [
+        "OrgUnits"
+      ]
+    },
+    {
+      "method": "PATCH",
+      "path": "/admin/directory/v1/customer/{customerId}/orgunits/{orgUnitPath}",
+      "operationId": "patchOrgUnit",
+      "summary": "Patch an Organizational Unit",
+      "tags": [
+        "OrgUnits"
+      ]
+    }
+  ]
+}

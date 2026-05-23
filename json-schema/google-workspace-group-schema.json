@@ -1,0 +1,80 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Group",
+  "title": "Group",
+  "type": "object",
+  "description": "A Google Workspace group. JSON representation of a group resource from the Admin SDK Directory API.",
+  "properties": {
+    "kind": {
+      "type": "string",
+      "description": "The type of the API resource.",
+      "default": "admin#directory#group",
+      "readOnly": true,
+      "example": "example_value"
+    },
+    "id": {
+      "type": "string",
+      "description": "The unique ID of a group.",
+      "readOnly": true,
+      "example": "abc123"
+    },
+    "etag": {
+      "type": "string",
+      "description": "ETag of the resource.",
+      "readOnly": true,
+      "example": "example_value"
+    },
+    "email": {
+      "type": "string",
+      "format": "email",
+      "description": "The group email address. This property is required when creating a group. Group email addresses must be unique.",
+      "example": "user@example.com"
+    },
+    "name": {
+      "type": "string",
+      "description": "The group display name.",
+      "example": "Example Title"
+    },
+    "description": {
+      "type": "string",
+      "description": "An extended description to help users determine the purpose of a group. Maximum 4,096 characters.",
+      "maxLength": 4096,
+      "example": "A sample description."
+    },
+    "adminCreated": {
+      "type": "boolean",
+      "description": "Value is true if this group was created by an administrator rather than a user.",
+      "readOnly": true,
+      "example": true
+    },
+    "directMembersCount": {
+      "type": "string",
+      "description": "The number of users that are direct members of the group. Members of child groups are not counted.",
+      "readOnly": true,
+      "example": "example_value"
+    },
+    "aliases": {
+      "type": "array",
+      "description": "A list of a group alias email addresses.",
+      "readOnly": true,
+      "items": {
+        "type": "string",
+        "format": "email"
+      },
+      "example": []
+    },
+    "nonEditableAliases": {
+      "type": "array",
+      "description": "A list of the group non-editable alias email addresses that are outside of the account primary domain or subdomains.",
+      "readOnly": true,
+      "items": {
+        "type": "string",
+        "format": "email"
+      },
+      "example": []
+    }
+  },
+  "required": [
+    "email"
+  ]
+}

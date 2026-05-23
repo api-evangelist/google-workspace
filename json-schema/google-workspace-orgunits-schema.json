@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/OrgUnits",
+  "title": "OrgUnits",
+  "type": "object",
+  "description": "A list of organizational unit resources.",
+  "properties": {
+    "kind": {
+      "type": "string",
+      "description": "The type of the API resource.",
+      "default": "admin#directory#orgUnits",
+      "readOnly": true,
+      "example": "example_value"
+    },
+    "etag": {
+      "type": "string",
+      "description": "ETag of the resource.",
+      "readOnly": true,
+      "example": "example_value"
+    },
+    "organizationUnits": {
+      "type": "array",
+      "description": "A list of organizational unit objects.",
+      "items": {
+        "$ref": "#/components/schemas/OrgUnit"
+      },
+      "example": []
+    }
+  }
+}

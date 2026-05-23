@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/OrgUnit",
+  "title": "OrgUnit",
+  "type": "object",
+  "description": "A Google Workspace organizational unit. JSON representation of an org unit resource from the Admin SDK Directory API. The hierarchy is limited to 35 levels of depth.",
+  "properties": {
+    "kind": {
+      "type": "string",
+      "description": "The type of the API resource.",
+      "default": "admin#directory#orgUnit",
+      "readOnly": true,
+      "example": "example_value"
+    },
+    "etag": {
+      "type": "string",
+      "description": "ETag of the resource.",
+      "readOnly": true,
+      "example": "example_value"
+    },
+    "name": {
+      "type": "string",
+      "description": "The organizational unit path name. For example, an organizational unit with parent path /corp and name sales is derived as /corp/sales.",
+      "example": "Example Title"
+    },
+    "description": {
+      "type": "string",
+      "description": "Description of the organizational unit.",
+      "example": "A sample description."
+    },
+    "orgUnitPath": {
+      "type": "string",
+      "description": "The full path to the organizational unit. The orgUnitPath is a derived property. When listed, it is derived from parentOrgUnitPath and the organizational unit name.",
+      "readOnly": true,
+      "example": "example_value"
+    },
+    "orgUnitId": {
+      "type": "string",
+      "description": "The unique ID of the organizational unit.",
+      "readOnly": true,
+      "example": "500123"
+    },
+    "parentOrgUnitPath": {
+      "type": "string",
+      "description": "The organizational unit path of the parent organizational unit. Required unless parentOrgUnitId is set.",
+      "example": "example_value"
+    },
+    "parentOrgUnitId": {
+      "type": "string",
+      "description": "The unique ID of the parent organizational unit. Required unless parentOrgUnitPath is set.",
+      "example": "500123"
+    },
+    "blockInheritance": {
+      "type": "boolean",
+      "description": "Deprecated. Setting this field has no effect.",
+      "deprecated": true,
+      "example": true
+    }
+  },
+  "required": [
+    "name"
+  ]
+}

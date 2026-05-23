@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Groups",
+  "title": "Groups",
+  "type": "object",
+  "description": "A paginated list of group resources.",
+  "properties": {
+    "kind": {
+      "type": "string",
+      "description": "The type of the API resource.",
+      "default": "admin#directory#groups",
+      "readOnly": true,
+      "example": "example_value"
+    },
+    "etag": {
+      "type": "string",
+      "description": "ETag of the resource.",
+      "readOnly": true,
+      "example": "example_value"
+    },
+    "groups": {
+      "type": "array",
+      "description": "A list of group objects.",
+      "items": {
+        "$ref": "#/components/schemas/Group"
+      },
+      "example": []
+    },
+    "nextPageToken": {
+      "type": "string",
+      "description": "Token for retrieving the next page of results.",
+      "example": "example_value"
+    }
+  }
+}

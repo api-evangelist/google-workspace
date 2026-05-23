@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Users",
+  "title": "Users",
+  "type": "object",
+  "description": "A paginated list of user resources.",
+  "properties": {
+    "kind": {
+      "type": "string",
+      "description": "The type of the API resource.",
+      "default": "admin#directory#users",
+      "readOnly": true,
+      "example": "example_value"
+    },
+    "etag": {
+      "type": "string",
+      "description": "ETag of the resource.",
+      "readOnly": true,
+      "example": "example_value"
+    },
+    "users": {
+      "type": "array",
+      "description": "A list of user objects.",
+      "items": {
+        "$ref": "#/components/schemas/User"
+      },
+      "example": []
+    },
+    "nextPageToken": {
+      "type": "string",
+      "description": "Token for retrieving the next page of results.",
+      "example": "example_value"
+    },
+    "trigger_event": {
+      "type": "string",
+      "description": "Event that triggered this response (for push notifications).",
+      "readOnly": true,
+      "example": "example_value"
+    }
+  }
+}

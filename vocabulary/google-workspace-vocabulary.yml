@@ -1,0 +1,11 @@
+name: Google Workspace Domain Vocabulary
+provider: Google Workspace
+providerId: google-workspace
+description: Tag-derived vocabulary for the Google Workspace API surface; sourced from openapi/ tags.
+terms:
+- term: Users
+  description: Manage user accounts in a Google Workspace domain
+- term: Groups
+  description: Manage groups in a Google Workspace domain
+- term: OrgUnits
+  description: Manage organizational units in a Google Workspace domain
