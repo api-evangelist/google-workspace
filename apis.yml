@@ -453,6 +453,57 @@ apis:
     - type: Authentication
       url: https://developers.google.com/workspace/marketplace/authorizing
 common:
+  - type: ArazzoWorkflows
+    url: arazzo/
+    workflows:
+    - url: arazzo/google-workspace-audit-user-groups-workflow.yml
+      name: Google Workspace Audit a User's Group Memberships
+      summary: Confirm a user exists, then list every group the user belongs to.
+    - url: arazzo/google-workspace-create-group-workflow.yml
+      name: Google Workspace Create a Group
+      summary: Create a group with an email and description, then read it back.
+    - url: arazzo/google-workspace-create-org-unit-and-assign-user-workflow.yml
+      name: Google Workspace Create an Org Unit and Assign a User
+      summary: Create an organizational unit, then move a user into it and confirm.
+    - url: arazzo/google-workspace-decommission-org-unit-workflow.yml
+      name: Google Workspace Decommission an Org Unit
+      summary: Move a user out of an org unit, then delete the now-empty unit.
+    - url: arazzo/google-workspace-delete-user-safely-workflow.yml
+      name: Google Workspace Delete a User Safely
+      summary: Look up a user, confirm it exists, then delete the account.
+    - url: arazzo/google-workspace-find-and-delete-group-workflow.yml
+      name: Google Workspace Find and Delete a Group
+      summary: Search groups by query, branch on a match, then delete the group.
+    - url: arazzo/google-workspace-find-and-update-user-workflow.yml
+      name: Google Workspace Find and Update a User
+      summary: Search users by query, branch on whether a match was found, then patch it.
+    - url: arazzo/google-workspace-inspect-org-unit-tree-workflow.yml
+      name: Google Workspace Inspect the Org Unit Tree
+      summary: List all child org units under a path, then read the first one in detail.
+    - url: arazzo/google-workspace-move-user-org-unit-workflow.yml
+      name: Google Workspace Move a User to Another Org Unit
+      summary: Verify the target org unit exists, then move a user into it and confirm.
+    - url: arazzo/google-workspace-offboard-user-workflow.yml
+      name: Google Workspace Offboard a User
+      summary: Suspend a departing user, sign them out of all sessions, and confirm the state.
+    - url: arazzo/google-workspace-promote-user-to-admin-workflow.yml
+      name: Google Workspace Promote a User to Super Administrator
+      summary: Confirm a user exists, grant super admin, then verify the admin flag.
+    - url: arazzo/google-workspace-provision-user-workflow.yml
+      name: Google Workspace Provision a User
+      summary: Create a new user account, place it in an organizational unit, and read it back.
+    - url: arazzo/google-workspace-rename-group-workflow.yml
+      name: Google Workspace Rename a Group
+      summary: Read a group, patch its name and description, then confirm the change.
+    - url: arazzo/google-workspace-rename-org-unit-workflow.yml
+      name: Google Workspace Rename an Org Unit
+      summary: Read an org unit, patch its name and description, then confirm.
+    - url: arazzo/google-workspace-reset-user-password-workflow.yml
+      name: Google Workspace Reset a User Password
+      summary: Confirm a user, set a new password forcing change at next login, sign them out.
+    - url: arazzo/google-workspace-restore-deleted-user-workflow.yml
+      name: Google Workspace Restore a Deleted User
+      summary: Find a recently deleted user, undelete it into an org unit, and confirm.
   - type: GitHubOrganization
     url: https://github.com/googleworkspace
   - type: LinkedIn

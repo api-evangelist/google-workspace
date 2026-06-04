@@ -1,0 +1,104 @@
+arazzo: 1.0.1
+info:
+  title: Google Workspace Move a User to Another Org Unit
+  summary: Verify the target org unit exists, then move a user into it and confirm.
+  description: >-
+    Reorganizes a user into a different organizational unit. The workflow first
+    reads the destination org unit to confirm it exists, patches the user's
+    orgUnitPath to the new location, and then re-reads the user to confirm the
+    move. Every step spells out its request inline so the flow can be read and
+    executed without opening the underlying OpenAPI description.
+  version: 1.0.0
+sourceDescriptions:
+- name: directoryApi
+  url: ../openapi/admin-sdk-directory-api.yml
+  type: openapi
+workflows:
+- workflowId: move-user-org-unit
+  summary: Confirm a destination org unit and move a user into it.
+  description: >-
+    Fetches the destination organizational unit to confirm it exists, patches
+    the user's orgUnitPath to that location, and reads the user back to confirm
+    the new placement.
+  inputs:
+    type: object
+    required:
+    - accessToken
+    - userKey
+    - orgUnitPath
+    properties:
+      accessToken:
+        type: string
+        description: OAuth 2.0 bearer access token with the admin.directory.user and orgunit scopes.
+      userKey:
+        type: string
+        description: Primary email, alias, or unique id of the user to move.
+      orgUnitPath:
+        type: string
+        description: The destination org unit path (minus the leading slash) to read and move into.
+      customerId:
+        type: string
+        description: Customer account id or the my_customer alias.
+        default: my_customer
+  steps:
+  - stepId: confirmOrgUnit
+    description: >-
+      Read the destination organizational unit to confirm it exists before
+      moving the user into it.
+    operationId: getOrgUnit
+    parameters:
+    - name: customerId
+      in: path
+      value: $inputs.customerId
+    - name: orgUnitPath
+      in: path
+      value: $inputs.orgUnitPath
+    - name: Authorization
+      in: header
+      value: "Bearer $inputs.accessToken"
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      orgUnitId: $response.body#/orgUnitId
+      orgUnitPath: $response.body#/orgUnitPath
+  - stepId: moveUser
+    description: >-
+      Patch the user's orgUnitPath to the confirmed destination org unit so the
+      account is reorganized.
+    operationId: patchUser
+    parameters:
+    - name: userKey
+      in: path
+      value: $inputs.userKey
+    - name: Authorization
+      in: header
+      value: "Bearer $inputs.accessToken"
+    requestBody:
+      contentType: application/json
+      payload:
+        orgUnitPath: $steps.confirmOrgUnit.outputs.orgUnitPath
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      userId: $response.body#/id
+      orgUnitPath: $response.body#/orgUnitPath
+  - stepId: confirmMove
+    description: >-
+      Read the user back to confirm the orgUnitPath now reflects the new
+      organizational unit.
+    operationId: getUser
+    parameters:
+    - name: userKey
+      in: path
+      value: $inputs.userKey
+    - name: Authorization
+      in: header
+      value: "Bearer $inputs.accessToken"
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      userId: $response.body#/id
+      orgUnitPath: $response.body#/orgUnitPath
+  outputs:
+    userId: $steps.confirmMove.outputs.userId
+    orgUnitPath: $steps.confirmMove.outputs.orgUnitPath

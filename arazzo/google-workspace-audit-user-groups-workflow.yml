@@ -1,0 +1,76 @@
+arazzo: 1.0.1
+info:
+  title: Google Workspace Audit a User's Group Memberships
+  summary: Confirm a user exists, then list every group the user belongs to.
+  description: >-
+    Produces a membership report for a single user. The workflow reads the user
+    to confirm the account exists and capture its primary email, then lists all
+    groups the user is a member of by passing the userKey filter to the groups
+    list. This adapts a membership-lookup theme to the operations the directory
+    spec actually supports, since the API exposes no standalone members
+    resource. Every step spells out its request inline so the flow can be read
+    and executed without opening the underlying OpenAPI description.
+  version: 1.0.0
+sourceDescriptions:
+- name: directoryApi
+  url: ../openapi/admin-sdk-directory-api.yml
+  type: openapi
+workflows:
+- workflowId: audit-user-groups
+  summary: List all groups a confirmed user belongs to.
+  description: >-
+    Reads the user to confirm it exists, then lists the groups the user is a
+    direct member of using the userKey filter on the groups list.
+  inputs:
+    type: object
+    required:
+    - accessToken
+    - userKey
+    properties:
+      accessToken:
+        type: string
+        description: OAuth 2.0 bearer access token with the user.readonly and group.readonly scopes.
+      userKey:
+        type: string
+        description: Primary email, alias, or unique id of the user to audit.
+  steps:
+  - stepId: lookupUser
+    description: >-
+      Read the user to confirm the account exists and capture its id and
+      primary email for the group lookup.
+    operationId: getUser
+    parameters:
+    - name: userKey
+      in: path
+      value: $inputs.userKey
+    - name: Authorization
+      in: header
+      value: "Bearer $inputs.accessToken"
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      userId: $response.body#/id
+      primaryEmail: $response.body#/primaryEmail
+  - stepId: listUserGroups
+    description: >-
+      List all groups the confirmed user belongs to by filtering the groups
+      list on the user's primary email.
+    operationId: listGroups
+    parameters:
+    - name: Authorization
+      in: header
+      value: "Bearer $inputs.accessToken"
+    - name: userKey
+      in: query
+      value: $steps.lookupUser.outputs.primaryEmail
+    - name: maxResults
+      in: query
+      value: 200
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      groups: $response.body#/groups
+  outputs:
+    userId: $steps.lookupUser.outputs.userId
+    primaryEmail: $steps.lookupUser.outputs.primaryEmail
+    groups: $steps.listUserGroups.outputs.groups

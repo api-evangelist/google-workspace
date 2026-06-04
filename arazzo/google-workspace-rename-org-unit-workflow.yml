@@ -1,0 +1,115 @@
+arazzo: 1.0.1
+info:
+  title: Google Workspace Rename an Org Unit
+  summary: Read an org unit, patch its name and description, then confirm.
+  description: >-
+    Updates the name and description of an existing organizational unit. The
+    workflow reads the org unit to confirm it exists, patches the new name and
+    description with patch semantics, and reads it back to confirm the change.
+    Every step spells out its request inline so the flow can be read and executed
+    without opening the underlying OpenAPI description.
+  version: 1.0.0
+sourceDescriptions:
+- name: directoryApi
+  url: ../openapi/admin-sdk-directory-api.yml
+  type: openapi
+workflows:
+- workflowId: rename-org-unit
+  summary: Patch an org unit's name and description and confirm the update.
+  description: >-
+    Reads the organizational unit to confirm it exists, patches the supplied
+    name and description, and re-reads it to confirm the new values.
+  inputs:
+    type: object
+    required:
+    - accessToken
+    - orgUnitPath
+    - name
+    properties:
+      accessToken:
+        type: string
+        description: OAuth 2.0 bearer access token with the admin.directory.orgunit scope.
+      orgUnitPath:
+        type: string
+        description: The full path (minus leading slash) of the org unit to rename.
+      name:
+        type: string
+        description: The new name for the organizational unit.
+      description:
+        type: string
+        description: The new description for the organizational unit.
+        default: ""
+      customerId:
+        type: string
+        description: Customer account id or the my_customer alias.
+        default: my_customer
+  steps:
+  - stepId: lookupOrgUnit
+    description: >-
+      Read the organizational unit by its path to confirm it exists and capture
+      its current name and id.
+    operationId: getOrgUnit
+    parameters:
+    - name: customerId
+      in: path
+      value: $inputs.customerId
+    - name: orgUnitPath
+      in: path
+      value: $inputs.orgUnitPath
+    - name: Authorization
+      in: header
+      value: "Bearer $inputs.accessToken"
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      orgUnitId: $response.body#/orgUnitId
+      currentName: $response.body#/name
+  - stepId: renameOrgUnit
+    description: >-
+      Patch the organizational unit with the new name and description.
+    operationId: patchOrgUnit
+    parameters:
+    - name: customerId
+      in: path
+      value: $inputs.customerId
+    - name: orgUnitPath
+      in: path
+      value: $inputs.orgUnitPath
+    - name: Authorization
+      in: header
+      value: "Bearer $inputs.accessToken"
+    requestBody:
+      contentType: application/json
+      payload:
+        name: $inputs.name
+        description: $inputs.description
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      orgUnitId: $response.body#/orgUnitId
+      name: $response.body#/name
+  - stepId: confirmRename
+    description: >-
+      Read the organizational unit back to confirm the new name and description
+      are set.
+    operationId: getOrgUnit
+    parameters:
+    - name: customerId
+      in: path
+      value: $inputs.customerId
+    - name: orgUnitPath
+      in: path
+      value: $inputs.orgUnitPath
+    - name: Authorization
+      in: header
+      value: "Bearer $inputs.accessToken"
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      orgUnitId: $response.body#/orgUnitId
+      name: $response.body#/name
+      description: $response.body#/description
+  outputs:
+    orgUnitId: $steps.confirmRename.outputs.orgUnitId
+    name: $steps.confirmRename.outputs.name
+    description: $steps.confirmRename.outputs.description

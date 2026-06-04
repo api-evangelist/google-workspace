@@ -1,0 +1,101 @@
+arazzo: 1.0.1
+info:
+  title: Google Workspace Provision a User
+  summary: Create a new user account, place it in an organizational unit, and read it back.
+  description: >-
+    The core onboarding flow for Google Workspace. The workflow creates a user
+    account with a primary email, name, and starting password, assigning it to a
+    target organizational unit in the same request, and then reads the created
+    user back to confirm the account exists and to capture its server-assigned
+    id. Every step spells out its request inline so the flow can be read and
+    executed without opening the underlying OpenAPI description.
+  version: 1.0.0
+sourceDescriptions:
+- name: directoryApi
+  url: ../openapi/admin-sdk-directory-api.yml
+  type: openapi
+workflows:
+- workflowId: provision-user
+  summary: Create a Google Workspace user in a specific org unit and confirm it.
+  description: >-
+    Creates a user account with the supplied identity and organizational unit
+    assignment, then fetches the new user by its primary email to verify the
+    account was provisioned and to capture its unique id.
+  inputs:
+    type: object
+    required:
+    - accessToken
+    - primaryEmail
+    - givenName
+    - familyName
+    - password
+    properties:
+      accessToken:
+        type: string
+        description: OAuth 2.0 bearer access token with the admin.directory.user scope.
+      primaryEmail:
+        type: string
+        description: The unique primary email address for the new user.
+      givenName:
+        type: string
+        description: The user's first name.
+      familyName:
+        type: string
+        description: The user's last name.
+      password:
+        type: string
+        description: Initial password, 8-100 ASCII characters.
+      orgUnitPath:
+        type: string
+        description: The full org unit path to place the user into (defaults to root /).
+        default: /
+  steps:
+  - stepId: createUser
+    description: >-
+      Create the user account with the supplied identity, password, and org
+      unit assignment, forcing a password change at first login.
+    operationId: insertUser
+    parameters:
+    - name: Authorization
+      in: header
+      value: "Bearer $inputs.accessToken"
+    requestBody:
+      contentType: application/json
+      payload:
+        primaryEmail: $inputs.primaryEmail
+        name:
+          givenName: $inputs.givenName
+          familyName: $inputs.familyName
+        password: $inputs.password
+        changePasswordAtNextLogin: true
+        orgUnitPath: $inputs.orgUnitPath
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      userId: $response.body#/id
+      createdEmail: $response.body#/primaryEmail
+  - stepId: confirmUser
+    description: >-
+      Read the newly created user back by its primary email to confirm the
+      account exists and capture its full profile.
+    operationId: getUser
+    parameters:
+    - name: userKey
+      in: path
+      value: $steps.createUser.outputs.createdEmail
+    - name: Authorization
+      in: header
+      value: "Bearer $inputs.accessToken"
+    - name: projection
+      in: query
+      value: full
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      userId: $response.body#/id
+      primaryEmail: $response.body#/primaryEmail
+      orgUnitPath: $response.body#/orgUnitPath
+  outputs:
+    userId: $steps.confirmUser.outputs.userId
+    primaryEmail: $steps.confirmUser.outputs.primaryEmail
+    orgUnitPath: $steps.confirmUser.outputs.orgUnitPath

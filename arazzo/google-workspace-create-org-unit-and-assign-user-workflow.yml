@@ -1,0 +1,113 @@
+arazzo: 1.0.1
+info:
+  title: Google Workspace Create an Org Unit and Assign a User
+  summary: Create an organizational unit, then move a user into it and confirm.
+  description: >-
+    Stands up a new organizational unit and immediately populates it. The
+    workflow creates the org unit under a parent path, patches a user's
+    orgUnitPath to the new unit, and reads the user back to confirm the
+    assignment. Every step spells out its request inline so the flow can be read
+    and executed without opening the underlying OpenAPI description.
+  version: 1.0.0
+sourceDescriptions:
+- name: directoryApi
+  url: ../openapi/admin-sdk-directory-api.yml
+  type: openapi
+workflows:
+- workflowId: create-org-unit-and-assign-user
+  summary: Create an org unit and move a user into it.
+  description: >-
+    Creates an organizational unit under the supplied parent path, patches the
+    user's orgUnitPath to the new unit, and reads the user to confirm placement.
+  inputs:
+    type: object
+    required:
+    - accessToken
+    - name
+    - parentOrgUnitPath
+    - userKey
+    properties:
+      accessToken:
+        type: string
+        description: OAuth 2.0 bearer access token with the orgunit and user scopes.
+      name:
+        type: string
+        description: The name of the new organizational unit.
+      parentOrgUnitPath:
+        type: string
+        description: The parent org unit path under which to create the new unit.
+      userKey:
+        type: string
+        description: Primary email, alias, or unique id of the user to assign.
+      description:
+        type: string
+        description: Description for the new organizational unit.
+        default: ""
+      customerId:
+        type: string
+        description: Customer account id or the my_customer alias.
+        default: my_customer
+  steps:
+  - stepId: createOrgUnit
+    description: >-
+      Create the organizational unit under the supplied parent path.
+    operationId: insertOrgUnit
+    parameters:
+    - name: customerId
+      in: path
+      value: $inputs.customerId
+    - name: Authorization
+      in: header
+      value: "Bearer $inputs.accessToken"
+    requestBody:
+      contentType: application/json
+      payload:
+        name: $inputs.name
+        parentOrgUnitPath: $inputs.parentOrgUnitPath
+        description: $inputs.description
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      orgUnitId: $response.body#/orgUnitId
+      orgUnitPath: $response.body#/orgUnitPath
+  - stepId: assignUser
+    description: >-
+      Patch the user's orgUnitPath to the newly created organizational unit.
+    operationId: patchUser
+    parameters:
+    - name: userKey
+      in: path
+      value: $inputs.userKey
+    - name: Authorization
+      in: header
+      value: "Bearer $inputs.accessToken"
+    requestBody:
+      contentType: application/json
+      payload:
+        orgUnitPath: $steps.createOrgUnit.outputs.orgUnitPath
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      userId: $response.body#/id
+      orgUnitPath: $response.body#/orgUnitPath
+  - stepId: confirmAssignment
+    description: >-
+      Read the user back to confirm the orgUnitPath now points at the new
+      organizational unit.
+    operationId: getUser
+    parameters:
+    - name: userKey
+      in: path
+      value: $inputs.userKey
+    - name: Authorization
+      in: header
+      value: "Bearer $inputs.accessToken"
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      userId: $response.body#/id
+      orgUnitPath: $response.body#/orgUnitPath
+  outputs:
+    orgUnitId: $steps.createOrgUnit.outputs.orgUnitId
+    orgUnitPath: $steps.createOrgUnit.outputs.orgUnitPath
+    userId: $steps.confirmAssignment.outputs.userId

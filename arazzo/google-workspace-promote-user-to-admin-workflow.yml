@@ -1,0 +1,92 @@
+arazzo: 1.0.1
+info:
+  title: Google Workspace Promote a User to Super Administrator
+  summary: Confirm a user exists, grant super admin, then verify the admin flag.
+  description: >-
+    Elevates an existing user to super administrator. Because the isAdmin
+    property cannot be edited directly on the user resource, the workflow uses
+    the dedicated makeAdmin operation. It first reads the user to confirm the
+    account exists, grants super administrator privileges, and then re-reads the
+    user to confirm isAdmin is now true. Every step spells out its request inline
+    so the flow can be read and executed without opening the underlying OpenAPI
+    description.
+  version: 1.0.0
+sourceDescriptions:
+- name: directoryApi
+  url: ../openapi/admin-sdk-directory-api.yml
+  type: openapi
+workflows:
+- workflowId: promote-user-to-admin
+  summary: Grant super administrator privileges to an existing user and verify.
+  description: >-
+    Reads the user to confirm it exists and is not already an admin, calls the
+    makeAdmin operation to grant super administrator status, then re-reads the
+    user to confirm the isAdmin flag.
+  inputs:
+    type: object
+    required:
+    - accessToken
+    - userKey
+    properties:
+      accessToken:
+        type: string
+        description: OAuth 2.0 bearer access token with the admin.directory.user scope.
+      userKey:
+        type: string
+        description: Primary email, alias, or unique id of the user to promote.
+  steps:
+  - stepId: lookupUser
+    description: >-
+      Read the user by its key to confirm the account exists and capture its
+      current admin status.
+    operationId: getUser
+    parameters:
+    - name: userKey
+      in: path
+      value: $inputs.userKey
+    - name: Authorization
+      in: header
+      value: "Bearer $inputs.accessToken"
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      userId: $response.body#/id
+      isAdmin: $response.body#/isAdmin
+  - stepId: makeAdmin
+    description: >-
+      Grant super administrator privileges to the user via the dedicated
+      makeAdmin operation.
+    operationId: makeUserAdmin
+    parameters:
+    - name: userKey
+      in: path
+      value: $inputs.userKey
+    - name: Authorization
+      in: header
+      value: "Bearer $inputs.accessToken"
+    requestBody:
+      contentType: application/json
+      payload:
+        status: true
+    successCriteria:
+    - condition: $statusCode == 204
+  - stepId: confirmAdmin
+    description: >-
+      Re-read the user to confirm the isAdmin flag is now true after the
+      promotion.
+    operationId: getUser
+    parameters:
+    - name: userKey
+      in: path
+      value: $inputs.userKey
+    - name: Authorization
+      in: header
+      value: "Bearer $inputs.accessToken"
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      userId: $response.body#/id
+      isAdmin: $response.body#/isAdmin
+  outputs:
+    userId: $steps.confirmAdmin.outputs.userId
+    isAdmin: $steps.confirmAdmin.outputs.isAdmin

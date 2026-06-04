@@ -1,0 +1,108 @@
+arazzo: 1.0.1
+info:
+  title: Google Workspace Find and Delete a Group
+  summary: Search groups by query, branch on a match, then delete the group.
+  description: >-
+    Cleans up a group located by directory search. The workflow queries the
+    groups list, then branches: when a matching group is found it reads the
+    group to confirm and then deletes it, and when no group matches it ends
+    without deleting anything. Every step spells out its request inline so the
+    flow can be read and executed without opening the underlying OpenAPI
+    description.
+  version: 1.0.0
+sourceDescriptions:
+- name: directoryApi
+  url: ../openapi/admin-sdk-directory-api.yml
+  type: openapi
+workflows:
+- workflowId: find-and-delete-group
+  summary: Search for a group and delete it when a match is found.
+  description: >-
+    Searches the groups list with a query, branches on whether a group was
+    returned, confirms the matched group, and deletes it.
+  inputs:
+    type: object
+    required:
+    - accessToken
+    - query
+    properties:
+      accessToken:
+        type: string
+        description: OAuth 2.0 bearer access token with the admin.directory.group scope.
+      query:
+        type: string
+        description: Group search query, for example "email:team@example.com".
+      customer:
+        type: string
+        description: Customer account id or the my_customer alias.
+        default: my_customer
+  steps:
+  - stepId: searchGroups
+    description: >-
+      Search the groups list with the supplied query, returning at most one
+      candidate match.
+    operationId: listGroups
+    parameters:
+    - name: Authorization
+      in: header
+      value: "Bearer $inputs.accessToken"
+    - name: customer
+      in: query
+      value: $inputs.customer
+    - name: query
+      in: query
+      value: $inputs.query
+    - name: maxResults
+      in: query
+      value: 1
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      matchedGroupId: $response.body#/groups/0/id
+      matchedEmail: $response.body#/groups/0/email
+    onSuccess:
+    - name: groupFound
+      type: goto
+      stepId: confirmGroup
+      criteria:
+      - context: $response.body
+        condition: $.groups.length > 0
+        type: jsonpath
+    - name: groupMissing
+      type: end
+      criteria:
+      - context: $response.body
+        condition: $.groups.length == 0
+        type: jsonpath
+  - stepId: confirmGroup
+    description: >-
+      Read the matched group to confirm it exists before deleting it.
+    operationId: getGroup
+    parameters:
+    - name: groupKey
+      in: path
+      value: $steps.searchGroups.outputs.matchedGroupId
+    - name: Authorization
+      in: header
+      value: "Bearer $inputs.accessToken"
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      groupId: $response.body#/id
+      email: $response.body#/email
+  - stepId: deleteGroup
+    description: >-
+      Delete the confirmed group from the directory.
+    operationId: deleteGroup
+    parameters:
+    - name: groupKey
+      in: path
+      value: $steps.searchGroups.outputs.matchedGroupId
+    - name: Authorization
+      in: header
+      value: "Bearer $inputs.accessToken"
+    successCriteria:
+    - condition: $statusCode == 204
+  outputs:
+    deletedGroupId: $steps.confirmGroup.outputs.groupId
+    deletedEmail: $steps.confirmGroup.outputs.email

@@ -1,0 +1,122 @@
+arazzo: 1.0.1
+info:
+  title: Google Workspace Find and Update a User
+  summary: Search users by query, branch on whether a match was found, then patch it.
+  description: >-
+    Locates a user with a directory search and updates a subset of their
+    profile. The workflow runs a query against the users list, then branches:
+    when a matching user is found it reads the full record and patches the
+    supplied fields, and when no user matches it ends without making changes.
+    Every step spells out its request inline so the flow can be read and executed
+    without opening the underlying OpenAPI description.
+  version: 1.0.0
+sourceDescriptions:
+- name: directoryApi
+  url: ../openapi/admin-sdk-directory-api.yml
+  type: openapi
+workflows:
+- workflowId: find-and-update-user
+  summary: Search for a user and patch their profile when a match is found.
+  description: >-
+    Searches the users list with a query, branches on whether at least one user
+    was returned, reads the matched user, and patches the supplied profile
+    fields.
+  inputs:
+    type: object
+    required:
+    - accessToken
+    - query
+    - updates
+    properties:
+      accessToken:
+        type: string
+        description: OAuth 2.0 bearer access token with the admin.directory.user scope.
+      query:
+        type: string
+        description: User search query, for example "email:jane@example.com".
+      updates:
+        type: object
+        description: Partial user fields to patch onto the matched record.
+      customer:
+        type: string
+        description: Customer account id or the my_customer alias.
+        default: my_customer
+  steps:
+  - stepId: searchUsers
+    description: >-
+      Search the users list with the supplied query, returning at most one
+      candidate match.
+    operationId: listUsers
+    parameters:
+    - name: Authorization
+      in: header
+      value: "Bearer $inputs.accessToken"
+    - name: customer
+      in: query
+      value: $inputs.customer
+    - name: query
+      in: query
+      value: $inputs.query
+    - name: maxResults
+      in: query
+      value: 1
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      matchedUserId: $response.body#/users/0/id
+      matchedEmail: $response.body#/users/0/primaryEmail
+    onSuccess:
+    - name: userFound
+      type: goto
+      stepId: readUser
+      criteria:
+      - context: $response.body
+        condition: $.users.length > 0
+        type: jsonpath
+    - name: userMissing
+      type: end
+      criteria:
+      - context: $response.body
+        condition: $.users.length == 0
+        type: jsonpath
+  - stepId: readUser
+    description: >-
+      Read the matched user's full profile before applying the partial update.
+    operationId: getUser
+    parameters:
+    - name: userKey
+      in: path
+      value: $steps.searchUsers.outputs.matchedUserId
+    - name: Authorization
+      in: header
+      value: "Bearer $inputs.accessToken"
+    - name: projection
+      in: query
+      value: full
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      userId: $response.body#/id
+  - stepId: applyUpdate
+    description: >-
+      Patch the matched user with the supplied profile fields using patch
+      semantics so unspecified fields are left intact.
+    operationId: patchUser
+    parameters:
+    - name: userKey
+      in: path
+      value: $steps.searchUsers.outputs.matchedUserId
+    - name: Authorization
+      in: header
+      value: "Bearer $inputs.accessToken"
+    requestBody:
+      contentType: application/json
+      payload: $inputs.updates
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      userId: $response.body#/id
+      primaryEmail: $response.body#/primaryEmail
+  outputs:
+    userId: $steps.applyUpdate.outputs.userId
+    primaryEmail: $steps.applyUpdate.outputs.primaryEmail
