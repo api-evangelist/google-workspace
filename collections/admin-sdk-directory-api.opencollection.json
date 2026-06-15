@@ -1,0 +1,629 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Google Workspace Admin SDK Directory API",
+    "version": "directory_v1"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "authorization_code",
+      "authorizationUrl": "https://accounts.google.com/o/oauth2/v2/auth",
+      "accessTokenUrl": "https://oauth2.googleapis.com/token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Users",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Users",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://admin.googleapis.com/admin/directory/v1/users",
+            "params": [
+              {
+                "name": "domain",
+                "value": "",
+                "type": "query",
+                "description": "The domain name. Use this field to get groups from only one domain. To return all domains for a customer account, use the customer query parameter instead."
+              },
+              {
+                "name": "customer",
+                "value": "",
+                "type": "query",
+                "description": "The unique ID for the customer Google Workspace account. In a multi-domain account, use this to list all groups for a customer. You can also use the my_customer alias."
+              },
+              {
+                "name": "maxResults",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of results to return (1-500). Default is 100."
+              },
+              {
+                "name": "pageToken",
+                "value": "",
+                "type": "query",
+                "description": "Token to specify the next page in the list."
+              },
+              {
+                "name": "orderBy",
+                "value": "",
+                "type": "query",
+                "description": "Property to use for sorting results."
+              },
+              {
+                "name": "sortOrder",
+                "value": "",
+                "type": "query",
+                "description": "Whether to return results in ascending or descending order."
+              },
+              {
+                "name": "query",
+                "value": "",
+                "type": "query",
+                "description": "Query string for searching user fields. For more information on constructing user queries, see the Search for Users documentation."
+              },
+              {
+                "name": "showDeleted",
+                "value": "",
+                "type": "query",
+                "description": "If set to true, retrieves the list of deleted users."
+              },
+              {
+                "name": "projection",
+                "value": "",
+                "type": "query",
+                "description": "What subset of fields to fetch for this user."
+              },
+              {
+                "name": "viewType",
+                "value": "",
+                "type": "query",
+                "description": "Whether to fetch the administrator-only or domain-wide public view of the user. Default is admin_view."
+              },
+              {
+                "name": "customFieldMask",
+                "value": "",
+                "type": "query",
+                "description": "A comma-separated list of schema names. All fields from these schemas are fetched. Must be set when projection=custom."
+              }
+            ]
+          },
+          "docs": "Retrieves a paginated list of either deleted users or all users in a domain. Requires authorization with the admin.directory.user.readonly or admin.directory.user scope."
+        },
+        {
+          "info": {
+            "name": "Create a User",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://admin.googleapis.com/admin/directory/v1/users",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a user account. The new user account is created in the customer account specified in the request body."
+        },
+        {
+          "info": {
+            "name": "Get a User",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://admin.googleapis.com/admin/directory/v1/users/:userKey",
+            "params": [
+              {
+                "name": "userKey",
+                "value": "",
+                "type": "path",
+                "description": "Identifies the user in the API request. The value can be the user primary email address, alias email address, or unique user ID."
+              },
+              {
+                "name": "projection",
+                "value": "",
+                "type": "query",
+                "description": "What subset of fields to fetch for this user."
+              },
+              {
+                "name": "viewType",
+                "value": "",
+                "type": "query",
+                "description": "Whether to fetch the administrator-only or domain-wide public view of the user."
+              },
+              {
+                "name": "customFieldMask",
+                "value": "",
+                "type": "query",
+                "description": "A comma-separated list of schema names. All fields from these schemas are fetched. Must be set when projection=custom."
+              }
+            ]
+          },
+          "docs": "Retrieves a user account by user key (primary email address, alias email address, or unique user ID)."
+        },
+        {
+          "info": {
+            "name": "Update a User",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://admin.googleapis.com/admin/directory/v1/users/:userKey",
+            "params": [
+              {
+                "name": "userKey",
+                "value": "",
+                "type": "path",
+                "description": "Identifies the user in the API request. The value can be the user primary email address, alias email address, or unique user ID."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Updates a user account. This replaces the entire user resource. Use patch for partial updates."
+        },
+        {
+          "info": {
+            "name": "Patch a User",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://admin.googleapis.com/admin/directory/v1/users/:userKey",
+            "params": [
+              {
+                "name": "userKey",
+                "value": "",
+                "type": "path",
+                "description": "Identifies the user in the API request. The value can be the user primary email address, alias email address, or unique user ID."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Updates a user account using patch semantics. Only the fields specified in the request body are updated."
+        },
+        {
+          "info": {
+            "name": "Delete a User",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://admin.googleapis.com/admin/directory/v1/users/:userKey",
+            "params": [
+              {
+                "name": "userKey",
+                "value": "",
+                "type": "path",
+                "description": "Identifies the user in the API request. The value can be the user primary email address, alias email address, or unique user ID."
+              }
+            ]
+          },
+          "docs": "Deletes a user account. Deleted users are recoverable for a period of 20 days using the undelete method."
+        },
+        {
+          "info": {
+            "name": "Make a User a Super Administrator",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://admin.googleapis.com/admin/directory/v1/users/:userKey/makeAdmin",
+            "params": [
+              {
+                "name": "userKey",
+                "value": "",
+                "type": "path",
+                "description": "Identifies the user in the API request. The value can be the user primary email address, alias email address, or unique user ID."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Makes a user a super administrator. This can only be done by another super administrator."
+        },
+        {
+          "info": {
+            "name": "Undelete a User",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://admin.googleapis.com/admin/directory/v1/users/:userKey/undelete",
+            "params": [
+              {
+                "name": "userKey",
+                "value": "",
+                "type": "path",
+                "description": "Identifies the user in the API request. The value can be the user primary email address, alias email address, or unique user ID."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Restores a recently deleted user account. Users are recoverable for a period of 20 days after deletion."
+        },
+        {
+          "info": {
+            "name": "Sign Out a User",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://admin.googleapis.com/admin/directory/v1/users/:userKey/signOut",
+            "params": [
+              {
+                "name": "userKey",
+                "value": "",
+                "type": "path",
+                "description": "Identifies the user in the API request. The value can be the user primary email address, alias email address, or unique user ID."
+              }
+            ]
+          },
+          "docs": "Signs a user out of all web and device sessions and resets their sign-in cookies."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Groups",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Groups",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://admin.googleapis.com/admin/directory/v1/groups",
+            "params": [
+              {
+                "name": "domain",
+                "value": "",
+                "type": "query",
+                "description": "The domain name. Use this field to get groups from only one domain. To return all domains for a customer account, use the customer query parameter instead."
+              },
+              {
+                "name": "customer",
+                "value": "",
+                "type": "query",
+                "description": "The unique ID for the customer Google Workspace account. In a multi-domain account, use this to list all groups for a customer. You can also use the my_customer alias."
+              },
+              {
+                "name": "maxResults",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of results to return (1-200). Default is 200."
+              },
+              {
+                "name": "pageToken",
+                "value": "",
+                "type": "query",
+                "description": "Token to specify the next page in the list."
+              },
+              {
+                "name": "orderBy",
+                "value": "",
+                "type": "query",
+                "description": "Column to use for sorting results."
+              },
+              {
+                "name": "sortOrder",
+                "value": "",
+                "type": "query",
+                "description": "Whether to return results in ascending or descending order."
+              },
+              {
+                "name": "userKey",
+                "value": "",
+                "type": "query",
+                "description": "Email or immutable ID of the user to list groups for. If specified, returns only those groups the user is a member of."
+              },
+              {
+                "name": "query",
+                "value": "",
+                "type": "query",
+                "description": "Query string for searching group fields. See the Searching for Groups documentation for supported fields."
+              }
+            ]
+          },
+          "docs": "Retrieves all groups of a domain or all groups a user is a member of. Requires authorization with the admin.directory.group.readonly or admin.directory.group scope."
+        },
+        {
+          "info": {
+            "name": "Create a Group",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://admin.googleapis.com/admin/directory/v1/groups",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a group in the specified domain."
+        },
+        {
+          "info": {
+            "name": "Get a Group",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://admin.googleapis.com/admin/directory/v1/groups/:groupKey",
+            "params": [
+              {
+                "name": "groupKey",
+                "value": "",
+                "type": "path",
+                "description": "Identifies the group in the API request. The value can be the group email address, group alias, or the unique group ID."
+              }
+            ]
+          },
+          "docs": "Retrieves a group's properties by group key (group email address, group alias, or the unique group ID)."
+        },
+        {
+          "info": {
+            "name": "Update a Group",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://admin.googleapis.com/admin/directory/v1/groups/:groupKey",
+            "params": [
+              {
+                "name": "groupKey",
+                "value": "",
+                "type": "path",
+                "description": "Identifies the group in the API request. The value can be the group email address, group alias, or the unique group ID."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Updates a group's properties. This replaces the entire group resource."
+        },
+        {
+          "info": {
+            "name": "Patch a Group",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://admin.googleapis.com/admin/directory/v1/groups/:groupKey",
+            "params": [
+              {
+                "name": "groupKey",
+                "value": "",
+                "type": "path",
+                "description": "Identifies the group in the API request. The value can be the group email address, group alias, or the unique group ID."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Updates a group's properties using patch semantics. Only the specified fields are updated."
+        },
+        {
+          "info": {
+            "name": "Delete a Group",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://admin.googleapis.com/admin/directory/v1/groups/:groupKey",
+            "params": [
+              {
+                "name": "groupKey",
+                "value": "",
+                "type": "path",
+                "description": "Identifies the group in the API request. The value can be the group email address, group alias, or the unique group ID."
+              }
+            ]
+          },
+          "docs": "Deletes a group."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "OrgUnits",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Organizational Units",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://admin.googleapis.com/admin/directory/v1/customer/:customerId/orgunits",
+            "params": [
+              {
+                "name": "customerId",
+                "value": "",
+                "type": "path",
+                "description": "The unique ID for the customer Google Workspace account. Use the value my_customer to represent the account associated with the authenticated administrator."
+              },
+              {
+                "name": "type",
+                "value": "",
+                "type": "query",
+                "description": "Whether to return all sub-organizations or just immediate children."
+              },
+              {
+                "name": "orgUnitPath",
+                "value": "",
+                "type": "query",
+                "description": "The full path to the organizational unit or its unique ID. Returns child organizational units beneath the specified path."
+              }
+            ]
+          },
+          "docs": "Retrieves a list of all organizational units for an account. The hierarchy of organizational units is limited to 35 levels of depth."
+        },
+        {
+          "info": {
+            "name": "Create an Organizational Unit",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://admin.googleapis.com/admin/directory/v1/customer/:customerId/orgunits",
+            "params": [
+              {
+                "name": "customerId",
+                "value": "",
+                "type": "path",
+                "description": "The unique ID for the customer Google Workspace account. Use the value my_customer to represent the account associated with the authenticated administrator."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Adds an organizational unit under the specified customer account."
+        },
+        {
+          "info": {
+            "name": "Get an Organizational Unit",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://admin.googleapis.com/admin/directory/v1/customer/:customerId/orgunits/:orgUnitPath",
+            "params": [
+              {
+                "name": "customerId",
+                "value": "",
+                "type": "path",
+                "description": "The unique ID for the customer Google Workspace account. Use the value my_customer to represent the account associated with the authenticated administrator."
+              },
+              {
+                "name": "orgUnitPath",
+                "value": "",
+                "type": "path",
+                "description": "The full path of the organizational unit (minus the leading /) or its unique ID."
+              }
+            ]
+          },
+          "docs": "Retrieves an organizational unit."
+        },
+        {
+          "info": {
+            "name": "Update an Organizational Unit",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://admin.googleapis.com/admin/directory/v1/customer/:customerId/orgunits/:orgUnitPath",
+            "params": [
+              {
+                "name": "customerId",
+                "value": "",
+                "type": "path",
+                "description": "The unique ID for the customer Google Workspace account. Use the value my_customer to represent the account associated with the authenticated administrator."
+              },
+              {
+                "name": "orgUnitPath",
+                "value": "",
+                "type": "path",
+                "description": "The full path of the organizational unit (minus the leading /) or its unique ID."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Updates an organizational unit. This replaces the entire resource. Use patch for partial updates."
+        },
+        {
+          "info": {
+            "name": "Patch an Organizational Unit",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://admin.googleapis.com/admin/directory/v1/customer/:customerId/orgunits/:orgUnitPath",
+            "params": [
+              {
+                "name": "customerId",
+                "value": "",
+                "type": "path",
+                "description": "The unique ID for the customer Google Workspace account. Use the value my_customer to represent the account associated with the authenticated administrator."
+              },
+              {
+                "name": "orgUnitPath",
+                "value": "",
+                "type": "path",
+                "description": "The full path of the organizational unit (minus the leading /) or its unique ID."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Updates an organizational unit using patch semantics. Only the specified fields are updated."
+        },
+        {
+          "info": {
+            "name": "Delete an Organizational Unit",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://admin.googleapis.com/admin/directory/v1/customer/:customerId/orgunits/:orgUnitPath",
+            "params": [
+              {
+                "name": "customerId",
+                "value": "",
+                "type": "path",
+                "description": "The unique ID for the customer Google Workspace account. Use the value my_customer to represent the account associated with the authenticated administrator."
+              },
+              {
+                "name": "orgUnitPath",
+                "value": "",
+                "type": "path",
+                "description": "The full path of the organizational unit (minus the leading /) or its unique ID."
+              }
+            ]
+          },
+          "docs": "Removes an organizational unit. Only empty organizational units can be deleted. All users and child organizational units must be moved or deleted before the parent can be removed."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
