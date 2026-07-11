@@ -446,6 +446,8 @@ apis:
       - type: Authentication
         url: https://developers.google.com/workspace/marketplace/authorizing
 common:
+  - type: OAuthScopes
+    url: scopes/google-workspace-scopes.yml
   - type: PostmanWorkspace
     url: https://www.postman.com/kinlaneapi/google-workspace/overview
   - type: Arazzo

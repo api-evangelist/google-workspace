@@ -1,0 +1,48 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/admin-sdk-directory-api.yml
+schemes:
+- name: oauth2
+  source: openapi/admin-sdk-directory-api.yml
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://accounts.google.com/o/oauth2/v2/auth
+    tokenUrl: https://oauth2.googleapis.com/token
+  description: OAuth 2.0 authorization for Google Workspace Admin operations.
+scopes:
+- scope: https://www.googleapis.com/auth/admin.directory.group
+  description: View and manage the provisioning of groups on your domain
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/admin-sdk-directory-api.yml
+- scope: https://www.googleapis.com/auth/admin.directory.group.readonly
+  description: View groups on your domain
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/admin-sdk-directory-api.yml
+- scope: https://www.googleapis.com/auth/admin.directory.orgunit
+  description: View and manage organization units on your domain
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/admin-sdk-directory-api.yml
+- scope: https://www.googleapis.com/auth/admin.directory.orgunit.readonly
+  description: View organization units on your domain
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/admin-sdk-directory-api.yml
+- scope: https://www.googleapis.com/auth/admin.directory.user
+  description: View and manage the provisioning of users on your domain
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/admin-sdk-directory-api.yml
+- scope: https://www.googleapis.com/auth/admin.directory.user.readonly
+  description: View users on your domain
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/admin-sdk-directory-api.yml
