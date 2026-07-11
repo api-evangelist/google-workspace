@@ -446,6 +446,12 @@ apis:
       - type: Authentication
         url: https://developers.google.com/workspace/marketplace/authorizing
 common:
+  - type: VulnerabilityDisclosure
+    url: security/google-workspace-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/google-workspace-domain-security.yml
+  - type: Authentication
+    url: authentication/google-workspace-authentication.yml
   - type: OAuthScopes
     url: scopes/google-workspace-scopes.yml
   - type: PostmanWorkspace
