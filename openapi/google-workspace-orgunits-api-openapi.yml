@@ -1,0 +1,352 @@
+openapi: 3.1.0
+info:
+  title: Google Workspace Admin SDK Directory Groups OrgUnits API
+  description: Manage users, groups, and organizational units in a Google Workspace domain. The Admin SDK Directory API lets administrators of enterprise domains view and manage resources such as user accounts, groups, and organizational units within their Google Workspace domain.
+  version: directory_v1
+  contact:
+    name: Google Workspace Developer Support
+    url: https://developers.google.com/admin-sdk/directory
+  license:
+    name: Google APIs Terms of Service
+    url: https://developers.google.com/terms
+  x-logo:
+    url: https://www.gstatic.com/images/branding/product/2x/admin_2020q4_48dp.png
+servers:
+- url: https://admin.googleapis.com
+  description: Google Admin SDK production endpoint
+security:
+- oauth2: []
+tags:
+- name: OrgUnits
+  description: Manage organizational units in a Google Workspace domain
+  externalDocs:
+    url: https://developers.google.com/admin-sdk/directory/reference/rest/v1/orgunits
+paths:
+  /admin/directory/v1/customer/{customerId}/orgunits:
+    parameters:
+    - $ref: '#/components/parameters/customerId'
+    get:
+      operationId: listOrgUnits
+      summary: List Organizational Units
+      description: Retrieves a list of all organizational units for an account. The hierarchy of organizational units is limited to 35 levels of depth.
+      tags:
+      - OrgUnits
+      parameters:
+      - name: type
+        in: query
+        description: Whether to return all sub-organizations or just immediate children.
+        schema:
+          type: string
+          enum:
+          - all
+          - children
+          - allIncludingParent
+      - name: orgUnitPath
+        in: query
+        description: The full path to the organizational unit or its unique ID. Returns child organizational units beneath the specified path.
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response containing a list of organizational units.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OrgUnits'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+    post:
+      operationId: insertOrgUnit
+      summary: Create an Organizational Unit
+      description: Adds an organizational unit under the specified customer account.
+      tags:
+      - OrgUnits
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OrgUnit'
+      responses:
+        '200':
+          description: Successfully created organizational unit.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OrgUnit'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /admin/directory/v1/customer/{customerId}/orgunits/{orgUnitPath}:
+    parameters:
+    - $ref: '#/components/parameters/customerId'
+    - $ref: '#/components/parameters/orgUnitPath'
+    get:
+      operationId: getOrgUnit
+      summary: Get an Organizational Unit
+      description: Retrieves an organizational unit.
+      tags:
+      - OrgUnits
+      responses:
+        '200':
+          description: Successful response containing the organizational unit.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OrgUnit'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+    put:
+      operationId: updateOrgUnit
+      summary: Update an Organizational Unit
+      description: Updates an organizational unit. This replaces the entire resource. Use patch for partial updates.
+      tags:
+      - OrgUnits
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OrgUnit'
+      responses:
+        '200':
+          description: Successfully updated organizational unit.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OrgUnit'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+    patch:
+      operationId: patchOrgUnit
+      summary: Patch an Organizational Unit
+      description: Updates an organizational unit using patch semantics. Only the specified fields are updated.
+      tags:
+      - OrgUnits
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OrgUnit'
+      responses:
+        '200':
+          description: Successfully patched organizational unit.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OrgUnit'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+    delete:
+      operationId: deleteOrgUnit
+      summary: Delete an Organizational Unit
+      description: Removes an organizational unit. Only empty organizational units can be deleted. All users and child organizational units must be moved or deleted before the parent can be removed.
+      tags:
+      - OrgUnits
+      responses:
+        '204':
+          description: Successfully deleted organizational unit. No content returned.
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+components:
+  responses:
+    Forbidden:
+      description: The authenticated user does not have permission to perform this operation. Ensure the correct admin scopes are authorized.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    Unauthorized:
+      description: Authentication is required. The request did not include valid credentials.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    BadRequest:
+      description: The request was malformed or contained invalid parameters.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    NotFound:
+      description: The requested resource was not found.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+  schemas:
+    OrgUnit:
+      type: object
+      description: A Google Workspace organizational unit. JSON representation of an org unit resource from the Admin SDK Directory API. The hierarchy is limited to 35 levels of depth.
+      properties:
+        kind:
+          type: string
+          description: The type of the API resource.
+          default: admin#directory#orgUnit
+          readOnly: true
+          example: example_value
+        etag:
+          type: string
+          description: ETag of the resource.
+          readOnly: true
+          example: example_value
+        name:
+          type: string
+          description: The organizational unit path name. For example, an organizational unit with parent path /corp and name sales is derived as /corp/sales.
+          example: Example Title
+        description:
+          type: string
+          description: Description of the organizational unit.
+          example: A sample description.
+        orgUnitPath:
+          type: string
+          description: The full path to the organizational unit. The orgUnitPath is a derived property. When listed, it is derived from parentOrgUnitPath and the organizational unit name.
+          readOnly: true
+          example: example_value
+        orgUnitId:
+          type: string
+          description: The unique ID of the organizational unit.
+          readOnly: true
+          example: '500123'
+        parentOrgUnitPath:
+          type: string
+          description: The organizational unit path of the parent organizational unit. Required unless parentOrgUnitId is set.
+          example: example_value
+        parentOrgUnitId:
+          type: string
+          description: The unique ID of the parent organizational unit. Required unless parentOrgUnitPath is set.
+          example: '500123'
+        blockInheritance:
+          type: boolean
+          description: Deprecated. Setting this field has no effect.
+          deprecated: true
+          example: true
+      required:
+      - name
+    OrgUnits:
+      type: object
+      description: A list of organizational unit resources.
+      properties:
+        kind:
+          type: string
+          description: The type of the API resource.
+          default: admin#directory#orgUnits
+          readOnly: true
+          example: example_value
+        etag:
+          type: string
+          description: ETag of the resource.
+          readOnly: true
+          example: example_value
+        organizationUnits:
+          type: array
+          description: A list of organizational unit objects.
+          items:
+            $ref: '#/components/schemas/OrgUnit'
+          example: []
+    Error:
+      type: object
+      description: An error response from the API.
+      properties:
+        error:
+          type: object
+          properties:
+            code:
+              type: integer
+              description: The HTTP status code.
+            message:
+              type: string
+              description: A human-readable description of the error.
+            errors:
+              type: array
+              description: Detailed error information.
+              items:
+                type: object
+                properties:
+                  domain:
+                    type: string
+                  reason:
+                    type: string
+                  message:
+                    type: string
+          example: example_value
+  parameters:
+    orgUnitPath:
+      name: orgUnitPath
+      in: path
+      required: true
+      description: The full path of the organizational unit (minus the leading /) or its unique ID.
+      schema:
+        type: string
+    customerId:
+      name: customerId
+      in: path
+      required: true
+      description: The unique ID for the customer Google Workspace account. Use the value my_customer to represent the account associated with the authenticated administrator.
+      schema:
+        type: string
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      description: OAuth 2.0 authorization for Google Workspace Admin operations.
+      flows:
+        authorizationCode:
+          authorizationUrl: https://accounts.google.com/o/oauth2/v2/auth
+          tokenUrl: https://oauth2.googleapis.com/token
+          refreshUrl: https://oauth2.googleapis.com/token
+          scopes:
+            https://www.googleapis.com/auth/admin.directory.user: View and manage the provisioning of users on your domain
+            https://www.googleapis.com/auth/admin.directory.user.readonly: View users on your domain
+            https://www.googleapis.com/auth/admin.directory.group: View and manage the provisioning of groups on your domain
+            https://www.googleapis.com/auth/admin.directory.group.readonly: View groups on your domain
+            https://www.googleapis.com/auth/admin.directory.orgunit: View and manage organization units on your domain
+            https://www.googleapis.com/auth/admin.directory.orgunit.readonly: View organization units on your domain
+externalDocs:
+  description: Google Admin SDK Directory API Documentation
+  url: https://developers.google.com/admin-sdk/directory/reference/rest

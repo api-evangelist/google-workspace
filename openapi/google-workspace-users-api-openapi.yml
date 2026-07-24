@@ -1,0 +1,881 @@
+openapi: 3.1.0
+info:
+  title: Google Workspace Admin SDK Directory Groups Users API
+  description: Manage users, groups, and organizational units in a Google Workspace domain. The Admin SDK Directory API lets administrators of enterprise domains view and manage resources such as user accounts, groups, and organizational units within their Google Workspace domain.
+  version: directory_v1
+  contact:
+    name: Google Workspace Developer Support
+    url: https://developers.google.com/admin-sdk/directory
+  license:
+    name: Google APIs Terms of Service
+    url: https://developers.google.com/terms
+  x-logo:
+    url: https://www.gstatic.com/images/branding/product/2x/admin_2020q4_48dp.png
+servers:
+- url: https://admin.googleapis.com
+  description: Google Admin SDK production endpoint
+security:
+- oauth2: []
+tags:
+- name: Users
+  description: Manage user accounts in a Google Workspace domain
+  externalDocs:
+    url: https://developers.google.com/admin-sdk/directory/reference/rest/v1/users
+paths:
+  /admin/directory/v1/users:
+    get:
+      operationId: listUsers
+      summary: List Users
+      description: Retrieves a paginated list of either deleted users or all users in a domain. Requires authorization with the admin.directory.user.readonly or admin.directory.user scope.
+      tags:
+      - Users
+      parameters:
+      - $ref: '#/components/parameters/domain'
+      - $ref: '#/components/parameters/customer'
+      - name: maxResults
+        in: query
+        description: Maximum number of results to return (1-500). Default is 100.
+        schema:
+          type: integer
+          minimum: 1
+          maximum: 500
+          default: 100
+      - name: pageToken
+        in: query
+        description: Token to specify the next page in the list.
+        schema:
+          type: string
+      - name: orderBy
+        in: query
+        description: Property to use for sorting results.
+        schema:
+          type: string
+          enum:
+          - email
+          - familyName
+          - givenName
+      - name: sortOrder
+        in: query
+        description: Whether to return results in ascending or descending order.
+        schema:
+          type: string
+          enum:
+          - ASCENDING
+          - DESCENDING
+      - name: query
+        in: query
+        description: Query string for searching user fields. For more information on constructing user queries, see the Search for Users documentation.
+        schema:
+          type: string
+      - name: showDeleted
+        in: query
+        description: If set to true, retrieves the list of deleted users.
+        schema:
+          type: string
+      - name: projection
+        in: query
+        description: What subset of fields to fetch for this user.
+        schema:
+          type: string
+          enum:
+          - basic
+          - custom
+          - full
+      - name: viewType
+        in: query
+        description: Whether to fetch the administrator-only or domain-wide public view of the user. Default is admin_view.
+        schema:
+          type: string
+          enum:
+          - admin_view
+          - domain_public
+      - name: customFieldMask
+        in: query
+        description: A comma-separated list of schema names. All fields from these schemas are fetched. Must be set when projection=custom.
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response containing a list of users.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Users'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+    post:
+      operationId: insertUser
+      summary: Create a User
+      description: Creates a user account. The new user account is created in the customer account specified in the request body.
+      tags:
+      - Users
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User'
+      responses:
+        '200':
+          description: Successfully created user.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '409':
+          description: User already exists.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /admin/directory/v1/users/{userKey}:
+    parameters:
+    - $ref: '#/components/parameters/userKey'
+    get:
+      operationId: getUser
+      summary: Get a User
+      description: Retrieves a user account by user key (primary email address, alias email address, or unique user ID).
+      tags:
+      - Users
+      parameters:
+      - name: projection
+        in: query
+        description: What subset of fields to fetch for this user.
+        schema:
+          type: string
+          enum:
+          - basic
+          - custom
+          - full
+      - name: viewType
+        in: query
+        description: Whether to fetch the administrator-only or domain-wide public view of the user.
+        schema:
+          type: string
+          enum:
+          - admin_view
+          - domain_public
+      - name: customFieldMask
+        in: query
+        description: A comma-separated list of schema names. All fields from these schemas are fetched. Must be set when projection=custom.
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response containing the user.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+    put:
+      operationId: updateUser
+      summary: Update a User
+      description: Updates a user account. This replaces the entire user resource. Use patch for partial updates.
+      tags:
+      - Users
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User'
+      responses:
+        '200':
+          description: Successfully updated user.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+    patch:
+      operationId: patchUser
+      summary: Patch a User
+      description: Updates a user account using patch semantics. Only the fields specified in the request body are updated.
+      tags:
+      - Users
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User'
+      responses:
+        '200':
+          description: Successfully patched user.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+    delete:
+      operationId: deleteUser
+      summary: Delete a User
+      description: Deletes a user account. Deleted users are recoverable for a period of 20 days using the undelete method.
+      tags:
+      - Users
+      responses:
+        '204':
+          description: Successfully deleted user. No content returned.
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /admin/directory/v1/users/{userKey}/makeAdmin:
+    post:
+      operationId: makeUserAdmin
+      summary: Make a User a Super Administrator
+      description: Makes a user a super administrator. This can only be done by another super administrator.
+      tags:
+      - Users
+      parameters:
+      - $ref: '#/components/parameters/userKey'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                status:
+                  type: boolean
+                  description: Indicates the administrator status of the user. True grants super administrator privileges.
+      responses:
+        '204':
+          description: Successfully updated admin status.
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /admin/directory/v1/users/{userKey}/undelete:
+    post:
+      operationId: undeleteUser
+      summary: Undelete a User
+      description: Restores a recently deleted user account. Users are recoverable for a period of 20 days after deletion.
+      tags:
+      - Users
+      parameters:
+      - $ref: '#/components/parameters/userKey'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                orgUnitPath:
+                  type: string
+                  description: The full path of the parent organization unit to place the undeleted user into.
+      responses:
+        '204':
+          description: Successfully undeleted user.
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /admin/directory/v1/users/{userKey}/signOut:
+    post:
+      operationId: signOutUser
+      summary: Sign Out a User
+      description: Signs a user out of all web and device sessions and resets their sign-in cookies.
+      tags:
+      - Users
+      parameters:
+      - $ref: '#/components/parameters/userKey'
+      responses:
+        '204':
+          description: Successfully signed out user.
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+components:
+  responses:
+    Forbidden:
+      description: The authenticated user does not have permission to perform this operation. Ensure the correct admin scopes are authorized.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    Unauthorized:
+      description: Authentication is required. The request did not include valid credentials.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    BadRequest:
+      description: The request was malformed or contained invalid parameters.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    NotFound:
+      description: The requested resource was not found.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+  schemas:
+    UserName:
+      type: object
+      description: A user name object containing given, family, and full name.
+      properties:
+        givenName:
+          type: string
+          description: The user first name. Required when creating a user account.
+          maxLength: 60
+          example: example_value
+        familyName:
+          type: string
+          description: The user last name. Required when creating a user account.
+          maxLength: 60
+          example: example_value
+        fullName:
+          type: string
+          description: The user full name formed by concatenating first and last name values.
+          readOnly: true
+          example: example_value
+        displayName:
+          type: string
+          description: The user display name.
+          example: example_value
+      required:
+      - givenName
+      - familyName
+    Users:
+      type: object
+      description: A paginated list of user resources.
+      properties:
+        kind:
+          type: string
+          description: The type of the API resource.
+          default: admin#directory#users
+          readOnly: true
+          example: example_value
+        etag:
+          type: string
+          description: ETag of the resource.
+          readOnly: true
+          example: example_value
+        users:
+          type: array
+          description: A list of user objects.
+          items:
+            $ref: '#/components/schemas/User'
+          example: []
+        nextPageToken:
+          type: string
+          description: Token for retrieving the next page of results.
+          example: example_value
+        trigger_event:
+          type: string
+          description: Event that triggered this response (for push notifications).
+          readOnly: true
+          example: example_value
+    User:
+      type: object
+      description: A Google Workspace user account. JSON representation of a user resource from the Admin SDK Directory API.
+      properties:
+        kind:
+          type: string
+          description: The type of the API resource.
+          default: admin#directory#user
+          readOnly: true
+          example: example_value
+        id:
+          type: string
+          description: The unique ID for the user.
+          readOnly: true
+          example: abc123
+        etag:
+          type: string
+          description: ETag of the resource.
+          readOnly: true
+          example: example_value
+        primaryEmail:
+          type: string
+          format: email
+          description: The user primary email address. This property is required in a request to create a user account. The primaryEmail must be unique and cannot be an alias of another user.
+          example: user@example.com
+        name:
+          $ref: '#/components/schemas/UserName'
+        isAdmin:
+          type: boolean
+          description: Indicates a user with super administrator privileges. The isAdmin property can only be edited using the makeAdmin method; it is not directly editable in the user resource.
+          readOnly: true
+          example: true
+        isDelegatedAdmin:
+          type: boolean
+          description: Indicates if the user is a delegated administrator.
+          readOnly: true
+          example: true
+        lastLoginTime:
+          type: string
+          format: date-time
+          description: The last time the user logged into the user account. The value is in ISO 8601 date and time format.
+          readOnly: true
+          example: '2026-01-15T10:30:00Z'
+        creationTime:
+          type: string
+          format: date-time
+          description: The time the user account was created. The value is in ISO 8601 date and time format.
+          readOnly: true
+          example: '2026-01-15T10:30:00Z'
+        deletionTime:
+          type: string
+          format: date-time
+          description: The time the user account was deleted (for deleted users).
+          readOnly: true
+          example: '2026-01-15T10:30:00Z'
+        agreedToTerms:
+          type: boolean
+          description: Indicates whether the user has completed an initial login and accepted the Terms of Service.
+          readOnly: true
+          example: true
+        password:
+          type: string
+          description: Stores the password for the user account. The password value is never returned in the API response body. Required when creating a user account. Must be 8-100 ASCII characters.
+          writeOnly: true
+          example: example_value
+        hashFunction:
+          type: string
+          description: Stores the hash format of the password property. Use MD5, SHA-1, or crypt for supported hash formats.
+          enum:
+          - MD5
+          - SHA-1
+          - crypt
+          example: MD5
+        suspended:
+          type: boolean
+          description: Indicates if the user is suspended. A suspended user cannot sign in.
+          example: true
+        suspensionReason:
+          type: string
+          description: The reason a user account is suspended. Only returned when the suspended property is true.
+          readOnly: true
+          example: example_value
+        changePasswordAtNextLogin:
+          type: boolean
+          description: Indicates if the user is forced to change their password at next login.
+          example: true
+        ipWhitelisted:
+          type: boolean
+          description: If true, the user IP address is subject to a deprecated IP address allowlist configuration.
+          example: true
+        customerId:
+          type: string
+          description: The customer ID to retrieve all account users. You can use the alias my_customer to represent the account customerId.
+          readOnly: true
+          example: '500123'
+        orgUnitPath:
+          type: string
+          description: The full path of the parent organization associated with the user. If the parent organization is the top-level, it is represented as a forward slash (/).
+          example: example_value
+        isMailboxSetup:
+          type: boolean
+          description: Indicates if the user Gmail mailbox has been created.
+          readOnly: true
+          example: true
+        includeInGlobalAddressList:
+          type: boolean
+          description: Indicates if the user profile is visible in the Google Workspace global address list.
+          example: true
+        thumbnailPhotoUrl:
+          type: string
+          format: uri
+          description: Photo URL of the user. The URL might be temporary or private. Read-only.
+          readOnly: true
+          example: https://www.example.com
+        thumbnailPhotoEtag:
+          type: string
+          description: ETag of the user photo.
+          readOnly: true
+          example: example_value
+        archived:
+          type: boolean
+          description: Indicates if the user is archived.
+          example: true
+        recoveryEmail:
+          type: string
+          format: email
+          description: Recovery email of the user.
+          example: user@example.com
+        recoveryPhone:
+          type: string
+          description: Recovery phone of the user in E.164 format.
+          example: example_value
+        isEnrolledIn2Sv:
+          type: boolean
+          description: Is enrolled in 2-step verification. Read-only.
+          readOnly: true
+          example: true
+        isEnforcedIn2Sv:
+          type: boolean
+          description: Is 2-step verification enforced. Read-only.
+          readOnly: true
+          example: true
+        emails:
+          type: array
+          description: A list of the user email addresses. The maximum allowed data size is 10KB.
+          items:
+            type: object
+            properties:
+              address:
+                type: string
+                format: email
+              type:
+                type: string
+              customType:
+                type: string
+              primary:
+                type: boolean
+          example: user@example.com
+        phones:
+          type: array
+          description: A list of the user phone numbers.
+          items:
+            type: object
+            properties:
+              value:
+                type: string
+              type:
+                type: string
+              customType:
+                type: string
+              primary:
+                type: boolean
+          example: []
+        addresses:
+          type: array
+          description: A list of the user addresses.
+          items:
+            type: object
+            properties:
+              type:
+                type: string
+              customType:
+                type: string
+              streetAddress:
+                type: string
+              locality:
+                type: string
+              region:
+                type: string
+              postalCode:
+                type: string
+              country:
+                type: string
+              countryCode:
+                type: string
+              formatted:
+                type: string
+              poBox:
+                type: string
+              extendedAddress:
+                type: string
+              primary:
+                type: boolean
+              sourceIsStructured:
+                type: boolean
+          example: []
+        organizations:
+          type: array
+          description: A list of organizations the user belongs to.
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+              title:
+                type: string
+              department:
+                type: string
+              description:
+                type: string
+              costCenter:
+                type: string
+              location:
+                type: string
+              domain:
+                type: string
+              symbol:
+                type: string
+              type:
+                type: string
+              customType:
+                type: string
+              primary:
+                type: boolean
+              fullTimeEquivalent:
+                type: integer
+          example: []
+        relations:
+          type: array
+          description: A list of the user relationships to other users.
+          items:
+            type: object
+            properties:
+              value:
+                type: string
+              type:
+                type: string
+              customType:
+                type: string
+          example: []
+        externalIds:
+          type: array
+          description: A list of external IDs for the user.
+          items:
+            type: object
+            properties:
+              value:
+                type: string
+              type:
+                type: string
+              customType:
+                type: string
+          example: []
+        websites:
+          type: array
+          description: A list of the user websites.
+          items:
+            type: object
+            properties:
+              value:
+                type: string
+                format: uri
+              type:
+                type: string
+              customType:
+                type: string
+              primary:
+                type: boolean
+          example: []
+        ims:
+          type: array
+          description: The user Instant Messenger (IM) accounts.
+          items:
+            type: object
+            properties:
+              im:
+                type: string
+              type:
+                type: string
+              customType:
+                type: string
+              protocol:
+                type: string
+              customProtocol:
+                type: string
+              primary:
+                type: boolean
+          example: []
+        languages:
+          type: array
+          description: The user languages.
+          items:
+            type: object
+            properties:
+              languageCode:
+                type: string
+              customLanguage:
+                type: string
+              preference:
+                type: string
+          example: []
+        gender:
+          type: object
+          description: The user gender.
+          properties:
+            type:
+              type: string
+            customGender:
+              type: string
+            addressMeAs:
+              type: string
+          example: example_value
+        keywords:
+          type: array
+          description: The user keywords.
+          items:
+            type: object
+            properties:
+              value:
+                type: string
+              type:
+                type: string
+              customType:
+                type: string
+          example: []
+        locations:
+          type: array
+          description: The user locations.
+          items:
+            type: object
+            properties:
+              area:
+                type: string
+              buildingId:
+                type: string
+              customType:
+                type: string
+              deskCode:
+                type: string
+              floorName:
+                type: string
+              floorSection:
+                type: string
+              type:
+                type: string
+          example: []
+        notes:
+          type: object
+          description: Notes for the user.
+          properties:
+            value:
+              type: string
+            contentType:
+              type: string
+              enum:
+              - text_plain
+              - text_html
+          example: example_value
+        customSchemas:
+          type: object
+          description: Custom fields of the user. Keys are schema names and values are objects with field name/value pairs.
+          additionalProperties:
+            type: object
+            additionalProperties: true
+          example: example_value
+      required:
+      - primaryEmail
+      - name
+    Error:
+      type: object
+      description: An error response from the API.
+      properties:
+        error:
+          type: object
+          properties:
+            code:
+              type: integer
+              description: The HTTP status code.
+            message:
+              type: string
+              description: A human-readable description of the error.
+            errors:
+              type: array
+              description: Detailed error information.
+              items:
+                type: object
+                properties:
+                  domain:
+                    type: string
+                  reason:
+                    type: string
+                  message:
+                    type: string
+          example: example_value
+  parameters:
+    domain:
+      name: domain
+      in: query
+      description: The domain name. Use this field to get groups from only one domain. To return all domains for a customer account, use the customer query parameter instead.
+      schema:
+        type: string
+    userKey:
+      name: userKey
+      in: path
+      required: true
+      description: Identifies the user in the API request. The value can be the user primary email address, alias email address, or unique user ID.
+      schema:
+        type: string
+    customer:
+      name: customer
+      in: query
+      description: The unique ID for the customer Google Workspace account. In a multi-domain account, use this to list all groups for a customer. You can also use the my_customer alias.
+      schema:
+        type: string
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      description: OAuth 2.0 authorization for Google Workspace Admin operations.
+      flows:
+        authorizationCode:
+          authorizationUrl: https://accounts.google.com/o/oauth2/v2/auth
+          tokenUrl: https://oauth2.googleapis.com/token
+          refreshUrl: https://oauth2.googleapis.com/token
+          scopes:
+            https://www.googleapis.com/auth/admin.directory.user: View and manage the provisioning of users on your domain
+            https://www.googleapis.com/auth/admin.directory.user.readonly: View users on your domain
+            https://www.googleapis.com/auth/admin.directory.group: View and manage the provisioning of groups on your domain
+            https://www.googleapis.com/auth/admin.directory.group.readonly: View groups on your domain
+            https://www.googleapis.com/auth/admin.directory.orgunit: View and manage organization units on your domain
+            https://www.googleapis.com/auth/admin.directory.orgunit.readonly: View organization units on your domain
+externalDocs:
+  description: Google Admin SDK Directory API Documentation
+  url: https://developers.google.com/admin-sdk/directory/reference/rest

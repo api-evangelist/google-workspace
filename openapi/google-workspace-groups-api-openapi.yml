@@ -1,0 +1,404 @@
+openapi: 3.1.0
+info:
+  title: Google Workspace Admin SDK Directory Groups API
+  description: Manage users, groups, and organizational units in a Google Workspace domain. The Admin SDK Directory API lets administrators of enterprise domains view and manage resources such as user accounts, groups, and organizational units within their Google Workspace domain.
+  version: directory_v1
+  contact:
+    name: Google Workspace Developer Support
+    url: https://developers.google.com/admin-sdk/directory
+  license:
+    name: Google APIs Terms of Service
+    url: https://developers.google.com/terms
+  x-logo:
+    url: https://www.gstatic.com/images/branding/product/2x/admin_2020q4_48dp.png
+servers:
+- url: https://admin.googleapis.com
+  description: Google Admin SDK production endpoint
+security:
+- oauth2: []
+tags:
+- name: Groups
+  description: Manage groups in a Google Workspace domain
+  externalDocs:
+    url: https://developers.google.com/admin-sdk/directory/reference/rest/v1/groups
+paths:
+  /admin/directory/v1/groups:
+    get:
+      operationId: listGroups
+      summary: List Groups
+      description: Retrieves all groups of a domain or all groups a user is a member of. Requires authorization with the admin.directory.group.readonly or admin.directory.group scope.
+      tags:
+      - Groups
+      parameters:
+      - $ref: '#/components/parameters/domain'
+      - $ref: '#/components/parameters/customer'
+      - name: maxResults
+        in: query
+        description: Maximum number of results to return (1-200). Default is 200.
+        schema:
+          type: integer
+          minimum: 1
+          maximum: 200
+          default: 200
+      - name: pageToken
+        in: query
+        description: Token to specify the next page in the list.
+        schema:
+          type: string
+      - name: orderBy
+        in: query
+        description: Column to use for sorting results.
+        schema:
+          type: string
+          enum:
+          - email
+      - name: sortOrder
+        in: query
+        description: Whether to return results in ascending or descending order.
+        schema:
+          type: string
+          enum:
+          - ASCENDING
+          - DESCENDING
+      - name: userKey
+        in: query
+        description: Email or immutable ID of the user to list groups for. If specified, returns only those groups the user is a member of.
+        schema:
+          type: string
+      - name: query
+        in: query
+        description: Query string for searching group fields. See the Searching for Groups documentation for supported fields.
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response containing a list of groups.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Groups'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+    post:
+      operationId: insertGroup
+      summary: Create a Group
+      description: Creates a group in the specified domain.
+      tags:
+      - Groups
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Group'
+      responses:
+        '200':
+          description: Successfully created group.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Group'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '409':
+          description: Group already exists.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /admin/directory/v1/groups/{groupKey}:
+    parameters:
+    - $ref: '#/components/parameters/groupKey'
+    get:
+      operationId: getGroup
+      summary: Get a Group
+      description: Retrieves a group's properties by group key (group email address, group alias, or the unique group ID).
+      tags:
+      - Groups
+      responses:
+        '200':
+          description: Successful response containing the group.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Group'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+    put:
+      operationId: updateGroup
+      summary: Update a Group
+      description: Updates a group's properties. This replaces the entire group resource.
+      tags:
+      - Groups
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Group'
+      responses:
+        '200':
+          description: Successfully updated group.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Group'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+    patch:
+      operationId: patchGroup
+      summary: Patch a Group
+      description: Updates a group's properties using patch semantics. Only the specified fields are updated.
+      tags:
+      - Groups
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Group'
+      responses:
+        '200':
+          description: Successfully patched group.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Group'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+    delete:
+      operationId: deleteGroup
+      summary: Delete a Group
+      description: Deletes a group.
+      tags:
+      - Groups
+      responses:
+        '204':
+          description: Successfully deleted group. No content returned.
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+components:
+  responses:
+    Forbidden:
+      description: The authenticated user does not have permission to perform this operation. Ensure the correct admin scopes are authorized.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    Unauthorized:
+      description: Authentication is required. The request did not include valid credentials.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    BadRequest:
+      description: The request was malformed or contained invalid parameters.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    NotFound:
+      description: The requested resource was not found.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+  schemas:
+    Group:
+      type: object
+      description: A Google Workspace group. JSON representation of a group resource from the Admin SDK Directory API.
+      properties:
+        kind:
+          type: string
+          description: The type of the API resource.
+          default: admin#directory#group
+          readOnly: true
+          example: example_value
+        id:
+          type: string
+          description: The unique ID of a group.
+          readOnly: true
+          example: abc123
+        etag:
+          type: string
+          description: ETag of the resource.
+          readOnly: true
+          example: example_value
+        email:
+          type: string
+          format: email
+          description: The group email address. This property is required when creating a group. Group email addresses must be unique.
+          example: user@example.com
+        name:
+          type: string
+          description: The group display name.
+          example: Example Title
+        description:
+          type: string
+          description: An extended description to help users determine the purpose of a group. Maximum 4,096 characters.
+          maxLength: 4096
+          example: A sample description.
+        adminCreated:
+          type: boolean
+          description: Value is true if this group was created by an administrator rather than a user.
+          readOnly: true
+          example: true
+        directMembersCount:
+          type: string
+          description: The number of users that are direct members of the group. Members of child groups are not counted.
+          readOnly: true
+          example: example_value
+        aliases:
+          type: array
+          description: A list of a group alias email addresses.
+          readOnly: true
+          items:
+            type: string
+            format: email
+          example: []
+        nonEditableAliases:
+          type: array
+          description: A list of the group non-editable alias email addresses that are outside of the account primary domain or subdomains.
+          readOnly: true
+          items:
+            type: string
+            format: email
+          example: []
+      required:
+      - email
+    Groups:
+      type: object
+      description: A paginated list of group resources.
+      properties:
+        kind:
+          type: string
+          description: The type of the API resource.
+          default: admin#directory#groups
+          readOnly: true
+          example: example_value
+        etag:
+          type: string
+          description: ETag of the resource.
+          readOnly: true
+          example: example_value
+        groups:
+          type: array
+          description: A list of group objects.
+          items:
+            $ref: '#/components/schemas/Group'
+          example: []
+        nextPageToken:
+          type: string
+          description: Token for retrieving the next page of results.
+          example: example_value
+    Error:
+      type: object
+      description: An error response from the API.
+      properties:
+        error:
+          type: object
+          properties:
+            code:
+              type: integer
+              description: The HTTP status code.
+            message:
+              type: string
+              description: A human-readable description of the error.
+            errors:
+              type: array
+              description: Detailed error information.
+              items:
+                type: object
+                properties:
+                  domain:
+                    type: string
+                  reason:
+                    type: string
+                  message:
+                    type: string
+          example: example_value
+  parameters:
+    groupKey:
+      name: groupKey
+      in: path
+      required: true
+      description: Identifies the group in the API request. The value can be the group email address, group alias, or the unique group ID.
+      schema:
+        type: string
+    domain:
+      name: domain
+      in: query
+      description: The domain name. Use this field to get groups from only one domain. To return all domains for a customer account, use the customer query parameter instead.
+      schema:
+        type: string
+    customer:
+      name: customer
+      in: query
+      description: The unique ID for the customer Google Workspace account. In a multi-domain account, use this to list all groups for a customer. You can also use the my_customer alias.
+      schema:
+        type: string
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      description: OAuth 2.0 authorization for Google Workspace Admin operations.
+      flows:
+        authorizationCode:
+          authorizationUrl: https://accounts.google.com/o/oauth2/v2/auth
+          tokenUrl: https://oauth2.googleapis.com/token
+          refreshUrl: https://oauth2.googleapis.com/token
+          scopes:
+            https://www.googleapis.com/auth/admin.directory.user: View and manage the provisioning of users on your domain
+            https://www.googleapis.com/auth/admin.directory.user.readonly: View users on your domain
+            https://www.googleapis.com/auth/admin.directory.group: View and manage the provisioning of groups on your domain
+            https://www.googleapis.com/auth/admin.directory.group.readonly: View groups on your domain
+            https://www.googleapis.com/auth/admin.directory.orgunit: View and manage organization units on your domain
+            https://www.googleapis.com/auth/admin.directory.orgunit.readonly: View organization units on your domain
+externalDocs:
+  description: Google Admin SDK Directory API Documentation
+  url: https://developers.google.com/admin-sdk/directory/reference/rest
