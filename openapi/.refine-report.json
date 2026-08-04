@@ -1,0 +1,18 @@
+{
+  "provider": "google-workspace",
+  "sources": [
+    "google-workspace-groups-api-openapi.yml",
+    "google-workspace-orgunits-api-openapi.yml",
+    "google-workspace-users-api-openapi.yml"
+  ],
+  "outputs": [
+    "google-workspace-groups-api-openapi.yml",
+    "google-workspace-orgunits-api-openapi.yml",
+    "google-workspace-users-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
