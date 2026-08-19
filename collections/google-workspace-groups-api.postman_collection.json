@@ -1,0 +1,2061 @@
+{
+  "item": [
+    {
+      "id": "471f42e5-c96b-4858-bed8-a49a95e5176c",
+      "name": "Groups",
+      "description": {
+        "content": "Manage groups in a Google Workspace domain",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "259d32b8-8f36-4343-b8b2-a0613de8b64e",
+          "name": "List Groups",
+          "request": {
+            "name": "List Groups",
+            "description": {
+              "content": "Retrieves all groups of a domain or all groups a user is a member of. Requires authorization with the admin.directory.group.readonly or admin.directory.group scope.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "admin",
+                "directory",
+                "v1",
+                "groups"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "domain",
+                  "value": "<string>",
+                  "description": "The domain name. Use this field to get groups from only one domain. To return all domains for a customer account, use the customer query parameter instead."
+                },
+                {
+                  "disabled": false,
+                  "key": "customer",
+                  "value": "<string>",
+                  "description": "The unique ID for the customer Google Workspace account. In a multi-domain account, use this to list all groups for a customer. You can also use the my_customer alias."
+                },
+                {
+                  "disabled": false,
+                  "key": "maxResults",
+                  "value": "200",
+                  "description": "Maximum number of results to return (1-200). Default is 200."
+                },
+                {
+                  "disabled": false,
+                  "key": "pageToken",
+                  "value": "<string>",
+                  "description": "Token to specify the next page in the list."
+                },
+                {
+                  "disabled": false,
+                  "key": "orderBy",
+                  "value": "<string>",
+                  "description": "Column to use for sorting results."
+                },
+                {
+                  "disabled": false,
+                  "key": "sortOrder",
+                  "value": "<string>",
+                  "description": "Whether to return results in ascending or descending order."
+                },
+                {
+                  "disabled": false,
+                  "key": "userKey",
+                  "value": "<string>",
+                  "description": "Email or immutable ID of the user to list groups for. If specified, returns only those groups the user is a member of."
+                },
+                {
+                  "disabled": false,
+                  "key": "query",
+                  "value": "<string>",
+                  "description": "Query string for searching group fields. See the Searching for Groups documentation for supported fields."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "95ef2628-1022-4f2b-8e21-4382d954ec43",
+              "name": "Successful response containing a list of groups.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "directory",
+                    "v1",
+                    "groups"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "domain",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "customer",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "maxResults",
+                      "value": "200"
+                    },
+                    {
+                      "key": "pageToken",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "orderBy",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sortOrder",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "userKey",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "query",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"kind\": \"example_value\",\n  \"etag\": \"example_value\",\n  \"nextPageToken\": \"example_value\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f8be625d-280e-423b-a779-242595055ae5",
+              "name": "The request was malformed or contained invalid parameters.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "directory",
+                    "v1",
+                    "groups"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "domain",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "customer",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "maxResults",
+                      "value": "200"
+                    },
+                    {
+                      "key": "pageToken",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "orderBy",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sortOrder",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "userKey",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "query",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": 3809,\n    \"message\": \"string\",\n    \"errors\": [\n      {\n        \"domain\": \"string\",\n        \"reason\": \"string\",\n        \"message\": \"string\"\n      },\n      {\n        \"domain\": \"string\",\n        \"reason\": \"string\",\n        \"message\": \"string\"\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f2b5f70f-ddea-434b-9534-86c17693c632",
+              "name": "Authentication is required. The request did not include valid credentials.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "directory",
+                    "v1",
+                    "groups"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "domain",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "customer",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "maxResults",
+                      "value": "200"
+                    },
+                    {
+                      "key": "pageToken",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "orderBy",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sortOrder",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "userKey",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "query",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": 3809,\n    \"message\": \"string\",\n    \"errors\": [\n      {\n        \"domain\": \"string\",\n        \"reason\": \"string\",\n        \"message\": \"string\"\n      },\n      {\n        \"domain\": \"string\",\n        \"reason\": \"string\",\n        \"message\": \"string\"\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b6c53093-0ccb-4860-a941-b2cb3fe5825c",
+              "name": "The authenticated user does not have permission to perform this operation. Ensure the correct admin scopes are authorized.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "directory",
+                    "v1",
+                    "groups"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "domain",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "customer",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "maxResults",
+                      "value": "200"
+                    },
+                    {
+                      "key": "pageToken",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "orderBy",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sortOrder",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "userKey",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "query",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": 3809,\n    \"message\": \"string\",\n    \"errors\": [\n      {\n        \"domain\": \"string\",\n        \"reason\": \"string\",\n        \"message\": \"string\"\n      },\n      {\n        \"domain\": \"string\",\n        \"reason\": \"string\",\n        \"message\": \"string\"\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5aa5f452-e603-4c38-819c-9026a2b52758",
+          "name": "Create a Group",
+          "request": {
+            "name": "Create a Group",
+            "description": {
+              "content": "Creates a group in the specified domain.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "admin",
+                "directory",
+                "v1",
+                "groups"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"<email>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "2b8e20e8-7297-43ab-925a-c7befdbad050",
+              "name": "Successfully created group.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "directory",
+                    "v1",
+                    "groups"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"email\": \"user@example.com\",\n  \"name\": \"Example Title\",\n  \"description\": \"A sample description.\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"email\": \"user@example.com\",\n  \"kind\": \"example_value\",\n  \"id\": \"abc123\",\n  \"etag\": \"example_value\",\n  \"name\": \"Example Title\",\n  \"description\": \"A sample description.\",\n  \"adminCreated\": true,\n  \"directMembersCount\": \"example_value\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "cc322e07-94c3-436f-a452-8b5f7330115d",
+              "name": "The request was malformed or contained invalid parameters.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "directory",
+                    "v1",
+                    "groups"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"email\": \"user@example.com\",\n  \"name\": \"Example Title\",\n  \"description\": \"A sample description.\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": 3402,\n    \"message\": \"string\",\n    \"errors\": [\n      {\n        \"domain\": \"string\",\n        \"reason\": \"string\",\n        \"message\": \"string\"\n      },\n      {\n        \"domain\": \"string\",\n        \"reason\": \"string\",\n        \"message\": \"string\"\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "aca417e5-c082-4dc2-9db4-b9afcb7da6ae",
+              "name": "Authentication is required. The request did not include valid credentials.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "directory",
+                    "v1",
+                    "groups"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"email\": \"user@example.com\",\n  \"name\": \"Example Title\",\n  \"description\": \"A sample description.\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": 3402,\n    \"message\": \"string\",\n    \"errors\": [\n      {\n        \"domain\": \"string\",\n        \"reason\": \"string\",\n        \"message\": \"string\"\n      },\n      {\n        \"domain\": \"string\",\n        \"reason\": \"string\",\n        \"message\": \"string\"\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e67e7b52-b5ec-4620-9825-4f2110fca5ad",
+              "name": "The authenticated user does not have permission to perform this operation. Ensure the correct admin scopes are authorized.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "directory",
+                    "v1",
+                    "groups"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"email\": \"user@example.com\",\n  \"name\": \"Example Title\",\n  \"description\": \"A sample description.\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": 3402,\n    \"message\": \"string\",\n    \"errors\": [\n      {\n        \"domain\": \"string\",\n        \"reason\": \"string\",\n        \"message\": \"string\"\n      },\n      {\n        \"domain\": \"string\",\n        \"reason\": \"string\",\n        \"message\": \"string\"\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ff49e1aa-3cad-47a3-b32b-da2b69e0b0e8",
+              "name": "Group already exists.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "directory",
+                    "v1",
+                    "groups"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"email\": \"user@example.com\",\n  \"name\": \"Example Title\",\n  \"description\": \"A sample description.\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Conflict",
+              "code": 409,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": 3809,\n    \"message\": \"string\",\n    \"errors\": [\n      {\n        \"domain\": \"string\",\n        \"reason\": \"string\",\n        \"message\": \"string\"\n      },\n      {\n        \"domain\": \"string\",\n        \"reason\": \"string\",\n        \"message\": \"string\"\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b27b16b5-ea8e-4633-9389-da5e13e6338e",
+          "name": "Get a Group",
+          "request": {
+            "name": "Get a Group",
+            "description": {
+              "content": "Retrieves a group's properties by group key (group email address, group alias, or the unique group ID).",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "admin",
+                "directory",
+                "v1",
+                "groups",
+                ":groupKey"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "groupKey",
+                  "description": "(Required) Identifies the group in the API request. The value can be the group email address, group alias, or the unique group ID."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0604ac5b-d1a6-417a-a53f-211bed54fc8b",
+              "name": "Successful response containing the group.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "directory",
+                    "v1",
+                    "groups",
+                    ":groupKey"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "groupKey",
+                      "description": "(Required) Identifies the group in the API request. The value can be the group email address, group alias, or the unique group ID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"email\": \"user@example.com\",\n  \"kind\": \"example_value\",\n  \"id\": \"abc123\",\n  \"etag\": \"example_value\",\n  \"name\": \"Example Title\",\n  \"description\": \"A sample description.\",\n  \"adminCreated\": true,\n  \"directMembersCount\": \"example_value\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f5a7e8ff-86b8-402b-8b15-2fafbf880bbd",
+              "name": "Authentication is required. The request did not include valid credentials.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "directory",
+                    "v1",
+                    "groups",
+                    ":groupKey"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "groupKey",
+                      "description": "(Required) Identifies the group in the API request. The value can be the group email address, group alias, or the unique group ID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": 3402,\n    \"message\": \"string\",\n    \"errors\": [\n      {\n        \"domain\": \"string\",\n        \"reason\": \"string\",\n        \"message\": \"string\"\n      },\n      {\n        \"domain\": \"string\",\n        \"reason\": \"string\",\n        \"message\": \"string\"\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f2999a21-799b-4c1d-8940-f2f8a45107c6",
+              "name": "The authenticated user does not have permission to perform this operation. Ensure the correct admin scopes are authorized.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "directory",
+                    "v1",
+                    "groups",
+                    ":groupKey"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "groupKey",
+                      "description": "(Required) Identifies the group in the API request. The value can be the group email address, group alias, or the unique group ID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": 3402,\n    \"message\": \"string\",\n    \"errors\": [\n      {\n        \"domain\": \"string\",\n        \"reason\": \"string\",\n        \"message\": \"string\"\n      },\n      {\n        \"domain\": \"string\",\n        \"reason\": \"string\",\n        \"message\": \"string\"\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a5dbe427-6cda-4be4-a944-34231b929795",
+              "name": "The requested resource was not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "directory",
+                    "v1",
+                    "groups",
+                    ":groupKey"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "groupKey",
+                      "description": "(Required) Identifies the group in the API request. The value can be the group email address, group alias, or the unique group ID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": 3809,\n    \"message\": \"string\",\n    \"errors\": [\n      {\n        \"domain\": \"string\",\n        \"reason\": \"string\",\n        \"message\": \"string\"\n      },\n      {\n        \"domain\": \"string\",\n        \"reason\": \"string\",\n        \"message\": \"string\"\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "307fe900-f20b-445d-bd16-b4188a20f2d6",
+          "name": "Update a Group",
+          "request": {
+            "name": "Update a Group",
+            "description": {
+              "content": "Updates a group's properties. This replaces the entire group resource.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "admin",
+                "directory",
+                "v1",
+                "groups",
+                ":groupKey"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "groupKey",
+                  "description": "(Required) Identifies the group in the API request. The value can be the group email address, group alias, or the unique group ID."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"<email>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "b32d40f9-b382-4f94-aaf9-f0017ef0251c",
+              "name": "Successfully updated group.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "directory",
+                    "v1",
+                    "groups",
+                    ":groupKey"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "groupKey",
+                      "description": "(Required) Identifies the group in the API request. The value can be the group email address, group alias, or the unique group ID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"email\": \"user@example.com\",\n  \"name\": \"Example Title\",\n  \"description\": \"A sample description.\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"email\": \"user@example.com\",\n  \"kind\": \"example_value\",\n  \"id\": \"abc123\",\n  \"etag\": \"example_value\",\n  \"name\": \"Example Title\",\n  \"description\": \"A sample description.\",\n  \"adminCreated\": true,\n  \"directMembersCount\": \"example_value\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f84086d4-edde-447e-9334-efff49ddd24c",
+              "name": "The request was malformed or contained invalid parameters.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "directory",
+                    "v1",
+                    "groups",
+                    ":groupKey"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "groupKey",
+                      "description": "(Required) Identifies the group in the API request. The value can be the group email address, group alias, or the unique group ID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"email\": \"user@example.com\",\n  \"name\": \"Example Title\",\n  \"description\": \"A sample description.\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": 3402,\n    \"message\": \"string\",\n    \"errors\": [\n      {\n        \"domain\": \"string\",\n        \"reason\": \"string\",\n        \"message\": \"string\"\n      },\n      {\n        \"domain\": \"string\",\n        \"reason\": \"string\",\n        \"message\": \"string\"\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1add99ce-5f25-47c6-83d5-f3f43395e2fb",
+              "name": "Authentication is required. The request did not include valid credentials.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "directory",
+                    "v1",
+                    "groups",
+                    ":groupKey"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "groupKey",
+                      "description": "(Required) Identifies the group in the API request. The value can be the group email address, group alias, or the unique group ID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"email\": \"user@example.com\",\n  \"name\": \"Example Title\",\n  \"description\": \"A sample description.\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": 3402,\n    \"message\": \"string\",\n    \"errors\": [\n      {\n        \"domain\": \"string\",\n        \"reason\": \"string\",\n        \"message\": \"string\"\n      },\n      {\n        \"domain\": \"string\",\n        \"reason\": \"string\",\n        \"message\": \"string\"\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "81281de6-c8e5-44da-90a9-740615c0b12f",
+              "name": "The authenticated user does not have permission to perform this operation. Ensure the correct admin scopes are authorized.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "directory",
+                    "v1",
+                    "groups",
+                    ":groupKey"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "groupKey",
+                      "description": "(Required) Identifies the group in the API request. The value can be the group email address, group alias, or the unique group ID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"email\": \"user@example.com\",\n  \"name\": \"Example Title\",\n  \"description\": \"A sample description.\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": 3402,\n    \"message\": \"string\",\n    \"errors\": [\n      {\n        \"domain\": \"string\",\n        \"reason\": \"string\",\n        \"message\": \"string\"\n      },\n      {\n        \"domain\": \"string\",\n        \"reason\": \"string\",\n        \"message\": \"string\"\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "af469346-ec4b-4c58-8107-663c7e80f6dd",
+              "name": "The requested resource was not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "directory",
+                    "v1",
+                    "groups",
+                    ":groupKey"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "groupKey",
+                      "description": "(Required) Identifies the group in the API request. The value can be the group email address, group alias, or the unique group ID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"email\": \"user@example.com\",\n  \"name\": \"Example Title\",\n  \"description\": \"A sample description.\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": 3402,\n    \"message\": \"string\",\n    \"errors\": [\n      {\n        \"domain\": \"string\",\n        \"reason\": \"string\",\n        \"message\": \"string\"\n      },\n      {\n        \"domain\": \"string\",\n        \"reason\": \"string\",\n        \"message\": \"string\"\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a1b3cb2e-cec5-41a0-97ac-e6dbf1e20ec4",
+          "name": "Patch a Group",
+          "request": {
+            "name": "Patch a Group",
+            "description": {
+              "content": "Updates a group's properties using patch semantics. Only the specified fields are updated.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "admin",
+                "directory",
+                "v1",
+                "groups",
+                ":groupKey"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "groupKey",
+                  "description": "(Required) Identifies the group in the API request. The value can be the group email address, group alias, or the unique group ID."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"<email>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "ecc1b446-cd5c-495c-a7cc-50994abe5ef2",
+              "name": "Successfully patched group.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "directory",
+                    "v1",
+                    "groups",
+                    ":groupKey"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "groupKey",
+                      "description": "(Required) Identifies the group in the API request. The value can be the group email address, group alias, or the unique group ID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"email\": \"user@example.com\",\n  \"name\": \"Example Title\",\n  \"description\": \"A sample description.\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"email\": \"user@example.com\",\n  \"kind\": \"example_value\",\n  \"id\": \"abc123\",\n  \"etag\": \"example_value\",\n  \"name\": \"Example Title\",\n  \"description\": \"A sample description.\",\n  \"adminCreated\": true,\n  \"directMembersCount\": \"example_value\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7293a4ef-5907-47dc-a8a5-83309d2ce887",
+              "name": "The request was malformed or contained invalid parameters.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "directory",
+                    "v1",
+                    "groups",
+                    ":groupKey"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "groupKey",
+                      "description": "(Required) Identifies the group in the API request. The value can be the group email address, group alias, or the unique group ID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"email\": \"user@example.com\",\n  \"name\": \"Example Title\",\n  \"description\": \"A sample description.\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": 3402,\n    \"message\": \"string\",\n    \"errors\": [\n      {\n        \"domain\": \"string\",\n        \"reason\": \"string\",\n        \"message\": \"string\"\n      },\n      {\n        \"domain\": \"string\",\n        \"reason\": \"string\",\n        \"message\": \"string\"\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "734efec8-4c5e-4368-948c-01a5345f5824",
+              "name": "Authentication is required. The request did not include valid credentials.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "directory",
+                    "v1",
+                    "groups",
+                    ":groupKey"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "groupKey",
+                      "description": "(Required) Identifies the group in the API request. The value can be the group email address, group alias, or the unique group ID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"email\": \"user@example.com\",\n  \"name\": \"Example Title\",\n  \"description\": \"A sample description.\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": 3402,\n    \"message\": \"string\",\n    \"errors\": [\n      {\n        \"domain\": \"string\",\n        \"reason\": \"string\",\n        \"message\": \"string\"\n      },\n      {\n        \"domain\": \"string\",\n        \"reason\": \"string\",\n        \"message\": \"string\"\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c2a8d3bf-f2c1-4cca-9a5c-665f3e42c7bb",
+              "name": "The authenticated user does not have permission to perform this operation. Ensure the correct admin scopes are authorized.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "directory",
+                    "v1",
+                    "groups",
+                    ":groupKey"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "groupKey",
+                      "description": "(Required) Identifies the group in the API request. The value can be the group email address, group alias, or the unique group ID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"email\": \"user@example.com\",\n  \"name\": \"Example Title\",\n  \"description\": \"A sample description.\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": 3402,\n    \"message\": \"string\",\n    \"errors\": [\n      {\n        \"domain\": \"string\",\n        \"reason\": \"string\",\n        \"message\": \"string\"\n      },\n      {\n        \"domain\": \"string\",\n        \"reason\": \"string\",\n        \"message\": \"string\"\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6725e6cb-fc65-4d65-b3eb-6b395c0f392a",
+              "name": "The requested resource was not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "directory",
+                    "v1",
+                    "groups",
+                    ":groupKey"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "groupKey",
+                      "description": "(Required) Identifies the group in the API request. The value can be the group email address, group alias, or the unique group ID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"email\": \"user@example.com\",\n  \"name\": \"Example Title\",\n  \"description\": \"A sample description.\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": 3402,\n    \"message\": \"string\",\n    \"errors\": [\n      {\n        \"domain\": \"string\",\n        \"reason\": \"string\",\n        \"message\": \"string\"\n      },\n      {\n        \"domain\": \"string\",\n        \"reason\": \"string\",\n        \"message\": \"string\"\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7f87d425-47e4-4410-adbd-0589998691ab",
+          "name": "Delete a Group",
+          "request": {
+            "name": "Delete a Group",
+            "description": {
+              "content": "Deletes a group.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "admin",
+                "directory",
+                "v1",
+                "groups",
+                ":groupKey"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "groupKey",
+                  "description": "(Required) Identifies the group in the API request. The value can be the group email address, group alias, or the unique group ID."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "72625ca4-5cdc-46a6-ab5d-7b9fafe5d007",
+              "name": "Successfully deleted group. No content returned.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "directory",
+                    "v1",
+                    "groups",
+                    ":groupKey"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "groupKey",
+                      "description": "(Required) Identifies the group in the API request. The value can be the group email address, group alias, or the unique group ID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "ec4bdf50-0b60-410c-b590-bc3c0042e440",
+              "name": "Authentication is required. The request did not include valid credentials.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "directory",
+                    "v1",
+                    "groups",
+                    ":groupKey"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "groupKey",
+                      "description": "(Required) Identifies the group in the API request. The value can be the group email address, group alias, or the unique group ID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": 3402,\n    \"message\": \"string\",\n    \"errors\": [\n      {\n        \"domain\": \"string\",\n        \"reason\": \"string\",\n        \"message\": \"string\"\n      },\n      {\n        \"domain\": \"string\",\n        \"reason\": \"string\",\n        \"message\": \"string\"\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "48a4a088-0e08-4dbe-82d4-472c2e161c6a",
+              "name": "The authenticated user does not have permission to perform this operation. Ensure the correct admin scopes are authorized.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "directory",
+                    "v1",
+                    "groups",
+                    ":groupKey"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "groupKey",
+                      "description": "(Required) Identifies the group in the API request. The value can be the group email address, group alias, or the unique group ID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": 3402,\n    \"message\": \"string\",\n    \"errors\": [\n      {\n        \"domain\": \"string\",\n        \"reason\": \"string\",\n        \"message\": \"string\"\n      },\n      {\n        \"domain\": \"string\",\n        \"reason\": \"string\",\n        \"message\": \"string\"\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "090f5ee4-18bd-4e3f-b898-57dcf0b14e7a",
+              "name": "The requested resource was not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "directory",
+                    "v1",
+                    "groups",
+                    ":groupKey"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "groupKey",
+                      "description": "(Required) Identifies the group in the API request. The value can be the group email address, group alias, or the unique group ID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": 3402,\n    \"message\": \"string\",\n    \"errors\": [\n      {\n        \"domain\": \"string\",\n        \"reason\": \"string\",\n        \"message\": \"string\"\n      },\n      {\n        \"domain\": \"string\",\n        \"reason\": \"string\",\n        \"message\": \"string\"\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://admin.googleapis.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "https://www.googleapis.com/auth/admin.directory.user https://www.googleapis.com/auth/admin.directory.user.readonly https://www.googleapis.com/auth/admin.directory.group https://www.googleapis.com/auth/admin.directory.group.readonly https://www.googleapis.com/auth/admin.directory.orgunit https://www.googleapis.com/auth/admin.directory.orgunit.readonly"
+      },
+      {
+        "key": "redirect_uri",
+        "value": "https://oauth2.googleapis.com/token"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "https://oauth2.googleapis.com/token"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://accounts.google.com/o/oauth2/v2/auth"
+      },
+      {
+        "key": "grant_type",
+        "value": "authorization_code"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "d67a458d-035c-4cfe-9580-17a53ff1dceb",
+    "name": "Google Workspace Admin SDK Directory Groups API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Manage users, groups, and organizational units in a Google Workspace domain. The Admin SDK Directory API lets administrators of enterprise domains view and manage resources such as user accounts, groups, and organizational units within their Google Workspace domain.\n\nContact Support:\n Name: Google Workspace Developer Support",
+      "type": "text/plain"
+    }
+  }
+}

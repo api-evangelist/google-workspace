@@ -1,0 +1,190 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Google Workspace Admin SDK Directory Groups API",
+    "version": "directory_v1"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "authorization_code",
+      "authorizationUrl": "https://accounts.google.com/o/oauth2/v2/auth",
+      "accessTokenUrl": "https://oauth2.googleapis.com/token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Groups",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Groups",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://admin.googleapis.com/admin/directory/v1/groups",
+            "params": [
+              {
+                "name": "domain",
+                "value": "",
+                "type": "query",
+                "description": "The domain name. Use this field to get groups from only one domain. To return all domains for a customer account, use the customer query parameter instead."
+              },
+              {
+                "name": "customer",
+                "value": "",
+                "type": "query",
+                "description": "The unique ID for the customer Google Workspace account. In a multi-domain account, use this to list all groups for a customer. You can also use the my_customer alias."
+              },
+              {
+                "name": "maxResults",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of results to return (1-200). Default is 200."
+              },
+              {
+                "name": "pageToken",
+                "value": "",
+                "type": "query",
+                "description": "Token to specify the next page in the list."
+              },
+              {
+                "name": "orderBy",
+                "value": "",
+                "type": "query",
+                "description": "Column to use for sorting results."
+              },
+              {
+                "name": "sortOrder",
+                "value": "",
+                "type": "query",
+                "description": "Whether to return results in ascending or descending order."
+              },
+              {
+                "name": "userKey",
+                "value": "",
+                "type": "query",
+                "description": "Email or immutable ID of the user to list groups for. If specified, returns only those groups the user is a member of."
+              },
+              {
+                "name": "query",
+                "value": "",
+                "type": "query",
+                "description": "Query string for searching group fields. See the Searching for Groups documentation for supported fields."
+              }
+            ]
+          },
+          "docs": "Retrieves all groups of a domain or all groups a user is a member of. Requires authorization with the admin.directory.group.readonly or admin.directory.group scope."
+        },
+        {
+          "info": {
+            "name": "Create a Group",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://admin.googleapis.com/admin/directory/v1/groups",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a group in the specified domain."
+        },
+        {
+          "info": {
+            "name": "Get a Group",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://admin.googleapis.com/admin/directory/v1/groups/:groupKey",
+            "params": [
+              {
+                "name": "groupKey",
+                "value": "",
+                "type": "path",
+                "description": "Identifies the group in the API request. The value can be the group email address, group alias, or the unique group ID."
+              }
+            ]
+          },
+          "docs": "Retrieves a group's properties by group key (group email address, group alias, or the unique group ID)."
+        },
+        {
+          "info": {
+            "name": "Update a Group",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://admin.googleapis.com/admin/directory/v1/groups/:groupKey",
+            "params": [
+              {
+                "name": "groupKey",
+                "value": "",
+                "type": "path",
+                "description": "Identifies the group in the API request. The value can be the group email address, group alias, or the unique group ID."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Updates a group's properties. This replaces the entire group resource."
+        },
+        {
+          "info": {
+            "name": "Patch a Group",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://admin.googleapis.com/admin/directory/v1/groups/:groupKey",
+            "params": [
+              {
+                "name": "groupKey",
+                "value": "",
+                "type": "path",
+                "description": "Identifies the group in the API request. The value can be the group email address, group alias, or the unique group ID."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Updates a group's properties using patch semantics. Only the specified fields are updated."
+        },
+        {
+          "info": {
+            "name": "Delete a Group",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://admin.googleapis.com/admin/directory/v1/groups/:groupKey",
+            "params": [
+              {
+                "name": "groupKey",
+                "value": "",
+                "type": "path",
+                "description": "Identifies the group in the API request. The value can be the group email address, group alias, or the unique group ID."
+              }
+            ]
+          },
+          "docs": "Deletes a group."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

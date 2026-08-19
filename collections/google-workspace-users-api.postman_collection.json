@@ -1,0 +1,3092 @@
+{
+  "item": [
+    {
+      "id": "74834cbe-40b4-47c0-baa4-6685874b0b2b",
+      "name": "Users",
+      "description": {
+        "content": "Manage user accounts in a Google Workspace domain",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "62e5a8ea-4a9f-4a01-b856-c74ea88df51b",
+          "name": "List Users",
+          "request": {
+            "name": "List Users",
+            "description": {
+              "content": "Retrieves a paginated list of either deleted users or all users in a domain. Requires authorization with the admin.directory.user.readonly or admin.directory.user scope.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "admin",
+                "directory",
+                "v1",
+                "users"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "domain",
+                  "value": "<string>",
+                  "description": "The domain name. Use this field to get groups from only one domain. To return all domains for a customer account, use the customer query parameter instead."
+                },
+                {
+                  "disabled": false,
+                  "key": "customer",
+                  "value": "<string>",
+                  "description": "The unique ID for the customer Google Workspace account. In a multi-domain account, use this to list all groups for a customer. You can also use the my_customer alias."
+                },
+                {
+                  "disabled": false,
+                  "key": "maxResults",
+                  "value": "100",
+                  "description": "Maximum number of results to return (1-500). Default is 100."
+                },
+                {
+                  "disabled": false,
+                  "key": "pageToken",
+                  "value": "<string>",
+                  "description": "Token to specify the next page in the list."
+                },
+                {
+                  "disabled": false,
+                  "key": "orderBy",
+                  "value": "<string>",
+                  "description": "Property to use for sorting results."
+                },
+                {
+                  "disabled": false,
+                  "key": "sortOrder",
+                  "value": "<string>",
+                  "description": "Whether to return results in ascending or descending order."
+                },
+                {
+                  "disabled": false,
+                  "key": "query",
+                  "value": "<string>",
+                  "description": "Query string for searching user fields. For more information on constructing user queries, see the Search for Users documentation."
+                },
+                {
+                  "disabled": false,
+                  "key": "showDeleted",
+                  "value": "<string>",
+                  "description": "If set to true, retrieves the list of deleted users."
+                },
+                {
+                  "disabled": false,
+                  "key": "projection",
+                  "value": "<string>",
+                  "description": "What subset of fields to fetch for this user."
+                },
+                {
+                  "disabled": false,
+                  "key": "viewType",
+                  "value": "<string>",
+                  "description": "Whether to fetch the administrator-only or domain-wide public view of the user. Default is admin_view."
+                },
+                {
+                  "disabled": false,
+                  "key": "customFieldMask",
+                  "value": "<string>",
+                  "description": "A comma-separated list of schema names. All fields from these schemas are fetched. Must be set when projection=custom."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d7234d8a-ea4d-458a-a8fb-63ea3d82ce2e",
+              "name": "Successful response containing a list of users.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "directory",
+                    "v1",
+                    "users"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "domain",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "customer",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "maxResults",
+                      "value": "100"
+                    },
+                    {
+                      "key": "pageToken",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "orderBy",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sortOrder",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "query",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "showDeleted",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "projection",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "viewType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "customFieldMask",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"kind\": \"example_value\",\n  \"etag\": \"example_value\",\n  \"nextPageToken\": \"example_value\",\n  \"trigger_event\": \"example_value\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "94f11a68-785c-4cd0-9def-a606310a5e8a",
+              "name": "The request was malformed or contained invalid parameters.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "directory",
+                    "v1",
+                    "users"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "domain",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "customer",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "maxResults",
+                      "value": "100"
+                    },
+                    {
+                      "key": "pageToken",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "orderBy",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sortOrder",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "query",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "showDeleted",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "projection",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "viewType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "customFieldMask",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": 5298,\n    \"message\": \"string\",\n    \"errors\": [\n      {\n        \"domain\": \"string\",\n        \"reason\": \"string\",\n        \"message\": \"string\"\n      },\n      {\n        \"domain\": \"string\",\n        \"reason\": \"string\",\n        \"message\": \"string\"\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1d398f56-7d87-46f9-978a-95e2fb02a79c",
+              "name": "Authentication is required. The request did not include valid credentials.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "directory",
+                    "v1",
+                    "users"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "domain",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "customer",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "maxResults",
+                      "value": "100"
+                    },
+                    {
+                      "key": "pageToken",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "orderBy",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sortOrder",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "query",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "showDeleted",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "projection",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "viewType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "customFieldMask",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": 5298,\n    \"message\": \"string\",\n    \"errors\": [\n      {\n        \"domain\": \"string\",\n        \"reason\": \"string\",\n        \"message\": \"string\"\n      },\n      {\n        \"domain\": \"string\",\n        \"reason\": \"string\",\n        \"message\": \"string\"\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4304854c-78ec-49a7-ab33-5e9c05ae5993",
+              "name": "The authenticated user does not have permission to perform this operation. Ensure the correct admin scopes are authorized.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "directory",
+                    "v1",
+                    "users"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "domain",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "customer",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "maxResults",
+                      "value": "100"
+                    },
+                    {
+                      "key": "pageToken",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "orderBy",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sortOrder",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "query",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "showDeleted",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "projection",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "viewType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "customFieldMask",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": 5298,\n    \"message\": \"string\",\n    \"errors\": [\n      {\n        \"domain\": \"string\",\n        \"reason\": \"string\",\n        \"message\": \"string\"\n      },\n      {\n        \"domain\": \"string\",\n        \"reason\": \"string\",\n        \"message\": \"string\"\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "759c67d1-cb6f-4fc5-aecf-f2adff72b63f",
+          "name": "Create a User",
+          "request": {
+            "name": "Create a User",
+            "description": {
+              "content": "Creates a user account. The new user account is created in the customer account specified in the request body.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "admin",
+                "directory",
+                "v1",
+                "users"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"primaryEmail\": \"<email>\",\n  \"name\": {\n    \"givenName\": \"<string>\",\n    \"familyName\": \"<string>\",\n    \"displayName\": \"<string>\"\n  },\n  \"password\": \"<string>\",\n  \"hashFunction\": \"<string>\",\n  \"suspended\": \"<boolean>\",\n  \"changePasswordAtNextLogin\": \"<boolean>\",\n  \"ipWhitelisted\": \"<boolean>\",\n  \"orgUnitPath\": \"<string>\",\n  \"includeInGlobalAddressList\": \"<boolean>\",\n  \"archived\": \"<boolean>\",\n  \"recoveryEmail\": \"<email>\",\n  \"recoveryPhone\": \"<string>\",\n  \"emails\": [\n    {\n      \"address\": \"<email>\",\n      \"type\": \"<string>\",\n      \"customType\": \"<string>\",\n      \"primary\": \"<boolean>\"\n    },\n    {\n      \"address\": \"<email>\",\n      \"type\": \"<string>\",\n      \"customType\": \"<string>\",\n      \"primary\": \"<boolean>\"\n    }\n  ],\n  \"phones\": [\n    {\n      \"value\": \"<string>\",\n      \"type\": \"<string>\",\n      \"customType\": \"<string>\",\n      \"primary\": \"<boolean>\"\n    },\n    {\n      \"value\": \"<string>\",\n      \"type\": \"<string>\",\n      \"customType\": \"<string>\",\n      \"primary\": \"<boolean>\"\n    }\n  ],\n  \"addresses\": [\n    {\n      \"type\": \"<string>\",\n      \"customType\": \"<string>\",\n      \"streetAddress\": \"<string>\",\n      \"locality\": \"<string>\",\n      \"region\": \"<string>\",\n      \"postalCode\": \"<string>\",\n      \"country\": \"<string>\",\n      \"countryCode\": \"<string>\",\n      \"formatted\": \"<string>\",\n      \"poBox\": \"<string>\",\n      \"extendedAddress\": \"<string>\",\n      \"primary\": \"<boolean>\",\n      \"sourceIsStructured\": \"<boolean>\"\n    },\n    {\n      \"type\": \"<string>\",\n      \"customType\": \"<string>\",\n      \"streetAddress\": \"<string>\",\n      \"locality\": \"<string>\",\n      \"region\": \"<string>\",\n      \"postalCode\": \"<string>\",\n      \"country\": \"<string>\",\n      \"countryCode\": \"<string>\",\n      \"formatted\": \"<string>\",\n      \"poBox\": \"<string>\",\n      \"extendedAddress\": \"<string>\",\n      \"primary\": \"<boolean>\",\n      \"sourceIsStructured\": \"<boolean>\"\n    }\n  ],\n  \"organizations\": [\n    {\n      \"name\": \"<string>\",\n      \"title\": \"<string>\",\n      \"department\": \"<string>\",\n      \"description\": \"<string>\",\n      \"costCenter\": \"<string>\",\n      \"location\": \"<string>\",\n      \"domain\": \"<string>\",\n      \"symbol\": \"<string>\",\n      \"type\": \"<string>\",\n      \"customType\": \"<string>\",\n      \"primary\": \"<boolean>\",\n      \"fullTimeEquivalent\": \"<integer>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"title\": \"<string>\",\n      \"department\": \"<string>\",\n      \"description\": \"<string>\",\n      \"costCenter\": \"<string>\",\n      \"location\": \"<string>\",\n      \"domain\": \"<string>\",\n      \"symbol\": \"<string>\",\n      \"type\": \"<string>\",\n      \"customType\": \"<string>\",\n      \"primary\": \"<boolean>\",\n      \"fullTimeEquivalent\": \"<integer>\"\n    }\n  ],\n  \"relations\": [\n    {\n      \"value\": \"<string>\",\n      \"type\": \"<string>\",\n      \"customType\": \"<string>\"\n    },\n    {\n      \"value\": \"<string>\",\n      \"type\": \"<string>\",\n      \"customType\": \"<string>\"\n    }\n  ],\n  \"externalIds\": [\n    {\n      \"value\": \"<string>\",\n      \"type\": \"<string>\",\n      \"customType\": \"<string>\"\n    },\n    {\n      \"value\": \"<string>\",\n      \"type\": \"<string>\",\n      \"customType\": \"<string>\"\n    }\n  ],\n  \"websites\": [\n    {\n      \"value\": \"<uri>\",\n      \"type\": \"<string>\",\n      \"customType\": \"<string>\",\n      \"primary\": \"<boolean>\"\n    },\n    {\n      \"value\": \"<uri>\",\n      \"type\": \"<string>\",\n      \"customType\": \"<string>\",\n      \"primary\": \"<boolean>\"\n    }\n  ],\n  \"ims\": [\n    {\n      \"im\": \"<string>\",\n      \"type\": \"<string>\",\n      \"customType\": \"<string>\",\n      \"protocol\": \"<string>\",\n      \"customProtocol\": \"<string>\",\n      \"primary\": \"<boolean>\"\n    },\n    {\n      \"im\": \"<string>\",\n      \"type\": \"<string>\",\n      \"customType\": \"<string>\",\n      \"protocol\": \"<string>\",\n      \"customProtocol\": \"<string>\",\n      \"primary\": \"<boolean>\"\n    }\n  ],\n  \"languages\": [\n    {\n      \"languageCode\": \"<string>\",\n      \"customLanguage\": \"<string>\",\n      \"preference\": \"<string>\"\n    },\n    {\n      \"languageCode\": \"<string>\",\n      \"customLanguage\": \"<string>\",\n      \"preference\": \"<string>\"\n    }\n  ],\n  \"gender\": {\n    \"type\": \"<string>\",\n    \"customGender\": \"<string>\",\n    \"addressMeAs\": \"<string>\"\n  },\n  \"keywords\": [\n    {\n      \"value\": \"<string>\",\n      \"type\": \"<string>\",\n      \"customType\": \"<string>\"\n    },\n    {\n      \"value\": \"<string>\",\n      \"type\": \"<string>\",\n      \"customType\": \"<string>\"\n    }\n  ],\n  \"locations\": [\n    {\n      \"area\": \"<string>\",\n      \"buildingId\": \"<string>\",\n      \"customType\": \"<string>\",\n      \"deskCode\": \"<string>\",\n      \"floorName\": \"<string>\",\n      \"floorSection\": \"<string>\",\n      \"type\": \"<string>\"\n    },\n    {\n      \"area\": \"<string>\",\n      \"buildingId\": \"<string>\",\n      \"customType\": \"<string>\",\n      \"deskCode\": \"<string>\",\n      \"floorName\": \"<string>\",\n      \"floorSection\": \"<string>\",\n      \"type\": \"<string>\"\n    }\n  ],\n  \"notes\": {\n    \"value\": \"<string>\",\n    \"contentType\": \"<string>\"\n  },\n  \"customSchemas\": {\n    \"key_0\": {\n      \"key_0\": \"string\"\n    },\n    \"key_1\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\"\n    }\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "132823ff-713a-4d02-9056-5aa9750c1ccf",
+              "name": "Successfully created user.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "directory",
+                    "v1",
+                    "users"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"primaryEmail\": \"user@example.com\",\n  \"name\": {\n    \"givenName\": \"example_value\",\n    \"familyName\": \"example_value\",\n    \"displayName\": \"example_value\"\n  },\n  \"password\": \"example_value\",\n  \"hashFunction\": \"MD5\",\n  \"suspended\": true,\n  \"changePasswordAtNextLogin\": true,\n  \"ipWhitelisted\": true,\n  \"orgUnitPath\": \"example_value\",\n  \"includeInGlobalAddressList\": true,\n  \"archived\": true,\n  \"recoveryEmail\": \"user@example.com\",\n  \"recoveryPhone\": \"example_value\",\n  \"emails\": [\n    {\n      \"address\": \"<email>\",\n      \"type\": \"<string>\",\n      \"customType\": \"<string>\",\n      \"primary\": \"<boolean>\"\n    },\n    {\n      \"address\": \"<email>\",\n      \"type\": \"<string>\",\n      \"customType\": \"<string>\",\n      \"primary\": \"<boolean>\"\n    }\n  ],\n  \"gender\": {\n    \"type\": \"<string>\",\n    \"customGender\": \"<string>\",\n    \"addressMeAs\": \"<string>\"\n  },\n  \"notes\": {\n    \"value\": \"<string>\",\n    \"contentType\": \"<string>\"\n  },\n  \"customSchemas\": {\n    \"key_0\": {\n      \"key_0\": \"string\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"primaryEmail\": \"user@example.com\",\n  \"name\": {\n    \"givenName\": \"example_value\",\n    \"familyName\": \"example_value\",\n    \"fullName\": \"example_value\",\n    \"displayName\": \"example_value\"\n  },\n  \"kind\": \"example_value\",\n  \"id\": \"abc123\",\n  \"etag\": \"example_value\",\n  \"isAdmin\": true,\n  \"isDelegatedAdmin\": true,\n  \"lastLoginTime\": \"2026-01-15T10:30:00Z\",\n  \"creationTime\": \"2026-01-15T10:30:00Z\",\n  \"deletionTime\": \"2026-01-15T10:30:00Z\",\n  \"agreedToTerms\": true,\n  \"hashFunction\": \"MD5\",\n  \"suspended\": true,\n  \"suspensionReason\": \"example_value\",\n  \"changePasswordAtNextLogin\": true,\n  \"ipWhitelisted\": true,\n  \"customerId\": \"500123\",\n  \"orgUnitPath\": \"example_value\",\n  \"isMailboxSetup\": true,\n  \"includeInGlobalAddressList\": true,\n  \"thumbnailPhotoUrl\": \"https://www.example.com\",\n  \"thumbnailPhotoEtag\": \"example_value\",\n  \"archived\": true,\n  \"recoveryEmail\": \"user@example.com\",\n  \"recoveryPhone\": \"example_value\",\n  \"isEnrolledIn2Sv\": true,\n  \"isEnforcedIn2Sv\": true,\n  \"emails\": [\n    {\n      \"address\": \"PgRWVeR@CiHySWLL.is\",\n      \"type\": \"string\",\n      \"customType\": \"string\",\n      \"primary\": true\n    },\n    {\n      \"address\": \"E6cTiZKJYE2RL@rlfybotAxTpFDVgGNHunp.pifs\",\n      \"type\": \"string\",\n      \"customType\": \"string\",\n      \"primary\": false\n    }\n  ],\n  \"gender\": {\n    \"type\": \"string\",\n    \"customGender\": \"string\",\n    \"addressMeAs\": \"string\"\n  },\n  \"notes\": {\n    \"value\": \"string\",\n    \"contentType\": \"text_plain\"\n  },\n  \"customSchemas\": {\n    \"key_0\": {\n      \"key_0\": true,\n      \"key_1\": \"string\",\n      \"key_2\": true\n    },\n    \"key_1\": {\n      \"key_0\": \"string\"\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b096a2ce-ab06-4912-a298-562600c7bdb7",
+              "name": "The request was malformed or contained invalid parameters.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "directory",
+                    "v1",
+                    "users"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"primaryEmail\": \"user@example.com\",\n  \"name\": {\n    \"givenName\": \"example_value\",\n    \"familyName\": \"example_value\",\n    \"displayName\": \"example_value\"\n  },\n  \"password\": \"example_value\",\n  \"hashFunction\": \"MD5\",\n  \"suspended\": true,\n  \"changePasswordAtNextLogin\": true,\n  \"ipWhitelisted\": true,\n  \"orgUnitPath\": \"example_value\",\n  \"includeInGlobalAddressList\": true,\n  \"archived\": true,\n  \"recoveryEmail\": \"user@example.com\",\n  \"recoveryPhone\": \"example_value\",\n  \"emails\": [\n    {\n      \"address\": \"<email>\",\n      \"type\": \"<string>\",\n      \"customType\": \"<string>\",\n      \"primary\": \"<boolean>\"\n    },\n    {\n      \"address\": \"<email>\",\n      \"type\": \"<string>\",\n      \"customType\": \"<string>\",\n      \"primary\": \"<boolean>\"\n    }\n  ],\n  \"gender\": {\n    \"type\": \"<string>\",\n    \"customGender\": \"<string>\",\n    \"addressMeAs\": \"<string>\"\n  },\n  \"notes\": {\n    \"value\": \"<string>\",\n    \"contentType\": \"<string>\"\n  },\n  \"customSchemas\": {\n    \"key_0\": {\n      \"key_0\": \"string\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": 6500,\n    \"message\": \"string\",\n    \"errors\": [\n      {\n        \"domain\": \"string\",\n        \"reason\": \"string\",\n        \"message\": \"string\"\n      },\n      {\n        \"domain\": \"string\",\n        \"reason\": \"string\",\n        \"message\": \"string\"\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "fdc00e00-c570-4139-9433-adb4d7a76dbc",
+              "name": "Authentication is required. The request did not include valid credentials.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "directory",
+                    "v1",
+                    "users"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"primaryEmail\": \"user@example.com\",\n  \"name\": {\n    \"givenName\": \"example_value\",\n    \"familyName\": \"example_value\",\n    \"displayName\": \"example_value\"\n  },\n  \"password\": \"example_value\",\n  \"hashFunction\": \"MD5\",\n  \"suspended\": true,\n  \"changePasswordAtNextLogin\": true,\n  \"ipWhitelisted\": true,\n  \"orgUnitPath\": \"example_value\",\n  \"includeInGlobalAddressList\": true,\n  \"archived\": true,\n  \"recoveryEmail\": \"user@example.com\",\n  \"recoveryPhone\": \"example_value\",\n  \"emails\": [\n    {\n      \"address\": \"<email>\",\n      \"type\": \"<string>\",\n      \"customType\": \"<string>\",\n      \"primary\": \"<boolean>\"\n    },\n    {\n      \"address\": \"<email>\",\n      \"type\": \"<string>\",\n      \"customType\": \"<string>\",\n      \"primary\": \"<boolean>\"\n    }\n  ],\n  \"gender\": {\n    \"type\": \"<string>\",\n    \"customGender\": \"<string>\",\n    \"addressMeAs\": \"<string>\"\n  },\n  \"notes\": {\n    \"value\": \"<string>\",\n    \"contentType\": \"<string>\"\n  },\n  \"customSchemas\": {\n    \"key_0\": {\n      \"key_0\": \"string\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": 6500,\n    \"message\": \"string\",\n    \"errors\": [\n      {\n        \"domain\": \"string\",\n        \"reason\": \"string\",\n        \"message\": \"string\"\n      },\n      {\n        \"domain\": \"string\",\n        \"reason\": \"string\",\n        \"message\": \"string\"\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b69fb937-d086-4f60-a7f2-662b5a70beb9",
+              "name": "The authenticated user does not have permission to perform this operation. Ensure the correct admin scopes are authorized.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "directory",
+                    "v1",
+                    "users"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"primaryEmail\": \"user@example.com\",\n  \"name\": {\n    \"givenName\": \"example_value\",\n    \"familyName\": \"example_value\",\n    \"displayName\": \"example_value\"\n  },\n  \"password\": \"example_value\",\n  \"hashFunction\": \"MD5\",\n  \"suspended\": true,\n  \"changePasswordAtNextLogin\": true,\n  \"ipWhitelisted\": true,\n  \"orgUnitPath\": \"example_value\",\n  \"includeInGlobalAddressList\": true,\n  \"archived\": true,\n  \"recoveryEmail\": \"user@example.com\",\n  \"recoveryPhone\": \"example_value\",\n  \"emails\": [\n    {\n      \"address\": \"<email>\",\n      \"type\": \"<string>\",\n      \"customType\": \"<string>\",\n      \"primary\": \"<boolean>\"\n    },\n    {\n      \"address\": \"<email>\",\n      \"type\": \"<string>\",\n      \"customType\": \"<string>\",\n      \"primary\": \"<boolean>\"\n    }\n  ],\n  \"gender\": {\n    \"type\": \"<string>\",\n    \"customGender\": \"<string>\",\n    \"addressMeAs\": \"<string>\"\n  },\n  \"notes\": {\n    \"value\": \"<string>\",\n    \"contentType\": \"<string>\"\n  },\n  \"customSchemas\": {\n    \"key_0\": {\n      \"key_0\": \"string\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": 6500,\n    \"message\": \"string\",\n    \"errors\": [\n      {\n        \"domain\": \"string\",\n        \"reason\": \"string\",\n        \"message\": \"string\"\n      },\n      {\n        \"domain\": \"string\",\n        \"reason\": \"string\",\n        \"message\": \"string\"\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b0a2b58b-3d02-4c81-bcae-b1b2db10c574",
+              "name": "User already exists.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "directory",
+                    "v1",
+                    "users"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"primaryEmail\": \"user@example.com\",\n  \"name\": {\n    \"givenName\": \"example_value\",\n    \"familyName\": \"example_value\",\n    \"displayName\": \"example_value\"\n  },\n  \"password\": \"example_value\",\n  \"hashFunction\": \"MD5\",\n  \"suspended\": true,\n  \"changePasswordAtNextLogin\": true,\n  \"ipWhitelisted\": true,\n  \"orgUnitPath\": \"example_value\",\n  \"includeInGlobalAddressList\": true,\n  \"archived\": true,\n  \"recoveryEmail\": \"user@example.com\",\n  \"recoveryPhone\": \"example_value\",\n  \"emails\": [\n    {\n      \"address\": \"<email>\",\n      \"type\": \"<string>\",\n      \"customType\": \"<string>\",\n      \"primary\": \"<boolean>\"\n    },\n    {\n      \"address\": \"<email>\",\n      \"type\": \"<string>\",\n      \"customType\": \"<string>\",\n      \"primary\": \"<boolean>\"\n    }\n  ],\n  \"gender\": {\n    \"type\": \"<string>\",\n    \"customGender\": \"<string>\",\n    \"addressMeAs\": \"<string>\"\n  },\n  \"notes\": {\n    \"value\": \"<string>\",\n    \"contentType\": \"<string>\"\n  },\n  \"customSchemas\": {\n    \"key_0\": {\n      \"key_0\": \"string\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Conflict",
+              "code": 409,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": 5298,\n    \"message\": \"string\",\n    \"errors\": [\n      {\n        \"domain\": \"string\",\n        \"reason\": \"string\",\n        \"message\": \"string\"\n      },\n      {\n        \"domain\": \"string\",\n        \"reason\": \"string\",\n        \"message\": \"string\"\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "27627c1c-0e14-40a1-a5eb-0e98ec619a78",
+          "name": "Get a User",
+          "request": {
+            "name": "Get a User",
+            "description": {
+              "content": "Retrieves a user account by user key (primary email address, alias email address, or unique user ID).",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "admin",
+                "directory",
+                "v1",
+                "users",
+                ":userKey"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "projection",
+                  "value": "<string>",
+                  "description": "What subset of fields to fetch for this user."
+                },
+                {
+                  "disabled": false,
+                  "key": "viewType",
+                  "value": "<string>",
+                  "description": "Whether to fetch the administrator-only or domain-wide public view of the user."
+                },
+                {
+                  "disabled": false,
+                  "key": "customFieldMask",
+                  "value": "<string>",
+                  "description": "A comma-separated list of schema names. All fields from these schemas are fetched. Must be set when projection=custom."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "userKey",
+                  "description": "(Required) Identifies the user in the API request. The value can be the user primary email address, alias email address, or unique user ID."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8e26e138-e3d0-470d-822d-d3bbebe78eeb",
+              "name": "Successful response containing the user.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "directory",
+                    "v1",
+                    "users",
+                    ":userKey"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "projection",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "viewType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "customFieldMask",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "userKey",
+                      "description": "(Required) Identifies the user in the API request. The value can be the user primary email address, alias email address, or unique user ID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"primaryEmail\": \"user@example.com\",\n  \"name\": {\n    \"givenName\": \"example_value\",\n    \"familyName\": \"example_value\",\n    \"fullName\": \"example_value\",\n    \"displayName\": \"example_value\"\n  },\n  \"kind\": \"example_value\",\n  \"id\": \"abc123\",\n  \"etag\": \"example_value\",\n  \"isAdmin\": true,\n  \"isDelegatedAdmin\": true,\n  \"lastLoginTime\": \"2026-01-15T10:30:00Z\",\n  \"creationTime\": \"2026-01-15T10:30:00Z\",\n  \"deletionTime\": \"2026-01-15T10:30:00Z\",\n  \"agreedToTerms\": true,\n  \"hashFunction\": \"MD5\",\n  \"suspended\": true,\n  \"suspensionReason\": \"example_value\",\n  \"changePasswordAtNextLogin\": true,\n  \"ipWhitelisted\": true,\n  \"customerId\": \"500123\",\n  \"orgUnitPath\": \"example_value\",\n  \"isMailboxSetup\": true,\n  \"includeInGlobalAddressList\": true,\n  \"thumbnailPhotoUrl\": \"https://www.example.com\",\n  \"thumbnailPhotoEtag\": \"example_value\",\n  \"archived\": true,\n  \"recoveryEmail\": \"user@example.com\",\n  \"recoveryPhone\": \"example_value\",\n  \"isEnrolledIn2Sv\": true,\n  \"isEnforcedIn2Sv\": true,\n  \"emails\": [\n    {\n      \"address\": \"PgRWVeR@CiHySWLL.is\",\n      \"type\": \"string\",\n      \"customType\": \"string\",\n      \"primary\": true\n    },\n    {\n      \"address\": \"E6cTiZKJYE2RL@rlfybotAxTpFDVgGNHunp.pifs\",\n      \"type\": \"string\",\n      \"customType\": \"string\",\n      \"primary\": false\n    }\n  ],\n  \"gender\": {\n    \"type\": \"string\",\n    \"customGender\": \"string\",\n    \"addressMeAs\": \"string\"\n  },\n  \"notes\": {\n    \"value\": \"string\",\n    \"contentType\": \"text_plain\"\n  },\n  \"customSchemas\": {\n    \"key_0\": {\n      \"key_0\": true,\n      \"key_1\": \"string\",\n      \"key_2\": true\n    },\n    \"key_1\": {\n      \"key_0\": \"string\"\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "82d39ff5-8fac-4418-a13b-1978a819c879",
+              "name": "Authentication is required. The request did not include valid credentials.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "directory",
+                    "v1",
+                    "users",
+                    ":userKey"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "projection",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "viewType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "customFieldMask",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "userKey",
+                      "description": "(Required) Identifies the user in the API request. The value can be the user primary email address, alias email address, or unique user ID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": 6500,\n    \"message\": \"string\",\n    \"errors\": [\n      {\n        \"domain\": \"string\",\n        \"reason\": \"string\",\n        \"message\": \"string\"\n      },\n      {\n        \"domain\": \"string\",\n        \"reason\": \"string\",\n        \"message\": \"string\"\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "904c6d48-a719-4a28-bbf6-c4a58171f855",
+              "name": "The authenticated user does not have permission to perform this operation. Ensure the correct admin scopes are authorized.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "directory",
+                    "v1",
+                    "users",
+                    ":userKey"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "projection",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "viewType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "customFieldMask",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "userKey",
+                      "description": "(Required) Identifies the user in the API request. The value can be the user primary email address, alias email address, or unique user ID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": 6500,\n    \"message\": \"string\",\n    \"errors\": [\n      {\n        \"domain\": \"string\",\n        \"reason\": \"string\",\n        \"message\": \"string\"\n      },\n      {\n        \"domain\": \"string\",\n        \"reason\": \"string\",\n        \"message\": \"string\"\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "15f56bcd-87bf-4ba8-ab99-e07a21ccc836",
+              "name": "The requested resource was not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "directory",
+                    "v1",
+                    "users",
+                    ":userKey"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "projection",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "viewType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "customFieldMask",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "userKey",
+                      "description": "(Required) Identifies the user in the API request. The value can be the user primary email address, alias email address, or unique user ID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": 5298,\n    \"message\": \"string\",\n    \"errors\": [\n      {\n        \"domain\": \"string\",\n        \"reason\": \"string\",\n        \"message\": \"string\"\n      },\n      {\n        \"domain\": \"string\",\n        \"reason\": \"string\",\n        \"message\": \"string\"\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "79612120-494d-4a56-af71-f9947404ea46",
+          "name": "Update a User",
+          "request": {
+            "name": "Update a User",
+            "description": {
+              "content": "Updates a user account. This replaces the entire user resource. Use patch for partial updates.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "admin",
+                "directory",
+                "v1",
+                "users",
+                ":userKey"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "userKey",
+                  "description": "(Required) Identifies the user in the API request. The value can be the user primary email address, alias email address, or unique user ID."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"primaryEmail\": \"<email>\",\n  \"name\": {\n    \"givenName\": \"<string>\",\n    \"familyName\": \"<string>\",\n    \"displayName\": \"<string>\"\n  },\n  \"password\": \"<string>\",\n  \"hashFunction\": \"<string>\",\n  \"suspended\": \"<boolean>\",\n  \"changePasswordAtNextLogin\": \"<boolean>\",\n  \"ipWhitelisted\": \"<boolean>\",\n  \"orgUnitPath\": \"<string>\",\n  \"includeInGlobalAddressList\": \"<boolean>\",\n  \"archived\": \"<boolean>\",\n  \"recoveryEmail\": \"<email>\",\n  \"recoveryPhone\": \"<string>\",\n  \"emails\": [\n    {\n      \"address\": \"<email>\",\n      \"type\": \"<string>\",\n      \"customType\": \"<string>\",\n      \"primary\": \"<boolean>\"\n    },\n    {\n      \"address\": \"<email>\",\n      \"type\": \"<string>\",\n      \"customType\": \"<string>\",\n      \"primary\": \"<boolean>\"\n    }\n  ],\n  \"phones\": [\n    {\n      \"value\": \"<string>\",\n      \"type\": \"<string>\",\n      \"customType\": \"<string>\",\n      \"primary\": \"<boolean>\"\n    },\n    {\n      \"value\": \"<string>\",\n      \"type\": \"<string>\",\n      \"customType\": \"<string>\",\n      \"primary\": \"<boolean>\"\n    }\n  ],\n  \"addresses\": [\n    {\n      \"type\": \"<string>\",\n      \"customType\": \"<string>\",\n      \"streetAddress\": \"<string>\",\n      \"locality\": \"<string>\",\n      \"region\": \"<string>\",\n      \"postalCode\": \"<string>\",\n      \"country\": \"<string>\",\n      \"countryCode\": \"<string>\",\n      \"formatted\": \"<string>\",\n      \"poBox\": \"<string>\",\n      \"extendedAddress\": \"<string>\",\n      \"primary\": \"<boolean>\",\n      \"sourceIsStructured\": \"<boolean>\"\n    },\n    {\n      \"type\": \"<string>\",\n      \"customType\": \"<string>\",\n      \"streetAddress\": \"<string>\",\n      \"locality\": \"<string>\",\n      \"region\": \"<string>\",\n      \"postalCode\": \"<string>\",\n      \"country\": \"<string>\",\n      \"countryCode\": \"<string>\",\n      \"formatted\": \"<string>\",\n      \"poBox\": \"<string>\",\n      \"extendedAddress\": \"<string>\",\n      \"primary\": \"<boolean>\",\n      \"sourceIsStructured\": \"<boolean>\"\n    }\n  ],\n  \"organizations\": [\n    {\n      \"name\": \"<string>\",\n      \"title\": \"<string>\",\n      \"department\": \"<string>\",\n      \"description\": \"<string>\",\n      \"costCenter\": \"<string>\",\n      \"location\": \"<string>\",\n      \"domain\": \"<string>\",\n      \"symbol\": \"<string>\",\n      \"type\": \"<string>\",\n      \"customType\": \"<string>\",\n      \"primary\": \"<boolean>\",\n      \"fullTimeEquivalent\": \"<integer>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"title\": \"<string>\",\n      \"department\": \"<string>\",\n      \"description\": \"<string>\",\n      \"costCenter\": \"<string>\",\n      \"location\": \"<string>\",\n      \"domain\": \"<string>\",\n      \"symbol\": \"<string>\",\n      \"type\": \"<string>\",\n      \"customType\": \"<string>\",\n      \"primary\": \"<boolean>\",\n      \"fullTimeEquivalent\": \"<integer>\"\n    }\n  ],\n  \"relations\": [\n    {\n      \"value\": \"<string>\",\n      \"type\": \"<string>\",\n      \"customType\": \"<string>\"\n    },\n    {\n      \"value\": \"<string>\",\n      \"type\": \"<string>\",\n      \"customType\": \"<string>\"\n    }\n  ],\n  \"externalIds\": [\n    {\n      \"value\": \"<string>\",\n      \"type\": \"<string>\",\n      \"customType\": \"<string>\"\n    },\n    {\n      \"value\": \"<string>\",\n      \"type\": \"<string>\",\n      \"customType\": \"<string>\"\n    }\n  ],\n  \"websites\": [\n    {\n      \"value\": \"<uri>\",\n      \"type\": \"<string>\",\n      \"customType\": \"<string>\",\n      \"primary\": \"<boolean>\"\n    },\n    {\n      \"value\": \"<uri>\",\n      \"type\": \"<string>\",\n      \"customType\": \"<string>\",\n      \"primary\": \"<boolean>\"\n    }\n  ],\n  \"ims\": [\n    {\n      \"im\": \"<string>\",\n      \"type\": \"<string>\",\n      \"customType\": \"<string>\",\n      \"protocol\": \"<string>\",\n      \"customProtocol\": \"<string>\",\n      \"primary\": \"<boolean>\"\n    },\n    {\n      \"im\": \"<string>\",\n      \"type\": \"<string>\",\n      \"customType\": \"<string>\",\n      \"protocol\": \"<string>\",\n      \"customProtocol\": \"<string>\",\n      \"primary\": \"<boolean>\"\n    }\n  ],\n  \"languages\": [\n    {\n      \"languageCode\": \"<string>\",\n      \"customLanguage\": \"<string>\",\n      \"preference\": \"<string>\"\n    },\n    {\n      \"languageCode\": \"<string>\",\n      \"customLanguage\": \"<string>\",\n      \"preference\": \"<string>\"\n    }\n  ],\n  \"gender\": {\n    \"type\": \"<string>\",\n    \"customGender\": \"<string>\",\n    \"addressMeAs\": \"<string>\"\n  },\n  \"keywords\": [\n    {\n      \"value\": \"<string>\",\n      \"type\": \"<string>\",\n      \"customType\": \"<string>\"\n    },\n    {\n      \"value\": \"<string>\",\n      \"type\": \"<string>\",\n      \"customType\": \"<string>\"\n    }\n  ],\n  \"locations\": [\n    {\n      \"area\": \"<string>\",\n      \"buildingId\": \"<string>\",\n      \"customType\": \"<string>\",\n      \"deskCode\": \"<string>\",\n      \"floorName\": \"<string>\",\n      \"floorSection\": \"<string>\",\n      \"type\": \"<string>\"\n    },\n    {\n      \"area\": \"<string>\",\n      \"buildingId\": \"<string>\",\n      \"customType\": \"<string>\",\n      \"deskCode\": \"<string>\",\n      \"floorName\": \"<string>\",\n      \"floorSection\": \"<string>\",\n      \"type\": \"<string>\"\n    }\n  ],\n  \"notes\": {\n    \"value\": \"<string>\",\n    \"contentType\": \"<string>\"\n  },\n  \"customSchemas\": {\n    \"key_0\": {\n      \"key_0\": \"string\"\n    },\n    \"key_1\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\"\n    }\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "dc690146-bba8-4b20-9c4d-e636932269d9",
+              "name": "Successfully updated user.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "directory",
+                    "v1",
+                    "users",
+                    ":userKey"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "userKey",
+                      "description": "(Required) Identifies the user in the API request. The value can be the user primary email address, alias email address, or unique user ID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"primaryEmail\": \"user@example.com\",\n  \"name\": {\n    \"givenName\": \"example_value\",\n    \"familyName\": \"example_value\",\n    \"displayName\": \"example_value\"\n  },\n  \"password\": \"example_value\",\n  \"hashFunction\": \"MD5\",\n  \"suspended\": true,\n  \"changePasswordAtNextLogin\": true,\n  \"ipWhitelisted\": true,\n  \"orgUnitPath\": \"example_value\",\n  \"includeInGlobalAddressList\": true,\n  \"archived\": true,\n  \"recoveryEmail\": \"user@example.com\",\n  \"recoveryPhone\": \"example_value\",\n  \"emails\": [\n    {\n      \"address\": \"<email>\",\n      \"type\": \"<string>\",\n      \"customType\": \"<string>\",\n      \"primary\": \"<boolean>\"\n    },\n    {\n      \"address\": \"<email>\",\n      \"type\": \"<string>\",\n      \"customType\": \"<string>\",\n      \"primary\": \"<boolean>\"\n    }\n  ],\n  \"gender\": {\n    \"type\": \"<string>\",\n    \"customGender\": \"<string>\",\n    \"addressMeAs\": \"<string>\"\n  },\n  \"notes\": {\n    \"value\": \"<string>\",\n    \"contentType\": \"<string>\"\n  },\n  \"customSchemas\": {\n    \"key_0\": {\n      \"key_0\": \"string\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"primaryEmail\": \"user@example.com\",\n  \"name\": {\n    \"givenName\": \"example_value\",\n    \"familyName\": \"example_value\",\n    \"fullName\": \"example_value\",\n    \"displayName\": \"example_value\"\n  },\n  \"kind\": \"example_value\",\n  \"id\": \"abc123\",\n  \"etag\": \"example_value\",\n  \"isAdmin\": true,\n  \"isDelegatedAdmin\": true,\n  \"lastLoginTime\": \"2026-01-15T10:30:00Z\",\n  \"creationTime\": \"2026-01-15T10:30:00Z\",\n  \"deletionTime\": \"2026-01-15T10:30:00Z\",\n  \"agreedToTerms\": true,\n  \"hashFunction\": \"MD5\",\n  \"suspended\": true,\n  \"suspensionReason\": \"example_value\",\n  \"changePasswordAtNextLogin\": true,\n  \"ipWhitelisted\": true,\n  \"customerId\": \"500123\",\n  \"orgUnitPath\": \"example_value\",\n  \"isMailboxSetup\": true,\n  \"includeInGlobalAddressList\": true,\n  \"thumbnailPhotoUrl\": \"https://www.example.com\",\n  \"thumbnailPhotoEtag\": \"example_value\",\n  \"archived\": true,\n  \"recoveryEmail\": \"user@example.com\",\n  \"recoveryPhone\": \"example_value\",\n  \"isEnrolledIn2Sv\": true,\n  \"isEnforcedIn2Sv\": true,\n  \"emails\": [\n    {\n      \"address\": \"PgRWVeR@CiHySWLL.is\",\n      \"type\": \"string\",\n      \"customType\": \"string\",\n      \"primary\": true\n    },\n    {\n      \"address\": \"E6cTiZKJYE2RL@rlfybotAxTpFDVgGNHunp.pifs\",\n      \"type\": \"string\",\n      \"customType\": \"string\",\n      \"primary\": false\n    }\n  ],\n  \"gender\": {\n    \"type\": \"string\",\n    \"customGender\": \"string\",\n    \"addressMeAs\": \"string\"\n  },\n  \"notes\": {\n    \"value\": \"string\",\n    \"contentType\": \"text_plain\"\n  },\n  \"customSchemas\": {\n    \"key_0\": {\n      \"key_0\": true,\n      \"key_1\": \"string\",\n      \"key_2\": true\n    },\n    \"key_1\": {\n      \"key_0\": \"string\"\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5c380f26-63a7-48a4-961f-dc960eb7e242",
+              "name": "The request was malformed or contained invalid parameters.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "directory",
+                    "v1",
+                    "users",
+                    ":userKey"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "userKey",
+                      "description": "(Required) Identifies the user in the API request. The value can be the user primary email address, alias email address, or unique user ID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"primaryEmail\": \"user@example.com\",\n  \"name\": {\n    \"givenName\": \"example_value\",\n    \"familyName\": \"example_value\",\n    \"displayName\": \"example_value\"\n  },\n  \"password\": \"example_value\",\n  \"hashFunction\": \"MD5\",\n  \"suspended\": true,\n  \"changePasswordAtNextLogin\": true,\n  \"ipWhitelisted\": true,\n  \"orgUnitPath\": \"example_value\",\n  \"includeInGlobalAddressList\": true,\n  \"archived\": true,\n  \"recoveryEmail\": \"user@example.com\",\n  \"recoveryPhone\": \"example_value\",\n  \"emails\": [\n    {\n      \"address\": \"<email>\",\n      \"type\": \"<string>\",\n      \"customType\": \"<string>\",\n      \"primary\": \"<boolean>\"\n    },\n    {\n      \"address\": \"<email>\",\n      \"type\": \"<string>\",\n      \"customType\": \"<string>\",\n      \"primary\": \"<boolean>\"\n    }\n  ],\n  \"gender\": {\n    \"type\": \"<string>\",\n    \"customGender\": \"<string>\",\n    \"addressMeAs\": \"<string>\"\n  },\n  \"notes\": {\n    \"value\": \"<string>\",\n    \"contentType\": \"<string>\"\n  },\n  \"customSchemas\": {\n    \"key_0\": {\n      \"key_0\": \"string\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": 6500,\n    \"message\": \"string\",\n    \"errors\": [\n      {\n        \"domain\": \"string\",\n        \"reason\": \"string\",\n        \"message\": \"string\"\n      },\n      {\n        \"domain\": \"string\",\n        \"reason\": \"string\",\n        \"message\": \"string\"\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "516644c4-8db7-4d9d-bb12-20c11a0e5e95",
+              "name": "Authentication is required. The request did not include valid credentials.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "directory",
+                    "v1",
+                    "users",
+                    ":userKey"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "userKey",
+                      "description": "(Required) Identifies the user in the API request. The value can be the user primary email address, alias email address, or unique user ID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"primaryEmail\": \"user@example.com\",\n  \"name\": {\n    \"givenName\": \"example_value\",\n    \"familyName\": \"example_value\",\n    \"displayName\": \"example_value\"\n  },\n  \"password\": \"example_value\",\n  \"hashFunction\": \"MD5\",\n  \"suspended\": true,\n  \"changePasswordAtNextLogin\": true,\n  \"ipWhitelisted\": true,\n  \"orgUnitPath\": \"example_value\",\n  \"includeInGlobalAddressList\": true,\n  \"archived\": true,\n  \"recoveryEmail\": \"user@example.com\",\n  \"recoveryPhone\": \"example_value\",\n  \"emails\": [\n    {\n      \"address\": \"<email>\",\n      \"type\": \"<string>\",\n      \"customType\": \"<string>\",\n      \"primary\": \"<boolean>\"\n    },\n    {\n      \"address\": \"<email>\",\n      \"type\": \"<string>\",\n      \"customType\": \"<string>\",\n      \"primary\": \"<boolean>\"\n    }\n  ],\n  \"gender\": {\n    \"type\": \"<string>\",\n    \"customGender\": \"<string>\",\n    \"addressMeAs\": \"<string>\"\n  },\n  \"notes\": {\n    \"value\": \"<string>\",\n    \"contentType\": \"<string>\"\n  },\n  \"customSchemas\": {\n    \"key_0\": {\n      \"key_0\": \"string\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": 6500,\n    \"message\": \"string\",\n    \"errors\": [\n      {\n        \"domain\": \"string\",\n        \"reason\": \"string\",\n        \"message\": \"string\"\n      },\n      {\n        \"domain\": \"string\",\n        \"reason\": \"string\",\n        \"message\": \"string\"\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "2e506631-1106-476d-ae80-99c1dcb57412",
+              "name": "The authenticated user does not have permission to perform this operation. Ensure the correct admin scopes are authorized.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "directory",
+                    "v1",
+                    "users",
+                    ":userKey"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "userKey",
+                      "description": "(Required) Identifies the user in the API request. The value can be the user primary email address, alias email address, or unique user ID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"primaryEmail\": \"user@example.com\",\n  \"name\": {\n    \"givenName\": \"example_value\",\n    \"familyName\": \"example_value\",\n    \"displayName\": \"example_value\"\n  },\n  \"password\": \"example_value\",\n  \"hashFunction\": \"MD5\",\n  \"suspended\": true,\n  \"changePasswordAtNextLogin\": true,\n  \"ipWhitelisted\": true,\n  \"orgUnitPath\": \"example_value\",\n  \"includeInGlobalAddressList\": true,\n  \"archived\": true,\n  \"recoveryEmail\": \"user@example.com\",\n  \"recoveryPhone\": \"example_value\",\n  \"emails\": [\n    {\n      \"address\": \"<email>\",\n      \"type\": \"<string>\",\n      \"customType\": \"<string>\",\n      \"primary\": \"<boolean>\"\n    },\n    {\n      \"address\": \"<email>\",\n      \"type\": \"<string>\",\n      \"customType\": \"<string>\",\n      \"primary\": \"<boolean>\"\n    }\n  ],\n  \"gender\": {\n    \"type\": \"<string>\",\n    \"customGender\": \"<string>\",\n    \"addressMeAs\": \"<string>\"\n  },\n  \"notes\": {\n    \"value\": \"<string>\",\n    \"contentType\": \"<string>\"\n  },\n  \"customSchemas\": {\n    \"key_0\": {\n      \"key_0\": \"string\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": 6500,\n    \"message\": \"string\",\n    \"errors\": [\n      {\n        \"domain\": \"string\",\n        \"reason\": \"string\",\n        \"message\": \"string\"\n      },\n      {\n        \"domain\": \"string\",\n        \"reason\": \"string\",\n        \"message\": \"string\"\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5ca7f950-2dff-4159-ac63-17f24d44c17b",
+              "name": "The requested resource was not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "directory",
+                    "v1",
+                    "users",
+                    ":userKey"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "userKey",
+                      "description": "(Required) Identifies the user in the API request. The value can be the user primary email address, alias email address, or unique user ID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"primaryEmail\": \"user@example.com\",\n  \"name\": {\n    \"givenName\": \"example_value\",\n    \"familyName\": \"example_value\",\n    \"displayName\": \"example_value\"\n  },\n  \"password\": \"example_value\",\n  \"hashFunction\": \"MD5\",\n  \"suspended\": true,\n  \"changePasswordAtNextLogin\": true,\n  \"ipWhitelisted\": true,\n  \"orgUnitPath\": \"example_value\",\n  \"includeInGlobalAddressList\": true,\n  \"archived\": true,\n  \"recoveryEmail\": \"user@example.com\",\n  \"recoveryPhone\": \"example_value\",\n  \"emails\": [\n    {\n      \"address\": \"<email>\",\n      \"type\": \"<string>\",\n      \"customType\": \"<string>\",\n      \"primary\": \"<boolean>\"\n    },\n    {\n      \"address\": \"<email>\",\n      \"type\": \"<string>\",\n      \"customType\": \"<string>\",\n      \"primary\": \"<boolean>\"\n    }\n  ],\n  \"gender\": {\n    \"type\": \"<string>\",\n    \"customGender\": \"<string>\",\n    \"addressMeAs\": \"<string>\"\n  },\n  \"notes\": {\n    \"value\": \"<string>\",\n    \"contentType\": \"<string>\"\n  },\n  \"customSchemas\": {\n    \"key_0\": {\n      \"key_0\": \"string\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": 6500,\n    \"message\": \"string\",\n    \"errors\": [\n      {\n        \"domain\": \"string\",\n        \"reason\": \"string\",\n        \"message\": \"string\"\n      },\n      {\n        \"domain\": \"string\",\n        \"reason\": \"string\",\n        \"message\": \"string\"\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c892fd7d-2c07-4cc3-857f-651c7f345236",
+          "name": "Patch a User",
+          "request": {
+            "name": "Patch a User",
+            "description": {
+              "content": "Updates a user account using patch semantics. Only the fields specified in the request body are updated.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "admin",
+                "directory",
+                "v1",
+                "users",
+                ":userKey"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "userKey",
+                  "description": "(Required) Identifies the user in the API request. The value can be the user primary email address, alias email address, or unique user ID."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"primaryEmail\": \"<email>\",\n  \"name\": {\n    \"givenName\": \"<string>\",\n    \"familyName\": \"<string>\",\n    \"displayName\": \"<string>\"\n  },\n  \"password\": \"<string>\",\n  \"hashFunction\": \"<string>\",\n  \"suspended\": \"<boolean>\",\n  \"changePasswordAtNextLogin\": \"<boolean>\",\n  \"ipWhitelisted\": \"<boolean>\",\n  \"orgUnitPath\": \"<string>\",\n  \"includeInGlobalAddressList\": \"<boolean>\",\n  \"archived\": \"<boolean>\",\n  \"recoveryEmail\": \"<email>\",\n  \"recoveryPhone\": \"<string>\",\n  \"emails\": [\n    {\n      \"address\": \"<email>\",\n      \"type\": \"<string>\",\n      \"customType\": \"<string>\",\n      \"primary\": \"<boolean>\"\n    },\n    {\n      \"address\": \"<email>\",\n      \"type\": \"<string>\",\n      \"customType\": \"<string>\",\n      \"primary\": \"<boolean>\"\n    }\n  ],\n  \"phones\": [\n    {\n      \"value\": \"<string>\",\n      \"type\": \"<string>\",\n      \"customType\": \"<string>\",\n      \"primary\": \"<boolean>\"\n    },\n    {\n      \"value\": \"<string>\",\n      \"type\": \"<string>\",\n      \"customType\": \"<string>\",\n      \"primary\": \"<boolean>\"\n    }\n  ],\n  \"addresses\": [\n    {\n      \"type\": \"<string>\",\n      \"customType\": \"<string>\",\n      \"streetAddress\": \"<string>\",\n      \"locality\": \"<string>\",\n      \"region\": \"<string>\",\n      \"postalCode\": \"<string>\",\n      \"country\": \"<string>\",\n      \"countryCode\": \"<string>\",\n      \"formatted\": \"<string>\",\n      \"poBox\": \"<string>\",\n      \"extendedAddress\": \"<string>\",\n      \"primary\": \"<boolean>\",\n      \"sourceIsStructured\": \"<boolean>\"\n    },\n    {\n      \"type\": \"<string>\",\n      \"customType\": \"<string>\",\n      \"streetAddress\": \"<string>\",\n      \"locality\": \"<string>\",\n      \"region\": \"<string>\",\n      \"postalCode\": \"<string>\",\n      \"country\": \"<string>\",\n      \"countryCode\": \"<string>\",\n      \"formatted\": \"<string>\",\n      \"poBox\": \"<string>\",\n      \"extendedAddress\": \"<string>\",\n      \"primary\": \"<boolean>\",\n      \"sourceIsStructured\": \"<boolean>\"\n    }\n  ],\n  \"organizations\": [\n    {\n      \"name\": \"<string>\",\n      \"title\": \"<string>\",\n      \"department\": \"<string>\",\n      \"description\": \"<string>\",\n      \"costCenter\": \"<string>\",\n      \"location\": \"<string>\",\n      \"domain\": \"<string>\",\n      \"symbol\": \"<string>\",\n      \"type\": \"<string>\",\n      \"customType\": \"<string>\",\n      \"primary\": \"<boolean>\",\n      \"fullTimeEquivalent\": \"<integer>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"title\": \"<string>\",\n      \"department\": \"<string>\",\n      \"description\": \"<string>\",\n      \"costCenter\": \"<string>\",\n      \"location\": \"<string>\",\n      \"domain\": \"<string>\",\n      \"symbol\": \"<string>\",\n      \"type\": \"<string>\",\n      \"customType\": \"<string>\",\n      \"primary\": \"<boolean>\",\n      \"fullTimeEquivalent\": \"<integer>\"\n    }\n  ],\n  \"relations\": [\n    {\n      \"value\": \"<string>\",\n      \"type\": \"<string>\",\n      \"customType\": \"<string>\"\n    },\n    {\n      \"value\": \"<string>\",\n      \"type\": \"<string>\",\n      \"customType\": \"<string>\"\n    }\n  ],\n  \"externalIds\": [\n    {\n      \"value\": \"<string>\",\n      \"type\": \"<string>\",\n      \"customType\": \"<string>\"\n    },\n    {\n      \"value\": \"<string>\",\n      \"type\": \"<string>\",\n      \"customType\": \"<string>\"\n    }\n  ],\n  \"websites\": [\n    {\n      \"value\": \"<uri>\",\n      \"type\": \"<string>\",\n      \"customType\": \"<string>\",\n      \"primary\": \"<boolean>\"\n    },\n    {\n      \"value\": \"<uri>\",\n      \"type\": \"<string>\",\n      \"customType\": \"<string>\",\n      \"primary\": \"<boolean>\"\n    }\n  ],\n  \"ims\": [\n    {\n      \"im\": \"<string>\",\n      \"type\": \"<string>\",\n      \"customType\": \"<string>\",\n      \"protocol\": \"<string>\",\n      \"customProtocol\": \"<string>\",\n      \"primary\": \"<boolean>\"\n    },\n    {\n      \"im\": \"<string>\",\n      \"type\": \"<string>\",\n      \"customType\": \"<string>\",\n      \"protocol\": \"<string>\",\n      \"customProtocol\": \"<string>\",\n      \"primary\": \"<boolean>\"\n    }\n  ],\n  \"languages\": [\n    {\n      \"languageCode\": \"<string>\",\n      \"customLanguage\": \"<string>\",\n      \"preference\": \"<string>\"\n    },\n    {\n      \"languageCode\": \"<string>\",\n      \"customLanguage\": \"<string>\",\n      \"preference\": \"<string>\"\n    }\n  ],\n  \"gender\": {\n    \"type\": \"<string>\",\n    \"customGender\": \"<string>\",\n    \"addressMeAs\": \"<string>\"\n  },\n  \"keywords\": [\n    {\n      \"value\": \"<string>\",\n      \"type\": \"<string>\",\n      \"customType\": \"<string>\"\n    },\n    {\n      \"value\": \"<string>\",\n      \"type\": \"<string>\",\n      \"customType\": \"<string>\"\n    }\n  ],\n  \"locations\": [\n    {\n      \"area\": \"<string>\",\n      \"buildingId\": \"<string>\",\n      \"customType\": \"<string>\",\n      \"deskCode\": \"<string>\",\n      \"floorName\": \"<string>\",\n      \"floorSection\": \"<string>\",\n      \"type\": \"<string>\"\n    },\n    {\n      \"area\": \"<string>\",\n      \"buildingId\": \"<string>\",\n      \"customType\": \"<string>\",\n      \"deskCode\": \"<string>\",\n      \"floorName\": \"<string>\",\n      \"floorSection\": \"<string>\",\n      \"type\": \"<string>\"\n    }\n  ],\n  \"notes\": {\n    \"value\": \"<string>\",\n    \"contentType\": \"<string>\"\n  },\n  \"customSchemas\": {\n    \"key_0\": {\n      \"key_0\": \"string\"\n    },\n    \"key_1\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\"\n    }\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "913bce45-23da-40ce-8cf0-391805ad5198",
+              "name": "Successfully patched user.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "directory",
+                    "v1",
+                    "users",
+                    ":userKey"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "userKey",
+                      "description": "(Required) Identifies the user in the API request. The value can be the user primary email address, alias email address, or unique user ID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"primaryEmail\": \"user@example.com\",\n  \"name\": {\n    \"givenName\": \"example_value\",\n    \"familyName\": \"example_value\",\n    \"displayName\": \"example_value\"\n  },\n  \"password\": \"example_value\",\n  \"hashFunction\": \"MD5\",\n  \"suspended\": true,\n  \"changePasswordAtNextLogin\": true,\n  \"ipWhitelisted\": true,\n  \"orgUnitPath\": \"example_value\",\n  \"includeInGlobalAddressList\": true,\n  \"archived\": true,\n  \"recoveryEmail\": \"user@example.com\",\n  \"recoveryPhone\": \"example_value\",\n  \"emails\": [\n    {\n      \"address\": \"<email>\",\n      \"type\": \"<string>\",\n      \"customType\": \"<string>\",\n      \"primary\": \"<boolean>\"\n    },\n    {\n      \"address\": \"<email>\",\n      \"type\": \"<string>\",\n      \"customType\": \"<string>\",\n      \"primary\": \"<boolean>\"\n    }\n  ],\n  \"gender\": {\n    \"type\": \"<string>\",\n    \"customGender\": \"<string>\",\n    \"addressMeAs\": \"<string>\"\n  },\n  \"notes\": {\n    \"value\": \"<string>\",\n    \"contentType\": \"<string>\"\n  },\n  \"customSchemas\": {\n    \"key_0\": {\n      \"key_0\": \"string\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"primaryEmail\": \"user@example.com\",\n  \"name\": {\n    \"givenName\": \"example_value\",\n    \"familyName\": \"example_value\",\n    \"fullName\": \"example_value\",\n    \"displayName\": \"example_value\"\n  },\n  \"kind\": \"example_value\",\n  \"id\": \"abc123\",\n  \"etag\": \"example_value\",\n  \"isAdmin\": true,\n  \"isDelegatedAdmin\": true,\n  \"lastLoginTime\": \"2026-01-15T10:30:00Z\",\n  \"creationTime\": \"2026-01-15T10:30:00Z\",\n  \"deletionTime\": \"2026-01-15T10:30:00Z\",\n  \"agreedToTerms\": true,\n  \"hashFunction\": \"MD5\",\n  \"suspended\": true,\n  \"suspensionReason\": \"example_value\",\n  \"changePasswordAtNextLogin\": true,\n  \"ipWhitelisted\": true,\n  \"customerId\": \"500123\",\n  \"orgUnitPath\": \"example_value\",\n  \"isMailboxSetup\": true,\n  \"includeInGlobalAddressList\": true,\n  \"thumbnailPhotoUrl\": \"https://www.example.com\",\n  \"thumbnailPhotoEtag\": \"example_value\",\n  \"archived\": true,\n  \"recoveryEmail\": \"user@example.com\",\n  \"recoveryPhone\": \"example_value\",\n  \"isEnrolledIn2Sv\": true,\n  \"isEnforcedIn2Sv\": true,\n  \"emails\": [\n    {\n      \"address\": \"PgRWVeR@CiHySWLL.is\",\n      \"type\": \"string\",\n      \"customType\": \"string\",\n      \"primary\": true\n    },\n    {\n      \"address\": \"E6cTiZKJYE2RL@rlfybotAxTpFDVgGNHunp.pifs\",\n      \"type\": \"string\",\n      \"customType\": \"string\",\n      \"primary\": false\n    }\n  ],\n  \"gender\": {\n    \"type\": \"string\",\n    \"customGender\": \"string\",\n    \"addressMeAs\": \"string\"\n  },\n  \"notes\": {\n    \"value\": \"string\",\n    \"contentType\": \"text_plain\"\n  },\n  \"customSchemas\": {\n    \"key_0\": {\n      \"key_0\": true,\n      \"key_1\": \"string\",\n      \"key_2\": true\n    },\n    \"key_1\": {\n      \"key_0\": \"string\"\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b2d285d7-527a-4b81-89a6-dc79587b6468",
+              "name": "The request was malformed or contained invalid parameters.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "directory",
+                    "v1",
+                    "users",
+                    ":userKey"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "userKey",
+                      "description": "(Required) Identifies the user in the API request. The value can be the user primary email address, alias email address, or unique user ID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"primaryEmail\": \"user@example.com\",\n  \"name\": {\n    \"givenName\": \"example_value\",\n    \"familyName\": \"example_value\",\n    \"displayName\": \"example_value\"\n  },\n  \"password\": \"example_value\",\n  \"hashFunction\": \"MD5\",\n  \"suspended\": true,\n  \"changePasswordAtNextLogin\": true,\n  \"ipWhitelisted\": true,\n  \"orgUnitPath\": \"example_value\",\n  \"includeInGlobalAddressList\": true,\n  \"archived\": true,\n  \"recoveryEmail\": \"user@example.com\",\n  \"recoveryPhone\": \"example_value\",\n  \"emails\": [\n    {\n      \"address\": \"<email>\",\n      \"type\": \"<string>\",\n      \"customType\": \"<string>\",\n      \"primary\": \"<boolean>\"\n    },\n    {\n      \"address\": \"<email>\",\n      \"type\": \"<string>\",\n      \"customType\": \"<string>\",\n      \"primary\": \"<boolean>\"\n    }\n  ],\n  \"gender\": {\n    \"type\": \"<string>\",\n    \"customGender\": \"<string>\",\n    \"addressMeAs\": \"<string>\"\n  },\n  \"notes\": {\n    \"value\": \"<string>\",\n    \"contentType\": \"<string>\"\n  },\n  \"customSchemas\": {\n    \"key_0\": {\n      \"key_0\": \"string\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": 6500,\n    \"message\": \"string\",\n    \"errors\": [\n      {\n        \"domain\": \"string\",\n        \"reason\": \"string\",\n        \"message\": \"string\"\n      },\n      {\n        \"domain\": \"string\",\n        \"reason\": \"string\",\n        \"message\": \"string\"\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "62da3fde-895f-43dc-b5e9-50c5b76c7441",
+              "name": "Authentication is required. The request did not include valid credentials.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "directory",
+                    "v1",
+                    "users",
+                    ":userKey"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "userKey",
+                      "description": "(Required) Identifies the user in the API request. The value can be the user primary email address, alias email address, or unique user ID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"primaryEmail\": \"user@example.com\",\n  \"name\": {\n    \"givenName\": \"example_value\",\n    \"familyName\": \"example_value\",\n    \"displayName\": \"example_value\"\n  },\n  \"password\": \"example_value\",\n  \"hashFunction\": \"MD5\",\n  \"suspended\": true,\n  \"changePasswordAtNextLogin\": true,\n  \"ipWhitelisted\": true,\n  \"orgUnitPath\": \"example_value\",\n  \"includeInGlobalAddressList\": true,\n  \"archived\": true,\n  \"recoveryEmail\": \"user@example.com\",\n  \"recoveryPhone\": \"example_value\",\n  \"emails\": [\n    {\n      \"address\": \"<email>\",\n      \"type\": \"<string>\",\n      \"customType\": \"<string>\",\n      \"primary\": \"<boolean>\"\n    },\n    {\n      \"address\": \"<email>\",\n      \"type\": \"<string>\",\n      \"customType\": \"<string>\",\n      \"primary\": \"<boolean>\"\n    }\n  ],\n  \"gender\": {\n    \"type\": \"<string>\",\n    \"customGender\": \"<string>\",\n    \"addressMeAs\": \"<string>\"\n  },\n  \"notes\": {\n    \"value\": \"<string>\",\n    \"contentType\": \"<string>\"\n  },\n  \"customSchemas\": {\n    \"key_0\": {\n      \"key_0\": \"string\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": 6500,\n    \"message\": \"string\",\n    \"errors\": [\n      {\n        \"domain\": \"string\",\n        \"reason\": \"string\",\n        \"message\": \"string\"\n      },\n      {\n        \"domain\": \"string\",\n        \"reason\": \"string\",\n        \"message\": \"string\"\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "384d42c5-872e-4106-a83e-edbfa348534e",
+              "name": "The authenticated user does not have permission to perform this operation. Ensure the correct admin scopes are authorized.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "directory",
+                    "v1",
+                    "users",
+                    ":userKey"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "userKey",
+                      "description": "(Required) Identifies the user in the API request. The value can be the user primary email address, alias email address, or unique user ID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"primaryEmail\": \"user@example.com\",\n  \"name\": {\n    \"givenName\": \"example_value\",\n    \"familyName\": \"example_value\",\n    \"displayName\": \"example_value\"\n  },\n  \"password\": \"example_value\",\n  \"hashFunction\": \"MD5\",\n  \"suspended\": true,\n  \"changePasswordAtNextLogin\": true,\n  \"ipWhitelisted\": true,\n  \"orgUnitPath\": \"example_value\",\n  \"includeInGlobalAddressList\": true,\n  \"archived\": true,\n  \"recoveryEmail\": \"user@example.com\",\n  \"recoveryPhone\": \"example_value\",\n  \"emails\": [\n    {\n      \"address\": \"<email>\",\n      \"type\": \"<string>\",\n      \"customType\": \"<string>\",\n      \"primary\": \"<boolean>\"\n    },\n    {\n      \"address\": \"<email>\",\n      \"type\": \"<string>\",\n      \"customType\": \"<string>\",\n      \"primary\": \"<boolean>\"\n    }\n  ],\n  \"gender\": {\n    \"type\": \"<string>\",\n    \"customGender\": \"<string>\",\n    \"addressMeAs\": \"<string>\"\n  },\n  \"notes\": {\n    \"value\": \"<string>\",\n    \"contentType\": \"<string>\"\n  },\n  \"customSchemas\": {\n    \"key_0\": {\n      \"key_0\": \"string\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": 6500,\n    \"message\": \"string\",\n    \"errors\": [\n      {\n        \"domain\": \"string\",\n        \"reason\": \"string\",\n        \"message\": \"string\"\n      },\n      {\n        \"domain\": \"string\",\n        \"reason\": \"string\",\n        \"message\": \"string\"\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "abf4ae71-e06b-46e0-b73a-30f536295527",
+              "name": "The requested resource was not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "directory",
+                    "v1",
+                    "users",
+                    ":userKey"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "userKey",
+                      "description": "(Required) Identifies the user in the API request. The value can be the user primary email address, alias email address, or unique user ID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"primaryEmail\": \"user@example.com\",\n  \"name\": {\n    \"givenName\": \"example_value\",\n    \"familyName\": \"example_value\",\n    \"displayName\": \"example_value\"\n  },\n  \"password\": \"example_value\",\n  \"hashFunction\": \"MD5\",\n  \"suspended\": true,\n  \"changePasswordAtNextLogin\": true,\n  \"ipWhitelisted\": true,\n  \"orgUnitPath\": \"example_value\",\n  \"includeInGlobalAddressList\": true,\n  \"archived\": true,\n  \"recoveryEmail\": \"user@example.com\",\n  \"recoveryPhone\": \"example_value\",\n  \"emails\": [\n    {\n      \"address\": \"<email>\",\n      \"type\": \"<string>\",\n      \"customType\": \"<string>\",\n      \"primary\": \"<boolean>\"\n    },\n    {\n      \"address\": \"<email>\",\n      \"type\": \"<string>\",\n      \"customType\": \"<string>\",\n      \"primary\": \"<boolean>\"\n    }\n  ],\n  \"gender\": {\n    \"type\": \"<string>\",\n    \"customGender\": \"<string>\",\n    \"addressMeAs\": \"<string>\"\n  },\n  \"notes\": {\n    \"value\": \"<string>\",\n    \"contentType\": \"<string>\"\n  },\n  \"customSchemas\": {\n    \"key_0\": {\n      \"key_0\": \"string\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": 6500,\n    \"message\": \"string\",\n    \"errors\": [\n      {\n        \"domain\": \"string\",\n        \"reason\": \"string\",\n        \"message\": \"string\"\n      },\n      {\n        \"domain\": \"string\",\n        \"reason\": \"string\",\n        \"message\": \"string\"\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9e47cdcc-ee63-47cd-bb07-cebe91d87062",
+          "name": "Delete a User",
+          "request": {
+            "name": "Delete a User",
+            "description": {
+              "content": "Deletes a user account. Deleted users are recoverable for a period of 20 days using the undelete method.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "admin",
+                "directory",
+                "v1",
+                "users",
+                ":userKey"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "userKey",
+                  "description": "(Required) Identifies the user in the API request. The value can be the user primary email address, alias email address, or unique user ID."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7fa1454c-9c8f-4b2f-992f-d3c493a380ac",
+              "name": "Successfully deleted user. No content returned.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "directory",
+                    "v1",
+                    "users",
+                    ":userKey"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "userKey",
+                      "description": "(Required) Identifies the user in the API request. The value can be the user primary email address, alias email address, or unique user ID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "29f1d2ce-9113-4699-b7df-277e32dd3eda",
+              "name": "Authentication is required. The request did not include valid credentials.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "directory",
+                    "v1",
+                    "users",
+                    ":userKey"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "userKey",
+                      "description": "(Required) Identifies the user in the API request. The value can be the user primary email address, alias email address, or unique user ID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": 6500,\n    \"message\": \"string\",\n    \"errors\": [\n      {\n        \"domain\": \"string\",\n        \"reason\": \"string\",\n        \"message\": \"string\"\n      },\n      {\n        \"domain\": \"string\",\n        \"reason\": \"string\",\n        \"message\": \"string\"\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6bd54ef8-a4f4-486f-bb13-72eb0986c2a6",
+              "name": "The authenticated user does not have permission to perform this operation. Ensure the correct admin scopes are authorized.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "directory",
+                    "v1",
+                    "users",
+                    ":userKey"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "userKey",
+                      "description": "(Required) Identifies the user in the API request. The value can be the user primary email address, alias email address, or unique user ID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": 6500,\n    \"message\": \"string\",\n    \"errors\": [\n      {\n        \"domain\": \"string\",\n        \"reason\": \"string\",\n        \"message\": \"string\"\n      },\n      {\n        \"domain\": \"string\",\n        \"reason\": \"string\",\n        \"message\": \"string\"\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "dc5f688a-86e1-40e6-8ffc-751f8ce84fe3",
+              "name": "The requested resource was not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "directory",
+                    "v1",
+                    "users",
+                    ":userKey"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "userKey",
+                      "description": "(Required) Identifies the user in the API request. The value can be the user primary email address, alias email address, or unique user ID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": 6500,\n    \"message\": \"string\",\n    \"errors\": [\n      {\n        \"domain\": \"string\",\n        \"reason\": \"string\",\n        \"message\": \"string\"\n      },\n      {\n        \"domain\": \"string\",\n        \"reason\": \"string\",\n        \"message\": \"string\"\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "09d88766-bdc3-4055-8e80-205ddaff3342",
+          "name": "Make a User a Super Administrator",
+          "request": {
+            "name": "Make a User a Super Administrator",
+            "description": {
+              "content": "Makes a user a super administrator. This can only be done by another super administrator.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "admin",
+                "directory",
+                "v1",
+                "users",
+                ":userKey",
+                "makeAdmin"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "userKey",
+                  "description": "(Required) Identifies the user in the API request. The value can be the user primary email address, alias email address, or unique user ID."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"status\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "b94b114f-2b8a-4053-ad56-c33979acb50a",
+              "name": "Successfully updated admin status.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "directory",
+                    "v1",
+                    "users",
+                    ":userKey",
+                    "makeAdmin"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "userKey",
+                      "description": "(Required) Identifies the user in the API request. The value can be the user primary email address, alias email address, or unique user ID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"status\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "f1109905-7c7c-4f90-92bf-c4362dec0b67",
+              "name": "Authentication is required. The request did not include valid credentials.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "directory",
+                    "v1",
+                    "users",
+                    ":userKey",
+                    "makeAdmin"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "userKey",
+                      "description": "(Required) Identifies the user in the API request. The value can be the user primary email address, alias email address, or unique user ID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"status\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": 6500,\n    \"message\": \"string\",\n    \"errors\": [\n      {\n        \"domain\": \"string\",\n        \"reason\": \"string\",\n        \"message\": \"string\"\n      },\n      {\n        \"domain\": \"string\",\n        \"reason\": \"string\",\n        \"message\": \"string\"\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "550c4317-ef7c-4d6a-a538-b7969ff1340c",
+              "name": "The authenticated user does not have permission to perform this operation. Ensure the correct admin scopes are authorized.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "directory",
+                    "v1",
+                    "users",
+                    ":userKey",
+                    "makeAdmin"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "userKey",
+                      "description": "(Required) Identifies the user in the API request. The value can be the user primary email address, alias email address, or unique user ID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"status\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": 6500,\n    \"message\": \"string\",\n    \"errors\": [\n      {\n        \"domain\": \"string\",\n        \"reason\": \"string\",\n        \"message\": \"string\"\n      },\n      {\n        \"domain\": \"string\",\n        \"reason\": \"string\",\n        \"message\": \"string\"\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "76201584-855c-4e91-a7ee-c026b0bcaabd",
+              "name": "The requested resource was not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "directory",
+                    "v1",
+                    "users",
+                    ":userKey",
+                    "makeAdmin"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "userKey",
+                      "description": "(Required) Identifies the user in the API request. The value can be the user primary email address, alias email address, or unique user ID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"status\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": 6500,\n    \"message\": \"string\",\n    \"errors\": [\n      {\n        \"domain\": \"string\",\n        \"reason\": \"string\",\n        \"message\": \"string\"\n      },\n      {\n        \"domain\": \"string\",\n        \"reason\": \"string\",\n        \"message\": \"string\"\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a7978a8e-7d55-4238-889f-08ac9cf79630",
+          "name": "Undelete a User",
+          "request": {
+            "name": "Undelete a User",
+            "description": {
+              "content": "Restores a recently deleted user account. Users are recoverable for a period of 20 days after deletion.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "admin",
+                "directory",
+                "v1",
+                "users",
+                ":userKey",
+                "undelete"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "userKey",
+                  "description": "(Required) Identifies the user in the API request. The value can be the user primary email address, alias email address, or unique user ID."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"orgUnitPath\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "0a284f34-2f6b-4316-b476-6c137fce41cf",
+              "name": "Successfully undeleted user.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "directory",
+                    "v1",
+                    "users",
+                    ":userKey",
+                    "undelete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "userKey",
+                      "description": "(Required) Identifies the user in the API request. The value can be the user primary email address, alias email address, or unique user ID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"orgUnitPath\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "20d4eca4-b11c-43f9-9f0f-9123c88079c2",
+              "name": "Authentication is required. The request did not include valid credentials.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "directory",
+                    "v1",
+                    "users",
+                    ":userKey",
+                    "undelete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "userKey",
+                      "description": "(Required) Identifies the user in the API request. The value can be the user primary email address, alias email address, or unique user ID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"orgUnitPath\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": 6500,\n    \"message\": \"string\",\n    \"errors\": [\n      {\n        \"domain\": \"string\",\n        \"reason\": \"string\",\n        \"message\": \"string\"\n      },\n      {\n        \"domain\": \"string\",\n        \"reason\": \"string\",\n        \"message\": \"string\"\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "be912a95-57d0-4064-a70a-4a4a002c6252",
+              "name": "The authenticated user does not have permission to perform this operation. Ensure the correct admin scopes are authorized.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "directory",
+                    "v1",
+                    "users",
+                    ":userKey",
+                    "undelete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "userKey",
+                      "description": "(Required) Identifies the user in the API request. The value can be the user primary email address, alias email address, or unique user ID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"orgUnitPath\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": 6500,\n    \"message\": \"string\",\n    \"errors\": [\n      {\n        \"domain\": \"string\",\n        \"reason\": \"string\",\n        \"message\": \"string\"\n      },\n      {\n        \"domain\": \"string\",\n        \"reason\": \"string\",\n        \"message\": \"string\"\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "cc0043ff-6cf4-4046-b68a-0f3e0bec50e6",
+              "name": "The requested resource was not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "directory",
+                    "v1",
+                    "users",
+                    ":userKey",
+                    "undelete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "userKey",
+                      "description": "(Required) Identifies the user in the API request. The value can be the user primary email address, alias email address, or unique user ID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"orgUnitPath\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": 6500,\n    \"message\": \"string\",\n    \"errors\": [\n      {\n        \"domain\": \"string\",\n        \"reason\": \"string\",\n        \"message\": \"string\"\n      },\n      {\n        \"domain\": \"string\",\n        \"reason\": \"string\",\n        \"message\": \"string\"\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8b968323-0bb2-47cb-97b3-6641cf90fc33",
+          "name": "Sign Out a User",
+          "request": {
+            "name": "Sign Out a User",
+            "description": {
+              "content": "Signs a user out of all web and device sessions and resets their sign-in cookies.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "admin",
+                "directory",
+                "v1",
+                "users",
+                ":userKey",
+                "signOut"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "userKey",
+                  "description": "(Required) Identifies the user in the API request. The value can be the user primary email address, alias email address, or unique user ID."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5422c1f3-ecf8-41db-bd3b-b6cdd02edf86",
+              "name": "Successfully signed out user.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "directory",
+                    "v1",
+                    "users",
+                    ":userKey",
+                    "signOut"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "userKey",
+                      "description": "(Required) Identifies the user in the API request. The value can be the user primary email address, alias email address, or unique user ID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "26ea7b96-6465-4cf3-b4a9-8412daf2adb2",
+              "name": "Authentication is required. The request did not include valid credentials.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "directory",
+                    "v1",
+                    "users",
+                    ":userKey",
+                    "signOut"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "userKey",
+                      "description": "(Required) Identifies the user in the API request. The value can be the user primary email address, alias email address, or unique user ID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": 6500,\n    \"message\": \"string\",\n    \"errors\": [\n      {\n        \"domain\": \"string\",\n        \"reason\": \"string\",\n        \"message\": \"string\"\n      },\n      {\n        \"domain\": \"string\",\n        \"reason\": \"string\",\n        \"message\": \"string\"\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e46fd9f0-22be-4f25-b4bf-fbc09b2a0796",
+              "name": "The authenticated user does not have permission to perform this operation. Ensure the correct admin scopes are authorized.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "directory",
+                    "v1",
+                    "users",
+                    ":userKey",
+                    "signOut"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "userKey",
+                      "description": "(Required) Identifies the user in the API request. The value can be the user primary email address, alias email address, or unique user ID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": 6500,\n    \"message\": \"string\",\n    \"errors\": [\n      {\n        \"domain\": \"string\",\n        \"reason\": \"string\",\n        \"message\": \"string\"\n      },\n      {\n        \"domain\": \"string\",\n        \"reason\": \"string\",\n        \"message\": \"string\"\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3419f941-ef45-4e76-b20a-085b254b3f6c",
+              "name": "The requested resource was not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "directory",
+                    "v1",
+                    "users",
+                    ":userKey",
+                    "signOut"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "userKey",
+                      "description": "(Required) Identifies the user in the API request. The value can be the user primary email address, alias email address, or unique user ID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": 6500,\n    \"message\": \"string\",\n    \"errors\": [\n      {\n        \"domain\": \"string\",\n        \"reason\": \"string\",\n        \"message\": \"string\"\n      },\n      {\n        \"domain\": \"string\",\n        \"reason\": \"string\",\n        \"message\": \"string\"\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://admin.googleapis.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "https://www.googleapis.com/auth/admin.directory.user https://www.googleapis.com/auth/admin.directory.user.readonly https://www.googleapis.com/auth/admin.directory.group https://www.googleapis.com/auth/admin.directory.group.readonly https://www.googleapis.com/auth/admin.directory.orgunit https://www.googleapis.com/auth/admin.directory.orgunit.readonly"
+      },
+      {
+        "key": "redirect_uri",
+        "value": "https://oauth2.googleapis.com/token"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "https://oauth2.googleapis.com/token"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://accounts.google.com/o/oauth2/v2/auth"
+      },
+      {
+        "key": "grant_type",
+        "value": "authorization_code"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "3a0f4eca-eb89-4b26-b0ec-0014b50771f6",
+    "name": "Google Workspace Admin SDK Directory Groups Users API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Manage users, groups, and organizational units in a Google Workspace domain. The Admin SDK Directory API lets administrators of enterprise domains view and manage resources such as user accounts, groups, and organizational units within their Google Workspace domain.\n\nContact Support:\n Name: Google Workspace Developer Support",
+      "type": "text/plain"
+    }
+  }
+}

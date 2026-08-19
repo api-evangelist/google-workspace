@@ -1,0 +1,192 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Google Workspace Admin SDK Directory Groups OrgUnits API",
+    "version": "directory_v1"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "authorization_code",
+      "authorizationUrl": "https://accounts.google.com/o/oauth2/v2/auth",
+      "accessTokenUrl": "https://oauth2.googleapis.com/token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "OrgUnits",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Organizational Units",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://admin.googleapis.com/admin/directory/v1/customer/:customerId/orgunits",
+            "params": [
+              {
+                "name": "customerId",
+                "value": "",
+                "type": "path",
+                "description": "The unique ID for the customer Google Workspace account. Use the value my_customer to represent the account associated with the authenticated administrator."
+              },
+              {
+                "name": "type",
+                "value": "",
+                "type": "query",
+                "description": "Whether to return all sub-organizations or just immediate children."
+              },
+              {
+                "name": "orgUnitPath",
+                "value": "",
+                "type": "query",
+                "description": "The full path to the organizational unit or its unique ID. Returns child organizational units beneath the specified path."
+              }
+            ]
+          },
+          "docs": "Retrieves a list of all organizational units for an account. The hierarchy of organizational units is limited to 35 levels of depth."
+        },
+        {
+          "info": {
+            "name": "Create an Organizational Unit",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://admin.googleapis.com/admin/directory/v1/customer/:customerId/orgunits",
+            "params": [
+              {
+                "name": "customerId",
+                "value": "",
+                "type": "path",
+                "description": "The unique ID for the customer Google Workspace account. Use the value my_customer to represent the account associated with the authenticated administrator."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Adds an organizational unit under the specified customer account."
+        },
+        {
+          "info": {
+            "name": "Get an Organizational Unit",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://admin.googleapis.com/admin/directory/v1/customer/:customerId/orgunits/:orgUnitPath",
+            "params": [
+              {
+                "name": "customerId",
+                "value": "",
+                "type": "path",
+                "description": "The unique ID for the customer Google Workspace account. Use the value my_customer to represent the account associated with the authenticated administrator."
+              },
+              {
+                "name": "orgUnitPath",
+                "value": "",
+                "type": "path",
+                "description": "The full path of the organizational unit (minus the leading /) or its unique ID."
+              }
+            ]
+          },
+          "docs": "Retrieves an organizational unit."
+        },
+        {
+          "info": {
+            "name": "Update an Organizational Unit",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://admin.googleapis.com/admin/directory/v1/customer/:customerId/orgunits/:orgUnitPath",
+            "params": [
+              {
+                "name": "customerId",
+                "value": "",
+                "type": "path",
+                "description": "The unique ID for the customer Google Workspace account. Use the value my_customer to represent the account associated with the authenticated administrator."
+              },
+              {
+                "name": "orgUnitPath",
+                "value": "",
+                "type": "path",
+                "description": "The full path of the organizational unit (minus the leading /) or its unique ID."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Updates an organizational unit. This replaces the entire resource. Use patch for partial updates."
+        },
+        {
+          "info": {
+            "name": "Patch an Organizational Unit",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://admin.googleapis.com/admin/directory/v1/customer/:customerId/orgunits/:orgUnitPath",
+            "params": [
+              {
+                "name": "customerId",
+                "value": "",
+                "type": "path",
+                "description": "The unique ID for the customer Google Workspace account. Use the value my_customer to represent the account associated with the authenticated administrator."
+              },
+              {
+                "name": "orgUnitPath",
+                "value": "",
+                "type": "path",
+                "description": "The full path of the organizational unit (minus the leading /) or its unique ID."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Updates an organizational unit using patch semantics. Only the specified fields are updated."
+        },
+        {
+          "info": {
+            "name": "Delete an Organizational Unit",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://admin.googleapis.com/admin/directory/v1/customer/:customerId/orgunits/:orgUnitPath",
+            "params": [
+              {
+                "name": "customerId",
+                "value": "",
+                "type": "path",
+                "description": "The unique ID for the customer Google Workspace account. Use the value my_customer to represent the account associated with the authenticated administrator."
+              },
+              {
+                "name": "orgUnitPath",
+                "value": "",
+                "type": "path",
+                "description": "The full path of the organizational unit (minus the leading /) or its unique ID."
+              }
+            ]
+          },
+          "docs": "Removes an organizational unit. Only empty organizational units can be deleted. All users and child organizational units must be moved or deleted before the parent can be removed."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
