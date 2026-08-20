@@ -57,6 +57,10 @@ apis:
   baseURL: https://www.googleapis.com/drive/v3
   tags:
   - Cloud
+  - File
+  - Storage
+  tags_raw:
+  - Cloud
   - Files
   - Storage
   properties:
@@ -75,6 +79,10 @@ apis:
   humanURL: https://developers.google.com/calendar/api
   baseURL: https://www.googleapis.com/calendar/v3
   tags:
+  - Calendar
+  - Event
+  - Scheduling
+  tags_raw:
   - Calendar
   - Events
   - Scheduling
@@ -210,6 +218,10 @@ apis:
   baseURL: https://tasks.googleapis.com
   tags:
   - Productivity
+  - Task
+  - To-Do
+  tags_raw:
+  - Productivity
   - Tasks
   - To-Do
   properties:
@@ -241,6 +253,10 @@ apis:
   humanURL: https://developers.google.com/workspace/vault
   baseURL: https://vault.googleapis.com
   tags:
+  - Compliance
+  - eDiscovery
+  - Legal
+  tags_raw:
   - Compliance
   - Ediscovery
   - Legal
@@ -299,6 +315,10 @@ apis:
   tags:
   - Activity
   - Audit
+  - Drives
+  tags_raw:
+  - Activity
+  - Audit
   - Drive
   properties:
   - type: Documentation
@@ -311,6 +331,10 @@ apis:
   humanURL: https://developers.google.com/workspace/drive/labels/guides/overview
   baseURL: https://drivelabels.googleapis.com
   tags:
+  - Drives
+  - Labels
+  - Metadata
+  tags_raw:
   - Drive
   - Labels
   - Metadata
@@ -344,6 +368,10 @@ apis:
   baseURL: https://www.googleapis.com/groups/v1
   tags:
   - Admin
+  - Group
+  - Settings
+  tags_raw:
+  - Admin
   - Groups
   - Settings
   properties:
@@ -358,6 +386,10 @@ apis:
   humanURL: https://developers.google.com/workspace/admin/groups-migration/v1/guides/overview
   baseURL: https://groupsmigration.googleapis.com
   tags:
+  - Admin
+  - Group
+  - Migration
+  tags_raw:
   - Admin
   - Groups
   - Migration
@@ -405,6 +437,10 @@ apis:
   tags:
   - Admin
   - Reseller
+  - Subscription
+  tags_raw:
+  - Admin
+  - Reseller
   - Subscriptions
   properties:
   - type: Documentation
@@ -434,6 +470,10 @@ apis:
   humanURL: https://developers.google.com/workspace/marketplace/overview
   baseURL: https://appsmarket.googleapis.com
   tags:
+  - Application
+  - Licensing
+  - Marketplace
+  tags_raw:
   - Apps
   - Licensing
   - Marketplace
@@ -450,6 +490,8 @@ apis:
   humanURL: https://developers.google.com/gmail/api
   baseURL: https://gmail.googleapis.com
   tags:
+  - Group
+  tags_raw:
   - Groups
   properties:
   - type: OpenAPI
@@ -470,6 +512,8 @@ apis:
   humanURL: https://developers.google.com/gmail/api
   baseURL: https://gmail.googleapis.com
   tags:
+  - Org Units
+  tags_raw:
   - OrgUnits
   properties:
   - type: OpenAPI
@@ -490,6 +534,8 @@ apis:
   humanURL: https://developers.google.com/gmail/api
   baseURL: https://gmail.googleapis.com
   tags:
+  - User
+  tags_raw:
   - Users
   properties:
   - type: OpenAPI
