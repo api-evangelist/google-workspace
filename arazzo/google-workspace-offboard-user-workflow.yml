@@ -11,8 +11,8 @@ info:
     underlying OpenAPI description.
   version: 1.0.0
 sourceDescriptions:
-- name: directoryApi
-  url: ../openapi/admin-sdk-directory-api.yml
+- name: usersApi
+  url: ../openapi/google-workspace-users-api-openapi.yml
   type: openapi
 workflows:
 - workflowId: offboard-user
