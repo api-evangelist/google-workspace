@@ -563,6 +563,9 @@ apis:
   - type: GettingStarted
     url: https://developers.google.com/admin-sdk/directory/v1/quickstart/python
 common:
+  - type: CapabilityMap
+    url: capabilities/google-workspace-capability-edges.yml
+    name: Google Workspace Business Capability Map
   - type: AgenticAccess
     url: agentic-access/google-workspace-agentic-access.yml
   - type: VulnerabilityDisclosure
