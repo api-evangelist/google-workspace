@@ -1,6 +1,18 @@
 aid: google-workspace
 name: Google Workspace
 description: A collection of productivity and collaboration tools from Google including Gmail, Drive, Calendar, Meet, and more.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: paid
   onboarding: self-serve
