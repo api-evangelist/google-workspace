@@ -266,7 +266,7 @@ apis:
   baseURL: https://vault.googleapis.com
   tags:
   - Compliance
-  - Ediscovery
+  - eDiscovery
   - Legal
   tags_raw:
   - Compliance
@@ -327,7 +327,7 @@ apis:
   tags:
   - Activity
   - Audit
-  - Drive
+  - Drives
   tags_raw:
   - Activity
   - Audit
@@ -343,7 +343,7 @@ apis:
   humanURL: https://developers.google.com/workspace/drive/labels/guides/overview
   baseURL: https://drivelabels.googleapis.com
   tags:
-  - Drive
+  - Drives
   - Labels
   - Metadata
   tags_raw:
@@ -524,7 +524,7 @@ apis:
   humanURL: https://developers.google.com/gmail/api
   baseURL: https://gmail.googleapis.com
   tags:
-  - OrgUnits
+  - Org Units
   tags_raw:
   - OrgUnits
   properties:
