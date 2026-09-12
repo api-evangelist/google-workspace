@@ -34,12 +34,12 @@ specificationVersion: '0.23'
 type: Index
 access: 3rd-Party
 tags:
-  - Calendar
-  - Collaboration
-  - Email
-  - Productivity
-  - Storage
-  - Video Conferencing
+- Calendar
+- Collaboration
+- Email
+- Productivity
+- Storage
+- Video Conferencing
 apis:
 - aid: google-workspace:gmail
   name: Gmail API
@@ -191,8 +191,7 @@ apis:
     url: https://developers.google.com/chat/api/reference/rest
 - aid: google-workspace:admin-reports
   name: Admin SDK Reports API
-  description: >-
-    View audit and usage reports for a Google Workspace domain including user activity and admin actions.
+  description: View audit and usage reports for a Google Workspace domain including user activity and admin actions.
   humanURL: https://developers.google.com/admin-sdk/reports
   baseURL: https://admin.googleapis.com
   tags:
@@ -245,8 +244,7 @@ apis:
     url: https://developers.google.com/tasks/quickstart/js
 - aid: google-workspace:keep
   name: Google Keep API
-  description: >-
-    Manage Google Keep notes including creating, listing, and deleting notes and managing permissions.
+  description: Manage Google Keep notes including creating, listing, and deleting notes and managing permissions.
   humanURL: https://developers.google.com/workspace/keep
   baseURL: https://keep.googleapis.com
   tags:
@@ -259,9 +257,7 @@ apis:
     url: https://developers.google.com/workspace/keep/api/reference/rest
 - aid: google-workspace:vault
   name: Google Vault API
-  description: >-
-    Manage eDiscovery for your organization including matters, holds, and exports across Google Workspace
-    services.
+  description: Manage eDiscovery for your organization including matters, holds, and exports across Google Workspace services.
   humanURL: https://developers.google.com/workspace/vault
   baseURL: https://vault.googleapis.com
   tags:
@@ -357,8 +353,7 @@ apis:
     url: https://developers.google.com/workspace/drive/labels/reference/rest/v2
 - aid: google-workspace:alert-center
   name: Alert Center API
-  description: >-
-    Manage alerts on issues affecting your Google Workspace domain including security and compliance warnings.
+  description: Manage alerts on issues affecting your Google Workspace domain including security and compliance warnings.
   humanURL: https://developers.google.com/workspace/admin/alertcenter/guides
   baseURL: https://alertcenter.googleapis.com
   tags:
@@ -374,8 +369,7 @@ apis:
     url: https://developers.google.com/workspace/admin/alertcenter/guides/auth
 - aid: google-workspace:groups-settings
   name: Groups Settings API
-  description: >-
-    Update and retrieve settings for existing Google Groups including permissions and access controls.
+  description: Update and retrieve settings for existing Google Groups including permissions and access controls.
   humanURL: https://developers.google.com/admin-sdk/groups-settings/concepts
   baseURL: https://www.googleapis.com/groups/v1
   tags:
@@ -393,8 +387,7 @@ apis:
     url: https://developers.google.com/admin-sdk/groups-settings/v1/reference
 - aid: google-workspace:groups-migration
   name: Groups Migration API
-  description: >-
-    Migrate shared emails from public folders and distribution lists to Google Groups discussion archives.
+  description: Migrate shared emails from public folders and distribution lists to Google Groups discussion archives.
   humanURL: https://developers.google.com/workspace/admin/groups-migration/v1/guides/overview
   baseURL: https://groupsmigration.googleapis.com
   tags:
@@ -442,8 +435,7 @@ apis:
     url: https://developers.google.com/admin-sdk/licensing/v1/how-tos/authorizing
 - aid: google-workspace:reseller
   name: Google Workspace Reseller API
-  description: >-
-    Perform common reseller functions at scale including placing orders and managing customer subscriptions.
+  description: Perform common reseller functions at scale including placing orders and managing customer subscriptions.
   humanURL: https://developers.google.com/workspace/admin/reseller/v1/how-tos/concepts
   baseURL: https://reseller.googleapis.com
   tags:
@@ -463,8 +455,7 @@ apis:
     url: https://developers.google.com/workspace/admin/reseller/v1/how-tos/authorize
 - aid: google-workspace:postmaster
   name: Gmail Postmaster Tools API
-  description: >-
-    Gather statistics on bulk emails sent to Gmail users including spam reports and delivery errors.
+  description: Gather statistics on bulk emails sent to Gmail users including spam reports and delivery errors.
   humanURL: https://developers.google.com/workspace/gmail/postmaster
   baseURL: https://gmailpostmastertools.googleapis.com
   tags:
@@ -562,150 +553,164 @@ apis:
     url: https://developers.google.com/workspace/admin/directory/reference/rest
   - type: GettingStarted
     url: https://developers.google.com/admin-sdk/directory/v1/quickstart/python
+- name: Google Meet API
+  description: The Google Meet API allows developers to build applications that integrate with Google Meet.
+  image: https://www.gstatic.com/images/branding/product/2x/meet_64dp.png
+  humanURL: https://developers.google.com/meet
+  baseURL: https://meet.googleapis.com/v2
+  tags:
+  - Collaboration
+  - Communications
+  - Meetings
+  - Video Conferencing
+  tags_raw:
+  - Collaboration
+  - Communication
+  - Meetings
+  - Video-Conferencing
+  properties:
+  - type: Documentation
+    url: https://developers.google.com/meet/api/guides/overview
+  - type: Reference
+    url: https://developers.google.com/meet/api/reference/rest
 common:
-  - type: CapabilityMap
-    url: capabilities/google-workspace-capability-edges.yml
-    name: Google Workspace Business Capability Map
-  - type: AgenticAccess
-    url: agentic-access/google-workspace-agentic-access.yml
-  - type: VulnerabilityDisclosure
-    url: security/google-workspace-vulnerability-disclosure.yml
-  - type: DomainSecurity
-    url: security/google-workspace-domain-security.yml
-  - type: Authentication
-    url: authentication/google-workspace-authentication.yml
-  - type: OAuthScopes
-    url: scopes/google-workspace-scopes.yml
-  - type: PostmanWorkspace
-    url: https://www.postman.com/kinlaneapi/google-workspace/overview
-  - type: Arazzo
-    url: arazzo/google-workspace-audit-user-groups-workflow.yml
-    name: Google Workspace Audit a User's Group Memberships
-  - type: Arazzo
-    url: arazzo/google-workspace-create-group-workflow.yml
-    name: Google Workspace Create a Group
-  - type: Arazzo
-    url: arazzo/google-workspace-create-org-unit-and-assign-user-workflow.yml
-    name: Google Workspace Create an Org Unit and Assign a User
-  - type: Arazzo
-    url: arazzo/google-workspace-decommission-org-unit-workflow.yml
-    name: Google Workspace Decommission an Org Unit
-  - type: Arazzo
-    url: arazzo/google-workspace-delete-user-safely-workflow.yml
-    name: Google Workspace Delete a User Safely
-  - type: Arazzo
-    url: arazzo/google-workspace-find-and-delete-group-workflow.yml
-    name: Google Workspace Find and Delete a Group
-  - type: Arazzo
-    url: arazzo/google-workspace-find-and-update-user-workflow.yml
-    name: Google Workspace Find and Update a User
-  - type: Arazzo
-    url: arazzo/google-workspace-inspect-org-unit-tree-workflow.yml
-    name: Google Workspace Inspect the Org Unit Tree
-  - type: Arazzo
-    url: arazzo/google-workspace-move-user-org-unit-workflow.yml
-    name: Google Workspace Move a User to Another Org Unit
-  - type: Arazzo
-    url: arazzo/google-workspace-offboard-user-workflow.yml
-    name: Google Workspace Offboard a User
-  - type: Arazzo
-    url: arazzo/google-workspace-promote-user-to-admin-workflow.yml
-    name: Google Workspace Promote a User to Super Administrator
-  - type: Arazzo
-    url: arazzo/google-workspace-provision-user-workflow.yml
-    name: Google Workspace Provision a User
-  - type: Arazzo
-    url: arazzo/google-workspace-rename-group-workflow.yml
-    name: Google Workspace Rename a Group
-  - type: Arazzo
-    url: arazzo/google-workspace-rename-org-unit-workflow.yml
-    name: Google Workspace Rename an Org Unit
-  - type: Arazzo
-    url: arazzo/google-workspace-reset-user-password-workflow.yml
-    name: Google Workspace Reset a User Password
-  - type: Arazzo
-    url: arazzo/google-workspace-restore-deleted-user-workflow.yml
-    name: Google Workspace Restore a Deleted User
-  - type: GitHubOrganization
-    url: https://github.com/googleworkspace
-  - type: LinkedIn
-    url: https://www.linkedin.com/showcase/googleworkspace
-  - type: Console
-    url: https://console.cloud.google.com
-  - type: Authentication
-    url: https://developers.google.com/identity/protocols/oauth2
-  - type: TermsOfService
-    url: https://workspace.google.com/terms/service-terms/
-  - type: Support
-    url: https://support.google.com/workspace
-  - type: StatusPage
-    url: https://www.google.com/appsstatus/dashboard/
-  - type: DeveloperPortal
-    url: https://developers.google.com/workspace
-  - type: Pricing
-    url: https://workspace.google.com/pricing
-  - type: Blog
-    url: https://workspaceupdates.googleblog.com
-  - type: ReleaseNotes
-    url: https://developers.google.com/workspace/release-notes
-  - type: GettingStarted
-    url: https://developers.google.com/workspace/guides/get-started
-  - type: SDKs
-    url: https://developers.google.com/workspace/guides/libraries
-  - type: Features
-    data:
-      - name: Email and Communication
-        description: >-
-          Send, receive, and manage email with Gmail API, build chat bots with Chat API, and host video meetings with
-          Meet API.
-      - name: Document Collaboration
-        description: >-
-          Create and edit documents, spreadsheets, presentations, and forms programmatically across Google Workspace
-          apps.
-      - name: File Storage and Management
-        description: Store, sync, and manage files with Drive API including permissions, metadata, labels, and activity tracking.
-      - name: Directory and User Management
-        description: Manage users, groups, organizational units, and devices across a Google Workspace domain with Admin SDK.
-      - name: Calendar and Scheduling
-        description: Create and manage calendars, events, and attendees with automatic conflict detection and resource booking.
-      - name: Security and Compliance
-        description: Monitor security alerts, manage eDiscovery holds, and generate audit reports for compliance requirements.
-      - name: Enterprise Search
-        description: Index and search across Google Workspace and external data sources with Cloud Search API.
-      - name: Task and Note Management
-        description: Manage tasks and notes programmatically with Tasks API and Keep API for productivity workflows.
-  - type: UseCases
-    data:
-      - name: Automated Onboarding
-        description: >-
-          Provision user accounts, assign groups and licenses, and configure organizational units for new employee
-          onboarding.
-      - name: Document Workflow Automation
-        description: Automate document creation, approval workflows, and distribution using Docs, Sheets, and Drive APIs.
-      - name: Meeting Management
-        description: >-
-          Schedule meetings, manage recordings and transcripts, and integrate video conferencing into custom
-          applications.
-      - name: Security Monitoring
-        description: >-
-          Monitor security alerts, audit user activity, and enforce compliance policies across the Google Workspace
-          domain.
-      - name: Customer Communication
-        description: Automate email campaigns, manage support inboxes, and integrate Gmail with CRM and helpdesk systems.
-  - type: Integrations
-    data:
-      - name: Salesforce
-        description: Sync contacts, calendar events, and emails between Google Workspace and Salesforce CRM.
-      - name: Slack
-        description: Bridge Google Workspace content and notifications with Slack channels for unified collaboration.
-      - name: Microsoft 365
-        description: Interoperability support for document sharing and calendar synchronization with Microsoft Office apps.
-      - name: Jira
-        description: Link Google Drive files, create documents from Jira issues, and sync calendar events with project timelines.
-      - name: Zapier
-        description: Connect Google Workspace apps with thousands of services through Zapier automation workflows.
-      - name: Asana
-        description: Integrate Google Drive attachments, Calendar events, and Gmail notifications with Asana project management.
+- type: PrivacyPolicy
+  url: https://policies.google.com/privacy
+- type: Website
+  url: https://workspace.google.com/
+- type: CapabilityMap
+  url: capabilities/google-workspace-capability-edges.yml
+  name: Google Workspace Business Capability Map
+- type: AgenticAccess
+  url: agentic-access/google-workspace-agentic-access.yml
+- type: VulnerabilityDisclosure
+  url: security/google-workspace-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/google-workspace-domain-security.yml
+- type: Authentication
+  url: authentication/google-workspace-authentication.yml
+- type: OAuthScopes
+  url: scopes/google-workspace-scopes.yml
+- type: PostmanWorkspace
+  url: https://www.postman.com/kinlaneapi/google-workspace/overview
+- type: Arazzo
+  url: arazzo/google-workspace-audit-user-groups-workflow.yml
+  name: Google Workspace Audit a User's Group Memberships
+- type: Arazzo
+  url: arazzo/google-workspace-create-group-workflow.yml
+  name: Google Workspace Create a Group
+- type: Arazzo
+  url: arazzo/google-workspace-create-org-unit-and-assign-user-workflow.yml
+  name: Google Workspace Create an Org Unit and Assign a User
+- type: Arazzo
+  url: arazzo/google-workspace-decommission-org-unit-workflow.yml
+  name: Google Workspace Decommission an Org Unit
+- type: Arazzo
+  url: arazzo/google-workspace-delete-user-safely-workflow.yml
+  name: Google Workspace Delete a User Safely
+- type: Arazzo
+  url: arazzo/google-workspace-find-and-delete-group-workflow.yml
+  name: Google Workspace Find and Delete a Group
+- type: Arazzo
+  url: arazzo/google-workspace-find-and-update-user-workflow.yml
+  name: Google Workspace Find and Update a User
+- type: Arazzo
+  url: arazzo/google-workspace-inspect-org-unit-tree-workflow.yml
+  name: Google Workspace Inspect the Org Unit Tree
+- type: Arazzo
+  url: arazzo/google-workspace-move-user-org-unit-workflow.yml
+  name: Google Workspace Move a User to Another Org Unit
+- type: Arazzo
+  url: arazzo/google-workspace-offboard-user-workflow.yml
+  name: Google Workspace Offboard a User
+- type: Arazzo
+  url: arazzo/google-workspace-promote-user-to-admin-workflow.yml
+  name: Google Workspace Promote a User to Super Administrator
+- type: Arazzo
+  url: arazzo/google-workspace-provision-user-workflow.yml
+  name: Google Workspace Provision a User
+- type: Arazzo
+  url: arazzo/google-workspace-rename-group-workflow.yml
+  name: Google Workspace Rename a Group
+- type: Arazzo
+  url: arazzo/google-workspace-rename-org-unit-workflow.yml
+  name: Google Workspace Rename an Org Unit
+- type: Arazzo
+  url: arazzo/google-workspace-reset-user-password-workflow.yml
+  name: Google Workspace Reset a User Password
+- type: Arazzo
+  url: arazzo/google-workspace-restore-deleted-user-workflow.yml
+  name: Google Workspace Restore a Deleted User
+- type: GitHubOrganization
+  url: https://github.com/googleworkspace
+- type: LinkedIn
+  url: https://www.linkedin.com/showcase/googleworkspace
+- type: Console
+  url: https://console.cloud.google.com
+- type: Authentication
+  url: https://developers.google.com/identity/protocols/oauth2
+- type: TermsOfService
+  url: https://workspace.google.com/terms/service-terms/
+- type: Support
+  url: https://support.google.com/workspace
+- type: StatusPage
+  url: https://www.google.com/appsstatus/dashboard/
+- type: DeveloperPortal
+  url: https://developers.google.com/workspace
+- type: Pricing
+  url: https://workspace.google.com/pricing
+- type: Blog
+  url: https://workspaceupdates.googleblog.com
+- type: ReleaseNotes
+  url: https://developers.google.com/workspace/release-notes
+- type: GettingStarted
+  url: https://developers.google.com/workspace/guides/get-started
+- type: SDKs
+  url: https://developers.google.com/workspace/guides/libraries
+- type: Features
+  data:
+  - name: Email and Communication
+    description: Send, receive, and manage email with Gmail API, build chat bots with Chat API, and host video meetings with Meet API.
+  - name: Document Collaboration
+    description: Create and edit documents, spreadsheets, presentations, and forms programmatically across Google Workspace apps.
+  - name: File Storage and Management
+    description: Store, sync, and manage files with Drive API including permissions, metadata, labels, and activity tracking.
+  - name: Directory and User Management
+    description: Manage users, groups, organizational units, and devices across a Google Workspace domain with Admin SDK.
+  - name: Calendar and Scheduling
+    description: Create and manage calendars, events, and attendees with automatic conflict detection and resource booking.
+  - name: Security and Compliance
+    description: Monitor security alerts, manage eDiscovery holds, and generate audit reports for compliance requirements.
+  - name: Enterprise Search
+    description: Index and search across Google Workspace and external data sources with Cloud Search API.
+  - name: Task and Note Management
+    description: Manage tasks and notes programmatically with Tasks API and Keep API for productivity workflows.
+- type: UseCases
+  data:
+  - name: Automated Onboarding
+    description: Provision user accounts, assign groups and licenses, and configure organizational units for new employee onboarding.
+  - name: Document Workflow Automation
+    description: Automate document creation, approval workflows, and distribution using Docs, Sheets, and Drive APIs.
+  - name: Meeting Management
+    description: Schedule meetings, manage recordings and transcripts, and integrate video conferencing into custom applications.
+  - name: Security Monitoring
+    description: Monitor security alerts, audit user activity, and enforce compliance policies across the Google Workspace domain.
+  - name: Customer Communication
+    description: Automate email campaigns, manage support inboxes, and integrate Gmail with CRM and helpdesk systems.
+- type: Integrations
+  data:
+  - name: Salesforce
+    description: Sync contacts, calendar events, and emails between Google Workspace and Salesforce CRM.
+  - name: Slack
+    description: Bridge Google Workspace content and notifications with Slack channels for unified collaboration.
+  - name: Microsoft 365
+    description: Interoperability support for document sharing and calendar synchronization with Microsoft Office apps.
+  - name: Jira
+    description: Link Google Drive files, create documents from Jira issues, and sync calendar events with project timelines.
+  - name: Zapier
+    description: Connect Google Workspace apps with thousands of services through Zapier automation workflows.
+  - name: Asana
+    description: Integrate Google Drive attachments, Calendar events, and Gmail notifications with Asana project management.
 maintainers:
-  - FN: Kin Lane
-    email: kin@apievangelist.com
+- FN: Kin Lane
+  email: kin@apievangelist.com

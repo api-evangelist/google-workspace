@@ -1,4 +1,4 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
   title: Google Workspace Admin SDK Directory Groups Users API
   description: Manage users, groups, and organizational units in a Google Workspace domain. The Admin SDK Directory API lets administrators of enterprise domains view and manage resources such as user accounts, groups, and organizational units within their Google Workspace domain.
@@ -354,58 +354,7 @@ paths:
         delay: 0
         dispatcher: FALLBACK
 components:
-  responses:
-    Forbidden:
-      description: The authenticated user does not have permission to perform this operation. Ensure the correct admin scopes are authorized.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
-    Unauthorized:
-      description: Authentication is required. The request did not include valid credentials.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
-    BadRequest:
-      description: The request was malformed or contained invalid parameters.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
-    NotFound:
-      description: The requested resource was not found.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
   schemas:
-    UserName:
-      type: object
-      description: A user name object containing given, family, and full name.
-      properties:
-        givenName:
-          type: string
-          description: The user first name. Required when creating a user account.
-          maxLength: 60
-          example: example_value
-        familyName:
-          type: string
-          description: The user last name. Required when creating a user account.
-          maxLength: 60
-          example: example_value
-        fullName:
-          type: string
-          description: The user full name formed by concatenating first and last name values.
-          readOnly: true
-          example: example_value
-        displayName:
-          type: string
-          description: The user display name.
-          example: example_value
-      required:
-      - givenName
-      - familyName
     Users:
       type: object
       description: A paginated list of user resources.
@@ -436,6 +385,32 @@ components:
           description: Event that triggered this response (for push notifications).
           readOnly: true
           example: example_value
+    UserName:
+      type: object
+      description: A user name object containing given, family, and full name.
+      properties:
+        givenName:
+          type: string
+          description: The user first name. Required when creating a user account.
+          maxLength: 60
+          example: example_value
+        familyName:
+          type: string
+          description: The user last name. Required when creating a user account.
+          maxLength: 60
+          example: example_value
+        fullName:
+          type: string
+          description: The user full name formed by concatenating first and last name values.
+          readOnly: true
+          example: example_value
+        displayName:
+          type: string
+          description: The user display name.
+          example: example_value
+      required:
+      - givenName
+      - familyName
     User:
       type: object
       description: A Google Workspace user account. JSON representation of a user resource from the Admin SDK Directory API.
@@ -840,18 +815,43 @@ components:
                   message:
                     type: string
           example: example_value
+  responses:
+    NotFound:
+      description: The requested resource was not found.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    Forbidden:
+      description: The authenticated user does not have permission to perform this operation. Ensure the correct admin scopes are authorized.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    Unauthorized:
+      description: Authentication is required. The request did not include valid credentials.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    BadRequest:
+      description: The request was malformed or contained invalid parameters.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
   parameters:
-    domain:
-      name: domain
-      in: query
-      description: The domain name. Use this field to get groups from only one domain. To return all domains for a customer account, use the customer query parameter instead.
-      schema:
-        type: string
     userKey:
       name: userKey
       in: path
       required: true
       description: Identifies the user in the API request. The value can be the user primary email address, alias email address, or unique user ID.
+      schema:
+        type: string
+    domain:
+      name: domain
+      in: query
+      description: The domain name. Use this field to get groups from only one domain. To return all domains for a customer account, use the customer query parameter instead.
       schema:
         type: string
     customer:
