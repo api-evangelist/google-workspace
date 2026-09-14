@@ -573,6 +573,110 @@ apis:
     url: https://developers.google.com/meet/api/guides/overview
   - type: Reference
     url: https://developers.google.com/meet/api/reference/rest
+- aid: google-suites:google-suites-calendar-api
+  name: Google Workspace APIs Calendar API
+  description: The Calendar API from Google Workspace APIs — 3 operation(s) for calendar.
+  humanURL: https://developers.google.com/gmail/api
+  baseURL: https://gmail.googleapis.com
+  tags:
+  - Calendar
+  properties:
+  - type: OpenAPI
+    url: openapi/google-workspace-calendar-api-openapi.yml
+  - type: Documentation
+    url: https://developers.google.com/gmail/api/guides
+  - type: Authentication
+    url: https://developers.google.com/gmail/api/auth/about-auth
+  - type: Documentation
+    url: https://developers.google.com/calendar/api/guides/overview
+  - type: GettingStarted
+    url: https://developers.google.com/calendar/api/quickstart
+  - type: Documentation
+    url: https://developers.google.com/drive/api/guides/about-sdk
+  - type: Pricing
+    url: https://workspace.google.com/pricing
+  - type: Documentation
+    url: https://developers.google.com/docs/api/how-tos/overview
+  - type: Examples
+    url: https://developers.google.com/docs/api/samples
+  - type: Documentation
+    url: https://developers.google.com/sheets/api/guides/concepts
+  - type: GettingStarted
+    url: https://developers.google.com/sheets/api/quickstart
+  - type: Documentation
+    url: https://developers.google.com/slides/how-tos/overview
+  - type: Documentation
+    url: https://developers.google.com/admin-sdk/directory/reference/rest
+- aid: google-suites:google-suites-drive-api
+  name: Google Workspace APIs Drive API
+  description: The Drive API from Google Workspace APIs — 2 operation(s) for drive.
+  humanURL: https://developers.google.com/gmail/api
+  baseURL: https://gmail.googleapis.com
+  tags:
+  - Drives
+  tags_raw:
+  - Drive
+  properties:
+  - type: OpenAPI
+    url: openapi/google-workspace-drive-api-openapi.yml
+  - type: Documentation
+    url: https://developers.google.com/gmail/api/guides
+  - type: Authentication
+    url: https://developers.google.com/gmail/api/auth/about-auth
+  - type: Documentation
+    url: https://developers.google.com/calendar/api/guides/overview
+  - type: GettingStarted
+    url: https://developers.google.com/calendar/api/quickstart
+  - type: Documentation
+    url: https://developers.google.com/drive/api/guides/about-sdk
+  - type: Pricing
+    url: https://workspace.google.com/pricing
+  - type: Documentation
+    url: https://developers.google.com/docs/api/how-tos/overview
+  - type: Examples
+    url: https://developers.google.com/docs/api/samples
+  - type: Documentation
+    url: https://developers.google.com/sheets/api/guides/concepts
+  - type: GettingStarted
+    url: https://developers.google.com/sheets/api/quickstart
+  - type: Documentation
+    url: https://developers.google.com/slides/how-tos/overview
+  - type: Documentation
+    url: https://developers.google.com/admin-sdk/directory/reference/rest
+- aid: google-suites:google-suites-gmail-api
+  name: Google Workspace APIs Gmail API
+  description: The Gmail API from Google Workspace APIs — 4 operation(s) for gmail.
+  humanURL: https://developers.google.com/gmail/api
+  baseURL: https://gmail.googleapis.com
+  tags:
+  - Gmail
+  properties:
+  - type: OpenAPI
+    url: openapi/google-workspace-gmail-api-openapi.yml
+  - type: Documentation
+    url: https://developers.google.com/gmail/api/guides
+  - type: Authentication
+    url: https://developers.google.com/gmail/api/auth/about-auth
+  - type: Documentation
+    url: https://developers.google.com/calendar/api/guides/overview
+  - type: GettingStarted
+    url: https://developers.google.com/calendar/api/quickstart
+  - type: Documentation
+    url: https://developers.google.com/drive/api/guides/about-sdk
+  - type: Pricing
+    url: https://workspace.google.com/pricing
+  - type: Documentation
+    url: https://developers.google.com/docs/api/how-tos/overview
+  - type: Examples
+    url: https://developers.google.com/docs/api/samples
+  - type: Documentation
+    url: https://developers.google.com/sheets/api/guides/concepts
+  - type: GettingStarted
+    url: https://developers.google.com/sheets/api/quickstart
+  - type: Documentation
+    url: https://developers.google.com/slides/how-tos/overview
+  - type: Documentation
+    url: https://developers.google.com/admin-sdk/directory/reference/rest
 common:
 - type: PrivacyPolicy
   url: https://policies.google.com/privacy
