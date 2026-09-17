@@ -191,7 +191,8 @@ apis:
     url: https://developers.google.com/chat/api/reference/rest
 - aid: google-workspace:admin-reports
   name: Admin SDK Reports API
-  description: View audit and usage reports for a Google Workspace domain including user activity and admin actions.
+  description: >-
+    View audit and usage reports for a Google Workspace domain including user activity and admin actions.
   humanURL: https://developers.google.com/admin-sdk/reports
   baseURL: https://admin.googleapis.com
   tags:
@@ -244,7 +245,8 @@ apis:
     url: https://developers.google.com/tasks/quickstart/js
 - aid: google-workspace:keep
   name: Google Keep API
-  description: Manage Google Keep notes including creating, listing, and deleting notes and managing permissions.
+  description: >-
+    Manage Google Keep notes including creating, listing, and deleting notes and managing permissions.
   humanURL: https://developers.google.com/workspace/keep
   baseURL: https://keep.googleapis.com
   tags:
@@ -257,7 +259,9 @@ apis:
     url: https://developers.google.com/workspace/keep/api/reference/rest
 - aid: google-workspace:vault
   name: Google Vault API
-  description: Manage eDiscovery for your organization including matters, holds, and exports across Google Workspace services.
+  description: >-
+    Manage eDiscovery for your organization including matters, holds, and exports across Google Workspace
+    services.
   humanURL: https://developers.google.com/workspace/vault
   baseURL: https://vault.googleapis.com
   tags:
@@ -353,7 +357,8 @@ apis:
     url: https://developers.google.com/workspace/drive/labels/reference/rest/v2
 - aid: google-workspace:alert-center
   name: Alert Center API
-  description: Manage alerts on issues affecting your Google Workspace domain including security and compliance warnings.
+  description: >-
+    Manage alerts on issues affecting your Google Workspace domain including security and compliance warnings.
   humanURL: https://developers.google.com/workspace/admin/alertcenter/guides
   baseURL: https://alertcenter.googleapis.com
   tags:
@@ -369,7 +374,8 @@ apis:
     url: https://developers.google.com/workspace/admin/alertcenter/guides/auth
 - aid: google-workspace:groups-settings
   name: Groups Settings API
-  description: Update and retrieve settings for existing Google Groups including permissions and access controls.
+  description: >-
+    Update and retrieve settings for existing Google Groups including permissions and access controls.
   humanURL: https://developers.google.com/admin-sdk/groups-settings/concepts
   baseURL: https://www.googleapis.com/groups/v1
   tags:
@@ -387,7 +393,8 @@ apis:
     url: https://developers.google.com/admin-sdk/groups-settings/v1/reference
 - aid: google-workspace:groups-migration
   name: Groups Migration API
-  description: Migrate shared emails from public folders and distribution lists to Google Groups discussion archives.
+  description: >-
+    Migrate shared emails from public folders and distribution lists to Google Groups discussion archives.
   humanURL: https://developers.google.com/workspace/admin/groups-migration/v1/guides/overview
   baseURL: https://groupsmigration.googleapis.com
   tags:
@@ -435,7 +442,8 @@ apis:
     url: https://developers.google.com/admin-sdk/licensing/v1/how-tos/authorizing
 - aid: google-workspace:reseller
   name: Google Workspace Reseller API
-  description: Perform common reseller functions at scale including placing orders and managing customer subscriptions.
+  description: >-
+    Perform common reseller functions at scale including placing orders and managing customer subscriptions.
   humanURL: https://developers.google.com/workspace/admin/reseller/v1/how-tos/concepts
   baseURL: https://reseller.googleapis.com
   tags:
@@ -455,7 +463,8 @@ apis:
     url: https://developers.google.com/workspace/admin/reseller/v1/how-tos/authorize
 - aid: google-workspace:postmaster
   name: Gmail Postmaster Tools API
-  description: Gather statistics on bulk emails sent to Gmail users including spam reports and delivery errors.
+  description: >-
+    Gather statistics on bulk emails sent to Gmail users including spam reports and delivery errors.
   humanURL: https://developers.google.com/workspace/gmail/postmaster
   baseURL: https://gmailpostmastertools.googleapis.com
   tags:
@@ -509,28 +518,6 @@ apis:
     url: https://developers.google.com/workspace/admin/directory/reference/rest
   - type: GettingStarted
     url: https://developers.google.com/admin-sdk/directory/v1/quickstart/python
-- aid: google-workspace:google-workspace-orgunits-api
-  name: Google Workspace OrgUnits API
-  description: Manage organizational units in a Google Workspace domain
-  humanURL: https://developers.google.com/gmail/api
-  baseURL: https://gmail.googleapis.com
-  tags:
-  - Org Units
-  tags_raw:
-  - OrgUnits
-  properties:
-  - type: OpenAPI
-    url: openapi/google-workspace-orgunits-api-openapi.yml
-  - type: Documentation
-    url: https://developers.google.com/admin-sdk/directory/reference/rest
-  - type: JSONSchema
-    url: json-schema/google-workspace-user-schema.json
-  - type: JSONLD
-    url: json-ld/google-workspace-context.jsonld
-  - type: APIReference
-    url: https://developers.google.com/workspace/admin/directory/reference/rest
-  - type: GettingStarted
-    url: https://developers.google.com/admin-sdk/directory/v1/quickstart/python
 - aid: google-workspace:google-workspace-users-api
   name: Google Workspace Users API
   description: Manage user accounts in a Google Workspace domain
@@ -554,7 +541,8 @@ apis:
   - type: GettingStarted
     url: https://developers.google.com/admin-sdk/directory/v1/quickstart/python
 - name: Google Meet API
-  description: The Google Meet API allows developers to build applications that integrate with Google Meet.
+  description: >-
+    The Google Meet API allows developers to build applications that integrate with Google Meet.
   image: https://www.gstatic.com/images/branding/product/2x/meet_64dp.png
   humanURL: https://developers.google.com/meet
   baseURL: https://meet.googleapis.com/v2
@@ -677,6 +665,26 @@ apis:
     url: https://developers.google.com/slides/how-tos/overview
   - type: Documentation
     url: https://developers.google.com/admin-sdk/directory/reference/rest
+- aid: google-workspace:google-workspace-org-units-api
+  name: Google Workspace Org Units API
+  description: Manage organizational units in a Google Workspace domain
+  humanURL: https://developers.google.com/gmail/api
+  baseURL: https://gmail.googleapis.com
+  tags:
+  - Org Units
+  properties:
+  - type: OpenAPI
+    url: openapi/google-workspace-org-units-api-openapi.yml
+  - type: Documentation
+    url: https://developers.google.com/admin-sdk/directory/reference/rest
+  - type: JSONSchema
+    url: json-schema/google-workspace-user-schema.json
+  - type: JSONLD
+    url: json-ld/google-workspace-context.jsonld
+  - type: APIReference
+    url: https://developers.google.com/workspace/admin/directory/reference/rest
+  - type: GettingStarted
+    url: https://developers.google.com/admin-sdk/directory/v1/quickstart/python
 common:
 - type: PrivacyPolicy
   url: https://policies.google.com/privacy
