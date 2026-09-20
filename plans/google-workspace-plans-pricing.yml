@@ -1,158 +1,51 @@
-specification: API Commons Plans
-specificationVersion: '0.1'
-schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/Plans
-provider: Google Workspace
-providerId: google-workspace
-created: '2026-05-04'
-# Provenance stamped 2026-08-11: this artifact was written by the API Evangelist
-# bulk sweep dated 2026-05-04, not harvested from the provider. See roadmap#35.
-method: generated
-modified: '2026-05-05'
-reconciled: true
-tags:
-  - Calendar
-  - Collaboration
-  - Email
-  - Productivity
-  - Storage
-  - Video Conferencing
-description: Google Workspace is sold as per-user-per-month subscriptions across four editions — Business
-  Starter, Business Standard, Business Plus, and Enterprise. The Workspace REST APIs (Gmail, Drive,
-  Calendar, Meet, Docs, Sheets, Slides, Admin SDK, Chat, etc.) are included with any Workspace subscription
-  at no per-call charge; usage is governed by published Google API quotas. Promotional 50% off for first
-  three months is shown on the public pricing page.
+# Pricing transcribed from the provider's own page — see provenance. Numbers are quoted, not derived.
+generated: '2026-09-20'
+method: searched
+source: https://workspace.google.com/pricing
 sources:
-  - https://workspace.google.com/pricing
+- https://workspace.google.com/pricing
+provenance:
+  tool: planning/api-economics/harvest_pricing.py
+  run: 20260920T120546
+  grounding: every price_text was found verbatim in the fetched page text
+audience: business-product
+pricing_basis: per-seat
+published: true
+note: Promotional discounted prices also shown ($3.50, $7.00, $15.40 for 3 months); annual plan saves
+  16% with 1 year commitment. Intro price limited to first 20 users for 12 months.
+plan_count: 4
+currency: USD
 plans:
-  - id: google-workspace-business-starter
-    name: Business Starter
-    type: subscription
-    description: Entry plan with custom business email, 30 GB pooled storage per user, 100-participant
-      video meetings, and Gemini in Gmail.
-    entries:
-      - label: Per-user monthly fee
-        name: seat_monthly
-        type: subscription
-        metric: seat
-        limit: -1
-        timeFrame: month
-        geo: global
-        unit: 1
-        price: '7.00'
-        userMultiplied: true
-      - label: Pooled storage per user
-        name: storage_per_user
-        type: quota
-        metric: gb
-        limit: 30
-        timeFrame: usage
-        geo: global
-        unit: 1
-        price: '0.00'
-        userMultiplied: true
-    elements:
-      - name: Custom business email
-      - name: Gemini in Gmail
-      - name: 100-participant video meetings
-      - name: Standard security and management
-      - name: Workspace REST APIs (Gmail, Drive, Calendar, Meet, Docs, Sheets, Slides)
-  - id: google-workspace-business-standard
-    name: Business Standard
-    type: subscription
-    description: Most popular plan; 2 TB pooled storage per user, 150-participant meetings with recording,
-      eSignature, appointment booking, Gemini across multiple apps.
-    entries:
-      - label: Per-user monthly fee
-        name: seat_monthly
-        type: subscription
-        metric: seat
-        limit: -1
-        timeFrame: month
-        geo: global
-        unit: 1
-        price: '14.00'
-        userMultiplied: true
-      - label: Pooled storage per user
-        name: storage_per_user
-        type: quota
-        metric: gb
-        limit: 2048
-        timeFrame: usage
-        geo: global
-        unit: 1
-        price: '0.00'
-        userMultiplied: true
-    elements:
-      - name: Gemini in Gmail, Docs, Meet
-      - name: Meeting recording (150 participants)
-      - name: eSignature
-      - name: Appointment booking
-      - name: Workspace REST APIs
-  - id: google-workspace-business-plus
-    name: Business Plus
-    type: subscription
-    description: 5 TB pooled storage per user, 500-participant meetings with attendance tracking, Vault
-      eDiscovery, advanced endpoint management.
-    entries:
-      - label: Per-user monthly fee
-        name: seat_monthly
-        type: subscription
-        metric: seat
-        limit: -1
-        timeFrame: month
-        geo: global
-        unit: 1
-        price: '22.00'
-        userMultiplied: true
-      - label: Pooled storage per user
-        name: storage_per_user
-        type: quota
-        metric: gb
-        limit: 5120
-        timeFrame: usage
-        geo: global
-        unit: 1
-        price: '0.00'
-        userMultiplied: true
-    elements:
-      - name: Full Gemini access
-      - name: 500-participant meetings with attendance tracking
-      - name: Vault and eDiscovery
-      - name: Advanced endpoint management
-      - name: Workspace REST APIs (incl. Vault, Alert Center)
-  - id: google-workspace-enterprise
-    name: Enterprise
-    type: enterprise
-    description: Custom-priced plan with in-domain live streaming, 1,000-participant meetings, DLP,
-      enhanced support, and enterprise endpoint management.
-    entries:
-      - label: Per-user monthly fee
-        name: seat_monthly
-        type: subscription
-        metric: seat
-        limit: -1
-        timeFrame: month
-        geo: global
-        unit: 1
-        price: contact sales
-        userMultiplied: true
-      - label: Pooled storage per user
-        name: storage_per_user
-        type: quota
-        metric: gb
-        limit: 5120
-        timeFrame: usage
-        geo: global
-        unit: 1
-        price: contact sales
-        userMultiplied: true
-    elements:
-      - name: In-domain live streaming
-      - name: 1000-participant meetings
-      - name: Data loss prevention (DLP)
-      - name: Enhanced support
-      - name: Enterprise endpoint management
-      - name: Full Workspace REST API surface (Admin SDK, Reports, Chat, Cloud Search, Vault, Reseller)
-maintainers:
-  - FN: Kin Lane
-    email: kin@apievangelist.com
+- name: Starter
+  price_text: $7 ** / user per month
+  price: 7
+  currency: USD
+  period: month
+  unit: user
+  included_quota: 30 GB pooled storage per person, business email, Gemini AI assistant in Gmail, video
+    meetings 100 participants
+- name: Standard
+  price_text: $14 ** / user per month
+  price: 14
+  currency: USD
+  period: month
+  unit: user
+  included_quota: 2 TB pooled storage, Gemini in Gmail/Docs/Meet, meetings with recording, 150 participants
+- name: Plus
+  price_text: $22 ** / user per month
+  price: 22
+  currency: USD
+  period: month
+  unit: user
+  included_quota: 5 TB pooled storage, eDiscovery, Vault, 500 participants
+- name: Enterprise
+  price_text: Contact sales
+  period: none
+  unit: user
+  included_quota: 5 TB or upgrade for more, DLP, context-aware access, 1000 participants
+rate_limit_statements:
+- Starter, Standard, and Plus plans can be purchased for a maximum of 300 users. There is no minimum or
+  maximum user limit for Enterprise plans.
+- Meeting length (maximum) 24 hours
+- Generate interactive Audio Overviews with two AI hosts Up to 3 per day
+- Up to 20 per day
