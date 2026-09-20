@@ -1,0 +1,35 @@
+slug: google-workspace
+provider: Google Workspace
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Telecommunications
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 2
+edges:
+- tag: Users
+  spec_file: google-workspace-users-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.85
+  evidence: POST /admin/directory/v1/users/{userKey}/makeAdmin  makeUserAdmin  Make a User a Super Administrator;
+    POST .../signOut  signOutUser
+  reason: User account lifecycle, admin privilege grant and session sign-out are plainly identity and
+    access management, not HR employee records.
+- tag: Groups
+  spec_file: google-workspace-groups-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.75
+  evidence: POST /admin/directory/v1/groups  insertGroup  Create a Group — "Manage users, groups, and
+    organizational units in a Google Workspace domain"
+  reason: Directory group objects are identity/access constructs administered by domain admins; closest
+    honest fit is Identity & Access Management. Not a business-domain capability beyond IT administration.
