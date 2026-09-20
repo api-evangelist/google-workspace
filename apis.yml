@@ -687,6 +687,8 @@ apis:
   - type: GettingStarted
     url: https://developers.google.com/admin-sdk/directory/v1/quickstart/python
 common:
+- type: RateLimits
+  url: rate-limits/google-workspace-rate-limits.yml
 - type: Plans
   url: plans/google-workspace-plans-pricing.yml
 - type: PrivacyPolicy

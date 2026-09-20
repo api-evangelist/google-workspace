@@ -1,87 +1,36 @@
-specification: API Commons Rate Limits
-specificationVersion: '0.1'
-schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/RateLimits
-provider: Google Workspace
-providerId: google-workspace
-created: '2026-05-04'
-# Provenance stamped 2026-08-11: this artifact was written by the API Evangelist
-# bulk sweep dated 2026-05-04, not harvested from the provider. See roadmap#35.
-method: generated
-modified: '2026-05-05'
-reconciled: true
-tags:
-  - Rate Limiting
-  - Calendar
-  - Collaboration
-  - Email
-  - Productivity
-  - Storage
-description: Google Workspace REST APIs are governed by Google Cloud per-project quotas. Each Workspace
-  API publishes its own service-specific quotas (visible in the Google Cloud Console > IAM > Quotas
-  page) typically expressed as queries per minute per project, queries per minute per user, and
-  per-user-per-second limits. Examples include Admin SDK Reports at 2,400 QPM per user per project with
-  a separate filter-query limit of 250 per minute / 15,000 per hour. Quotas can be raised via Google
-  Cloud support.
+# Rate limits transcribed from the provider's own documentation — see provenance. Quoted, not derived.
+generated: '2026-09-20'
+method: searched
+source: https://developers.google.com/health/rate-limits
 sources:
-  - https://developers.google.com/workspace/admin/reports/v1/limits
-  - https://developers.google.com/gmail/api/reference/quota
-  - https://developers.google.com/calendar/api/guides/quota
-  - https://developers.google.com/drive/api/guides/limits
-responseCodes:
-  throttled: 429
-  quotaExceeded: 429
-  serviceUnavailable: 503
+- https://developers.google.com/health/rate-limits
+provenance:
+  tool: planning/api-economics/harvest_ratelimits.py
+  run: 20260920T133210
+  grounding: every limit_text was found verbatim in the fetched page text
+published: true
+note: Page documents default quotas for Google Health API; QPS figures are impact analysis estimates.
+limit_count: 4
 limits:
-  - name: Admin SDK Reports — activities.list (default)
-    scope: project/user
-    metric: requests_per_minute
-    limit: 2400
-    timeFrame: minute
-    notes: Per-user-per-project default; configurable in Google Cloud Console.
-  - name: Admin SDK Reports — filter queries
-    scope: project/user
-    metric: requests_per_minute
-    limit: 250
-    timeFrame: minute
-    notes: Filter queries also capped at 15,000 per hour. Calls using only startTime/endTime do not count.
-  - name: Gmail API — per-user
-    scope: user
-    metric: varies
-    limit: 'see service-specific quotas page'
-    notes: Gmail uses quota units per request rather than raw QPS; default 250 quota units per user per
-      second with per-method costs documented.
-  - name: Google Drive API — per-user
-    scope: user
-    metric: requests_per_second
-    limit: 'see service-specific quotas page'
-    notes: Default per-user QPS plus per-project QPS; raise via support.
-  - name: Google Calendar API — per-user
-    scope: user
-    metric: requests_per_second
-    limit: 'see service-specific quotas page'
-  - name: Other Workspace APIs (Docs, Sheets, Slides, Chat, Forms, Vault, Classroom, etc.)
-    scope: project/user
-    metric: varies
-    limit: 'see service-specific quotas page'
-    notes: Each API has its own published per-user and per-project limits — see the API Library quota
-      page in Google Cloud Console.
-  - name: maxResults page size
-    scope: request
-    metric: records_per_page
-    limit: 1000
-    notes: Most list endpoints support a maxResults of 0-1000 with default 1000.
-policies:
-  - name: Backoff Strategy
-    description: Use exponential backoff with jitter on 429 / 503; respect Retry-After when present.
-  - name: Quota raise via support
-    description: Default project-level quotas can be increased through the Google Cloud Console quota
-      request flow.
-  - name: Per-user vs per-project scoping
-    description: Most Workspace APIs enforce both per-authenticated-user and per-project quotas; either
-      ceiling can throttle.
-  - name: Use of audit log exports
-    description: For high-volume Reports API consumers, Google recommends BigQuery audit log export
-      instead of polling activities.list.
-maintainers:
-  - FN: Kin Lane
-    email: kin@apievangelist.com
+- name: Per project (daily)
+  limit_text: 86.4M requests / day
+  window: day
+  scope: account
+- name: Per project (minutely)
+  limit_text: 120,000 requests / minute
+  limit: 120000
+  window: minute
+  scope: account
+  kind: burst
+- name: Per user (minutely)
+  limit_text: 300 requests / minute
+  limit: 300
+  window: minute
+  scope: user
+- name: Unverified applications cap
+  limit_text: Max 250 QPS total (capped at 100 users @ 2.5 QPS per user)
+  limit: 250
+  window: second
+  scope: account
+  plan: Unverified applications
+exceeded_status: 429
