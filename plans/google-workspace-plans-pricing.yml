@@ -10,6 +10,11 @@ provenance:
   grounding: every price_text was found verbatim in the fetched page text
 audience: business-product
 pricing_basis: per-seat
+delivery:
+  delivery: managed
+  method: page
+  read: '2026-09-20'
+  managed_tier: Starter
 published: true
 note: Promotional discounted prices also shown ($3.50, $7.00, $15.40 for 3 months); annual plan saves
   16% with 1 year commitment. Intro price limited to first 20 users for 12 months.
