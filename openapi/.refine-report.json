@@ -1,23 +1,37 @@
 {
   "provider": "google-workspace",
   "sources": [
-    "google-workspace-groups-api-openapi.yml",
-    "google-workspace-orgunits-api-openapi.yml",
-    "google-workspace-users-api-openapi.yml"
+    "_original/admin-sdk-directory-api.yml",
+    "google-workspace-calendar-api-openapi.yml",
+    "google-workspace-drive-api-openapi.yml",
+    "google-workspace-gmail-api-openapi.yml"
   ],
   "outputs": [
     "google-workspace-groups-api-openapi.yml",
     "google-workspace-orgunits-api-openapi.yml",
-    "google-workspace-users-api-openapi.yml"
+    "google-workspace-users-api-openapi.yml",
+    "google-workspace-calendar-api-openapi.yml",
+    "google-workspace-drive-api-openapi.yml",
+    "google-workspace-gmail-api-openapi.yml"
   ],
-  "archived": [],
+  "archived": [
+    "deleted 1 superseded output(s) from the previous generation"
+  ],
   "errors": [],
-  "warnings": [],
-  "notes": [
-    "google-workspace-groups-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "google-workspace-orgunits-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "google-workspace-users-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "apis.yml register: already-registered"
+  "warnings": [
+    "google-workspace-calendar-api-openapi.yml: previously refined output kept for 6 operation(s) no archived document covers (e.g. /calendar/v3/calendars/{calendarId}/events get, /calendar/v3/calendars/{calendarId}/events post, /calendar/v3/calendars/{calendarId}/events/{eventId} delete); its other 0 operation(s) came from the archive and were dropped from it. The archive is incomplete for this provider \u2014 re-harvest to restore _original/ as the full source of truth.",
+    "google-workspace-drive-api-openapi.yml: previously refined output kept for 4 operation(s) no archived document covers (e.g. /drive/v3/files get, /drive/v3/files post, /drive/v3/files/{fileId} delete); its other 0 operation(s) came from the archive and were dropped from it. The archive is incomplete for this provider \u2014 re-harvest to restore _original/ as the full source of truth.",
+    "google-workspace-gmail-api-openapi.yml: previously refined output kept for 4 operation(s) no archived document covers (e.g. /gmail/v1/users/{userId}/labels get, /gmail/v1/users/{userId}/messages get, /gmail/v1/users/{userId}/messages/send post); its other 0 operation(s) came from the archive and were dropped from it. The archive is incomplete for this provider \u2014 re-harvest to restore _original/ as the full source of truth."
   ],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "admin-sdk-directory-api.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "superseded outputs removed: google-workspace-org-units-api-openapi.yml",
+    "apis.yml register: written (+1 apis, 33 total)"
+  ],
+  "skipped": [
+    "google-workspace-groups-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "google-workspace-org-units-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "google-workspace-users-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

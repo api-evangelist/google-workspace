@@ -224,31 +224,6 @@ paths:
         delay: 0
         dispatcher: FALLBACK
 components:
-  responses:
-    NotFound:
-      description: The requested resource was not found.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
-    Forbidden:
-      description: The authenticated user does not have permission to perform this operation. Ensure the correct admin scopes are authorized.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
-    Unauthorized:
-      description: Authentication is required. The request did not include valid credentials.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
-    BadRequest:
-      description: The request was malformed or contained invalid parameters.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
   parameters:
     groupKey:
       name: groupKey
@@ -257,19 +232,44 @@ components:
       description: Identifies the group in the API request. The value can be the group email address, group alias, or the unique group ID.
       schema:
         type: string
-    domain:
-      name: domain
-      in: query
-      description: The domain name. Use this field to get groups from only one domain. To return all domains for a customer account, use the customer query parameter instead.
-      schema:
-        type: string
     customer:
       name: customer
       in: query
       description: The unique ID for the customer Google Workspace account. In a multi-domain account, use this to list all groups for a customer. You can also use the my_customer alias.
       schema:
         type: string
+    domain:
+      name: domain
+      in: query
+      description: The domain name. Use this field to get groups from only one domain. To return all domains for a customer account, use the customer query parameter instead.
+      schema:
+        type: string
   schemas:
+    Groups:
+      type: object
+      description: A paginated list of group resources.
+      properties:
+        kind:
+          type: string
+          description: The type of the API resource.
+          default: admin#directory#groups
+          readOnly: true
+          example: example_value
+        etag:
+          type: string
+          description: ETag of the resource.
+          readOnly: true
+          example: example_value
+        groups:
+          type: array
+          description: A list of group objects.
+          items:
+            $ref: '#/components/schemas/Group'
+          example: []
+        nextPageToken:
+          type: string
+          description: Token for retrieving the next page of results.
+          example: example_value
     Group:
       type: object
       description: A Google Workspace group. JSON representation of a group resource from the Admin SDK Directory API.
@@ -332,31 +332,6 @@ components:
           example: []
       required:
       - email
-    Groups:
-      type: object
-      description: A paginated list of group resources.
-      properties:
-        kind:
-          type: string
-          description: The type of the API resource.
-          default: admin#directory#groups
-          readOnly: true
-          example: example_value
-        etag:
-          type: string
-          description: ETag of the resource.
-          readOnly: true
-          example: example_value
-        groups:
-          type: array
-          description: A list of group objects.
-          items:
-            $ref: '#/components/schemas/Group'
-          example: []
-        nextPageToken:
-          type: string
-          description: Token for retrieving the next page of results.
-          example: example_value
     Error:
       type: object
       description: An error response from the API.
@@ -383,6 +358,31 @@ components:
                   message:
                     type: string
           example: example_value
+  responses:
+    Forbidden:
+      description: The authenticated user does not have permission to perform this operation. Ensure the correct admin scopes are authorized.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    NotFound:
+      description: The requested resource was not found.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    Unauthorized:
+      description: Authentication is required. The request did not include valid credentials.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    BadRequest:
+      description: The request was malformed or contained invalid parameters.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
   securitySchemes:
     oauth2:
       type: oauth2

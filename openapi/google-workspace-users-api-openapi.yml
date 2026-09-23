@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: Google Workspace Admin SDK Directory Groups Users API
+  title: Google Workspace Admin SDK Directory Users API
   description: Manage users, groups, and organizational units in a Google Workspace domain. The Admin SDK Directory API lets administrators of enterprise domains view and manage resources such as user accounts, groups, and organizational units within their Google Workspace domain.
   version: directory_v1
   contact:
@@ -816,14 +816,14 @@ components:
                     type: string
           example: example_value
   responses:
-    NotFound:
-      description: The requested resource was not found.
+    Forbidden:
+      description: The authenticated user does not have permission to perform this operation. Ensure the correct admin scopes are authorized.
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/Error'
-    Forbidden:
-      description: The authenticated user does not have permission to perform this operation. Ensure the correct admin scopes are authorized.
+    NotFound:
+      description: The requested resource was not found.
       content:
         application/json:
           schema:
@@ -841,11 +841,10 @@ components:
           schema:
             $ref: '#/components/schemas/Error'
   parameters:
-    userKey:
-      name: userKey
-      in: path
-      required: true
-      description: Identifies the user in the API request. The value can be the user primary email address, alias email address, or unique user ID.
+    customer:
+      name: customer
+      in: query
+      description: The unique ID for the customer Google Workspace account. In a multi-domain account, use this to list all groups for a customer. You can also use the my_customer alias.
       schema:
         type: string
     domain:
@@ -854,10 +853,11 @@ components:
       description: The domain name. Use this field to get groups from only one domain. To return all domains for a customer account, use the customer query parameter instead.
       schema:
         type: string
-    customer:
-      name: customer
-      in: query
-      description: The unique ID for the customer Google Workspace account. In a multi-domain account, use this to list all groups for a customer. You can also use the my_customer alias.
+    userKey:
+      name: userKey
+      in: path
+      required: true
+      description: Identifies the user in the API request. The value can be the user primary email address, alias email address, or unique user ID.
       schema:
         type: string
   securitySchemes:

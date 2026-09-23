@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: Google Workspace Admin SDK Directory Groups Org Units API
+  title: Google Workspace Admin SDK Directory Org Units API
   description: Manage users, groups, and organizational units in a Google Workspace domain. The Admin SDK Directory API lets administrators of enterprise domains view and manage resources such as user accounts, groups, and organizational units within their Google Workspace domain.
   version: directory_v1
   contact:
@@ -17,7 +17,7 @@ servers:
 security:
 - oauth2: []
 tags:
-- name: OrgUnits
+- name: Org Units
   description: Manage organizational units in a Google Workspace domain
   externalDocs:
     url: https://developers.google.com/admin-sdk/directory/reference/rest/v1/orgunits
@@ -30,7 +30,7 @@ paths:
       summary: List Organizational Units
       description: Retrieves a list of all organizational units for an account. The hierarchy of organizational units is limited to 35 levels of depth.
       tags:
-      - OrgUnits
+      - Org Units
       parameters:
       - name: type
         in: query
@@ -67,7 +67,7 @@ paths:
       summary: Create an Organizational Unit
       description: Adds an organizational unit under the specified customer account.
       tags:
-      - OrgUnits
+      - Org Units
       requestBody:
         required: true
         content:
@@ -99,7 +99,7 @@ paths:
       summary: Get an Organizational Unit
       description: Retrieves an organizational unit.
       tags:
-      - OrgUnits
+      - Org Units
       responses:
         '200':
           description: Successful response containing the organizational unit.
@@ -121,7 +121,7 @@ paths:
       summary: Update an Organizational Unit
       description: Updates an organizational unit. This replaces the entire resource. Use patch for partial updates.
       tags:
-      - OrgUnits
+      - Org Units
       requestBody:
         required: true
         content:
@@ -151,7 +151,7 @@ paths:
       summary: Patch an Organizational Unit
       description: Updates an organizational unit using patch semantics. Only the specified fields are updated.
       tags:
-      - OrgUnits
+      - Org Units
       requestBody:
         required: true
         content:
@@ -181,7 +181,7 @@ paths:
       summary: Delete an Organizational Unit
       description: Removes an organizational unit. Only empty organizational units can be deleted. All users and child organizational units must be moved or deleted before the parent can be removed.
       tags:
-      - OrgUnits
+      - Org Units
       responses:
         '204':
           description: Successfully deleted organizational unit. No content returned.
@@ -195,31 +195,6 @@ paths:
         delay: 0
         dispatcher: FALLBACK
 components:
-  responses:
-    NotFound:
-      description: The requested resource was not found.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
-    Forbidden:
-      description: The authenticated user does not have permission to perform this operation. Ensure the correct admin scopes are authorized.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
-    Unauthorized:
-      description: Authentication is required. The request did not include valid credentials.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
-    BadRequest:
-      description: The request was malformed or contained invalid parameters.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
   parameters:
     orgUnitPath:
       name: orgUnitPath
@@ -284,6 +259,27 @@ components:
           example: true
       required:
       - name
+    OrgUnits:
+      type: object
+      description: A list of organizational unit resources.
+      properties:
+        kind:
+          type: string
+          description: The type of the API resource.
+          default: admin#directory#orgUnits
+          readOnly: true
+          example: example_value
+        etag:
+          type: string
+          description: ETag of the resource.
+          readOnly: true
+          example: example_value
+        organizationUnits:
+          type: array
+          description: A list of organizational unit objects.
+          items:
+            $ref: '#/components/schemas/OrgUnit'
+          example: []
     Error:
       type: object
       description: An error response from the API.
@@ -310,27 +306,31 @@ components:
                   message:
                     type: string
           example: example_value
-    OrgUnits:
-      type: object
-      description: A list of organizational unit resources.
-      properties:
-        kind:
-          type: string
-          description: The type of the API resource.
-          default: admin#directory#orgUnits
-          readOnly: true
-          example: example_value
-        etag:
-          type: string
-          description: ETag of the resource.
-          readOnly: true
-          example: example_value
-        organizationUnits:
-          type: array
-          description: A list of organizational unit objects.
-          items:
-            $ref: '#/components/schemas/OrgUnit'
-          example: []
+  responses:
+    Forbidden:
+      description: The authenticated user does not have permission to perform this operation. Ensure the correct admin scopes are authorized.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    NotFound:
+      description: The requested resource was not found.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    Unauthorized:
+      description: Authentication is required. The request did not include valid credentials.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    BadRequest:
+      description: The request was malformed or contained invalid parameters.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
   securitySchemes:
     oauth2:
       type: oauth2
