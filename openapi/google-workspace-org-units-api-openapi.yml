@@ -196,14 +196,14 @@ paths:
         dispatcher: FALLBACK
 components:
   responses:
-    BadRequest:
-      description: The request was malformed or contained invalid parameters.
+    Forbidden:
+      description: The authenticated user does not have permission to perform this operation. Ensure the correct admin scopes are authorized.
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/Error'
-    Forbidden:
-      description: The authenticated user does not have permission to perform this operation. Ensure the correct admin scopes are authorized.
+    BadRequest:
+      description: The request was malformed or contained invalid parameters.
       content:
         application/json:
           schema:
@@ -269,6 +269,27 @@ components:
           example: true
       required:
       - name
+    OrgUnits:
+      type: object
+      description: A list of organizational unit resources.
+      properties:
+        kind:
+          type: string
+          description: The type of the API resource.
+          default: admin#directory#orgUnits
+          readOnly: true
+          example: example_value
+        etag:
+          type: string
+          description: ETag of the resource.
+          readOnly: true
+          example: example_value
+        organizationUnits:
+          type: array
+          description: A list of organizational unit objects.
+          items:
+            $ref: '#/components/schemas/OrgUnit'
+          example: []
     Error:
       type: object
       description: An error response from the API.
@@ -295,27 +316,6 @@ components:
                   message:
                     type: string
           example: example_value
-    OrgUnits:
-      type: object
-      description: A list of organizational unit resources.
-      properties:
-        kind:
-          type: string
-          description: The type of the API resource.
-          default: admin#directory#orgUnits
-          readOnly: true
-          example: example_value
-        etag:
-          type: string
-          description: ETag of the resource.
-          readOnly: true
-          example: example_value
-        organizationUnits:
-          type: array
-          description: A list of organizational unit objects.
-          items:
-            $ref: '#/components/schemas/OrgUnit'
-          example: []
   parameters:
     customerId:
       name: customerId
