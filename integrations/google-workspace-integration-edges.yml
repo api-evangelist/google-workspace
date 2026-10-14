@@ -1,0 +1,24 @@
+generated: '2026-10-14'
+method: searched
+checked:
+- docusign/integrations/docusign-integration-edges.yml
+source:
+- docusign/integrations/docusign-integration-edges.yml
+edges:
+- partner_name: Docusign (partner-store)
+  partner: docusign
+  partner_match: mirror
+  mirror_match: domain+product
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: partner-store
+  evidence: https://workspace.google.com/marketplace/app/docusign_esignature_for_google_workspace/469176070494
+  mirror_of: docusign/integrations/docusign-integration-edges.yml
+  apps:
+  - eSignature for Google Workspace
+  listing_count: 1
+  detected: '2026-10-14'
+  detected_by: mirror-platform-listings.py
+  category: Integrations
