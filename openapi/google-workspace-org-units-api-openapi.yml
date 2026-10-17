@@ -195,31 +195,6 @@ paths:
         delay: 0
         dispatcher: FALLBACK
 components:
-  responses:
-    Forbidden:
-      description: The authenticated user does not have permission to perform this operation. Ensure the correct admin scopes are authorized.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
-    BadRequest:
-      description: The request was malformed or contained invalid parameters.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
-    NotFound:
-      description: The requested resource was not found.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
-    Unauthorized:
-      description: Authentication is required. The request did not include valid credentials.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
   schemas:
     OrgUnit:
       type: object
@@ -269,27 +244,6 @@ components:
           example: true
       required:
       - name
-    OrgUnits:
-      type: object
-      description: A list of organizational unit resources.
-      properties:
-        kind:
-          type: string
-          description: The type of the API resource.
-          default: admin#directory#orgUnits
-          readOnly: true
-          example: example_value
-        etag:
-          type: string
-          description: ETag of the resource.
-          readOnly: true
-          example: example_value
-        organizationUnits:
-          type: array
-          description: A list of organizational unit objects.
-          items:
-            $ref: '#/components/schemas/OrgUnit'
-          example: []
     Error:
       type: object
       description: An error response from the API.
@@ -316,6 +270,27 @@ components:
                   message:
                     type: string
           example: example_value
+    OrgUnits:
+      type: object
+      description: A list of organizational unit resources.
+      properties:
+        kind:
+          type: string
+          description: The type of the API resource.
+          default: admin#directory#orgUnits
+          readOnly: true
+          example: example_value
+        etag:
+          type: string
+          description: ETag of the resource.
+          readOnly: true
+          example: example_value
+        organizationUnits:
+          type: array
+          description: A list of organizational unit objects.
+          items:
+            $ref: '#/components/schemas/OrgUnit'
+          example: []
   parameters:
     customerId:
       name: customerId
@@ -331,6 +306,31 @@ components:
       description: The full path of the organizational unit (minus the leading /) or its unique ID.
       schema:
         type: string
+  responses:
+    Forbidden:
+      description: The authenticated user does not have permission to perform this operation. Ensure the correct admin scopes are authorized.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    Unauthorized:
+      description: Authentication is required. The request did not include valid credentials.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    NotFound:
+      description: The requested resource was not found.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    BadRequest:
+      description: The request was malformed or contained invalid parameters.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
   securitySchemes:
     oauth2:
       type: oauth2
