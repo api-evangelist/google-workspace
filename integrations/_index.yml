@@ -67,3 +67,4226 @@
     builder: Pipedream repo (component)
   status: not-a-workflow
   arazzo: null
+- slug: google-workspace-meltano
+  label: Meltano
+  partner: meltano
+  partner_name: Meltano
+  type: marketplace
+  marketplace: meltano-hub
+  channel: elt-connector
+  evidence: https://hub.meltano.com/extractors/tap-google-workspace-admin-reports--airbyte
+  source: edge
+  relationship: ipaas-bridge
+  contract_reference:
+    register: Meltano Hub (github.com/meltano/hub _data/meltano extractors + loaders)
+    spec_file: null
+    role: elt-connector:meltano-hub
+    registered_name: Google Workspace Admin Reports
+    matched_domain: google.com
+    matched_by: domain+name-among-holders
+    detected_by: sweep-data-integration.py
+    detected: '2026-10-18'
+    signal_note: one edge per (provider, platform); connectors, streams, packages and usage are context, never read
+    plugins:
+    - tap-google-workspace-admin-reports--airbyte
+    maintenance_status:
+    - beta
+    quality:
+    - bronze
+    builder: 'community (Meltano Hub variant maintainers: airbyte)'
+  status: pending-partner-spec
+  arazzo: null
+- slug: google-workspace-1password
+  label: 1Password
+  partner: 1password
+  partner_name: 1Password
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/1password_saas_manager/351269263993
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: 1Password
+    matched_domain: 1password.com
+    matched_by: domain+name-among-holders
+    listings: 1
+    sample_apps:
+    - 1Password Saas Manager
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-1up-corp
+  label: 1up Corp.
+  partner: 1up
+  partner_name: 1up Corp.
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/ask1up/926681905295
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: 1up Corp.
+    matched_domain: 1up.ai
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Ask1up
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-abnormal-report-phish
+  label: Abnormal Report Phish
+  partner: abnormal
+  partner_name: Abnormal Report Phish
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/abnormal_report_button/660910162790
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: Abnormal Report Phish
+    matched_domain: abnormal.ai
+    matched_by: domain+name-among-holders
+    listings: 1
+    sample_apps:
+    - Abnormal Report Button
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-actionstep
+  label: Actionstep
+  partner: actionstep
+  partner_name: Actionstep
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/actionstep/857048888210
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: Actionstep
+    matched_domain: actionstep.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Actionstep
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-acumatica
+  label: Acumatica
+  partner: acumatica
+  partner_name: Acumatica
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/acumatica_for_gmail/980548332619
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: Acumatica
+    matched_domain: acumatica.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Acumatica for Gmail™
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-adaptive-security
+  label: Adaptive Security
+  partner: adaptive-security
+  partner_name: Adaptive Security
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/phish_alert/396715444090
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: Adaptive Security
+    matched_domain: adaptivesecurity.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Phish Alert
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-adobe-systems-incorporated
+  label: Adobe Systems Incorporated
+  partner: adobe
+  partner_name: Adobe Systems Incorporated
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/adobe_stock/477057038292
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: Adobe Systems Incorporated
+    matched_domain: adobe.com
+    matched_by: domain+name-among-holders
+    listings: 6
+    sample_apps:
+    - 'Adobe Acrobat: PDF edit, convert, sign tools'
+    - Adobe Creative Cloud
+    - Adobe Express for Google Classroom
+    - Adobe Express for Google Slides
+    - Adobe Stock
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-aha-labs-inc
+  label: Aha! Labs Inc.
+  partner: aha
+  partner_name: Aha! Labs Inc.
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/aha/817440275761
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: Aha! Labs Inc.
+    matched_domain: aha.io
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Aha!
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-all-quiet-gmbh
+  label: All Quiet GmbH
+  partner: allquiet
+  partner_name: All Quiet GmbH
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/all_quiet/1099054146739
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: All Quiet GmbH
+    matched_domain: allquiet.app
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - All Quiet
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-alpha-vantage
+  label: Alpha Vantage
+  partner: alpha-vantage
+  partner_name: Alpha Vantage
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/alpha_vantage_market_data/434809773372
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: Alpha Vantage
+    matched_domain: alphavantage.co
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Alpha Vantage Market Data
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-asana
+  label: Asana
+  partner: asana
+  partner_name: Asana
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/asana/1032199425885
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: Asana
+    matched_domain: asana.com
+    matched_by: domain
+    listings: 2
+    sample_apps:
+    - Asana
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-atlassian
+  label: Atlassian
+  partner: atlassian
+  partner_name: Atlassian
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/jira_cloud_for_sheets/1065669263016
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: Atlassian
+    matched_domain: atlassian.com
+    matched_by: domain+name-among-holders
+    listings: 3
+    sample_apps:
+    - Atlassian
+    - Confluence
+    - Jira Cloud for Sheets
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-atriumhq-com
+  label: atriumhq.com
+  partner: atrium
+  partner_name: atriumhq.com
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/atrium/82978052357
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: atriumhq.com
+    matched_domain: atriumhq.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Atrium
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+    identity_source: developer published as a domain only; name check = app title
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-autodesk
+  label: Autodesk
+  partner: autodesk
+  partner_name: Autodesk
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/autodesk_tinkercad/614288788007
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: Autodesk
+    matched_domain: autodesk.com
+    matched_by: domain+name-among-holders
+    listings: 2
+    sample_apps:
+    - AutoCAD web app
+    - Autodesk Tinkercad
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-automattic
+  label: Automattic
+  partner: automattic
+  partner_name: Automattic
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/wordpresscom_for_google_docs/460536350236
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: Automattic
+    matched_domain: automattic.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - WordPress.com for Google Docs
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-axiamatic
+  label: Axiamatic
+  partner: axiamatic
+  partner_name: Axiamatic
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/axiamatic/889895531684
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: Axiamatic
+    matched_domain: axiamatic.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Axiamatic
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-www-backupify-com
+  label: www.backupify.com
+  partner: backupify
+  partner_name: www.backupify.com
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/backupify_for_google_workspace/417725447329
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: www.backupify.com
+    matched_domain: backupify.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Backupify for Google Workspace™
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+    identity_source: developer published as a domain only; name check = app title
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-www-bark-us
+  label: www.bark.us
+  partner: bark
+  partner_name: www.bark.us
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/bark/777045243888
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: www.bark.us
+    matched_domain: bark.us
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Bark
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+    identity_source: developer published as a domain only; name check = app title
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-bettercloud-com
+  label: bettercloud.com
+  partner: bettercloud
+  partner_name: bettercloud.com
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/bettercloud/531389178272
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: bettercloud.com
+    matched_domain: bettercloud.com
+    matched_by: domain+name-among-holders
+    listings: 3
+    sample_apps:
+    - BetterCloud
+    - BetterCloud File Governance
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+    identity_source: developer published as a domain only; name check = app title
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-blackbaud-inc
+  label: Blackbaud, Inc.
+  partner: blackbaud
+  partner_name: Blackbaud, Inc.
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/blackbaud_for_gmail/787205246854
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: Blackbaud, Inc.
+    matched_domain: blackbaud.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Blackbaud for Gmail™
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-box
+  label: Box
+  partner: box
+  partner_name: Box
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/box/828801433755
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: Box
+    matched_domain: box.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Box
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-bullhorn
+  label: Bullhorn
+  partner: bullhorn
+  partner_name: Bullhorn
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/bullhorn_for_email/174384294008
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: Bullhorn
+    matched_domain: bullhorn.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Bullhorn for Email
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-capsule-crm
+  label: Capsule CRM
+  partner: capsule-crm
+  partner_name: Capsule CRM
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/capsule_crm/689204729644
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: Capsule CRM
+    matched_domain: capsulecrm.com
+    matched_by: domain
+    listings: 2
+    sample_apps:
+    - Capsule CRM
+    - Capsule CRM for Gmail
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-cdata-software
+  label: CData Software
+  partner: cdata
+  partner_name: CData Software
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/connect_spreadsheets_salesforce_sage_qui/53950082621
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: CData Software
+    matched_domain: cdata.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - 'Connect Spreadsheets: Salesforce, Sage, QuickBooks'
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-charthop-inc
+  label: ChartHop, Inc
+  partner: charthop
+  partner_name: ChartHop, Inc
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/charthop_sheets/397657075455
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: ChartHop, Inc
+    matched_domain: charthop.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - ChartHop Sheets
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-check-point-software-technologies-ltd
+  label: Check Point Software Technologies Ltd.
+  partner: checkpoint
+  partner_name: Check Point Software Technologies Ltd.
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/avanan_security/445730079397
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: Check Point Software Technologies Ltd.
+    matched_domain: checkpoint.com
+    matched_by: domain+name-among-holders
+    listings: 1
+    sample_apps:
+    - Avanan Security
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-chorus
+  label: Chorus
+  partner: chorus-ai
+  partner_name: Chorus
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/chorus_scheduler/903225597070
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: Chorus
+    matched_domain: chorus.ai
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Chorus Scheduler
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-cisco-umbrella
+  label: Cisco Umbrella
+  partner: cisco-umbrella
+  partner_name: Cisco Umbrella
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/cisco_user_management_for_sse/845526025787
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: Cisco Umbrella
+    matched_domain: cisco.com
+    matched_by: domain+name-among-holders
+    listings: 1
+    sample_apps:
+    - Cisco User Management for SSE
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-https-www-clari-com
+  label: https://www.clari.com/
+  partner: clari
+  partner_name: https://www.clari.com/
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/clari/1026767857296
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: https://www.clari.com/
+    matched_domain: clari.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Clari
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-clever-inc
+  label: Clever Inc.
+  partner: clever
+  partner_name: Clever Inc.
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/waterford_early_learning/484297380700
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: Clever Inc.
+    matched_domain: clever.com
+    matched_by: domain
+    listings: 3
+    sample_apps:
+    - ClassMate
+    - Progress Learning
+    - Waterford Early Learning
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-clicksend
+  label: ClickSend
+  partner: clicksend
+  partner_name: ClickSend
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/clicksend_sms/664000975254
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: ClickSend
+    matched_domain: clicksend.com
+    matched_by: domain
+    listings: 2
+    sample_apps:
+    - ClickSend SMS
+    - ClickSend SMS - Sheets
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-clickup
+  label: Clickup
+  partner: clickup
+  partner_name: Clickup
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/clickup/897450447475
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: Clickup
+    matched_domain: clickup.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - ClickUp
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-clio
+  label: Clio
+  partner: clio
+  partner_name: Clio
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/clio_for_gmail/259969685083
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: Clio
+    matched_domain: clio.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Clio for Gmail™
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-www-cloudally-com
+  label: www.cloudally.com
+  partner: cloudally
+  partner_name: www.cloudally.com
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/opentext_cloudally_backup_recovery_solut/364928561755
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: www.cloudally.com
+    matched_domain: cloudally.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - OpenText Cloudally Backup & Recovery Solution
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+    identity_source: developer published as a domain only; name check = app title
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-cloudconvert
+  label: CloudConvert
+  partner: cloudconvert
+  partner_name: CloudConvert
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/cloudconvert/199590644126
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: CloudConvert
+    matched_domain: cloudconvert.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - CloudConvert
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-coefficient
+  label: Coefficient
+  partner: coefficient-works
+  partner_name: Coefficient
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/coefficient_salesforce_hubspot_data_conn/182621001506
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: Coefficient
+    matched_domain: coefficient.io
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - 'Coefficient: Salesforce, HubSpot Data Connector'
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-coingecko
+  label: CoinGecko
+  partner: coingecko
+  partner_name: CoinGecko
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/coingecko_for_sheets_live_crypto_prices/429190203358
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: CoinGecko
+    matched_domain: coingecko.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - 'CoinGecko for Sheets: Live Crypto Prices'
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-copper-com
+  label: copper.com
+  partner: copper
+  partner_name: copper.com
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/copper_crm_for_google_sheets/461423560386
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: copper.com
+    matched_domain: copper.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Copper CRM for Google Sheets™
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+    identity_source: developer published as a domain only; name check = app title
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-cronofy
+  label: Cronofy
+  partner: cronofy
+  partner_name: Cronofy
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/cronofy_enterprise/902414518019
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: Cronofy
+    matched_domain: cronofy.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Cronofy Enterprise
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-darwinbox-digital-solutions-private-limited
+  label: Darwinbox Digital Solutions Private Limited
+  partner: darwinbox
+  partner_name: Darwinbox Digital Solutions Private Limited
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/darwinbox_reports_cloud/963997033225
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: Darwinbox Digital Solutions Private Limited
+    matched_domain: darwinbox.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Darwinbox Reports Cloud
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-databricks
+  label: Databricks
+  partner: databricks
+  partner_name: Databricks
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/databricks_connector_for_google_sheets/465517936903
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: Databricks
+    matched_domain: databricks.com
+    matched_by: domain+name-among-holders
+    listings: 1
+    sample_apps:
+    - Databricks Connector for Google Sheets™
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-datadog
+  label: Datadog
+  partner: datadog
+  partner_name: Datadog
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/datadog/96497144843
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: Datadog
+    matched_domain: datadoghq.com
+    matched_by: domain+name-among-holders
+    listings: 1
+    sample_apps:
+    - Datadog
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-dialpad-inc
+  label: Dialpad, Inc
+  partner: dialpad
+  partner_name: Dialpad, Inc
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/dialpad_addon/1027370902578
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: Dialpad, Inc
+    matched_domain: dialpad.com
+    matched_by: domain
+    listings: 4
+    sample_apps:
+    - Dialpad
+    - Dialpad Add-on
+    - Dialpad Meetings for Google Calendar™
+    - Dialpad for Google Chat™
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-docusign
+  label: DocuSign
+  partner: docusign
+  partner_name: DocuSign
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/docusign_esignature_for_google_workspace/469176070494
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: DocuSign
+    matched_domain: docusign.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Docusign eSignature for Google Workspace™
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-dropbox-sign
+  label: Dropbox Sign
+  partner: dropbox
+  partner_name: Dropbox Sign
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/dropbox_sign_fka_as_hellosign_for_google/1094820495693
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: Dropbox Sign
+    matched_domain: dropbox.com
+    matched_by: domain
+    listings: 3
+    sample_apps:
+    - Dropbox Sign (fka as HelloSign) for Google Drive™
+    - Dropbox for Gmail™
+    - HelloSign
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-www-druva-com
+  label: www.druva.com
+  partner: druva
+  partner_name: www.druva.com
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/druva_insync_for_google_workspace/957935124900
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: www.druva.com
+    matched_domain: druva.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Druva inSync for Google Workspace
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+    identity_source: developer published as a domain only; name check = app title
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-edia-learning
+  label: Edia Learning
+  partner: edia
+  partner_name: Edia Learning
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/edia/494386509350
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: Edia Learning
+    matched_domain: edia.app
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Edia
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-egnyte-inc
+  label: Egnyte, Inc.
+  partner: egnyte
+  partner_name: Egnyte, Inc.
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/egnyte/588365742298
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: Egnyte, Inc.
+    matched_domain: egnyte.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Egnyte
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-eodhd-financial-apis-eod-historical-data
+  label: EODHD Financial APIs (EOD Historical Data)
+  partner: eodhd
+  partner_name: EODHD Financial APIs (EOD Historical Data)
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/financial_data/258473626842
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: EODHD Financial APIs (EOD Historical Data)
+    matched_domain: eodhd.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Financial Data
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-evernote-corporation
+  label: Evernote Corporation
+  partner: evernote
+  partner_name: Evernote Corporation
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/evernote_for_google_gmail/294974410262
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: Evernote Corporation
+    matched_domain: evernote.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Evernote for Google Gmail™
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-exclaimer-ltd
+  label: Exclaimer Ltd
+  partner: exclaimer
+  partner_name: Exclaimer Ltd
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/exclaimer_email_signature_management/441020792836
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: Exclaimer Ltd
+    matched_domain: exclaimer.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Exclaimer Email Signature Management
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-www-expensify-com
+  label: www.expensify.com
+  partner: expensify
+  partner_name: www.expensify.com
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/expensify/452047858523
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: www.expensify.com
+    matched_domain: expensify.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Expensify
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+    identity_source: developer published as a domain only; name check = app title
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-extensis
+  label: Extensis
+  partner: extensis
+  partner_name: Extensis
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/extensis_fonts_for_google_docs_and_googl/568288816452
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: Extensis
+    matched_domain: extensis.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Extensis Fonts for Google Docs™ and Google Slides™
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-figma
+  label: Figma
+  partner: figma
+  partner_name: Figma
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/figma/1035183305161
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: Figma
+    matched_domain: figma.com
+    matched_by: domain
+    listings: 2
+    sample_apps:
+    - FigJam
+    - Figma
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-filevine
+  label: Filevine
+  partner: filevine
+  partner_name: Filevine
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/filevine/843192500762
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: Filevine
+    matched_domain: filevine.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Filevine
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-financial-modeling-prep
+  label: Financial Modeling Prep
+  partner: financial-modeling-prep
+  partner_name: Financial Modeling Prep
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/financial_modeling_prep/262992176931
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: Financial Modeling Prep
+    matched_domain: financialmodelingprep.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Financial Modeling Prep
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-fleetline
+  label: Fleetline
+  partner: fleetline
+  partner_name: Fleetline
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/fleetlineai/497194088135
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: Fleetline
+    matched_domain: fleetline.ai
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - fleetline.ai
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-flowaccount
+  label: FlowAccount
+  partner: flowaccount
+  partner_name: FlowAccount
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/flowaccount_sheet_addon/983398668466
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: FlowAccount
+    matched_domain: flowaccount.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - FlowAccount Sheet Add-on
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-frappe-technologies-pvt-ltd
+  label: Frappe Technologies Pvt Ltd
+  partner: frappe
+  partner_name: Frappe Technologies Pvt Ltd
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/erpnext/358636246923
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: Frappe Technologies Pvt Ltd
+    matched_domain: frappe.io
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - ERPNext
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-freshbooks
+  label: FreshBooks
+  partner: freshbooks
+  partner_name: FreshBooks
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/freshbooks_invoicing_addon/35731807065
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: FreshBooks
+    matched_domain: freshbooks.com
+    matched_by: domain
+    listings: 2
+    sample_apps:
+    - FreshBooks
+    - FreshBooks Invoicing Add-on
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-gainsight
+  label: Gainsight
+  partner: gainsight
+  partner_name: Gainsight
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/gainsight_app_for_calendar/982040983797
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: Gainsight
+    matched_domain: gainsight.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Gainsight App for Calendar™
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-app-gong-io
+  label: app.gong.io
+  partner: gong
+  partner_name: app.gong.io
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/gongio/465092758304
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: app.gong.io
+    matched_domain: gong.io
+    matched_by: domain
+    listings: 2
+    sample_apps:
+    - Gong Meeting Manager
+    - Gong.io
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+    identity_source: developer published as a domain only; name check = app title
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-gusto-com
+  label: gusto.com
+  partner: gusto
+  partner_name: gusto.com
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/gusto/416608718644
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: gusto.com
+    matched_domain: gusto.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Gusto
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+    identity_source: developer published as a domain only; name check = app title
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-hackerrank
+  label: HackerRank
+  partner: hackerrank
+  partner_name: HackerRank
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/hackerrank_interview/386396436142
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: HackerRank
+    matched_domain: hackerrank.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - HackerRank Interview
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-harvest
+  label: Harvest
+  partner: harvest
+  partner_name: Harvest
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/harvest/168610159629
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: Harvest
+    matched_domain: getharvest.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Harvest
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-www-hellosign-com
+  label: www.hellosign.com
+  partner: hellosign
+  partner_name: www.hellosign.com
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/dropbox_sign_fka_as_hellosign_for_google/8454815545
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: www.hellosign.com
+    matched_domain: hellosign.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Dropbox Sign (fka as HelloSign) for Google Docs
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+    identity_source: developer published as a domain only; name check = app title
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-help-scout
+  label: Help Scout
+  partner: helpscout
+  partner_name: Help Scout
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/help_scout/545145119934
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: Help Scout
+    matched_domain: helpscout.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Help Scout
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-hirevue-com
+  label: hirevue.com
+  partner: hirevue
+  partner_name: hirevue.com
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/hirevue_hiring_assistant_calendar_integr/36472329053
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: hirevue.com
+    matched_domain: hirevue.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - HireVue Hiring Assistant Calendar Integration
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+    identity_source: developer published as a domain only; name check = app title
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-hitpay-payment-solutions-pte-ltd
+  label: HitPay Payment Solutions Pte Ltd
+  partner: hitpay
+  partner_name: HitPay Payment Solutions Pte Ltd
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/hitpay/969836523186
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: HitPay Payment Solutions Pte Ltd
+    matched_domain: hitpayapp.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - HitPay
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-hiverhq-com
+  label: hiverhq.com
+  partner: hiver
+  partner_name: hiverhq.com
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/hiver_aipowered_customer_service_platfor/300342089616
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: hiverhq.com
+    matched_domain: hiverhq.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - 'Hiver: AI-powered customer service platform'
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+    identity_source: developer published as a domain only; name check = app title
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-holistics-software
+  label: Holistics Software
+  partner: holistics
+  partner_name: Holistics Software
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/holistics_data_reporting/717468166706
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: Holistics Software
+    matched_domain: holistics.io
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Holistics Data Reporting
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-honeybadger-industries
+  label: Honeybadger Industries
+  partner: honeybadger
+  partner_name: Honeybadger Industries
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/honeybadger/15441823055
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: Honeybadger Industries
+    matched_domain: honeybadger.io
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Honeybadger
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-hunter
+  label: Hunter
+  partner: hunter
+  partner_name: Hunter
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/hunter_for_sheets/327237705162
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: Hunter
+    matched_domain: hunter.io
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Hunter for Sheets™
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-icons8
+  label: Icons8
+  partner: icons8
+  partner_name: Icons8
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/free_icons_photos_illustrations/204075515330
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: Icons8
+    matched_domain: icons8.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Free icons, photos & illustrations
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-ifttt
+  label: IFTTT
+  partner: ifttt
+  partner_name: IFTTT
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/ifttt/427071021612
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: IFTTT
+    matched_domain: ifttt.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - IFTTT
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-insightly-com
+  label: insightly.com
+  partner: insightly
+  partner_name: insightly.com
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/insightly_crm/340379804296
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: insightly.com
+    matched_domain: insightly.com
+    matched_by: domain
+    listings: 2
+    sample_apps:
+    - Insightly CRM
+    - Insightly CRM Sidebar
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+    identity_source: developer published as a domain only; name check = app title
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-instatus
+  label: Instatus
+  partner: instatus
+  partner_name: Instatus
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/instatus/732754506819
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: Instatus
+    matched_domain: instatus.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Instatus
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-intel-corporation
+  label: Intel Corporation
+  partner: intel
+  partner_name: Intel Corporation
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/intel_skills_for_innovation_for_google_c/16113332384
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: Intel Corporation
+    matched_domain: intel.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Intel Skills for Innovation for Google Classroom™
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-intuit-inc
+  label: Intuit Inc
+  partner: intuit
+  partner_name: Intuit Inc
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/spreadsheet_sync/183375661196
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: Intuit Inc
+    matched_domain: intuit.com
+    matched_by: domain+name-among-holders
+    listings: 1
+    sample_apps:
+    - Spreadsheet Sync
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-invoiced-inc
+  label: Invoiced, Inc.
+  partner: invoiced
+  partner_name: Invoiced, Inc.
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/invoiced/980661723912
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: Invoiced, Inc.
+    matched_domain: invoiced.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Invoiced
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-itslearning
+  label: itslearning
+  partner: itslearning
+  partner_name: itslearning
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/itslearning/269316705537
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: itslearning
+    matched_domain: itslearning.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - itslearning
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-ixl-learning
+  label: IXL Learning
+  partner: ixl
+  partner_name: IXL Learning
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/ixl_learning/850510713245
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: IXL Learning
+    matched_domain: ixl.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - IXL Learning
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-www-jumpcloud-com
+  label: www.jumpcloud.com
+  partner: jumpcloud
+  partner_name: www.jumpcloud.com
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/jumpcloud/629652647736
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: www.jumpcloud.com
+    matched_domain: jumpcloud.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - JumpCloud
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+    identity_source: developer published as a domain only; name check = app title
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-kahoot
+  label: Kahoot
+  partner: kahoot
+  partner_name: Kahoot
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/kahoot_for_google_meet/77335967938
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: Kahoot
+    matched_domain: kahoot.com
+    matched_by: domain
+    listings: 2
+    sample_apps:
+    - Kahoot!
+    - Kahoot! for Google Meet™
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-kaseya-llc
+  label: Kaseya LLC
+  partner: kaseya
+  partner_name: Kaseya LLC
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/automated_phishing_defense/94796565456
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: Kaseya LLC
+    matched_domain: kaseya.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Automated Phishing Defense
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-keepit
+  label: Keepit
+  partner: keepit
+  partner_name: Keepit
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/keepit_for_google_workspace/890080143002
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: Keepit
+    matched_domain: keepit.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Keepit for Google Workspace™
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-klaxoon-by-wrike
+  label: Klaxoon by Wrike
+  partner: klaxoon
+  partner_name: Klaxoon by Wrike
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/klaxoon_by_wrike/88757907571
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: Klaxoon by Wrike
+    matched_domain: klaxoon.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Klaxoon by Wrike
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-lara-ai
+  label: Lara AI
+  partner: lara-ai
+  partner_name: Lara AI
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/lara/390658168195
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: Lara AI
+    matched_domain: meetlara.ai
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Lara
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-lawvu
+  label: LawVu
+  partner: lawvu
+  partner_name: LawVu
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/lawvu_for_gmail/792170256219
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: LawVu
+    matched_domain: lawvu.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - LawVu for Gmail™
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-lifesize
+  label: Lifesize
+  partner: lifesize
+  partner_name: Lifesize
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/lifesize/120044848800
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: Lifesize
+    matched_domain: lifesize.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Lifesize
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-market-data
+  label: Market Data
+  partner: marketdata-app
+  partner_name: Market Data
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/market_data/453586334945
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: Market Data
+    matched_domain: marketdata.app
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Market Data
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-miro
+  label: Miro
+  partner: miro
+  partner_name: Miro
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/miro/1062019541050
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: Miro
+    matched_domain: miro.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Miro
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-mixmax-inc
+  label: Mixmax, Inc.
+  partner: mixmax
+  partner_name: Mixmax, Inc.
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/mixmax_sales_engagement_for_gmail/445090274054
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: Mixmax, Inc.
+    matched_domain: mixmax.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Mixmax Sales Engagement for Gmail™
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-monkeylearn
+  label: MonkeyLearn
+  partner: monkeylearn
+  partner_name: MonkeyLearn
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/text_analysis_by_monkeylearn/76050487453
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: MonkeyLearn
+    matched_domain: monkeylearn.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Text Analysis by MonkeyLearn
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-mural
+  label: Mural
+  partner: mural
+  partner_name: Mural
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/mural/365113861787
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: Mural
+    matched_domain: mural.co
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Mural
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-nearpod
+  label: Nearpod
+  partner: nearpod
+  partner_name: Nearpod
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/nearpod_for_google_classroom/28288372596
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: Nearpod
+    matched_domain: nearpod.com
+    matched_by: domain
+    listings: 2
+    sample_apps:
+    - Nearpod
+    - Nearpod for Google Classroom™
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-nectar-hr
+  label: Nectar HR
+  partner: nectar-hr
+  partner_name: Nectar HR
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/nectar/751519140195
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: Nectar HR
+    matched_domain: nectarhr.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Nectar
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-www-netskope-com
+  label: www.netskope.com
+  partner: netskope
+  partner_name: www.netskope.com
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/netskope/1055677045599
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: www.netskope.com
+    matched_domain: netskope.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Netskope
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+    identity_source: developer published as a domain only; name check = app title
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-newsela
+  label: Newsela
+  partner: newsela
+  partner_name: Newsela
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/newsela/972591127561
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: Newsela
+    matched_domain: newsela.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Newsela
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-thenounproject-com
+  label: thenounproject.com
+  partner: noun-project
+  partner_name: thenounproject.com
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/icons_by_noun_project/606689375894
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: thenounproject.com
+    matched_domain: thenounproject.com
+    matched_by: domain
+    listings: 2
+    sample_apps:
+    - Icons by Noun Project
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+    identity_source: developer published as a domain only; name check = app title
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-nudge-security-inc
+  label: Nudge Security, Inc.
+  partner: nudge-security
+  partner_name: Nudge Security, Inc.
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/nudge_security/596454085396
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: Nudge Security, Inc.
+    matched_domain: nudgesecurity.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Nudge Security
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-odoo-sa
+  label: Odoo SA
+  partner: odoo
+  partner_name: Odoo SA
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/odoo_inbox_addin/546131068990
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: Odoo SA
+    matched_domain: odoo.com
+    matched_by: domain
+    listings: 2
+    sample_apps:
+    - Odoo Inbox Addin
+    - Odoo Inbox Addin (Legacy)
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-openai
+  label: OpenAI
+  partner: openai
+  partner_name: OpenAI
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/chatgpt/870214997678
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: OpenAI
+    matched_domain: openai.com
+    matched_by: domain+name-among-holders
+    listings: 1
+    sample_apps:
+    - ChatGPT
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-overdrive-inc
+  label: OverDrive, Inc
+  partner: overdrive
+  partner_name: OverDrive, Inc
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/sora_by_overdrive_education/794111293111
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: OverDrive, Inc
+    matched_domain: overdrive.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Sora by OverDrive Education
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-padlet-inc
+  label: Padlet Inc.
+  partner: padlet
+  partner_name: Padlet Inc.
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/padlet/892091831180
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: Padlet Inc.
+    matched_domain: padlet.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Padlet
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-palo-alto-networks
+  label: Palo Alto Networks
+  partner: palo-alto-networks
+  partner_name: Palo Alto Networks
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/demisto_phishing_addon/98372960675
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: Palo Alto Networks
+    matched_domain: paloaltonetworks.com
+    matched_by: domain+name-among-holders
+    listings: 1
+    sample_apps:
+    - Demisto Phishing Add-on
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-pandadoc
+  label: PandaDoc
+  partner: pandadoc
+  partner_name: PandaDoc
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/pandadoc_for_google_docs/463622177030
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: PandaDoc
+    matched_domain: pandadoc.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - PandaDoc for Google Docs
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-people-ai
+  label: people.ai
+  partner: peopleai
+  partner_name: people.ai
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/peopleai/714057686991
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: people.ai
+    matched_domain: people.ai
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - People.ai
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+    identity_source: developer published as a domain only; name check = app title
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-peopleforce
+  label: PeopleForce
+  partner: peopleforce
+  partner_name: PeopleForce
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/peopleforce/38103911901
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: PeopleForce
+    matched_domain: peopleforce.io
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - PeopleForce
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-personio-se-co-kg
+  label: Personio SE & Co KG
+  partner: personio
+  partner_name: Personio SE & Co KG
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/personio_for_google_calendar/662075954923
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: Personio SE & Co KG
+    matched_domain: personio.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Personio for Google Calendar™
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-pipedrive-team
+  label: Pipedrive Team
+  partner: pipedrive
+  partner_name: Pipedrive Team
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/pipedrive_crm/181457847709
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: Pipedrive Team
+    matched_domain: pipedrive.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Pipedrive CRM
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-powerschool
+  label: PowerSchool
+  partner: powerschool
+  partner_name: PowerSchool
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/powerschool_unified_classroom/190562129324
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: PowerSchool
+    matched_domain: powerschool.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - PowerSchool Unified Classroom
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-practicepanther
+  label: PracticePanther
+  partner: practicepanther
+  partner_name: PracticePanther
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/practicepanther_for_gmail/1009448003
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: PracticePanther
+    matched_domain: practicepanther.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - PracticePanther for Gmail
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-proofpoint-inc
+  label: Proofpoint, Inc.
+  partner: proofpoint
+  partner_name: Proofpoint, Inc.
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/report_suspicious/939483390031
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: Proofpoint, Inc.
+    matched_domain: proofpoint.com
+    matched_by: domain+name-among-holders
+    listings: 1
+    sample_apps:
+    - Report Suspicious
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-quizlet
+  label: Quizlet
+  partner: quizlet
+  partner_name: Quizlet
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/quizlet/520305074949
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: Quizlet
+    matched_domain: quizlet.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Quizlet
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-read-ai
+  label: Read AI
+  partner: read-ai
+  partner_name: Read AI
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/read_ai/766098389391
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: Read AI
+    matched_domain: read.ai
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Read AI
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-rebrandly
+  label: Rebrandly
+  partner: rebrandly
+  partner_name: Rebrandly
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/rebrandly/865494018682
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: Rebrandly
+    matched_domain: rebrandly.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Rebrandly
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-reclaim-ai
+  label: Reclaim.ai
+  partner: reclaim-ai
+  partner_name: Reclaim.ai
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/ai_for_google_calendar_reclaimai/950518663892
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: Reclaim.ai
+    matched_domain: reclaim.ai?utm_source=google-calendar&utm_campaign=add-on&utm_medium=reclaim
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - 'AI for Google Calendar™: Reclaim.ai'
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-ringcentral
+  label: RingCentral
+  partner: ringcentral
+  partner_name: RingCentral
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/ringcentral_for_google_workspace/252157745625
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: RingCentral
+    matched_domain: ringcentral.com
+    matched_by: domain+name-among-holders
+    listings: 1
+    sample_apps:
+    - RingCentral for Google Workspace
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-riot-inc
+  label: Riot Inc
+  partner: riot
+  partner_name: Riot Inc
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/riot_phishing_reporter/622566661269
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: Riot Inc
+    matched_domain: tryriot.com
+    matched_by: domain
+    listings: 2
+    sample_apps:
+    - Albert
+    - Riot Phishing Reporter
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-sansan
+  label: Sansan
+  partner: sansan
+  partner_name: Sansan
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/sansan/697437957320
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: Sansan
+    matched_domain: sansan.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Sansan
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-seismic
+  label: Seismic
+  partner: seismic
+  partner_name: Seismic
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/seismic_for_google_slides/666531727296
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: Seismic
+    matched_domain: seismic.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Seismic for Google Slides™
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-sejda-pdf
+  label: Sejda PDF
+  partner: sejda
+  partner_name: Sejda PDF
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/sejda_pdf_editor/8721525582
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: Sejda PDF
+    matched_domain: sejda.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Sejda PDF Editor
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-semrush
+  label: Semrush
+  partner: semrush
+  partner_name: Semrush
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/semrush_seo_writing_assistant/215726158749
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: Semrush
+    matched_domain: semrush.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Semrush SEO Writing Assistant
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-manageengine-com
+  label: manageengine.com
+  partner: servicedesk-plus
+  partner_name: manageengine.com
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/servicedesk_plus_cloud/253102309453
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: manageengine.com
+    matched_domain: manageengine.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - ServiceDesk Plus (Cloud)
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+    identity_source: developer published as a domain only; name check = app title
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-ship24
+  label: Ship24
+  partner: ship24
+  partner_name: Ship24
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/ship24_ai_order_tracking/939860061085
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: Ship24
+    matched_domain: ship24.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Ship24 AI Order Tracking
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-signeasy
+  label: Signeasy
+  partner: signeasy
+  partner_name: Signeasy
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/signeasy_esignatures_for_google_workspac/484878786372
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: Signeasy
+    matched_domain: signeasy.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Signeasy eSignatures for Google Workspace™
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-small-improvements
+  label: Small Improvements
+  partner: small-improvements
+  partner_name: Small Improvements
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/small_improvements_calendar_integration/1058581511050
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: Small Improvements
+    matched_domain: small-improvements.com
+    matched_by: domain
+    listings: 2
+    sample_apps:
+    - Small Improvements Calendar Integration
+    - Small Improvements Calendar Integration EU
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-smartsheet-inc
+  label: Smartsheet, Inc.
+  partner: smartsheet
+  partner_name: Smartsheet, Inc.
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/smartsheet_for_google_docs/306818934099
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: Smartsheet, Inc.
+    matched_domain: smartsheet.com
+    matched_by: domain
+    listings: 3
+    sample_apps:
+    - Smartsheet for Gmail Add-On
+    - Smartsheet for Google Docs
+    - Smartsheet for Google Forms
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-spanning-com
+  label: spanning.com
+  partner: spanning
+  partner_name: spanning.com
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/spanning_backup_for_g_suite/632855923494
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: spanning.com
+    matched_domain: spanning.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Spanning Backup for G Suite
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+    identity_source: developer published as a domain only; name check = app title
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-spotify-ab
+  label: Spotify AB
+  partner: spotify
+  partner_name: Spotify AB
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/spotify/135083966748
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: Spotify AB
+    matched_domain: spotify.com
+    matched_by: domain+name-among-holders
+    listings: 1
+    sample_apps:
+    - Spotify
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-streak-crm
+  label: Streak CRM
+  partner: streak
+  partner_name: Streak CRM
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/streak_crm_importer/1008328246438
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: Streak CRM
+    matched_domain: streak.com
+    matched_by: domain
+    listings: 2
+    sample_apps:
+    - Streak CRM Importer
+    - Streak CRM for Google Workspace™
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-supermetrics
+  label: Supermetrics
+  partner: supermetrics
+  partner_name: Supermetrics
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/supermetrics/523876908005
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: Supermetrics
+    matched_domain: supermetrics.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Supermetrics
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-surveymonkey
+  label: SurveyMonkey
+  partner: surveymonkey
+  partner_name: SurveyMonkey
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/surveymonkey/464504635391
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: SurveyMonkey
+    matched_domain: surveymonkey.com
+    matched_by: domain
+    listings: 3
+    sample_apps:
+    - SurveyMonkey
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-teamviewer-germany-gmbh
+  label: TeamViewer Germany GmbH
+  partner: teamviewer
+  partner_name: TeamViewer Germany GmbH
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/teamviewer_remote_control/325781671307
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: TeamViewer Germany GmbH
+    matched_domain: teamviewer.com?utm_source=googlemeet&utm_medium=partner&utm_campaign=global|2024|nov|googlemeet|marketplace
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - TeamViewer Remote Control
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-teamwork-com
+  label: Teamwork.com
+  partner: teamwork
+  partner_name: Teamwork.com
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/teamworkcom/275857615071
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: Teamwork.com
+    matched_domain: teamwork.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Teamwork.com
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+    identity_source: developer published as a domain only; name check = app title
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-todoist-inc
+  label: Todoist Inc
+  partner: todoist
+  partner_name: Todoist Inc
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/todoist_for_gmail_planner_calendar/815972520808
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: Todoist Inc
+    matched_domain: todoist.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - 'Todoist for Gmail™: Planner & Calendar'
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-tracxn-technologies-limited
+  label: Tracxn Technologies Limited
+  partner: tracxn
+  partner_name: Tracxn Technologies Limited
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/tracxn/474169435149
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: Tracxn Technologies Limited
+    matched_domain: tracxn.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Tracxn
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-travelperk-s-l
+  label: Travelperk S.L.
+  partner: travelperk
+  partner_name: Travelperk S.L.
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/travelperk/1029628525364
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: Travelperk S.L.
+    matched_domain: travelperk.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - TravelPerk
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-trellis-tech-inc
+  label: Trellis Tech, Inc.
+  partner: trellistech
+  partner_name: Trellis Tech, Inc.
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/trellis/228689929555
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: Trellis Tech, Inc.
+    matched_domain: trellistech.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - trellis
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-trello-com
+  label: trello.com
+  partner: trello
+  partner_name: trello.com
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/trello/28300235456
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: trello.com
+    matched_domain: trello.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Trello
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+    identity_source: developer published as a domain only; name check = app title
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-turnitin
+  label: Turnitin
+  partner: turnitin
+  partner_name: Turnitin
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/turnitin_draft_coach/249033953412
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: Turnitin
+    matched_domain: turnitin.com
+    matched_by: domain
+    listings: 2
+    sample_apps:
+    - Turnitin
+    - Turnitin Draft Coach™
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-ukg-dimensions-integration-schedule
+  label: UKG Dimensions Integration Schedule
+  partner: ukg
+  partner_name: UKG Dimensions Integration Schedule
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/ukg_dimensions_integration_schedule/236461531690
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: UKG Dimensions Integration Schedule
+    matched_domain: ukg.com
+    matched_by: domain+name-among-holders
+    listings: 3
+    sample_apps:
+    - UKG Dimensions Integration Admin
+    - UKG Dimensions Integration Schedule
+    - UKG Flow (Preview)
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-unito
+  label: Unito
+  partner: unito
+  partner_name: Unito
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/unito_spreadsheet_sync/548272798607
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: Unito
+    matched_domain: unito.io
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Unito Spreadsheet Sync
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-vendr
+  label: Vendr
+  partner: vendr
+  partner_name: Vendr
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/vendr/494431333351
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: Vendr
+    matched_domain: vendr.com
+    matched_by: domain+name-among-holders
+    listings: 1
+    sample_apps:
+    - Vendr
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-verkada
+  label: Verkada
+  partner: verkada
+  partner_name: Verkada
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/verkada_guest/903205868911
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: Verkada
+    matched_domain: verkada.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Verkada Guest
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-virtru-corporation
+  label: Virtru Corporation
+  partner: virtru
+  partner_name: Virtru Corporation
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/virtru_data_protection_for_google_worksp/197076597243
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: Virtru Corporation
+    matched_domain: virtru.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Virtru Data Protection for Google Workspace™
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-vonage
+  label: Vonage
+  partner: vonage
+  partner_name: Vonage
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/vonage_meetings/822727696970
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: Vonage
+    matched_domain: vonage.com
+    matched_by: domain+name-among-holders
+    listings: 1
+    sample_apps:
+    - Vonage Meetings
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-wati
+  label: WATI
+  partner: wati
+  partner_name: WATI
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/whatsapp_message_sender_and_automation/212905810455
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: WATI
+    matched_domain: wati.io
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - WhatsApp Message Sender and Automation
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-wave-financial-inc
+  label: Wave Financial Inc.
+  partner: wave-financial
+  partner_name: Wave Financial Inc.
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/wave_connect/90421189176
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: Wave Financial Inc.
+    matched_domain: waveapps.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Wave Connect
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-cisco-webex
+  label: Cisco Webex
+  partner: webex
+  partner_name: Cisco Webex
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/cisco_webex/678783785621
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: Cisco Webex
+    matched_domain: webex.com
+    matched_by: domain+name-among-holders
+    listings: 1
+    sample_apps:
+    - Cisco Webex
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-whereby-as
+  label: Whereby AS
+  partner: whereby
+  partner_name: Whereby AS
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/whereby_for_google_calendar/480029666679
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: Whereby AS
+    matched_domain: whereby.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Whereby for Google Calendar™
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-workday-inc
+  label: Workday, Inc.
+  partner: workday
+  partner_name: Workday, Inc.
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/workday_for_google_sheets/154487802303
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: Workday, Inc.
+    matched_domain: workday.com
+    matched_by: domain+name-among-holders
+    listings: 1
+    sample_apps:
+    - Workday for Google Sheets™
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-wrike
+  label: Wrike
+  partner: wrike
+  partner_name: Wrike
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/wrike_for_gmail/931326872457
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: Wrike
+    matched_domain: wrike.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Wrike for Gmail™
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-empuls-by-xoxoday
+  label: Empuls by Xoxoday
+  partner: xoxoday
+  partner_name: Empuls by Xoxoday
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/empuls_by_xoxoday/961988132378
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: Empuls by Xoxoday
+    matched_domain: xoxoday.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Empuls by Xoxoday
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-yoast
+  label: Yoast
+  partner: yoast
+  partner_name: Yoast
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/yoast_seo_content_analyses/13982441862
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: Yoast
+    matched_domain: yoast.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Yoast SEO Content Analyses
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-zoho-corporation
+  label: Zoho Corporation
+  partner: zoho
+  partner_name: Zoho Corporation
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/zoho_notebook_for_google_workspace/1016591843637
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: Zoho Corporation
+    matched_domain: zoho.com
+    matched_by: domain+name-among-holders
+    listings: 28
+    sample_apps:
+    - Bigin for Gmail™
+    - Zoho Assist
+    - Zoho Billing
+    - Zoho Books
+    - Zoho CRM
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-zoho-com
+  label: zoho.com
+  partner: zoho-analytics
+  partner_name: zoho.com
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/zoho_analytics/381009473798
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: zoho.com
+    matched_domain: zoho.com
+    matched_by: domain+name-among-holders
+    listings: 1
+    sample_apps:
+    - Zoho Analytics
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+    identity_source: developer published as a domain only; name check = app title
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-zoominfo
+  label: ZoomInfo
+  partner: zoominfo
+  partner_name: ZoomInfo
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/zoominfo_for_google_calendar/635708537658
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Google Workspace Marketplace (category pages + app pages)
+    spec_file: null
+    role: google-workspace-app
+    registered_name: ZoomInfo
+    matched_domain: zoominfo.com
+    matched_by: domain
+    listings: 2
+    sample_apps:
+    - ZoomInfo for Gmail™
+    - ZoomInfo for Google Calendar™
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-workplace-apps.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
