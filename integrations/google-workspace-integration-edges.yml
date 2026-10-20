@@ -1,9 +1,16 @@
 generated: '2026-10-14'
 method: searched
 checked:
+- https://cdn.winget.microsoft.com/cache
+- https://formulae.brew.sh/api/cask.json
+- https://formulae.brew.sh/api/formula.json
 - https://github.com/PipedreamHQ/pipedream/tree/94800dd6de6640b942c65ea7ee655f71ac56d438/components/
 - https://github.com/PipedreamHQ/pipedream/tree/d5872355ef27b4efa769f05352f2820c299a456e/components/
+- https://github.com/ScoopInstaller/Extras
+- https://github.com/ScoopInstaller/Main
 - https://github.com/meltano/hub
+- https://pypi.org/pypi
+- https://registry.npmjs.org
 - https://workspace.google.com/marketplace/sitemap.xml
 - https://zapier.com/api/v4/apps/
 source:
@@ -4476,6 +4483,36 @@ edges:
     builder: Pipedream repo (component)
   detected_by: sweep-workflow-automation.py
   first_seen: '2026-10-15'
+- partner_name: Scoop
+  partner: null
+  partner_match: null
+  type: register
+  direction: provider-built
+  category: official CLI (Scoop)
+  evidence: https://github.com/ScoopInstaller/Main/blob/master/bucket/google-workspace-cli.json
+  channel: package-registry
+  relationship: distribution-channel
+  contract_reference:
+    register: Scoop (public package index)
+    spec_file: null
+    packages:
+    - name: google-workspace-cli
+      kind: main
+      version: 0.22.5
+      released: null
+      lapsed: false
+      page: https://github.com/ScoopInstaller/Main/blob/master/bucket/google-workspace-cli.json
+      cli: 'scoop description: Official command-line tool for Gooogle Drive, Gmail, Calendar, Sheets, Docs, Cha'
+      repo_leg: domain:google.com
+      publisher_leg: artifact-shared-github-org:googleworkspace
+      matched_by: domain+name-among-holders
+    current: true
+    signal_note: 'the provider''s own command-line tool on a package manager: distribution, not an integration;
+      lapsed = no release in 24 months or deprecated / disabled by the manager'
+    detected_by: sweep-official-clis.py
+    detected: '2026-10-20'
+  detected_by: sweep-official-clis.py
+  first_seen: '2026-10-20'
 marketplace_apps:
 - marketplace: own
   channel: partner-built
