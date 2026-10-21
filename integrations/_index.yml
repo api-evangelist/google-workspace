@@ -4278,3 +4278,46 @@
     builder: Pipedream repo (component)
   status: not-a-workflow
   arazzo: null
+- slug: google-workspace-scoop
+  label: Scoop
+  partner_name: Scoop
+  category: official CLI (Scoop)
+  type: register
+  channel: package-registry
+  evidence: https://github.com/ScoopInstaller/Main/blob/master/bucket/google-workspace-cli.json
+  source: edge
+  relationship: distribution-channel
+  contract_reference:
+    register: Scoop (public package index)
+    spec_file: null
+    packages:
+    - name: google-workspace-cli
+      kind: main
+      version: 0.22.5
+      released: null
+      lapsed: false
+      page: https://github.com/ScoopInstaller/Main/blob/master/bucket/google-workspace-cli.json
+      cli: 'scoop description: Official command-line tool for Gooogle Drive, Gmail, Calendar, Sheets, Docs, Cha'
+      repo_leg: domain:google.com
+      publisher_leg: artifact-shared-github-org:googleworkspace
+      matched_by: domain+name-among-holders
+    current: true
+    signal_note: 'the provider''s own command-line tool on a package manager: distribution, not an integration;
+      lapsed = no release in 24 months or deprecated / disabled by the manager'
+    detected_by: sweep-official-clis.py
+    detected: '2026-10-20'
+  status: not-a-workflow
+  arazzo: null
+- slug: google-workspace-eclipse-foundation-open-vsx
+  label: Eclipse Foundation (open-vsx)
+  partner: eclipse
+  partner_name: Eclipse Foundation (open-vsx)
+  category: IDE / developer extension marketplace listing
+  type: marketplace
+  marketplace: open-vsx
+  channel: partner-built
+  evidence: https://open-vsx.org/namespace/google-workspace
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null

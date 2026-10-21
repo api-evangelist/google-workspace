@@ -1,18 +1,19 @@
 generated: '2026-10-14'
 method: searched
 checked:
+- https://github.com/PipedreamHQ/pipedream/tree/94800dd6de6640b942c65ea7ee655f71ac56d438/components/
+- https://github.com/PipedreamHQ/pipedream/tree/d5872355ef27b4efa769f05352f2820c299a456e/components/
+- https://github.com/meltano/hub
+- https://workspace.google.com/marketplace/sitemap.xml
+- https://zapier.com/api/v4/apps/
 - https://cdn.winget.microsoft.com/cache
 - https://formulae.brew.sh/api/cask.json
 - https://formulae.brew.sh/api/formula.json
-- https://github.com/PipedreamHQ/pipedream/tree/94800dd6de6640b942c65ea7ee655f71ac56d438/components/
-- https://github.com/PipedreamHQ/pipedream/tree/d5872355ef27b4efa769f05352f2820c299a456e/components/
 - https://github.com/ScoopInstaller/Extras
 - https://github.com/ScoopInstaller/Main
-- https://github.com/meltano/hub
 - https://pypi.org/pypi
 - https://registry.npmjs.org
-- https://workspace.google.com/marketplace/sitemap.xml
-- https://zapier.com/api/v4/apps/
+- eclipse/integrations/eclipse-integration-edges.yml
 source:
 - https://github.com/PipedreamHQ/pipedream/tree/94800dd6de6640b942c65ea7ee655f71ac56d438/components/
 - https://github.com/meltano/hub
@@ -4513,6 +4514,25 @@ edges:
     detected: '2026-10-20'
   detected_by: sweep-official-clis.py
   first_seen: '2026-10-20'
+- partner_name: Eclipse Foundation (open-vsx)
+  partner: eclipse
+  partner_match: mirror
+  mirror_match: domain+name-among-holders
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: open-vsx
+  evidence: https://open-vsx.org/namespace/google-workspace
+  mirror_of: eclipse/integrations/eclipse-integration-edges.yml
+  apps:
+  - Google Workspace Developer Tools
+  listing_count: 1
+  detected: '2026-10-20'
+  detected_by: mirror-platform-listings.py
+  category: IDE / developer extension marketplace listing
+  badges:
+  - Verified namespace
 marketplace_apps:
 - marketplace: own
   channel: partner-built
