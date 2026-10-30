@@ -1,4 +1,4 @@
-# Google Workspace (google-workspace)
+# Google Workspace
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,611 +66,255 @@
 
 A collection of productivity and collaboration tools from Google including Gmail, Drive, Calendar, Meet, and more.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/google-workspace/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/google-workspace/refs/heads/main/apis.yml)
+**Areas:** Calendar · Collaboration · Email · Productivity · Storage · Video Conferencing · Google Workspace
 
-## Scope
+## Google Workspace on APIs.io
 
-- **Type:** Index
-- **Access:** 3rd-Party
+Everything profiled for Google Workspace is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/google-workspace/](https://apis.io/providers/google-workspace/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (33)
 
-- Calendar
-- Collaboration
-- Email
-- Productivity
-- Storage
-- Video Conferencing
+- [Gmail API](https://apis.io/apis/google-workspace/gmail/) — Send and read email, manage drafts and labels, and handle mailbox settings.
+- [Google Drive API](https://apis.io/apis/google-workspace/drive/) — Store and synchronize files across devices, manage file metadata and permissions.
+- [Google Calendar API](https://apis.io/apis/google-workspace/calendar/) — Create and manage calendars, events, and attendees.
+- [Google Meet REST API](https://apis.io/apis/google-workspace/meet/) — Create and manage video conferencing meetings, spaces, recordings, and transcripts.
+- [Google Docs API](https://apis.io/apis/google-workspace/docs/) — Create and edit documents programmatically.
+- [Google Sheets API](https://apis.io/apis/google-workspace/sheets/) — Read and write data in Google Sheets.
+- [Google Slides API](https://apis.io/apis/google-workspace/slides/) — Create and modify presentations.
+- [Google Chat API](https://apis.io/apis/google-workspace/chat/) — Build bots and integrations for Google Chat.
+- [Admin SDK Reports API](https://apis.io/apis/google-workspace/admin-reports/) — View audit and usage reports for a Google Workspace domain including user activity and admin actions.
+- [Google Forms API](https://apis.io/apis/google-workspace/forms/) — Create and modify forms and quizzes, retrieve form responses and quiz grades.
+- [Google Tasks API](https://apis.io/apis/google-workspace/tasks/) — Search, read, and update Google Tasks content and metadata.
+- [Google Keep API](https://apis.io/apis/google-workspace/keep/) — Manage Google Keep notes including creating, listing, and deleting notes and managing permissions.
+- [Google Vault API](https://apis.io/apis/google-workspace/vault/) — Manage eDiscovery for your organization including matters, holds, and exports across Google Workspace services.
+- [Google Classroom API](https://apis.io/apis/google-workspace/classroom/) — Manage classes, rosters, invitations, and coursework in Google Classroom.
+- [People API](https://apis.io/apis/google-workspace/people/) — Read and manage the authenticated user contacts and profiles, and search the directory.
+- [Google Cloud Search API](https://apis.io/apis/google-workspace/cloud-search/) — Index non-Google Workspace data and search across all organizational data sources.
+- [Drive Activity API](https://apis.io/apis/google-workspace/drive-activity/) — Retrieve information about changes made to objects within a user Google Drive.
+- [Drive Labels API](https://apis.io/apis/google-workspace/drive-labels/) — Create and manage labels to organize and classify files in Google Drive.
+- [Alert Center API](https://apis.io/apis/google-workspace/alert-center/) — Manage alerts on issues affecting your Google Workspace domain including security and compliance warnings.
+- [Groups Settings API](https://apis.io/apis/google-workspace/groups-settings/) — Update and retrieve settings for existing Google Groups including permissions and access controls.
+- [Groups Migration API](https://apis.io/apis/google-workspace/groups-migration/) — Migrate shared emails from public folders and distribution lists to Google Groups discussion archives.
+- [Admin SDK Data Transfer API](https://apis.io/apis/google-workspace/data-transfer/) — Transfer ownership of user data from one user to another within a domain.
+- [Enterprise License Manager API](https://apis.io/apis/google-workspace/license-manager/) — Manage Google Workspace and related product licenses for all users of a customer.
+- [Google Workspace Reseller API](https://apis.io/apis/google-workspace/reseller/) — Perform common reseller functions at scale including placing orders and managing customer subscriptions.
+- [Gmail Postmaster Tools API](https://apis.io/apis/google-workspace/postmaster/) — Gather statistics on bulk emails sent to Gmail users including spam reports and delivery errors.
+- [Google Workspace Marketplace API](https://apis.io/apis/google-workspace/marketplace/) — Manage customer and user license status for Google Workspace Marketplace applications.
+- [Google Workspace Groups API](https://apis.io/apis/google-workspace/google-workspace-groups-api/) — Manage groups in a Google Workspace domain
+- [Google Workspace Users API](https://apis.io/apis/google-workspace/google-workspace-users-api/) — Manage user accounts in a Google Workspace domain
+- [Google Meet API](https://apis.io/apis/google-workspace/google-meet-api/) — The Google Meet API allows developers to build applications that integrate with Google Meet.
+- [Google Workspace APIs Calendar API](https://apis.io/apis/google-workspace/google-suites-calendar-api/) — The Calendar API from Google Workspace APIs — 3 operation(s) for calendar.
+- [Google Workspace APIs Drive API](https://apis.io/apis/google-workspace/google-suites-drive-api/) — The Drive API from Google Workspace APIs — 2 operation(s) for drive.
+- [Google Workspace APIs Gmail API](https://apis.io/apis/google-workspace/google-suites-gmail-api/) — The Gmail API from Google Workspace APIs — 4 operation(s) for gmail.
+- [Google Workspace Org Units API](https://apis.io/apis/google-workspace/google-workspace-org-units-api/) — Manage organizational units in a Google Workspace domain
 
-## Timestamps
+### Published properties
 
-- **Created:** 2024-01-01
-- **Modified:** 2026-05-19
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Arazzo workflows (16)
 
-### Gmail API
+Multi-step workflows that chain operations into a business task.
 
-Send and read email, manage drafts and labels, and handle mailbox settings.
+- [Google Workspace Audit a User's Group Memberships](https://apis.io/arazzos/google-workspace/google-workspace-audit-user-groups-workflow/)
+- [Google Workspace Create a Group](https://apis.io/arazzos/google-workspace/google-workspace-create-group-workflow/)
+- [Google Workspace Create an Org Unit and Assign a User](https://apis.io/arazzos/google-workspace/google-workspace-create-org-unit-and-assign-user-workflow/)
+- [Google Workspace Decommission an Org Unit](https://apis.io/arazzos/google-workspace/google-workspace-decommission-org-unit-workflow/)
+- [Google Workspace Delete a User Safely](https://apis.io/arazzos/google-workspace/google-workspace-delete-user-safely-workflow/)
+- [Google Workspace Find and Delete a Group](https://apis.io/arazzos/google-workspace/google-workspace-find-and-delete-group-workflow/)
+- [Google Workspace Find and Update a User](https://apis.io/arazzos/google-workspace/google-workspace-find-and-update-user-workflow/)
+- [Google Workspace Inspect the Org Unit Tree](https://apis.io/arazzos/google-workspace/google-workspace-inspect-org-unit-tree-workflow/)
+- [Google Workspace Move a User to Another Org Unit](https://apis.io/arazzos/google-workspace/google-workspace-move-user-org-unit-workflow/)
+- [Google Workspace Offboard a User](https://apis.io/arazzos/google-workspace/google-workspace-offboard-user-workflow/)
+- [Google Workspace Promote a User to Super Administrator](https://apis.io/arazzos/google-workspace/google-workspace-promote-user-to-admin-workflow/)
+- [Google Workspace Provision a User](https://apis.io/arazzos/google-workspace/google-workspace-provision-user-workflow/)
+- [Google Workspace Rename a Group](https://apis.io/arazzos/google-workspace/google-workspace-rename-group-workflow/)
+- [Google Workspace Rename an Org Unit](https://apis.io/arazzos/google-workspace/google-workspace-rename-org-unit-workflow/)
+- [Google Workspace Reset a User Password](https://apis.io/arazzos/google-workspace/google-workspace-reset-user-password-workflow/)
+- [Google Workspace Restore a Deleted User](https://apis.io/arazzos/google-workspace/google-workspace-restore-deleted-user-workflow/)
 
-- **Human URL:** [https://developers.google.com/gmail/api](https://developers.google.com/gmail/api)
-- **Base URL:** `https://gmail.googleapis.com`
+#### Agentic access (1)
 
-#### Tags
+Which operations an agent can call, which act, and which need a human in the loop.
 
-- Email
-- Messaging
+- [Google Workspace Agentic Access](https://apis.io/agentic-access/google-workspace/google-workspace-agentic-access/)
 
-#### Properties
+#### JSON Schema (16)
 
-- [Documentation](https://developers.google.com/gmail/api/guides)
-- [Authentication](https://developers.google.com/gmail/api/auth/about-auth)
+The data models the API reads and writes.
+
+- [Error](https://apis.io/schemas/google-workspace/admin-sdk-directory-error/)
+- [Group](https://apis.io/schemas/google-workspace/admin-sdk-directory-group/)
+- [Groups](https://apis.io/schemas/google-workspace/admin-sdk-directory-groups/)
+- [OrgUnit](https://apis.io/schemas/google-workspace/admin-sdk-directory-org-unit/)
+- [OrgUnits](https://apis.io/schemas/google-workspace/admin-sdk-directory-org-units/)
+- [User](https://apis.io/schemas/google-workspace/admin-sdk-directory-user/)
+- [UserName](https://apis.io/schemas/google-workspace/admin-sdk-directory-user-name/)
+- [Users](https://apis.io/schemas/google-workspace/admin-sdk-directory-users/)
+- [Error](https://apis.io/schemas/google-workspace/google-workspace-error/)
+- [Group](https://apis.io/schemas/google-workspace/google-workspace-group/)
+- [Groups](https://apis.io/schemas/google-workspace/google-workspace-groups/)
+- [OrgUnit](https://apis.io/schemas/google-workspace/google-workspace-orgunit/)
+- [OrgUnits](https://apis.io/schemas/google-workspace/google-workspace-orgunits/)
+- [Google Workspace Admin SDK Directory API Models](https://apis.io/schemas/google-workspace/google-workspace-user/)
+- [UserName](https://apis.io/schemas/google-workspace/google-workspace-username/)
+- [Users](https://apis.io/schemas/google-workspace/google-workspace-users/)
+
+#### JSON Structure (9)
+
+Data models expressed in JSON Structure.
+
+- [Admin Sdk Directory Error Structure](https://apis.io/json-structure/google-workspace/admin-sdk-directory-error-structure/)
+- [Admin Sdk Directory Group Structure](https://apis.io/json-structure/google-workspace/admin-sdk-directory-group-structure/)
+- [Admin Sdk Directory Groups Structure](https://apis.io/json-structure/google-workspace/admin-sdk-directory-groups-structure/)
+- [Admin Sdk Directory Org Unit Structure](https://apis.io/json-structure/google-workspace/admin-sdk-directory-org-unit-structure/)
+- [Admin Sdk Directory Org Units Structure](https://apis.io/json-structure/google-workspace/admin-sdk-directory-org-units-structure/)
+- [Admin Sdk Directory User Name Structure](https://apis.io/json-structure/google-workspace/admin-sdk-directory-user-name-structure/)
+- [Admin Sdk Directory User Structure](https://apis.io/json-structure/google-workspace/admin-sdk-directory-user-structure/)
+- [Admin Sdk Directory Users Structure](https://apis.io/json-structure/google-workspace/admin-sdk-directory-users-structure/)
+- [Google Workspace Structure](https://apis.io/json-structure/google-workspace/google-workspace-structure/)
+
+#### JSON-LD (2)
+
+Linked-data contexts for the provider's vocabulary.
+
+- [Admin Sdk Directory Context](https://apis.io/jsonld/google-workspace/admin-sdk-directory-context/)
+- [Google Workspace Context](https://apis.io/jsonld/google-workspace/google-workspace-context/)
+
+#### Vocabulary (1)
+
+The provider's domain terms, defined.
+
+- [Google Workspace Domain Vocabulary](https://apis.io/vocabularies/google-workspace/google-workspace-vocabulary/)
+
+#### Examples (8)
+
+Example requests and responses.
+
+- [Admin Sdk Directory Error Example](https://apis.io/examples/google-workspace/admin-sdk-directory-error-example/)
+- [Admin Sdk Directory Group Example](https://apis.io/examples/google-workspace/admin-sdk-directory-group-example/)
+- [Admin Sdk Directory Groups Example](https://apis.io/examples/google-workspace/admin-sdk-directory-groups-example/)
+- [Admin Sdk Directory Org Unit Example](https://apis.io/examples/google-workspace/admin-sdk-directory-org-unit-example/)
+- [Admin Sdk Directory Org Units Example](https://apis.io/examples/google-workspace/admin-sdk-directory-org-units-example/)
+- [Admin Sdk Directory User Example](https://apis.io/examples/google-workspace/admin-sdk-directory-user-example/)
+- [Admin Sdk Directory User Name Example](https://apis.io/examples/google-workspace/admin-sdk-directory-user-name-example/)
+- [Admin Sdk Directory Users Example](https://apis.io/examples/google-workspace/admin-sdk-directory-users-example/)
+
+#### Collections (5)
+
+Postman and Open Collection request collections.
+
+- [Google Workspace Admin SDK Directory API](https://apis.io/collections/google-workspace/open-admin-sdk-directory-api/)
+- [Google Workspace Admin SDK Directory Groups API](https://apis.io/collections/google-workspace/open-google-workspace-groups-api/)
+- [Google Workspace Admin SDK Directory Groups OrgUnits API](https://apis.io/collections/google-workspace/open-google-workspace-orgunits-api/)
+- [Google Workspace Admin SDK Directory Groups Users API](https://apis.io/collections/google-workspace/open-google-workspace-users-api/)
+- [Google Workspace Admin SDK Directory API](https://apis.io/collections/google-workspace/postman-admin-sdk-directory-api/)
+
+#### Governance rules (2)
+
+Spectral rulesets for the provider's contracts.
+
+- [Google Workspace — jsonschema rules](https://apis.io/rules/google-workspace/google-workspace-jsonschema-spectral-rules/)
+- [Google Workspace API Rules](https://apis.io/rules/google-workspace/google-workspace-spectral-rules/)
+
+#### Security (3)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Google Workspace Authentication](https://apis.io/security/google-workspace/google-workspace-authentication/)
+- [Google Workspace Domain Security](https://apis.io/security/google-workspace/google-workspace-domain-security/)
+- [Google Workspace Vulnerability Disclosure](https://apis.io/security/google-workspace/google-workspace-vulnerability-disclosure/)
+
+#### OAuth scopes (1)
+
+The permissions the API asks for.
+
+- [Google Workspace Scopes](https://apis.io/scopes/google-workspace/google-workspace-scopes/)
+
+#### Plans and pricing (2)
+
+Published plans, tiers and prices.
+
+- [Google Workspace Plans Pricing](https://apis.io/plans/google-workspace/google-workspace-plans-pricing/)
+- [Google Workspace Price Estimates](https://apis.io/plans/google-workspace/google-workspace-price-estimates/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Google Workspace Rate Limits](https://apis.io/rate-limits/google-workspace/google-workspace-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Google Workspace Finops](https://apis.io/finops/google-workspace/google-workspace-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://workspace.google.com/)
+- [Getting started](https://developers.google.com/workspace/guides/get-started)
 - [Pricing](https://workspace.google.com/pricing)
-- [API Reference](https://developers.google.com/workspace/gmail/api/reference/rest)
-- [Quickstart](https://developers.google.com/gmail/api/quickstart/python)
-- [Postman Collection](collections/admin-sdk-directory-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/admin-sdk-directory-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Google Drive API
-
-Store and synchronize files across devices, manage file metadata and permissions.
-
-- **Human URL:** [https://developers.google.com/drive/api](https://developers.google.com/drive/api)
-- **Base URL:** `https://www.googleapis.com/drive/v3`
-
-#### Tags
-
-- Cloud
-- Files
-- Storage
-
-#### Properties
-
-- [Documentation](https://developers.google.com/drive/api/guides/about-sdk)
-- [Quickstart](https://developers.google.com/drive/api/quickstart/python)
-- [Authentication](https://developers.google.com/drive/api/guides/about-auth)
-- [API Reference](https://developers.google.com/workspace/drive/api/reference/rest/v3)
-- [Postman Collection](collections/admin-sdk-directory-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/admin-sdk-directory-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Google Calendar API
-
-Create and manage calendars, events, and attendees.
-
-- **Human URL:** [https://developers.google.com/calendar/api](https://developers.google.com/calendar/api)
-- **Base URL:** `https://www.googleapis.com/calendar/v3`
-
-#### Tags
-
-- Calendar
-- Events
-- Scheduling
-
-#### Properties
-
-- [Documentation](https://developers.google.com/calendar/api/guides/overview)
-- [Code Examples](https://developers.google.com/calendar/api/samples)
-- [API Reference](https://developers.google.com/workspace/calendar/api/reference/rest)
-- [Authentication](https://developers.google.com/calendar/api/auth)
-- [Postman Collection](collections/admin-sdk-directory-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/admin-sdk-directory-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Google Meet REST API
-
-Create and manage video conferencing meetings, spaces, recordings, and transcripts.
-
-- **Human URL:** [https://developers.google.com/meet](https://developers.google.com/meet)
-- **Base URL:** `https://meet.googleapis.com`
-
-#### Tags
-
-- Conferencing
-- Meetings
-- Video
-
-#### Properties
-
-- [Documentation](https://developers.google.com/meet/api/guides/overview)
-- [API Reference](https://developers.google.com/workspace/meet/api/reference/rest/v2)
-- [Postman Collection](collections/admin-sdk-directory-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/admin-sdk-directory-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Google Docs API
-
-Create and edit documents programmatically.
-
-- **Human URL:** [https://developers.google.com/docs/api](https://developers.google.com/docs/api)
-- **Base URL:** `https://docs.googleapis.com`
-
-#### Tags
-
-- Collaboration
-- Documents
-- Word Processing
-
-#### Properties
-
-- [Documentation](https://developers.google.com/docs/api/how-tos/overview)
-- [Quickstart](https://developers.google.com/docs/api/quickstart/python)
-- [API Reference](https://developers.google.com/workspace/docs/api/reference/rest)
-- [Postman Collection](collections/admin-sdk-directory-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/admin-sdk-directory-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Google Sheets API
-
-Read and write data in Google Sheets.
-
-- **Human URL:** [https://developers.google.com/sheets/api](https://developers.google.com/sheets/api)
-- **Base URL:** `https://sheets.googleapis.com`
-
-#### Tags
-
-- Analytics
-- Data
-- Spreadsheets
-
-#### Properties
-
-- [Documentation](https://developers.google.com/sheets/api/guides/concepts)
-- [Code Examples](https://developers.google.com/sheets/api/samples)
-- [Quickstart](https://developers.google.com/sheets/api/quickstart/python)
-- [API Reference](https://developers.google.com/workspace/sheets/api/reference/rest)
-- [Postman Collection](collections/admin-sdk-directory-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/admin-sdk-directory-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Google Slides API
-
-Create and modify presentations.
-
-- **Human URL:** [https://developers.google.com/slides/api](https://developers.google.com/slides/api)
-- **Base URL:** `https://slides.googleapis.com`
-
-#### Tags
-
-- Presentations
-- Slides
-
-#### Properties
-
-- [Documentation](https://developers.google.com/slides/api/guides/concepts)
-- [API Reference](https://developers.google.com/workspace/slides/api/reference/rest)
-- [Quickstart](https://developers.google.com/slides/api/quickstart/python)
-- [Postman Collection](collections/admin-sdk-directory-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/admin-sdk-directory-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Admin SDK Directory API
-
-Manage users, groups, organizational units, and devices in a Google Workspace domain.
-
-- **Human URL:** [https://developers.google.com/admin-sdk/directory](https://developers.google.com/admin-sdk/directory)
-- **Base URL:** `https://admin.googleapis.com`
-
-#### Tags
-
-- Admin
-- Groups
-- Management
-- Users
-
-#### Properties
-
-- [Documentation](https://developers.google.com/admin-sdk/directory/reference/rest)
-- [OpenAPI](openapi/admin-sdk-directory-api.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/admin-sdk-directory-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/admin-sdk-directory-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [JSON Schema](json-schema/google-workspace-user-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON-LD](json-ld/google-workspace-context.jsonld) — [JSON-LD](https://www.w3.org/TR/json-ld11/)
-- [API Reference](https://developers.google.com/workspace/admin/directory/reference/rest)
-- [Quickstart](https://developers.google.com/admin-sdk/directory/v1/quickstart/python)
-
-### Google Chat API
-
-Build bots and integrations for Google Chat.
-
-- **Human URL:** [https://developers.google.com/chat](https://developers.google.com/chat)
-- **Base URL:** `https://chat.googleapis.com`
-
-#### Tags
-
-- Chat
-- Collaboration
-- Messaging
-
-#### Properties
-
-- [Documentation](https://developers.google.com/chat/api/guides/overview)
-- [API Reference](https://developers.google.com/chat/api/reference/rest)
-- [Postman Collection](collections/admin-sdk-directory-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/admin-sdk-directory-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Admin SDK Reports API
-
-View audit and usage reports for a Google Workspace domain including user activity and admin actions.
-
-- **Human URL:** [https://developers.google.com/admin-sdk/reports](https://developers.google.com/admin-sdk/reports)
-- **Base URL:** `https://admin.googleapis.com`
-
-#### Tags
-
-- Admin
-- Audit
-- Reports
-- Usage
-
-#### Properties
-
-- [Documentation](https://developers.google.com/workspace/admin/reports/v1/get-start/overview)
-- [API Reference](https://developers.google.com/workspace/admin/reports/reference/rest)
-- [Authentication](https://developers.google.com/admin-sdk/reports/auth)
-- [Postman Collection](collections/admin-sdk-directory-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/admin-sdk-directory-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Google Forms API
-
-Create and modify forms and quizzes, retrieve form responses and quiz grades.
-
-- **Human URL:** [https://developers.google.com/workspace/forms/api](https://developers.google.com/workspace/forms/api)
-- **Base URL:** `https://forms.googleapis.com`
-
-#### Tags
-
-- Forms
-- Quizzes
-- Surveys
-
-#### Properties
-
-- [Documentation](https://developers.google.com/workspace/forms/api/guides)
-- [API Reference](https://developers.google.com/workspace/forms/api/reference/rest)
-- [Quickstart](https://developers.google.com/workspace/forms/api/quickstart/python)
-- [Postman Collection](collections/admin-sdk-directory-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/admin-sdk-directory-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Google Tasks API
-
-Search, read, and update Google Tasks content and metadata.
-
-- **Human URL:** [https://developers.google.com/tasks](https://developers.google.com/tasks)
-- **Base URL:** `https://tasks.googleapis.com`
-
-#### Tags
-
-- Productivity
-- Tasks
-- To-Do
-
-#### Properties
-
-- [Documentation](https://developers.google.com/workspace/tasks/overview)
-- [API Reference](https://developers.google.com/workspace/tasks/reference/rest)
-- [Quickstart](https://developers.google.com/tasks/quickstart/js)
-- [Postman Collection](collections/admin-sdk-directory-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/admin-sdk-directory-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Google Keep API
-
-Manage Google Keep notes including creating, listing, and deleting notes and managing permissions.
-
-- **Human URL:** [https://developers.google.com/workspace/keep](https://developers.google.com/workspace/keep)
-- **Base URL:** `https://keep.googleapis.com`
-
-#### Tags
-
-- Notes
-- Productivity
-
-#### Properties
-
-- [Documentation](https://developers.google.com/workspace/keep/api/guides)
-- [API Reference](https://developers.google.com/workspace/keep/api/reference/rest)
-- [Postman Collection](collections/admin-sdk-directory-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/admin-sdk-directory-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Google Vault API
-
-Manage eDiscovery for your organization including matters, holds, and exports across Google Workspace services.
-
-- **Human URL:** [https://developers.google.com/workspace/vault](https://developers.google.com/workspace/vault)
-- **Base URL:** `https://vault.googleapis.com`
-
-#### Tags
-
-- Compliance
-- Ediscovery
-- Legal
-
-#### Properties
-
-- [Documentation](https://developers.google.com/workspace/vault/guides)
-- [API Reference](https://developers.google.com/workspace/vault/reference/rest)
-- [Postman Collection](collections/admin-sdk-directory-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/admin-sdk-directory-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Google Classroom API
-
-Manage classes, rosters, invitations, and coursework in Google Classroom.
-
-- **Human URL:** [https://developers.google.com/workspace/classroom](https://developers.google.com/workspace/classroom)
-- **Base URL:** `https://classroom.googleapis.com`
-
-#### Tags
-
-- Classroom
-- Education
-- Learning
-
-#### Properties
-
-- [Documentation](https://developers.google.com/workspace/classroom/guides/get-started)
-- [API Reference](https://developers.google.com/workspace/classroom/reference/rest)
-- [Postman Collection](collections/admin-sdk-directory-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/admin-sdk-directory-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### People API
-
-Read and manage the authenticated user contacts and profiles, and search the directory.
-
-- **Human URL:** [https://developers.google.com/people](https://developers.google.com/people)
-- **Base URL:** `https://people.googleapis.com`
-
-#### Tags
-
-- Contacts
-- Directory
-- People
-
-#### Properties
-
-- [Documentation](https://developers.google.com/people)
-- [API Reference](https://developers.google.com/people/api/rest)
-- [Postman Collection](collections/admin-sdk-directory-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/admin-sdk-directory-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Google Cloud Search API
-
-Index non-Google Workspace data and search across all organizational data sources.
-
-- **Human URL:** [https://developers.google.com/workspace/cloud-search](https://developers.google.com/workspace/cloud-search)
-- **Base URL:** `https://cloudsearch.googleapis.com`
-
-#### Tags
-
-- Enterprise Search
-- Indexing
-- Search
-
-#### Properties
-
-- [Documentation](https://developers.google.com/workspace/cloud-search/docs/guides/project-setup)
-- [API Reference](https://developers.google.com/workspace/cloud-search/docs/reference/rest)
-- [Postman Collection](collections/admin-sdk-directory-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/admin-sdk-directory-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Drive Activity API
-
-Retrieve information about changes made to objects within a user Google Drive.
-
-- **Human URL:** [https://developers.google.com/drive/activity/v2](https://developers.google.com/drive/activity/v2)
-- **Base URL:** `https://driveactivity.googleapis.com`
-
-#### Tags
-
-- Activity
-- Audit
-- Drive
-
-#### Properties
-
-- [Documentation](https://developers.google.com/drive/activity/v2)
-- [API Reference](https://developers.google.com/workspace/drive/activity/v2/reference/rest)
-- [Postman Collection](collections/admin-sdk-directory-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/admin-sdk-directory-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Drive Labels API
-
-Create and manage labels to organize and classify files in Google Drive.
-
-- **Human URL:** [https://developers.google.com/workspace/drive/labels/guides/overview](https://developers.google.com/workspace/drive/labels/guides/overview)
-- **Base URL:** `https://drivelabels.googleapis.com`
-
-#### Tags
-
-- Drive
-- Labels
-- Metadata
-
-#### Properties
-
-- [Documentation](https://developers.google.com/workspace/drive/labels/guides/overview)
-- [API Reference](https://developers.google.com/workspace/drive/labels/reference/rest/v2)
-- [Postman Collection](collections/admin-sdk-directory-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/admin-sdk-directory-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Alert Center API
-
-Manage alerts on issues affecting your Google Workspace domain including security and compliance warnings.
-
-- **Human URL:** [https://developers.google.com/workspace/admin/alertcenter/guides](https://developers.google.com/workspace/admin/alertcenter/guides)
-- **Base URL:** `https://alertcenter.googleapis.com`
-
-#### Tags
-
-- Admin
-- Alerts
-- Security
-
-#### Properties
-
-- [Documentation](https://developers.google.com/workspace/admin/alertcenter/guides)
-- [API Reference](https://developers.google.com/workspace/admin/alertcenter/reference/rest)
-- [Authentication](https://developers.google.com/workspace/admin/alertcenter/guides/auth)
-- [Postman Collection](collections/admin-sdk-directory-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/admin-sdk-directory-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Groups Settings API
-
-Update and retrieve settings for existing Google Groups including permissions and access controls.
-
-- **Human URL:** [https://developers.google.com/admin-sdk/groups-settings/concepts](https://developers.google.com/admin-sdk/groups-settings/concepts)
-- **Base URL:** `https://www.googleapis.com/groups/v1`
-
-#### Tags
-
-- Admin
-- Groups
-- Settings
-
-#### Properties
-
-- [Documentation](https://developers.google.com/admin-sdk/groups-settings/concepts)
-- [API Reference](https://developers.google.com/admin-sdk/groups-settings/v1/reference)
-- [Postman Collection](collections/admin-sdk-directory-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/admin-sdk-directory-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Groups Migration API
-
-Migrate shared emails from public folders and distribution lists to Google Groups discussion archives.
-
-- **Human URL:** [https://developers.google.com/workspace/admin/groups-migration/v1/guides/overview](https://developers.google.com/workspace/admin/groups-migration/v1/guides/overview)
-- **Base URL:** `https://groupsmigration.googleapis.com`
-
-#### Tags
-
-- Admin
-- Groups
-- Migration
-
-#### Properties
-
-- [Documentation](https://developers.google.com/workspace/admin/groups-migration/v1/guides/overview)
-- [Authentication](https://developers.google.com/workspace/admin/groups-migration/v1/guides/authorizing)
-- [Postman Collection](collections/admin-sdk-directory-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/admin-sdk-directory-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Admin SDK Data Transfer API
-
-Transfer ownership of user data from one user to another within a domain.
-
-- **Human URL:** [https://developers.google.com/workspace/admin/data-transfer](https://developers.google.com/workspace/admin/data-transfer)
-- **Base URL:** `https://admin.googleapis.com`
-
-#### Tags
-
-- Admin
-- Data Transfer
-- Migration
-
-#### Properties
-
-- [Documentation](https://developers.google.com/workspace/admin/data-transfer)
-- [API Reference](https://developers.google.com/workspace/admin/data-transfer/reference/rest)
-- [Postman Collection](collections/admin-sdk-directory-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/admin-sdk-directory-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Enterprise License Manager API
-
-Manage Google Workspace and related product licenses for all users of a customer.
-
-- **Human URL:** [https://developers.google.com/admin-sdk/licensing](https://developers.google.com/admin-sdk/licensing)
-- **Base URL:** `https://licensing.googleapis.com`
-
-#### Tags
-
-- Admin
-- Licensing
-- Management
-
-#### Properties
-
-- [Documentation](https://developers.google.com/admin-sdk/licensing/v1/how-tos/using)
-- [API Reference](https://developers.google.com/workspace/admin/licensing/reference/rest)
-- [Authentication](https://developers.google.com/admin-sdk/licensing/v1/how-tos/authorizing)
-- [Postman Collection](collections/admin-sdk-directory-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/admin-sdk-directory-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Google Workspace Reseller API
-
-Perform common reseller functions at scale including placing orders and managing customer subscriptions.
-
-- **Human URL:** [https://developers.google.com/workspace/admin/reseller/v1/how-tos/concepts](https://developers.google.com/workspace/admin/reseller/v1/how-tos/concepts)
-- **Base URL:** `https://reseller.googleapis.com`
-
-#### Tags
-
-- Admin
-- Reseller
-- Subscriptions
-
-#### Properties
-
-- [Documentation](https://developers.google.com/workspace/admin/reseller/v1/how-tos/concepts)
-- [API Reference](https://developers.google.com/workspace/admin/reseller/reference/rest)
-- [Authentication](https://developers.google.com/workspace/admin/reseller/v1/how-tos/authorize)
-- [Postman Collection](collections/admin-sdk-directory-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/admin-sdk-directory-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Gmail Postmaster Tools API
-
-Gather statistics on bulk emails sent to Gmail users including spam reports and delivery errors.
-
-- **Human URL:** [https://developers.google.com/workspace/gmail/postmaster](https://developers.google.com/workspace/gmail/postmaster)
-- **Base URL:** `https://gmailpostmastertools.googleapis.com`
-
-#### Tags
-
-- Deliverability
-- Email
-- Postmaster
-
-#### Properties
-
-- [Documentation](https://developers.google.com/workspace/gmail/postmaster)
-- [API Reference](https://developers.google.com/workspace/gmail/postmaster/reference/rest)
-- [Postman Collection](collections/admin-sdk-directory-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/admin-sdk-directory-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Google Workspace Marketplace API
-
-Manage customer and user license status for Google Workspace Marketplace applications.
-
-- **Human URL:** [https://developers.google.com/workspace/marketplace/overview](https://developers.google.com/workspace/marketplace/overview)
-- **Base URL:** `https://appsmarket.googleapis.com`
-
-#### Tags
-
-- Apps
-- Licensing
-- Marketplace
-
-#### Properties
-
-- [Documentation](https://developers.google.com/workspace/marketplace/overview)
-- [API Reference](https://developers.google.com/workspace/marketplace/reference/rest)
-- [Authentication](https://developers.google.com/workspace/marketplace/authorizing)
-- [Postman Collection](collections/admin-sdk-directory-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/admin-sdk-directory-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-## Common Properties
-
-- [Arazzo Workflows](arazzo/) — [Arazzo Specification](https://spec.openapis.org/arazzo/latest.html)
-- [GitHub Organization](https://github.com/googleworkspace)
-- [LinkedIn](https://www.linkedin.com/showcase/googleworkspace)
-- [Console](https://console.cloud.google.com)
-- [Authentication](https://developers.google.com/identity/protocols/oauth2)
-- [Terms of Service](https://workspace.google.com/terms/service-terms/)
 - [Support](https://support.google.com/workspace)
-- [Status Page](https://www.google.com/appsstatus/dashboard/)
-- [Developer Portal](https://developers.google.com/workspace)
-- [Pricing](https://workspace.google.com/pricing)
 - [Blog](https://workspaceupdates.googleblog.com)
-- [Release Notes](https://developers.google.com/workspace/release-notes)
-- [Getting Started](https://developers.google.com/workspace/guides/get-started)
-- [SDK](https://developers.google.com/workspace/guides/libraries)
-- [Features](undefined)
-- [Use Cases](undefined)
-- [Integrations](undefined)
+- [Terms of service](https://workspace.google.com/terms/service-terms/)
+- [Privacy policy](https://policies.google.com/privacy)
+- [GitHub](https://github.com/googleworkspace)
+- [Status](https://www.google.com/appsstatus/dashboard/)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 60.4** — strong · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 57.1 |
+| Contract quality | 61.0 |
+| Contract governance | 13.6 |
+| Operational transparency | 76.3 |
+| Developer ergonomics | 60.7 |
+| Access clarity | 63.2 |
+
+**Agent readiness 27.6** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | negotiable (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | documented (partial credit) |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | documented (partial credit) |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | distinct |
+
+**Regulatory alignment 40.2** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/google-workspace/](https://apis.io/providers/google-workspace/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Google Workspace: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/google-workspace/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
